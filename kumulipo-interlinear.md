@@ -8,6 +8,17 @@ Interlinearization by David Stampe.
 Please Note: Hawaiian text and interlinearization of Beckwith's translation copied from [the Internet Archive's record of David Stampe's Faculty page](https://web.archive.org/web/20111024135456/http://www.ling.hawaii.edu/faculty/stampe/Oral-Lit/Hawaiian/Kumulipo/kumulipo-comb.html).
 More texts available on [this landing page](https://web.archive.org/web/20111119055316/http://www.ling.hawaii.edu/faculty/stampe/oral.html).
 
+## To Do
+
+- [ ] Add Queen Liliʻuokalani's translation to the each line
+- [ ] Remove whitespace at beginning of each line
+- [ ] Cleanup line numbers
+
+### Line numbers
+
+make their own line? just change formatting and leave with Hawaiian text?
+deal with possible whitespace after the number period.
+
 ## 1 - KA WA AKAHI - CHANT ONE
 
 0001. O ke au i kahuli wela ka honua
