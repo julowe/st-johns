@@ -8,8 +8,8 @@ Interlinearization by David Stampe.
 Please Note: Hawaiian text and interlinearization of Beckwith's translation copied from [the Internet Archive's record of David Stampe's Faculty page](https://web.archive.org/web/20111024135456/http://www.ling.hawaii.edu/faculty/stampe/Oral-Lit/Hawaiian/Kumulipo/kumulipo-comb.html).
 More texts available on [this landing page](https://web.archive.org/web/20111119055316/http://www.ling.hawaii.edu/faculty/stampe/oral.html).
 
-[1]   KA WA AKAHI
-        CHANT ONE
+## 1 - KA WA AKAHI - CHANT ONE
+
 0001. O ke au i kahuli wela ka honua
           At the time when the earth became hot
 0002. O ke au i kahuli lole ka lani
@@ -268,8 +268,8 @@ More texts available on [this landing page](https://web.archive.org/web/20111119
           The time passes, this night of Kumulipo
 0122.     Po--no
               Still it is night
-[2]   KA WA ELUA
-        CHANT TWO
+## 2 - KA WA ELUA - CHANT TWO
+
 0123. Hanau kama a ka Powehiwehi
           Born is a child to Po-wehiwehi
 0124. Ho‘oleilei ka lana a ka Pouliuli
@@ -588,8 +588,8 @@ More texts available on [this landing page](https://web.archive.org/web/20111119
 0272.     Po--no
               Still it is night
 
-[3]   KA WA EKOLU
-        CHANT THREE
+## 3 - KA WA EKOLU - CHANT THREE
+
 0273. O kane ia, o ka wahine kela
           A male this, the female that
 0274. O kane hanau i ke auau po-‘ele‘ele
@@ -810,8 +810,8 @@ More texts available on [this landing page](https://web.archive.org/web/20111119
 0377.     Po--no
               Still it is night
 
-[4]   KA WA EHA
-        CHANT FOUR
+## 4 - KA WA EHA - CHANT FOUR
+
 0378. E kukulu i ke ‘ahi‘a a la‘a la
           Plant the ‘ahi‘a and cause it to propagate
 0379. O ka ‘ape aumoa ka hiwa uli
@@ -1030,8 +1030,8 @@ More texts available on [this landing page](https://web.archive.org/web/20111119
 0480.     Po--no
               Still it is night
 
-[5]   KA WA ELIMA
-        CHANT FIVE
+## 5 - KA WA ELIMA - CHANT FIVE
+
 0481. O kuhele ke au ia Kapokanokano
           The time arrives for Po-kanokano
 0482. O ho‘omau i ke ahu o Polalouli
@@ -1151,8 +1151,8 @@ More texts available on [this landing page](https://web.archive.org/web/20111119
 0538.     Po--no
               Still it is night
 
-[6]   KA WA EONE
-        CHANT SIX
+## 6 - KA WA EONE - CHANT SIX
+
 0539. O kupukupu kahili o Kua-ka-mano
           Many new fines of chiefs spring up
 0540. O kuku ka mahimahi, o ka pihapiha kapu
@@ -1208,8 +1208,8 @@ More texts available on [this landing page](https://web.archive.org/web/20111119
 0565.     Po--no
               Still it is night
 
-[7]   KA WA EHIKU
-        CHANT SEVEN
+## 7 - KA WA EHIKU - CHANT SEVEN
+
 0566. O kau ke anoano, ia‘u kualono
           Fear falls upon me on the mountain top
 0567. He ano no ka po hane‘e aku
@@ -1269,8 +1269,8 @@ More texts available on [this landing page](https://web.archive.org/web/20111119
 0594.     Po--no
               Still it is night
 
-[8]   KA WA EWALU
-        CHANT EIGHT
+## 8 - KA WA EWALU - CHANT EIGHT
+
 0595. O kama auli[‘i], auli[‘i] anei
           Well-formed is the child, well-formed now
 0596. O kama i ke au o ka po kinikini
@@ -1372,8 +1372,8 @@ More texts available on [this landing page](https://web.archive.org/web/20111119
 0643. O kanaka lele wale, o kanaka nei la
           Man spread abroad, man was here now
            Ua a--o--
-[9]   KA WA EIWA
-        CHANT NINE
+## 9 - KA WA EIWA - CHANT NINE
+
 0644. O La‘ila‘i, o Ola‘i-ku-honua
           Still, trembling stands earth
 0645. O Wela, o Owe, o owa ka lani
@@ -1432,8 +1432,8 @@ More texts available on [this landing page](https://web.archive.org/web/20111119
           Part of the posterity of that woman
 0672.     Ua--ao--
 
-[10]   KA WA UMI
-          CHANT TEN
+## 10 - KA WA UMI - CHANT TEN
+
 0673. O mai la, o La‘ila‘i ka paia
           Come hither, La‘ila‘i [to] the wall [?]
 0674. O Kane a Kapokinikini ka pou, o Ki‘i ka mahu
@@ -1505,8 +1505,8 @@ More texts available on [this landing page](https://web.archive.org/web/20111119
 0707.     Puka--
               Came forth
 
-[11]   KA WA UMIKUMAMAKAHI
-          CHANT ELEVEN
+## 11 - KA WA UMIKUMAMAKAHI - CHANT ELEVEN
+
 0708. Oia wahine noho lani a pi‘o lani no
           She was a woman living among chiefs and married to her brother
 0709. Oia wahine haulani a noho lani no
@@ -2371,8 +2371,8 @@ More texts available on [this landing page](https://web.archive.org/web/20111119
 1545. Hua na lau la nalo, nalo i ka po liolio
           Many who came vanished, lost in the passing night
 
-[12]   KA WA UMIKUMAMALUA
-          CHANT TWELVE
+## 12 - KA WA UMIKUMAMALUA - CHANT TWELVE
+
 1546. Opu‘upu‘u ke kane -- La‘aniha ka wahine
 1547. Opu‘upe -- Pepe
 1548. Opu‘umauna -- Kapu‘u
@@ -2568,10 +2568,10 @@ More texts available on [this landing page](https://web.archive.org/web/20111119
 1734. Wakea i noho ia Haumea, ia Papa, ia Haohokakalani, hanau o Haloa
              O Haloa--no
 
-[13]   KA WA UMIKUMAMAKOLU
-          CHANT THIRTEEN
-          (HE LALA NO KA WA UMIKUMAMALUA)
-          (A BRANCH OF CHANT TWELVE)
+## 13 - KA WA UMIKUMAMAKOLU - CHANT THIRTEEN
+
+(HE LALA NO KA WA UMIKUMAMALUA) - (A BRANCH OF CHANT TWELVE)
+
 1735. Paliku ke kane -- Paliha‘i ka wahine
 1736. Palika‘a -- Palihiolo
 1737. Lakaunihau -- Keaona
@@ -2706,8 +2706,8 @@ More texts available on [this landing page](https://web.archive.org/web/20111119
 1813.     Pu--ka--
               Came forth
 
-[14]   KA WA UMIKUMAMAHA
-          CHANT FOURTEEN
+## 14 - KA WA UMIKUMAMAHA - CHANT FOURTEEN
+
 1814. Li‘aikuhonua ke kane -- Ke‘akahulihonua ka wahine
 1815. Laka -- Kapapaialaka
 1816. Kamo‘oalewa -- Lepu‘ukahonua
@@ -2909,8 +2909,8 @@ More texts available on [this landing page](https://web.archive.org/web/20111119
 1929.     I ka Nu‘u no
               Even to the sacred places
 
-[15]   KA WA UMIKUMAMALIMA
-          CHANT FIFTEEN
+## 15 - KA WA UMIKUMAMALIMA - CHANT FIFTEEN
+
 1930. O Haumea wahine o Nu‘umea i Kukuiha‘a
           Haumea, woman of Nu‘umea in Kukuiha‘a
 1931. O Mehani, nu‘u manoanoa o Kuaihealani i Paliuli
@@ -3137,8 +3137,8 @@ More texts available on [this landing page](https://web.archive.org/web/20111119
 2048.     He moku--no
               A chief indeed
 
-[16]   KA WA UMIKUMAMALIMA
-          CHANT SIXTEEN
+## 16 - KA WA UMIKUMAMALIMA - CHANT SIXTEEN
+
 2049. Maui ke kane -- Hinakealohaila ka wahine
           Maui-son-of-Kalana was the man, Hina-kealohaila the wife
 2050. Nanamaoa -- Hinakapa‘ikua
