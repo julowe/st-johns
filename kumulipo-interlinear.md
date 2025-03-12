@@ -2,14 +2,22 @@
 
 A Hawaiian Creation Chant
 
+Original Hawaiian text from the 1889 Kalakaua text.
 Edited and translated by Martha Warren Beckwith (University of Chicago Press, 1951).
-Interlinearization by David Stampe.
+Interlinearization of the Kalakaua text and Beckwith's translation by David Stampe.
 
 Hawaiian text and interlinearization of Beckwith's translation copied from:
 [the Internet Archive's record of David Stampe's Faculty page](https://web.archive.org/web/20111024135456/http://www.ling.hawaii.edu/faculty/stampe/Oral-Lit/Hawaiian/Kumulipo/kumulipo-comb.html).
 More texts available on [this landing page](https://web.archive.org/web/20111119055316/http://www.ling.hawaii.edu/faculty/stampe/oral.html).
 
+Interlinearization of Queen Liliʻuokalani's translation by Justin Lowe.
 Currently, only Eras 1-7 have the three interlinear texts
+
+Lines of text are as follows:
+
+Line ####: Hawaiian, from Kalakaua text  
+Beckwith's Translation  
+Queen Liliʻuokalani's Translation  
 
 ## The First Era, or Age
 
