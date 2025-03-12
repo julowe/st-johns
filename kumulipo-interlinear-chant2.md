@@ -516,6 +516,6 @@ Covered by the darkness of night
 The east is still in darkness of night,
 Line 0272: Po--no  
 Still it is night  
-                ’Tis night.
+        ’Tis night.
 
 Footnote: 10:1 There are four varieties known to me--the Aura, Clisle, Pia, Manalo.
