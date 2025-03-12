@@ -1,4 +1,6 @@
-### FIRST VERSE
+## The Fourth Era
+
+### First verse
 
 Line 0378: E kukulu i ke ‘ahi‘a a la‘a la  
 Plant the ‘ahi‘a and cause it to propagate  
@@ -58,7 +60,7 @@ Line 0396: Hanau ka po
 The night gives birth  
 Night was born.  
 
-### SECOND VERSE
+### Second verse
 
 Line 0397: Hanau ka po ia milinanea  
 The night gives birth to prolific ones  
@@ -109,7 +111,7 @@ Line 0412: Kali ka po ia mehe[u]he[u]
 The night lingers for track leavers  
 So the night must wait for motion.
 
-### THIRD VERSE
+### Third verse
 
 Line 0413: Hanau kane ia Wai‘ololi, o ka wahine ia Wai‘olola  
 Born is the male for the narrow stream, the female for the broad stream  
@@ -130,7 +132,7 @@ Line 0418: O ke Akua ke komo, ‘a‘oe komo kanaka
 The god enters, man can not enter  
 FIXME: missing line?
 
-### FOURTH VERSE
+### Fourth verse
 
 Line 0419: O kane ia Wai‘ololi, o ka wahine ia Wai‘olola  
 Man for the narrow stream, woman for the broad stream  
@@ -151,7 +153,7 @@ Line 0424: O ke Akua ke komo, ‘a‘oe komo kanaka
 The god enters, man can not enter  
 So the gods may enter, but not man.  
 
-### FIFTH VERSE
+### Fifth verse
 
 Line 0425: O kane ia Wai‘ololi, o ka wahine ia Wai‘olola  
 Man for the narrow stream, woman for the broad stream  
@@ -172,7 +174,7 @@ Line 0430: O ke Akua ke komo, ‘a‘oe komo kanaka
 The god enters, man can not enter  
 So the gods may enter, but not man.  
 
-### SIXTH VERSE
+### Sixth verse
 
 Line 0431: O kane ia Wai‘ololi, o ka wahine ia Wai‘olola  
 Man for the narrow stream, woman for the broad stream  
@@ -193,7 +195,7 @@ Line 0436: O ke Akua ke komo, ‘a‘oe komo kanaka
 The god enters, man can not enter  
 So the gods may enter, but not man.  
 
-### SEVENTH VERSE
+### Seventh verse
 
 Line 0437: O kane ia, Wai‘ololi, o ka wahine ia Wai‘olola  
 Man for the narrow stream, woman for the broad stream  
@@ -214,7 +216,7 @@ Line 0442: O ke Akua ke komo, ‘a‘oe komo kanaka
 The god enters, man can not enter  
 So the gods may enter, but not man.  
 
-### EIGHTH VERSE
+### Eighth verse
 
 Line 0443: O kane ia Wai‘ololi, o ka wahine ia Wai‘olola  
 Man for the narrow stream, woman for the broad stream  
@@ -235,7 +237,7 @@ Line 0448: O ke Akua ke komo, ‘a‘oe komo kanaka
 The god enters, man can not enter  
 So the gods may enter, but not man.  
 
-### NINTH VERSE
+### Ninth verse
 
 Line 0449: O kane ia Wai‘ololi, o ka wahine ia Wai‘olola  
 Man for the narrow stream, woman for the broad stream  
@@ -256,7 +258,7 @@ Line 0454: O ke Akua ke komo, ‘a‘oe komo kanaka
 The god enters, man can not enter  
 So the gods may enter, but not man.  
 
-### TENTH VERSE
+### Tenth verse
 
 Line 0455: O kane ia Wai‘ololi, o ka wahine ia Wai‘olola  
 Man for the narrow stream, woman for the broad stream  
@@ -277,7 +279,7 @@ Line 0460: O ke Akua ke komo, ‘a‘oe komo kanaka
 The god enters, man can not enter  
 So the gods may enter, but not man.
 
-### ELEVENTH VERSE
+### Eleventh verse
 
 Line 0461: O kane ia Wai‘ololi, o ka wahine ia Wai‘olola  
 Man for the narrow stream, woman for the broad stream  
@@ -298,7 +300,7 @@ Line 0466: O ke Akua ke komo, ‘a‘oe komo kanaka
 The god enters, man can not enter  
 So the gods may enter, but not man.  
 
-### TWELFTH VERSE
+### Twelfth verse
 
 Line 0467: O hulahula wale ka ne‘e [a]na a kolo  
 With a dancing motion they go creeping and crawling  
@@ -340,5 +342,5 @@ Line 0479: Hanau ka ohana o Kolo i ka po
 The family of crawlers born in the night  
 Where families of creepers were born in one night.  
 Line 0480: Po--no  
-Still it is night  
-                         ’Tis night.  
+    Still it is night  
+    ’Tis night.  
