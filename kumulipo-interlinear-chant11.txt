@@ -73,8 +73,8 @@ Po'u (wet night).                        Kalai (clear sky).
    These are myths of Gods.  _Italicized Header in Queen Liliʻuokalani's translation_  
 Line 0730: Po‘ulua -- Kukulukulu  
 *No Beckwith translation supplied.*  
-Poulua (Ulua night).                     Kukululiulu (drops). 
 Line 0731: Pae -- Ha‘a‘a  
+Poulua (Ulua night).                     Kukululiulu (drops).  
 *No Beckwith translation supplied.*  
 Pae (arrive).                            Haaa (tube of roots).  
 Line 0732: Paeheunui -- Ki‘eki‘e  
@@ -352,7 +352,7 @@ Line 0818: Koi‘ele -- Kauhi
 Koiele (swing).                                          Kauhi (the coverlet, a yam).  
 Line 0819: Pa‘ele -- Peleiomo  
 *No Beckwith translation supplied.*  
-Paele (daubed with black).                               Peleiomo (Pele's sudden disappearance). 
+Paele (daubed with black).                               Peleiomo (Pele's sudden disappearance).  
 Line 0820: Keomo -- Omoomo  
 *No Beckwith translation supplied.*  
 Keomo (plug).                                            Omoomo (suck).  
@@ -415,7 +415,7 @@ Line 0838: Ailapau -- Kaiwi
 Ailapau (the last burning of the sun.)     Kaiwi (the bones).  
 Line 0839: Manu -- Hele‘upa  
 *No Beckwith translation supplied.*  
-Manu (bird)                                Heleupa (walk and clash the knees or heels). 
+Manu (bird)                                Heleupa (walk and clash the knees or heels).  
 Line 0840: Lilio -- Makini  
 *No Beckwith translation supplied.*  
 Lilio (taut, drawn back or forward).       Makini.  
@@ -598,7 +598,7 @@ Line 0897: Lanai -- Po‘i
 Lanai (veranda, an island).                Poi (praise, exalt, food).  
 Line 0898: Ha‘o -- Au  
 *No Beckwith translation supplied.*  
-Hao (iron, to grab).                       Au (swim, tide, date or time). 
+Hao (iron, to grab).                       Au (swim, tide, date or time).  
 Line 0899: Pakaikai -- Puehu  
 *No Beckwith translation supplied.*  
 Pakaikai (a weed).                         Puehu (scatter, all gone).  
@@ -607,7 +607,7 @@ The husband.--The meaning                       Wife.--The meaning.  _Italicized
   
 Line 0900: Moana -- Hilo  
 *No Beckwith translation supplied.*  
-Moana (ocean, on the deep).                     Hilo (to entwine, land on Hawaii). 
+Moana (ocean, on the deep).                     Hilo (to entwine, land on Hawaii).  
 Line 0901: Hulu -- Makali  
 *No Beckwith translation supplied.*  
 Hulu (feather).                                 Makalii (very fine, summer).  
@@ -742,7 +742,7 @@ Line 0943: Kapehi -- Kaluku‘u
 Kapehi (to strike, throw at).                       Kalukuu (the shaking down).  
 Line 0944: Hiwa -- Kahiwahiwa  
 *No Beckwith translation supplied.*  
-Hiwa (anything precious is a hiwa).                 Kahiwahiwa (the precious sacred one). 
+Hiwa (anything precious is a hiwa).                 Kahiwahiwa (the precious sacred one).  
 Line 0945: Pano -- Kekaliholiho  
 *No Beckwith translation supplied.*  
 Pano (deep darkness).                               Kekaliholiho (the choice sprig).  
@@ -793,7 +793,7 @@ Line 0959: Komokomo -- Malie
 Komokomo (ring within ring, entered).         Malie (calm, gently).  
 Line 0960: Po‘ele‘ele -- Ho‘olua  
 *No Beckwith translation supplied.*  
-Poeleele (dark night).                        Hoolua (cook in Ti leaves, name of a wind). 
+Poeleele (dark night).                        Hoolua (cook in Ti leaves, name of a wind).  
 Line 0961: Nuku‘ele‘ele -- Papakele  
 *No Beckwith translation supplied.*  
 Nukueleele (dark lips).                       Papakele (wet board).  
@@ -835,7 +835,7 @@ The husband.--The meaning                     Wife.--The meaning.  _Italicized H
   
 Line 0973: Kelelua -- ‘A‘a  
 *No Beckwith translation supplied.*  
-Kelelua (to dampen).                          Aa (dwarf, fearless, root of a tree or shrub). 
+Kelelua (to dampen).                          Aa (dwarf, fearless, root of a tree or shrub).  
 Line 0974: Mukana -- Mahi‘opu  
 *No Beckwith translation supplied.*  
 Makana (present).                             Mahiopu (motion of digging).  
@@ -958,7 +958,7 @@ Line 1012: Humuhumu -- Palamau
 Humuhumu (sew, to stitch together).              Palamau (always ripe).  
 Line 1013: Ukianu -- Nenue  
 *No Beckwith translation supplied.*  
-Ukianu (coarse grass growing in cold places).    Nenue (a fish of the kind called perch). 
+Ukianu (coarse grass growing in cold places).    Nenue (a fish of the kind called perch).  
 Line 1014: Ukinala -- Ilimaka  
 *No Beckwith translation supplied.*  
 Ukinala (coarse grass plaited).                  Ilimaka (raw skin or hide).  
@@ -1018,7 +1018,7 @@ Line 1031: Manu‘ala -- Kawele
 Manuala (that bird, sweet bird).                                Kawele (drag, wipe up, wave gracefully).  
 Line 1032: Kolealea -- Kauwewe  
 *No Beckwith translation supplied.*  
-Kolealea (woman who leaves her child for pleasure).             Kauwewe (rushes, put over heated stones). 
+Kolealea (woman who leaves her child for pleasure).             Kauwewe (rushes, put over heated stones).  
 Line 1033: Hilohilo -- Hokelona  
 *No Beckwith translation supplied.*  
 Hilohilo (twine ropes).                                         Hokelona.  
@@ -1102,7 +1102,7 @@ Line 1058: Halekumu -- Kimonaue
 Halekumu (house founded).                                 Kimonaue (a game).  
 Line 1059: Halepaio -- Holio  
 *No Beckwith translation supplied.*  
-Halepaio (house of dispute).                              Holio (constantly before one's eyes or thoughts). 
+Halepaio (house of dispute).                              Holio (constantly before one's eyes or thoughts).  
 Line 1060: Halemoeanu -- Ke‘oke‘o  
 *No Beckwith translation supplied.*  
 Halemoeanu (cold sleeping house).                         Keokeo (white).  
@@ -1156,7 +1156,7 @@ Line 1075: Pa‘ikekalua -- Piliwale
 Paikekalua (hit in the hole).                        Piliwale (to impose on your friends).  
 Line 1076: Pu‘ukolukolu -- Hele‘iamai  
 *No Beckwith translation supplied.*  
-Puukolukolu (three heaps).                           Heleiamai (drawing down the lower eyelid). 
+Puukolukolu (three heaps).                           Heleiamai (drawing down the lower eyelid).  
 Line 1077: Napu‘ueha -- Ho‘okonokono  
 *No Beckwith translation supplied.*  
 Napuueha (four heaps or hillocks).                   Hookonokono (to insist).  
@@ -1204,7 +1204,7 @@ Line 1090: Paluaakaea‘akilolo -- Kelekeau
 Paluaakaeaakilolo (second by the turtle Akilolo).                         Kelekeau (the fat gall).  
 Line 1091: Pu‘ukoluakaea‘akilolo -- ‘Umikaua  
 *No Beckwith translation supplied.*  
-Puukoluakaeaakilolo (third heap by the turtle Akilolo).                   Umikaua (tenth battle, let's smother him). 
+Puukoluakaeaakilolo (third heap by the turtle Akilolo).                   Umikaua (tenth battle, let's smother him).  
 Line 1092: Pu‘uhakahaa‘akilolo -- Mailo  
 *No Beckwith translation supplied.*  
 Puuhakahaaakilolo (fourth heap by the turtle Akilolo).                    Mailo (sickly, delicate).  
@@ -1279,7 +1279,7 @@ Line 1114: Papio -- Lo‘ilo‘i
 Papio (to face downwards).                                              Loiloi (fastidious).  
 Line 1115: Manu‘akele -- Kealo  
 *No Beckwith translation supplied.*  
-Manuakele.                                                              Kealo (the right side of anything, or front). 
+Manuakele.                                                              Kealo (the right side of anything, or front).  
 Line 1116: Kaunuka -- Kukamaka  
 *No Beckwith translation supplied.*  
 Kaunuka (draw up the thighs).                                           Kukamaka (pierced the eye or face).  
@@ -1354,7 +1354,7 @@ Line 1138: Kupolohelele -- Holi
 Kupolohelele (dark night of flying Lo or being).               Holi (thin, slight).  
 Line 1139: Kupolopa‘iuma -- Kupolupa‘iuma  
 *No Beckwith translation supplied.*  
-Kupolopaiuma (dark night of slapping chest).                   Kupolupaiuma (dark night of scattering strokes of chest). 
+Kupolopaiuma (dark night of slapping chest).                   Kupolupaiuma (dark night of scattering strokes of chest).  
 Line 1140: Kupoloha‘iha‘i -- Luli  
 *No Beckwith translation supplied.*  
 Kupolohaihai (dark night of breaking).                         Luli (roll, turn one way or the other).  
@@ -1396,7 +1396,7 @@ Line 1151: Kupololuana -- Hoaka
 Kupololuana (dark night of a gathering).                        Hoaka (glitter, second night of the moon).  
 Line 1152: Kupolola‘ila‘i -- Lelea  
 *No Beckwith translation supplied.*  
-Kupololailai (dark night of a calm).                            Lelea (to jump or leap, he leapt the fence). 
+Kupololailai (dark night of a calm).                            Lelea (to jump or leap, he leapt the fence).  
 Line 1153: Kupolola‘iolo -- Hanau  
 *No Beckwith translation supplied.*  
 Kupololaiolo.                                                   Hanau (give birth, was born).  
@@ -1474,7 +1474,7 @@ Line 1176: Polouli -- Polo
 Polouli (Lo's night of darkness).                                  Polo (to pretend).  
 Line 1177: Polopolo -- Hamu  
 *No Beckwith translation supplied.*  
-Polopolo.                                                          Hamu (eating this, that, and everything, to search). 
+Polopolo.                                                          Hamu (eating this, that, and everything, to search).  
 
 The husband.--The meaning                                          Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_  
   
@@ -1555,7 +1555,7 @@ Line 1202: Polomehewa -- Hewa
 Polomehewa.                                                        Hewa (sin, wrong, mistake).  
 Line 1203: Poloula‘a -- Makolu  
 *No Beckwith translation supplied.*  
-Poloulaa (overturning god).                                        Makolu (deep cut, measure three fingers). 
+Poloulaa (overturning god).                                        Makolu (deep cut, measure three fingers).  
 Line 1204: Poloahiwa -- Hiwa  
 *No Beckwith translation supplied.*  
 Poloahiwa.                                                         Hiwa (choice, precious).  
@@ -1570,7 +1570,7 @@ Line 1206: Polowena -- We-na
 Polowe-na.                                                      We-na (red glow).  
 Line 1207: Poloimu -- Mohalu  
 *No Beckwith translation supplied.*  
-Poloimu.                                                        Mohalu (anything that yields when pressed). 
+Poloimu.                                                        Mohalu (anything that yields when pressed).  
 Line 1208: Polokakahia -- Kanakau  
 *No Beckwith translation supplied.*  
 Polokakahia.                                                    Kanakau.  
@@ -1669,7 +1669,7 @@ Line 1238: Polokokoiele -- ‘I‘iwa
 Polokokoiele.                                              Iiwa.  
 Line 1239: Polokuaiwa -- Hemo  
 *No Beckwith translation supplied.*  
-Polokuaiwa.                                                Hemo (undone, wrenched, taken of, separated). 
+Polokuaiwa.                                                Hemo (undone, wrenched, taken of, separated).  
 Line 1240: Polohemo -- Nahunahu  
 *No Beckwith translation supplied.*  
 Polohemo.                                                  Nahunahu (in travail, bitten in bits).  
@@ -1762,7 +1762,7 @@ Line 1268: Li‘ililimanu -- Po‘imo‘imo
 Liililimanu.                                Poimoimo (blinking night).  
 Line 1269: Li‘ilikapili -- Poiauwale  
 *No Beckwith translation supplied.*  
-Liilikapili.                                Poiauwale (night gone without incidents). 
+Liilikapili.                                Poiauwale (night gone without incidents).  
 Line 1270: Li‘iliholowa‘a -- Poilumai  
 *No Beckwith translation supplied.*  
 Liiliholowaa.                               Poilumai (night of strewing).  
@@ -1891,7 +1891,7 @@ Line 1310: Li‘imuli‘awa -- Newaku
 Liimuliawa.                               Newaku (stood unsteady).  
 Line 1311: Li‘inewaku -- Mali  
 *No Beckwith translation supplied.*  
-Liinewaku.                                Mali (fasten the bait with twine, deceive). 
+Liinewaku.                                Mali (fasten the bait with twine, deceive).  
 Line 1312: Li‘ihomali -- Pulama  
 *No Beckwith translation supplied.*  
 Liihomali.                                Pulama (fondle, make great deal of).  
@@ -1924,13 +1924,13 @@ Line 1320: Ali‘ila‘a -- Aka
 Aliilaa (chief dedicated).                       Aka (shadow, laugh, but).  
 Line 1321: Ali‘iaka -- Mau  
 *No Beckwith translation supplied.*  
-Aliiaka (shadow of a chief).                     Mau (fastened, caught, things, more than one). 
+Aliiaka (shadow of a chief).                     Mau (fastened, caught, things, more than one).  
 Line 1322: Ali‘imau -- Ali‘i  
 *No Beckwith translation supplied.*  
 Aliimau (always a chief).                        Alii (chief, person of rank).  
 Line 1323: Ali‘iali‘i -- Pohea  
 *No Beckwith translation supplied.*  
-Aliialii (chief of chiefs).                      Pohea (which or what, night or night of call). 
+Aliialii (chief of chiefs).                      Pohea (which or what, night or night of call).  
 Line 1324: Ali‘ipo‘i -- Mi‘i  
 *No Beckwith translation supplied.*  
 Aliipoi (chief made much of).                    Mii (clasp).  
@@ -1966,7 +1966,7 @@ Line 1334: Ali‘ilehelehe -- Lehelehe
 Aliilehelehe (chief with lips).                  Hinakolu (thrice thrown).  
 Line 1335: Ali‘imakolu -- Hinakolu  
 *No Beckwith translation supplied.*  
-Aliimakolu (chief thrice the rank).              Mauka (towards the mountain). 
+Aliimakolu (chief thrice the rank).              Mauka (towards the mountain).  
 Line 1336: Ali‘inohouka -- Mauka  
 *No Beckwith translation supplied.*  
 Aliinohouka (chief who lived in the mountains).  Haui (sideways).  
@@ -2008,7 +2008,7 @@ Line 1347: Ali‘ikilopoko -- Anana
 Aliikilopoko (chief that had no depth).                Anana (measure, six feet).  
 Line 1348: Ali‘iemi -- ‘Ami‘ami  
 *No Beckwith translation supplied.*  
-O Aliiemi (backward chief).                            Amiami (sway one's body backward and forth). 
+O Aliiemi (backward chief).                            Amiami (sway one's body backward and forth).  
 Line 1349: Ali‘ikolo -- Lepau  
 *No Beckwith translation supplied.*  
 Aliikolo (creeping chief).                             Lepau (point).  
@@ -2083,7 +2083,7 @@ Line 1371: Ali‘ikilomakali‘i -- Ho‘opulu
 Aliikilomakalii (chief skilled about observing the winter).    Hoopulu (make damp).  
 Line 1372: Ali‘ikilokau -- Kakeli‘i  
 *No Beckwith translation supplied.*  
-Alliikilokau (chief skilled about observing the seasons).      Kakelii (belong to the chief). 
+Alliikilokau (chief skilled about observing the seasons).      Kakelii (belong to the chief).  
 Line 1373: Ali‘ikiloho‘oilo -- Hulu  
 *No Beckwith translation supplied.*  
 Aliikilohooilo (chief skilled about summer).                   Hulu (feather, down).  
@@ -2104,7 +2104,7 @@ Line 1377: Ali‘ikilomo‘o -- Mo‘olio
 Aliikilomoo (chief skilled about serpents).        Moolio (taut).  
 Line 1378: Ali‘ikilokua -- Kilohi  
 *No Beckwith translation supplied.*  
-Aliikilokua (chief skilled about one's back).      Kilohi (look backward with self-admiration). 
+Aliikilokua (chief skilled about one's back).      Kilohi (look backward with self-admiration).  
 Line 1379: Ali‘ikiloalo -- Anapu  
 *No Beckwith translation supplied.*  
 Aliikiloalo (chief skilled about one's front).     Anapu (flash).  
@@ -2311,7 +2311,7 @@ Line 1444: Muaoka‘oliko -- Ehu
 Muaokaoliko.                           Ehu (yellow).  
 Line 1445: Muaokapahu -- Kapilipili  
 *No Beckwith translation supplied.*  
-Muaokapahu.                            Kapilipili (paste together). 
+Muaokapahu.                            Kapilipili (paste together).  
 Line 1446: Muaokahana -- Hapoe  
 *No Beckwith translation supplied.*  
 Muaokahana.                            Hapoe.  
