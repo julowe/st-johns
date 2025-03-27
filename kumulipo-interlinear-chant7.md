@@ -23,7 +23,7 @@ Dread of the food and the waste part remaining
 ’Tis fearful the amount eaten and left--  
 Line 0573: He weliweli a ka po hane‘e aku  
 Dread of the receding night  
-’Tis fearful the night past and gone, p. 22  
+’Tis fearful the night past and gone,  
 Line 0574: He ‘ili‘ilihia na ka po he‘e mai  
 Awe of the night approaching  
 The awful stillness of the night that came--  
