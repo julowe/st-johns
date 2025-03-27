@@ -37,7 +37,7 @@ Line 0655: Ka wahine no ‘Iliponi, no loko o ‘I‘ipakalani
 The woman of ‘Iliponi, of within ‘I‘ipakalani  
 A woman with dark skin, from the land of Iipakalani,  
 Line 0656: No ka ‘aunaki kuku wela ahi kanaka  
-"From the female firestick comes the fire that makes men"
+"From the female firestick comes the fire that makes men"  
 Where numbers of men lived in the heat.  
 Line 0657: Oia wahine noho i Nu‘umealani  
 That woman dwelt in Nu‘umealani  
@@ -46,7 +46,7 @@ Line 0658: ‘Aina a ka aoa i noho ai
 Land where the gods dwelt  
 Land where the Aoa thrived,  
 Line 0659: I hohole pahiwa ka lau koa  
-"She stripped the dark leaves of the koa tree"
+"She stripped the dark leaves of the koa tree"  
 Who stripped with great ease the leaves of the Koa;  
 Line 0660: He wahine kino paha‘oha‘o wale keia  
 A woman of mysterious body was this  
@@ -85,5 +85,5 @@ Line 0671: O ka ‘apana hanauna ia wahine la
 Part of the posterity of that woman  
 These were the children of this woman.  
 Line 0672: Ua--ao--  
-        _No Beckwith translation supplied._
+        _No Beckwith translation supplied._  
         ’Tis day.  
