@@ -11,7 +11,7 @@ Line 0541: O ka holo [a]na kuwaluwalu ka linalina
 Which fills the faint-hearted with awe,  
 Line 0542: Holi [a]na, ho‘omaka, ho‘omakamaka ka ‘ai  
 It sprouts, the first blades appear, the food is ready] [?]  
-But brings such ones to claim friendship. p. 21  
+But brings such ones to claim friendship.  
 Line 0543: Ka ‘ai ana ka pi‘ipi‘i wai  
 Food grown by the water courses  
 Those are beings who eat by gushing waters,  
