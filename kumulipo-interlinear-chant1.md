@@ -16,7 +16,7 @@ To cause the moon to shine
 To cause light to break forth,  
 Line 0005: O ke au o Makali‘i ka po  
 The time of the rise of the Pleiades  
-At the time of the night of Makalii (winter)
+At the time of the night of Makalii (winter)  
 Line 0006: O ka walewale ho‘okumu honua ia  
 The slime, this was the source of the earth  
 Then began the slime which established the earth,  
@@ -25,7 +25,7 @@ The source of the darkness that made darkness
 The source of deepest darkness.  
 Line 0008: O ke kumu o ka Po, i po ai  
 The source of the night that made night  
-_Queen Liliʻuokalani's translation has one less line_
+_Queen Liliʻuokalani's translation has one less line_  
 Line 0009: O ka lipolipo, o ka lipolipo  
 The intense darkness, the deep darkness  
 Of the depth of darkness, of the depth of darkness,  
@@ -69,7 +69,7 @@ Line 0021: Hanau kana, he Halula, puka
 Born was the short-spiked sea urchin, came forth  
 The Halula was born Halula (sea urchin).  
 
-                       Shell-fish. _Italicized Header in Queen Liliʻuokalani's translation_
+   Shell-fish. _Italicized Header in Queen Liliʻuokalani's translation_  
 Line 0022: Hanau ka Hawa‘e, o ka Wana-ku kana keiki, puka  
 Born was the smooth sea urchin, his child the long-spiked came forth  
 The Hawae was born, the Wana-ku was its offspring.  
@@ -105,7 +105,7 @@ Born was the nerita shellfish, the sand-burrowing shellfish his child came forth
 The Pipipi was born, the Kupee was its offspring (limpets).  
 Line 0033: Hanau ka Wi, o ke Kiki kana keiki, puka  
 Born was the fresh water shellfish, his child the small fresh water shellfish came forth  
-The Wi was born, the Kiki was its offspring. _Note: This line is after 'Kane was born' in Queen Liliʻuokalani's translation_
+The Wi was born, the Kiki was its offspring. _Note: This line is after 'Kane was born' in Queen Liliʻuokalani's translation_  
 Line 0034: Hanau kane ia Wai‘ololi, o ka wahine ia Wai‘olola  
 Born was man for the narrow stream, the woman for the broad stream  
 Kane was born to Waiololi, a female to Waiolola.  
@@ -127,7 +127,7 @@ So the gods may enter, but not man.
 
 ### Third verse
 
-             Seaweed and grasses _Italicized Header in Queen Liliʻuokalani's translation_
+   Seaweed and grasses _Italicized Header in Queen Liliʻuokalani's translation_  
 Line 0040: O kane ia Wai‘ololi, o ka wahine ia Wai‘olola  
 Man for the narrow stream, woman for the broad stream  
 Man by Waiololi, woman by Waiolola,  
@@ -191,7 +191,7 @@ So the gods may enter, but not man.
 
 ### Sixth verse
 
-             Seaweed and grasses _Italicized Header in Queen Liliʻuokalani's translation_
+   Seaweed and grasses _Italicized Header in Queen Liliʻuokalani's translation_  
 Line 0058: O kane, ia Wai‘ololi, o ka wahine ia Wai‘olola  
 Man for the narrow stream, woman for the broad stream  
 Man by Waiololi, woman by Waiolola,  
@@ -318,7 +318,7 @@ So the gods may enter but not man.
 
 ### Twelfth verse
 
-             Seaweed and grasses _Italicized Header in Queen Liliʻuokalani's translation_
+   Seaweed and grasses _Italicized Header in Queen Liliʻuokalani's translation_  
 Line 0094: O kane ia Wai‘ololi, o ka wahine ia Wai‘olola  
 Man for the narrow stream, woman for the broad stream  
 Man by Waiololi, woman by Waiolola,  
@@ -340,7 +340,7 @@ So the gods may enter, but not man.
 
 ### Thirteenth verse
 
-            Seaweed and grasses _Italicized Header in Queen Liliʻuokalani's translation_
+   Seaweed and grasses _Italicized Header in Queen Liliʻuokalani's translation_  
 Line 0100: O kane ia Wai‘ololi, o ka wahine ia Wai‘olola  
 Man for the narrow stream, woman for the broad stream  
 Man by Waiololi, woman by Waiolola,  
