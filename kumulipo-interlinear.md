@@ -1314,7 +1314,6 @@ Line 0377: Po--no
     Still it is night  
         ’Tis night.  
 
-
 ## The Fourth Era
 
 ### First verse
@@ -1344,7 +1343,7 @@ Line 0385: O ke alo o ku‘u milimili nanea
 The front of my cherished one [?]  
 With faces in front and claws to feel  
 Line 0386: O panoia, o panopano  
-He is dark, splendid,
+He is dark, splendid,  
 Of darkness, of darkness,  
 Line 0387: O kane o ka Popanopano i hanau  
 Popanopano is born as a male [?]  
@@ -1426,7 +1425,7 @@ The night gives birth to mud dwellers
 Night gave birth to slush,  
 Line 0412: Kali ka po ia mehe[u]he[u]  
 The night lingers for track leavers  
-So the night must wait for motion.
+So the night must wait for motion.  
 
 ### Third verse
 
@@ -1459,7 +1458,7 @@ Born is the sea-borer [Wili] living in the sea
 The Wili was born and lived in the sea;  
 Line 0421: Kia‘i ia e ka Wiliwili noho i uka  
 Guarded by the Wiliwili tree living on land  
-Guarded by the Wiliwili that grew on land (tiger's claws tree). p. 17  
+Guarded by the Wiliwili that grew on land (tiger's claws tree).  
 Line 0422: He po uhe‘e i ka wawa  
 Darkness slips into light  
 A night of flight by noises  
@@ -1594,7 +1593,7 @@ Earth and water are the food of the plant
 Through a channel; la-i is food and creeps;  
 Line 0460: O ke Akua ke komo, ‘a‘oe komo kanaka  
 The god enters, man can not enter  
-So the gods may enter, but not man.
+So the gods may enter, but not man.  
 
 ### Eleventh verse
 
@@ -1668,7 +1667,7 @@ Line 0480: Po--no
 
 Line 0481: O kuhele ke au ia Kapokanokano  
 The time arrives for Po-kanokano  
-The advance of age when Kapokanokano (night of strength)
+The advance of age when Kapokanokano (night of strength)  
 Line 0482: O ho‘omau i ke ahu o Polalouli  
 To increase the progeny of Po-lalo-uli  
 Established heaps in the Polalouli (depth of night),  
@@ -1857,7 +1856,7 @@ Line 0541: O ka holo [a]na kuwaluwalu ka linalina
 Which fills the faint-hearted with awe,  
 Line 0542: Holi [a]na, ho‘omaka, ho‘omakamaka ka ‘ai  
 It sprouts, the first blades appear, the food is ready] [?]  
-But brings such ones to claim friendship. p. 21  
+But brings such ones to claim friendship.  
 Line 0543: Ka ‘ai ana ka pi‘ipi‘i wai  
 Food grown by the water courses  
 Those are beings who eat by gushing waters,  
@@ -1956,7 +1955,7 @@ Dread of the food and the waste part remaining
 ’Tis fearful the amount eaten and left--  
 Line 0573: He weliweli a ka po hane‘e aku  
 Dread of the receding night  
-’Tis fearful the night past and gone, p. 22  
+’Tis fearful the night past and gone,  
 Line 0574: He ‘ili‘ilihia na ka po he‘e mai  
 Awe of the night approaching  
 The awful stillness of the night that came--  
@@ -2087,7 +2086,7 @@ Line 0615: Hanau o Kanaloa, o ka he‘e-haunawela ia
 Born was Kanaloa the hot-striking octopus  
 Kanaloa was born a god, the great Kaheehaunawela (Octopus).  
 Line 0615.2:            A--o  
-        _No Beckwith translation supplied._
+        _No Beckwith translation supplied._  
        ’Tis day.  
 
 Line 0616: Hanau ka pahu  
@@ -2175,7 +2174,7 @@ Line 0643: O kanaka lele wale, o kanaka nei la
 Man spread abroad, man was here now  
 These men that flew naked were the men of the day.  
 Line 0643.2:           Ua a--o--  
-        _No Beckwith translation supplied._
+        _No Beckwith translation supplied._  
         ’Tis day  
 
 ## The Ninth Era
@@ -2217,7 +2216,7 @@ Line 0655: Ka wahine no ‘Iliponi, no loko o ‘I‘ipakalani
 The woman of ‘Iliponi, of within ‘I‘ipakalani  
 A woman with dark skin, from the land of Iipakalani,  
 Line 0656: No ka ‘aunaki kuku wela ahi kanaka  
-"From the female firestick comes the fire that makes men"
+"From the female firestick comes the fire that makes men"  
 Where numbers of men lived in the heat.  
 Line 0657: Oia wahine noho i Nu‘umealani  
 That woman dwelt in Nu‘umealani  
@@ -2226,7 +2225,7 @@ Line 0658: ‘Aina a ka aoa i noho ai
 Land where the gods dwelt  
 Land where the Aoa thrived,  
 Line 0659: I hohole pahiwa ka lau koa  
-"She stripped the dark leaves of the koa tree"
+"She stripped the dark leaves of the koa tree"  
 Who stripped with great ease the leaves of the Koa;  
 Line 0660: He wahine kino paha‘oha‘o wale keia  
 A woman of mysterious body was this  
@@ -2265,7 +2264,7 @@ Line 0671: O ka ‘apana hanauna ia wahine la
 Part of the posterity of that woman  
 These were the children of this woman.  
 Line 0672: Ua--ao--  
-        _No Beckwith translation supplied._
+        _No Beckwith translation supplied._  
         ’Tis day.  
 
 ## The Tenth Era
@@ -2422,7 +2421,7 @@ Line 0721: Kulou -- Haliau
 Kulou was the husband, Halau the wife.  
 
 The husband.--The meaning.               Wife.--The meaning. _Italicized Header in Queen Liliʻuokalani's translation_  
-  
+
 Line 0722: Na‘u -- Ka-le  
 *No Beckwith translation supplied.*  
 Na'u (mine).                             Kele (mire).  
@@ -2447,8 +2446,8 @@ Kulewa (stand in space).                 Kune.
 Line 0729: Po‘u -- Kala‘i  
 *No Beckwith translation supplied.*  
 Po'u (wet night).                        Kalai (clear sky).  
-  
-        These are myths of Gods.  _Italicized Header in Queen Liliʻuokalani's translation_  
+
+   These are myths of Gods.  _Italicized Header in Queen Liliʻuokalani's translation_  
 Line 0730: Po‘ulua -- Kukulukulu  
 *No Beckwith translation supplied.*  
 Poulua (Ulua night).                     Kukululiulu (drops). 
@@ -2463,8 +2462,8 @@ Line 0733: Hewa -- Kulu
 Hewa (Sin).                              Kulu (drop).  
 
 The husband.--The meaning.                  Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_  
-  
-        These are myths of Gods.  _Italicized Header in Queen Liliʻuokalani's translation_  
+
+   These are myths of Gods.  _Italicized Header in Queen Liliʻuokalani's translation_  
 Line 0734: Maku -- Niau  
 *No Beckwith translation supplied.*  
 Maku (thick paste).                         Niau (glide away).  
@@ -2526,7 +2525,7 @@ Line 0753: Kuleha -- Ma-ka
 *No Beckwith translation supplied.*  
 Kuleha (looked askance).                    Ma-ka (face).  
 
-        Myths of Gods.  _Italicized Header in Queen Liliʻuokalani's translation_  
+   Myths of Gods.  _Italicized Header in Queen Liliʻuokalani's translation_  
 Line 0754: ‘Ike -- ‘Ao‘ao  
 *No Beckwith translation supplied.*  
 Ike (to see).                               Aoao (side).  
@@ -2568,7 +2567,7 @@ Line 0766: Ho‘omeha -- Memeha
 Hoomeha (loneliness).                       Memeha (alone).  
 
 The husband.--The meaning            Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_  
-  
+
 Line 0767: Pula -- Kua  
 *No Beckwith translation supplied.*  
 Pula (mote).                         Kua (back or to fall).  
@@ -2667,7 +2666,7 @@ Line 0798: Paila -- Opuopu
 Paila (boiling, a pile, heap).       Opuopu (filled to overflowing).  
 
 The husband.--The meaning                                Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_  
-  
+
 Line 0799: Halale -- Malu  
 *No Beckwith translation supplied.*  
 Halale (noise, swashing waves).                          Malu (shade, protection).  
@@ -3384,7 +3383,7 @@ Line 1027: Ho‘omauke‘a -- Muli
 Hoomauke-a (continue to burn).                                  Muli (younger).  
 Line 1028: Pulune -- Kahe  
 *No Beckwith translation supplied.*  
-_NOTE: Line missing from translation?_
+_NOTE: Line missing from translation?_  
 Line 1029: Kuaua -- Wailuhi  
 *No Beckwith translation supplied.*  
 Kuaua (heavy shower).                                           Wailuhi (drink that inebriates).  
@@ -3837,7 +3836,7 @@ Line 1171: Kupolo‘ololo -- Kio‘io
 Kupoloololi (dark night of unevenness).                            Holeaku (strip it).  
 Line 1172: Kupolo‘ololi -- Holeaku  
 *No Beckwith translation supplied.*  
-_NOTE: Line missing from translation?_
+_NOTE: Line missing from translation?_  
 Line 1173: O Polo -- Nolu  
 *No Beckwith translation supplied.*  
 O Polo (night of Lo).                                              Nolu (soft, spongy).  
@@ -4353,7 +4352,7 @@ Line 1337: Ali‘ihimuhani -- Haui
 Aliihimuhani.                                    Lopiana.  
 Line 1338: Ali‘ileleiona -- Lopiana  
 *No Beckwith translation supplied.*  
-Aliileleiona (flyaway chief).                    _NOTE: This word does not seem to have a matching word_
+Aliileleiona (flyaway chief).                    _NOTE: This word does not seem to have a matching word_  
 
 The husband.--The meaning                              Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_  
   
@@ -4524,7 +4523,7 @@ Line 1391: Muahaipu -- Kahiko
 Muahaipu (first to break).                         Kahiko (old, stale).  
 Line 1392: Muakahiko -- Wa‘awa‘a  
 *No Beckwith translation supplied.*  
-_NOTE: Line missing from translation?_
+_NOTE: Line missing from translation?_  
 Line 1393: Muawa‘a -- Po‘i  
 *No Beckwith translation supplied.*  
 Muawaa (prow of a canoe).                          Po-i (cover up the dish, cover of a dish).  
@@ -4996,4 +4995,4 @@ Dead is the current sweeping in from the navel of the earth: that was a warrior 
 The Aukaha Opikokahonua died; he was a warrior.  
 Line 1545: Hua na lau la nalo, nalo i ka po liolio  
 Many who came vanished, lost in the passing night  
-The leaves bore and disappeared, Disappeared in the darkest night. _NOTE: two lines combined into one here_
+The leaves bore and disappeared, Disappeared in the darkest night. _NOTE: two lines combined into one here_  
