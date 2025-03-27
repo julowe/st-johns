@@ -4,7 +4,7 @@
 
 Line 0481: O kuhele ke au ia Kapokanokano  
 The time arrives for Po-kanokano  
-The advance of age when Kapokanokano (night of strength)
+The advance of age when Kapokanokano (night of strength)  
 Line 0482: O ho‘omau i ke ahu o Polalouli  
 To increase the progeny of Po-lalo-uli  
 Established heaps in the Polalouli (depth of night),  
