@@ -19,6 +19,9 @@ Line ####: Hawaiian, from Kalakaua text
 Beckwith's Translation  
 Queen Liliʻuokalani's Translation  
 
+Please note: markdown does not render indents/lines leading with spaces well.
+But markdown does along a nice Table of Contents in the browser.
+
 ## The First Era, or Age
 
 ### First verse
