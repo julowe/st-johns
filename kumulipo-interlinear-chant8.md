@@ -64,7 +64,7 @@ Line 0615: Hanau o Kanaloa, o ka he‘e-haunawela ia
 Born was Kanaloa the hot-striking octopus  
 Kanaloa was born a god, the great Kaheehaunawela (Octopus).  
 Line 0615.2:            A--o  
-        _No Beckwith translation supplied._
+        _No Beckwith translation supplied._  
        ’Tis day.  
 
 Line 0616: Hanau ka pahu  
@@ -152,5 +152,5 @@ Line 0643: O kanaka lele wale, o kanaka nei la
 Man spread abroad, man was here now  
 These men that flew naked were the men of the day.  
 Line 0643.2:           Ua a--o--  
-        _No Beckwith translation supplied._
+        _No Beckwith translation supplied._  
         ’Tis day  
