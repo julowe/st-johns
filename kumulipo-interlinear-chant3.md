@@ -25,7 +25,7 @@ The rootstalk grew forming nine leaves
 The Haha grew and had nine leaves,  
 Line 0280: Ulu nioniolo ka lau pahiwa  
 Upright it grew with dark leaves  
-_Queen Liliʻuokalani's translation has one less line_
+_Queen Liliʻuokalani's translation has one less line_  
 Line 0281: O ho‘oulu i ka lau palaiali‘i  
 The sprout that shot forth leaves of high chiefs  
 And the Palai (fern) sprout that shot forth leaves of high chiefs  
