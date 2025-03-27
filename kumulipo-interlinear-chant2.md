@@ -48,7 +48,7 @@ Line 0137: O Powehiwehi ka wahine
 Po-wehiwehi the female  
 And Powehiwehi his wife.
 
-                                Fish. _Italicized Header in Queen Liliʻuokalani's translation_
+   Fish. _Italicized Header in Queen Liliʻuokalani's translation_
 Line 0138: Hanau ka i‘a, hanau ka Nai‘a i ke kai la holo  
 Born is the l‘a [fish], born the Nai‘a [porpoise] in the sea there swimming  
 And fish was born, the Naia (porpoise) was born in the sea and swam.
@@ -139,7 +139,7 @@ The Oo was born, the Akilolo was born in the sea and swam.
 
 ### Second verse
 
-               Fish and vine. _Italicized Header in Queen Liliʻuokalani's translation_
+   Fish and vine. _Italicized Header in Queen Liliʻuokalani's translation_
 Line 0167: Hanau ka Nenue, noho i kai  
 Born is the Nenue [pickerel] living in the sea  
 The Nenue was born and lived in the sea;
@@ -158,7 +158,7 @@ So the gods may enter, but not man.
 
 ### Third verse
 
-               Fish and vine.
+   Fish and vine. _Italicized Header in Queen Liliʻuokalani's translation_
 Line 0172: O kane ia Wai‘ololi, o ka wahine ia Wai‘olola  
 Man for the narrow stream, woman for the broad stream  
 Man by Waiololi, woman by Waiolola,
@@ -180,7 +180,7 @@ So the gods may enter, but not man.
 
 ### Fourth verse
 
-               Fish and shrub. _Italicized Header in Queen Liliʻuokalani's translation_
+   Fish and shrub. _Italicized Header in Queen Liliʻuokalani's translation_
 Line 0178: O kane ia Wai‘ololi, o ka wahine ia Wai‘olola  
 Man for the narrow stream, woman for the broad stream  
 Man by Waiololi, woman by Waiolola,
@@ -202,7 +202,7 @@ So the gods may enter, but not man.
 
 ### Fifth verse
 
-               Fish and shrub.
+   Fish and shrub. _Italicized Header in Queen Liliʻuokalani's translation_
 Line 0184: O kane ia Wai‘ololi, o ka wahine ia Wai‘olola  
 Man for the narrow stream, woman for the broad stream  
 Man by Waiololi, woman by Waiolola,
@@ -224,7 +224,7 @@ So the gods may enter, but not man.
 
 ### Sixth verse
 
-            Sea and water fish. _Italicized Header in Queen Liliʻuokalani's translation_
+   Sea and water fish. _Italicized Header in Queen Liliʻuokalani's translation_
 Line 0190: O kane ia Wai‘ololi, o ka wahine ia Wai‘olola  
 Man for the narrow stream, woman for the broad stream  
 Man by Waiololi, woman by Waiolola,
@@ -246,7 +246,7 @@ So the gods may enter, but not man.
 
 ### Seventh verse
 
-                   Eel and tree. _Italicized Header in Queen Liliʻuokalani's translation_
+   Eel and tree. _Italicized Header in Queen Liliʻuokalani's translation_
 Line 0196: O kane ia Wai‘ololi, o ka wahine ia Wai‘olola  
 Man for the narrow stream, woman for the broad stream  
 Man by Waiololi, woman by Waiolola,
@@ -268,7 +268,7 @@ So the gods may enter, but not man.
 
 ### Eighth verse
 
-                 Fish and bread-fruit. _Italicized Header in Queen Liliʻuokalani's translation_
+   Fish and bread-fruit. _Italicized Header in Queen Liliʻuokalani's translation_
 Line 0202: O kane ia Wai‘ololi, o ka wahine ia Wai‘olola  
 Man for the narrow stream, woman for the broad stream  
 Man by Waiololi, woman by Waiolola,
@@ -290,7 +290,7 @@ So the gods may enter, but not man.
 
 ### Ninth verse
 
-                   Eel and tree. _Italicized Header in Queen Liliʻuokalani's translation_
+   Eel and tree. _Italicized Header in Queen Liliʻuokalani's translation_
 Line 0208: O kane ia Wai‘ololi, o ka wahine ia Wai‘olola  
 Man for the narrow stream, woman for the broad stream  
 Man by Waiololi, woman by Waiolola,
@@ -312,7 +312,7 @@ So the gods may enter, but not man.
 
 ### Tenth verse
 
-                   Eel and tree. _Italicized Header in Queen Liliʻuokalani's translation_
+   Eel and tree. _Italicized Header in Queen Liliʻuokalani's translation_
 Line 0214: O kane ia Wai‘ololi, o ka wahine ia Wai‘olola  
 Man for the narrow stream, woman for the broad stream  
 Man by Waiololi, woman by Waiolola,
@@ -334,7 +334,7 @@ So the gods may enter, but not man.
 
 ### Eleventh verse
 
-          Fish and large tree. _Italicized Header in Queen Liliʻuokalani's translation_
+   Fish and large tree. _Italicized Header in Queen Liliʻuokalani's translation_
 Line 0220: O kane ia, Wai‘ololi, o ka wahine ia Wai‘olola  
 Man for the narrow stream, woman for the broad stream  
 Man by Waiololi, woman by Waiolola,
@@ -356,8 +356,8 @@ So the gods may enter, but not man.
 
 ### Twelfth verse
 
-        Fish and yam or Uhi _Italicized Header in Queen Liliʻuokalani's translation_
-         (Impomea batatas).
+   Fish and yam or Uhi _Italicized Header in Queen Liliʻuokalani's translation_
+   (Impomea batatas). _Italicized Header in Queen Liliʻuokalani's translation_
 Line 0226: O kane ia Wai‘ololi, o ka wahine ia Wai‘olola  
 Man for the narrow stream, woman for the broad stream  
 Man by Waiololi, woman by Waiolola,
@@ -400,8 +400,8 @@ So the gods may enter, but not man.
 
 ### Fourteenth verse
 
-          Fish and Awa _Italicized Header in Queen Liliʻuokalani's translation_
-             (Kawa).
+   Fish and Awa _Italicized Header in Queen Liliʻuokalani's translation_
+   (Kawa). _Italicized Header in Queen Liliʻuokalani's translation_
 Line 0238: O kane ia Wai‘ololi, o ka wahine ia Wai‘olola  
 Man for the narrow stream, woman for the broad stream  
 Man by Waiololi, woman by Waiolola,
@@ -423,7 +423,7 @@ So the gods may enter, but not man.
 
 ### Fifteenth verse
 
-            Fish and grass. _Italicized Header in Queen Liliʻuokalani's translation_
+   Fish and grass. _Italicized Header in Queen Liliʻuokalani's translation_
 Line 0244: O kane ia Wai‘ololi, o ka wahine ia Wai‘olola  
 Man for the narrow stream, woman for the broad stream  
 Man by Waiololi, woman by Waiolola,
@@ -519,3 +519,4 @@ Still it is night
         ’Tis night.
 
 Footnote: 10:1 There are four varieties known to me--the Aura, Clisle, Pia, Manalo.
+
