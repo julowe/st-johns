@@ -43,7 +43,7 @@ Line 0721: Kulou -- Haliau
 *No Beckwith translation supplied.*  
 Kulou was the husband, Halau the wife.  
 
-The husband.--The meaning  Wife.--The meaning.                        
+The husband.--The meaning.               Wife.--The meaning. _Italicized Header in Queen Liliʻuokalani's translation_  
                                                                       
 Line 0722: Na‘u -- Ka-le  
 *No Beckwith translation supplied.*  
@@ -70,7 +70,7 @@ Line 0729: Po‘u -- Kala‘i
 *No Beckwith translation supplied.*  
 Po'u (wet night).                        Kalai (clear sky).   
                                                               
-        These are myths of Gods.  
+        These are myths of Gods.  _Italicized Header in Queen Liliʻuokalani's translation_   
 Line 0730: Po‘ulua -- Kukulukulu  
 *No Beckwith translation supplied.*  
 Poulua (Ulua night).                     Kukululiulu (drops). 
@@ -84,9 +84,9 @@ Line 0733: Hewa -- Kulu
 *No Beckwith translation supplied.*  
 Hewa (Sin).                              Kulu (drop).         
 
-The husband.--The meaning  Wife.--The meaning.                        
+The husband.--The meaning.                  Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_                         
                                                                       
-        These are myths of Gods.  
+        These are myths of Gods.  _Italicized Header in Queen Liliʻuokalani's translation_   
 Line 0734: Maku -- Niau  
 *No Beckwith translation supplied.*  
 Maku (thick paste).                         Niau (glide away).                                      
@@ -148,7 +148,7 @@ Line 0753: Kuleha -- Ma-ka
 *No Beckwith translation supplied.*  
 Kuleha (looked askance).                    Ma-ka (face).                                           
 
-        Myths of Gods.  
+        Myths of Gods.  _Italicized Header in Queen Liliʻuokalani's translation_   
 Line 0754: ‘Ike -- ‘Ao‘ao  
 *No Beckwith translation supplied.*  
 Ike (to see).                               Aoao (side).                                            
@@ -189,7 +189,7 @@ Line 0766: Ho‘omeha -- Memeha
 *No Beckwith translation supplied.*  
 Hoomeha (loneliness).                       Memeha (alone).                                         
 
-The husband.--The meaning  Wife.--The meaning.                        
+The husband.--The meaning            Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_                         
                                                                       
 Line 0767: Pula -- Kua  
 *No Beckwith translation supplied.*  
@@ -288,154 +288,154 @@ Line 0798: Paila -- Opuopu
 *No Beckwith translation supplied.*  
 Paila (boiling, a pile, heap).       Opuopu (filled to overflowing).   
 
-The husband.--The meaning  Wife.--The meaning.                        
+The husband.--The meaning                                Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_                         
                                                                       
 Line 0799: Halale -- Malu  
 *No Beckwith translation supplied.*  
-Halale (noise, swashing waves).                              Malu (shade, protection).               
+Halale (noise, swashing waves).                          Malu (shade, protection).               
 Line 0800: Malie -- Kalino  
 *No Beckwith translation supplied.*  
-Malie (calm).                                                Kalino (a rope for hanging).            
+Malie (calm).                                            Kalino (a rope for hanging).            
 Line 0801: Ma‘oki -- Hulahe  
 *No Beckwith translation supplied.*  
-Maoki (streak).                                              Hulahe.                                 
+Maoki (streak).                                          Hulahe.                                 
 Line 0802: Kaiwi -- Iwi‘a  
 *No Beckwith translation supplied.*  
-Kaiwi (the bone).                                            Iwia.                                   
+Kaiwi (the bone).                                        Iwia.                                   
 Line 0803: Kulea -- Kulia  
 *No Beckwith translation supplied.*  
-Kulea.                                                       Kulia (stand firmly).                   
+Kulea.                                                   Kulia (stand firmly).                   
 Line 0804: Makou -- Koulu  
 *No Beckwith translation supplied.*  
-Makou (us, healthy complexion).                              Koula (red sugar cane).                 
+Makou (us, healthy complexion).                          Koula (red sugar cane).                 
 Line 0805: Ia‘u -- Mahea  
 *No Beckwith translation supplied.*  
-Ia'u (me).                                                   Mahea (where).                          
+Ia'u (me).                                               Mahea (where).                          
 Line 0806: Iaka -- Meia  
 *No Beckwith translation supplied.*  
-Iaka (a shadow).                                             Meia (that's it, with that person).     
+Iaka (a shadow).                                         Meia (that's it, with that person).     
 Line 0807: Makili -- Lulu  
 *No Beckwith translation supplied.*  
-Makili (wrench from, parted).                                Lulu (contribute, shake, calm).         
+Makili (wrench from, parted).                            Lulu (contribute, shake, calm).         
 Line 0808: Heamo -- Lou  
 *No Beckwith translation supplied.*  
-Heamo (suck, bring on the shoulder).                         Lou (hook, a wink of the eye).          
+Heamo (suck, bring on the shoulder).                     Lou (hook, a wink of the eye).          
 Line 0809: Heamokau -- Makea  
 *No Beckwith translation supplied.*  
-Heamokau (stick for carrying bundles).                       Makea (barren country).                 
+Heamokau (stick for carrying bundles).                   Makea (barren country).                 
 Line 0810: Pu‘ili -- Apomai  
 *No Beckwith translation supplied.*  
-Puili (embrace, clasp).                                      Apomai (embrace one).                   
+Puili (embrace, clasp).                                  Apomai (embrace one).                   
 Line 0811: Pu‘ili‘ili -- Li‘ili‘i  
 *No Beckwith translation supplied.*  
-Puiiliili (frequent embraces).                               Liilii (tiny bits).                     
+Puiiliili (frequent embraces).                           Liilii (tiny bits).                     
 Line 0812: Pu‘iliaku -- Heleihea  
 *No Beckwith translation supplied.*  
-Puiliaku (hold on to it, catch it).                          Heleihea (go where).                    
+Puiliaku (hold on to it, catch it).                      Heleihea (go where).                    
 Line 0813: Mokukapewa -- Na‘alo  
 *No Beckwith translation supplied.*  
-Mokukapewa (cut the tail of a fish).                         Naalo (the two fronts).                 
+Mokukapewa (cut the tail of a fish).                     Naalo (the two fronts).                 
 Line 0814: Mokukai‘a -- Naele  
 *No Beckwith translation supplied.*  
-Mokukaia (the fish is cut).                                  Naele (two blacks, miry).               
+Mokukaia (the fish is cut).                              Naele (two blacks, miry).               
 Line 0815: Pi‘ala -- Heleua  
 *No Beckwith translation supplied.*  
-Piala (sprinkle water on the rocks).                         Heleua (walk in the rain).              
+Piala (sprinkle water on the rocks).                     Heleua (walk in the rain).              
 Line 0816: Kiamo -- Komo  
 *No Beckwith translation supplied.*  
-Kiamo (any material used for filling cracks, napkin).        Komo (enter).                           
+Kiamo (any material used for filling cracks, napkin).    Komo (enter).                           
 Line 0817: Koikua -- Keaho  
 *No Beckwith translation supplied.*  
-Koikua (falseness, to go back of).                           Keaho (the breath).                     
+Koikua (falseness, to go back of).                       Keaho (the breath).                     
 Line 0818: Koi‘ele -- Kauhi  
 *No Beckwith translation supplied.*  
-Koiele (swing).                                              Kauhi (the coverlet, a yam).            
+Koiele (swing).                                          Kauhi (the coverlet, a yam).            
 Line 0819: Pa‘ele -- Peleiomo  
 *No Beckwith translation supplied.*  
-Paele (daubed with black).                                   Peleiomo (Pele's sudden disappearance). 
+Paele (daubed with black).                               Peleiomo (Pele's sudden disappearance). 
 Line 0820: Keomo -- Omoomo  
 *No Beckwith translation supplied.*  
-Keomo (plug).                                                Omoomo (suck).                          
+Keomo (plug).                                            Omoomo (suck).                          
 Line 0821: Hulimakani -- Nanailuna  
 *No Beckwith translation supplied.*  
-Hulimakani (change of wind).                                 Nanailuna (look upwards).               
+Hulimakani (change of wind).                             Nanailuna (look upwards).               
 
-The husband.--The meaning  Wife.--The meaning.                        
-                                                                      
+The husband.--The meaning                  Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_                         
+                                                       
 Line 0822: Nanaikala -- Haipule  
 *No Beckwith translation supplied.*  
-Nanaikala (look at the sun).                              Haipule (devout).                            
+Nanaikala (look at the sun).               Haipule (devout).                            
 Line 0823: Kalawela -- Kalahuiwale  
 *No Beckwith translation supplied.*  
-Kalawela (the hot day).                                   Kalahuiwale (forgiveness).                   
+Kalawela (the hot day).                    Kalahuiwale (forgiveness).                   
 Line 0824: Kealakau -- Hoku  
 *No Beckwith translation supplied.*  
-Kealakau (a high path).                                   Hoku (star).                                 
+Kealakau (a high path).                    Hoku (star).                                 
 Line 0825: Kamau -- Meu  
 *No Beckwith translation supplied.*  
-Kamau (luncheon, follow up).                              Meu (blunt).                                 
+Kamau (luncheon, follow up).               Meu (blunt).                                 
 Line 0826: ‘Opala -- Wene  
 *No Beckwith translation supplied.*  
-Opala (rubbish).                                          Wene.                                        
+Opala (rubbish).                           Wene.                                        
 Line 0827: Hali -- Halima  
 *No Beckwith translation supplied.*  
-Hali (carry).                                             Halima.                                      
+Hali (carry).                              Halima.                                      
 Line 0828: Haliluna -- Halilalo  
 *No Beckwith translation supplied.*  
-Haliluna (take up).                                       Halilalo (take down).                        
+Haliluna (take up).                        Halilalo (take down).                        
 Line 0829: Halimau -- Halelo  
 *No Beckwith translation supplied.*  
-Halimau (carry often).                                    Halelo (smutty).                             
+Halimau (carry often).                     Halelo (smutty).                             
 Line 0830: Halipau -- Muakau  
 *No Beckwith translation supplied.*  
-Halipau (carry the last).                                 Muakau (the first of the season).            
+Halipau (carry the last).                  Muakau (the first of the season).            
 Line 0831: Nunua -- Nene‘e  
 *No Beckwith translation supplied.*  
-Nunua (pile upon pile).                                   Nenee (stunted, creep).                      
+Nunua (pile upon pile).                    Nenee (stunted, creep).                      
 Line 0832: Nananaka -- Lele‘io  
 *No Beckwith translation supplied.*  
-Nananaka (cracks).                                        Leleio (fly and disappear suddenly).         
+Nananaka (cracks).                         Leleio (fly and disappear suddenly).         
 Line 0833: Oamio -- Ololi  
 *No Beckwith translation supplied.*  
-Oamio (hidden beneath).                                   Ololi (narrow).                              
+Oamio (hidden beneath).                    Ololi (narrow).                              
 Line 0834: Omiomio -- Wiwini  
 *No Beckwith translation supplied.*  
-Omiomio (things with small tips).                         Wiwini (pointed).                            
+Omiomio (things with small tips).          Wiwini (pointed).                            
 Line 0835: Aila -- Kukala  
 *No Beckwith translation supplied.*  
-Aila (eaten by the heat of the sun).                      Kukala (proclaim).                           
+Aila (eaten by the heat of the sun).       Kukala (proclaim).                           
 Line 0836: Ailamua -- Heia  
 *No Beckwith translation supplied.*  
-Ailamua (first eaten by the sun).                         Heia (entombed, caught, chased).             
+Ailamua (first eaten by the sun).          Heia (entombed, caught, chased).             
 Line 0837: Ailakau -- Hele  
 *No Beckwith translation supplied.*  
-Ailakau (permanently burnt by the sun).                   Hele (go or went).                           
+Ailakau (permanently burnt by the sun).    Hele (go or went).                           
 Line 0838: Ailapau -- Kaiwi  
 *No Beckwith translation supplied.*  
-Ailapau (the last burning of the sun.)                    Kaiwi (the bones).                           
+Ailapau (the last burning of the sun.)     Kaiwi (the bones).                           
 Line 0839: Manu -- Hele‘upa  
 *No Beckwith translation supplied.*  
-Manu (bird)                                               Heleupa (walk and clash the knees or heels). 
+Manu (bird)                                Heleupa (walk and clash the knees or heels). 
 Line 0840: Lilio -- Makini  
 *No Beckwith translation supplied.*  
-Lilio (taut, drawn back or forward).                      Makini.                                      
+Lilio (taut, drawn back or forward).       Makini.                                      
 Line 0841: Leheluhe -- ‘Aina  
 *No Beckwith translation supplied.*  
-Leheluhe (hanging lip).                                   Aina (land).                                 
+Leheluhe (hanging lip).                    Aina (land).                                 
 Line 0842: Kelemau -- Hinapu  
 *No Beckwith translation supplied.*  
-Kelemau (constant dampness).                              Hinapu (fall together).                      
+Kelemau (constant dampness).               Hinapu (fall together).                      
 Line 0843: Kaumau -- Puoho  
 *No Beckwith translation supplied.*  
-Kaumau (always up, on an elevation).                      Puoho (awakened).                            
+Kaumau (always up, on an elevation).       Puoho (awakened).                            
 Line 0844: Kaukahi -- Ma‘ele  
 *No Beckwith translation supplied.*  
-Kaukahi (elevated alone).                                 Maele (cramped).                             
+Kaukahi (elevated alone).                  Maele (cramped).                             
 Line 0845: Mauka -- Kai  
 *No Beckwith translation supplied.*  
-Mauka (on land, toward the mountain).                     Kai (sea).                                   
+Mauka (on land, toward the mountain).      Kai (sea).                                   
 
-The husband.--The meaning  Wife.--The meaning.                        
+The husband.--The meaning                  Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_                         
                                                                       
 Line 0846: Ohi -- Laulau  
 *No Beckwith translation supplied.*  
@@ -513,7 +513,7 @@ Line 0870: Omali -- Malimali
 *No Beckwith translation supplied.*  
 Omali (sickly, feeble).                    Malimali (entice with flattery).               
 
-The husband.--The meaning  Wife.--The meaning.                        
+The husband.--The meaning                  Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_                         
                                                                       
 Line 0871: Huelo -- Kakai  
 *No Beckwith translation supplied.*  
@@ -603,166 +603,166 @@ Line 0899: Pakaikai -- Puehu
 *No Beckwith translation supplied.*  
 Pakaikai (a weed).                         Puehu (scatter, all gone).     
 
-The husband.--The meaning  Wife.--The meaning.                        
-                                                                      
+The husband.--The meaning                       Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_                         
+                                                             
 Line 0900: Moana -- Hilo  
 *No Beckwith translation supplied.*  
-Moana (ocean, on the deep).                              Hilo (to entwine, land on Hawaii). 
+Moana (ocean, on the deep).                     Hilo (to entwine, land on Hawaii). 
 Line 0901: Hulu -- Makali  
 *No Beckwith translation supplied.*  
-Hulu (feather).                                          Makalii (very fine, summer).       
+Hulu (feather).                                 Makalii (very fine, summer).       
 Line 0902: He -- Ho‘eue  
 *No Beckwith translation supplied.*  
-He (grave, it is).                                       Hoeue (motion of paddling).        
+He (grave, it is).                              Hoeue (motion of paddling).        
 Line 0903: Makilo -- Moi  
 *No Beckwith translation supplied.*  
-Makilo (beggar).                                         Moi (a high chief, a fish).        
+Makilo (beggar).                                Moi (a high chief, a fish).        
 Line 0904: Naua -- ‘Upa  
 *No Beckwith translation supplied.*  
-Naua (name of a society).                                Upa (to slam, cut).                
+Naua (name of a society).                       Upa (to slam, cut).                
 Line 0905: Ua -- Hama  
 *No Beckwith translation supplied.*  
-Ua (rain, shower, shout).                                Hama.                              
+Ua (rain, shower, shout).                       Hama.                              
 Line 0906: Pele‘u -- Hamahuna  
 *No Beckwith translation supplied.*  
-Peleu (broad).                                           Hamahuna.                          
+Peleu (broad).                                  Hamahuna.                          
 Line 0907: Mahina -- Hina  
 *No Beckwith translation supplied.*  
-Mahina (moon).                                           Hina (fall).                       
+Mahina (moon).                                  Hina (fall).                       
 Line 0908: Mahinale -- Ulukua  
 *No Beckwith translation supplied.*  
-Mahinale.                                                Ulukua (grew on the back).         
+Mahinale.                                       Ulukua (grew on the back).         
 Line 0909: Mahinale‘a -- Palemo  
 *No Beckwith translation supplied.*  
-Mahinalea (moonlight enjoyment).                         Palemo (slip through, drown).      
+Mahinalea (moonlight enjoyment).                Palemo (slip through, drown).      
 Line 0910: Pipika -- Kuhinu  
 *No Beckwith translation supplied.*  
-Pipika (shrink from bashfulness).                        Kuhinu (besmear).                  
+Pipika (shrink from bashfulness).               Kuhinu (besmear).                  
 Line 0911: Mahele -- Pu‘unaue  
 *No Beckwith translation supplied.*  
-Mahele (to divide, share).                               Puunaue (divide).                  
+Mahele (to divide, share).                      Puunaue (divide).                  
 Line 0912: Kaohi -- Kaohiohi  
 *No Beckwith translation supplied.*  
-Kaohi (reserved, hold back).                             Kaohiohi (hold back).              
+Kaohi (reserved, hold back).                    Kaohiohi (hold back).              
 Line 0913: Kona -- Konakona  
 *No Beckwith translation supplied.*  
-Kona (his or hers, land on Hawaii).                      Konakona (disgusted).              
+Kona (his or hers, land on Hawaii).             Konakona (disgusted).              
 Line 0914: Iho -- Pelu  
 *No Beckwith translation supplied.*  
-Iho (go down, downwards).                                Pelu (doubled, folded).            
+Iho (go down, downwards).                       Pelu (doubled, folded).            
 Line 0915: Kula‘a -- Mailu  
 *No Beckwith translation supplied.*  
-Kulaa (his person is sacred during tabuday).             Mailu (not sufficient, little).    
+Kulaa (his person is sacred during tabuday).    Mailu (not sufficient, little).    
 Line 0916: Kuamau‘u -- Holehole  
 *No Beckwith translation supplied.*  
-Kuamauu (grass on the back).                             Holehole (stripped of bark).       
+Kuamauu (grass on the back).                    Holehole (stripped of bark).       
 Line 0917: Pahili -- Halulu  
 *No Beckwith translation supplied.*  
-Pahili (deceive, pretence).                              Halulu (crash).                    
+Pahili (deceive, pretence).                     Halulu (crash).                    
 Line 0918: Keia -- Luluka  
 *No Beckwith translation supplied.*  
-Keia (this).                                             Luluka (name of a chief).          
+Keia (this).                                    Luluka (name of a chief).          
 Line 0919: Maki‘oi -- Meihiolo  
 *No Beckwith translation supplied.*  
-Makioi.                                                  Meihiolo (things that fell).       
+Makioi.                                         Meihiolo (things that fell).       
 Line 0920: Helehele -- Pineha  
 *No Beckwith translation supplied.*  
-Helehele (cut up in strips).                             Pineha.                            
+Helehele (cut up in strips).                    Pineha.                            
 Line 0921: ‘Aukai -- Milo  
 *No Beckwith translation supplied.*  
-Aukai (swim in the sea).                                 Milo (dragged downwards).          
+Aukai (swim in the sea).                        Milo (dragged downwards).          
 Line 0922: Moekau -- Helemau  
 *No Beckwith translation supplied.*  
-Moekau (sleep through seasons).                          Helemau (go often).                
+Moekau (sleep through seasons).                 Helemau (go often).                
 Line 0923: Huluau -- Pulama  
 *No Beckwith translation supplied.*  
-Huluau (I take, name of a wind).                         Pulama (brought up with care).     
+Huluau (I take, name of a wind).                Pulama (brought up with care).     
 Line 0924: Melemele -- Milokua  
 *No Beckwith translation supplied.*  
-Melemele (yellow).                                       Milokua (returned secretly).       
+Melemele (yellow).                              Milokua (returned secretly).       
 Line 0925: Kumuniu -- Pilia  
 *No Beckwith translation supplied.*  
-Kumuniu (cocoanut tree)                                  Pilia (joined together).           
+Kumuniu (cocoanut tree)                         Pilia (joined together).           
 
-The husband.--The meaning  Wife.--The meaning.                        
-                                                                      
+The husband.--The meaning                           Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_                         
+                                                         
 Line 0926: Amoi -- Akua  
 *No Beckwith translation supplied.*  
-Amoi.                                                            Akua (god, feared).                   
+Amoi.                                               Akua (god, feared).                   
 Line 0927: Kunewa -- Hulema  
 *No Beckwith translation supplied.*  
-Kunewa (stagger).                                                Hulema.                               
+Kunewa (stagger).                                   Hulema.                               
 Line 0928: Pahilo -- Pili‘aiku  
 *No Beckwith translation supplied.*  
-Pahilo (delicate person, sickly).                                Piliaiku (drenching wet).             
+Pahilo (delicate person, sickly).                   Piliaiku (drenching wet).             
 Line 0929: Napo‘i -- Ka‘ale  
 *No Beckwith translation supplied.*  
-Napoi (cover of calabash).                                       Kaale (ocean wave, swallow).          
+Napoi (cover of calabash).                          Kaale (ocean wave, swallow).          
 Line 0930: Kulana -- Na-wa  
 *No Beckwith translation supplied.*  
-Kulana (unsteady).                                               Nawa (insignificant beings).          
+Kulana (unsteady).                                  Nawa (insignificant beings).          
 Line 0931: Kakau -- Po‘ipo‘i  
 *No Beckwith translation supplied.*  
-Kakau (an object before them).                                   Poipoi (smother fire or words).       
+Kakau (an object before them).                      Poipoi (smother fire or words).       
 Line 0932: Holeha -- Hulupehu  
 *No Beckwith translation supplied.*  
-Holeha (used for haole).                                         Hulupehu (swollen feather).           
+Holeha (used for haole).                            Hulupehu (swollen feather).           
 Line 0933: Pa‘ani -- Malana‘opi  
 *No Beckwith translation supplied.*  
-Paani (play, amusements).                                        Malanaopi (fold loosely).             
+Paani (play, amusements).                           Malanaopi (fold loosely).             
 Line 0934: Lewa -- Kukelemio  
 *No Beckwith translation supplied.*  
-Lewa (swing).                                                    Kukelemio (hidden swamp).             
+Lewa (swing).                                       Kukelemio (hidden swamp).             
 Line 0935: Pihaulu -- Hoiha  
 *No Beckwith translation supplied.*  
-Pihaulu (full of balls or bread fruit).                          Hoiha.                                
+Pihaulu (full of balls or bread fruit).             Hoiha.                                
 Line 0936: Kelewa‘a -- Kinohili  
 *No Beckwith translation supplied.*  
-Kelewaa (canoe steerer).                                         Kinohili (thrashed body).             
+Kelewaa (canoe steerer).                            Kinohili (thrashed body).             
 Line 0937: Kaki‘o -- Hiliha  
 *No Beckwith translation supplied.*  
-Kakio (boils).                                                   Hiliha (to braid with four strands).  
+Kakio (boils).                                      Hiliha (to braid with four strands).  
 Line 0938: Hulipena -- Miko  
 *No Beckwith translation supplied.*  
-Hulipena.                                                        Miko (salted, preserved).             
+Hulipena.                                           Miko (salted, preserved).             
 Line 0939: Mokiweo -- Pakala  
 *No Beckwith translation supplied.*  
-Mokiweo.                                                         Pakala (small Kala, a fish).          
+Mokiweo.                                            Pakala (small Kala, a fish).          
 Line 0940: Kapalama -- Kepo‘oha  
 *No Beckwith translation supplied.*  
-Kapalama (seclusion).                                            Kepooha (the four heads).             
+Kapalama (seclusion).                               Kepooha (the four heads).             
 Line 0941: Kapalamalama -- Kepo‘olimaha  
 *No Beckwith translation supplied.*  
-Kapalamalama (some ceremony of tabu).                            Kepoolimaha (the four-headed hands).  
+Kapalamalama (some ceremony of tabu).               Kepoolimaha (the four-headed hands).  
 Line 0942: Wikani -- Kamakolu  
 *No Beckwith translation supplied.*  
-Wikani (drawn too tight, too salt).                              Kamakolu (three-fingered mesh).       
+Wikani (drawn too tight, too salt).                 Kamakolu (three-fingered mesh).       
 Line 0943: Kapehi -- Kaluku‘u  
 *No Beckwith translation supplied.*  
-Kapehi (to strike, throw at).                                    Kalukuu (the shaking down).           
+Kapehi (to strike, throw at).                       Kalukuu (the shaking down).           
 Line 0944: Hiwa -- Kahiwahiwa  
 *No Beckwith translation supplied.*  
-Hiwa (anything precious is a hiwa).                              Kahiwahiwa (the precious sacred one). 
+Hiwa (anything precious is a hiwa).                 Kahiwahiwa (the precious sacred one). 
 Line 0945: Pano -- Kekaliholiho  
 *No Beckwith translation supplied.*  
-Pano (deep darkness).                                            Kekaliholiho (the choice sprig).      
+Pano (deep darkness).                               Kekaliholiho (the choice sprig).      
 Line 0946: Opelau -- Maha  
 *No Beckwith translation supplied.*  
-Opelau (many bundles).                                           Maha (rested).                        
+Opelau (many bundles).                              Maha (rested).                        
 Line 0947: Mahilu -- Kaene  
 *No Beckwith translation supplied.*  
-Mahilu.                                                          Kaena (boaster).                      
+Mahilu.                                             Kaena (boaster).                      
 Line 0948: Ho‘olewa -- Waiau  
 *No Beckwith translation supplied.*  
-Hoolewa (swing, carry from place to place).                      Waiau (swimming water).               
+Hoolewa (swing, carry from place to place).         Waiau (swimming water).               
 Line 0949: Kumau -- Kahaka  
 *No Beckwith translation supplied.*  
-Kumau (firmness, large calabash, long-standing).                 Kahaka (ladder).                      
+Kumau (firmness, large calabash, long-standing).    Kahaka (ladder).                      
 Line 0950: Papalele -- Kukala  
 *No Beckwith translation supplied.*  
-Papalele (flying board).                                         Mukala.                               
+Papalele (flying board).                            Mukala.                               
 
-The husband.--The meaning  Wife.--The meaning.                        
+The husband.--The meaning                     Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_                         
                                                                       
 Line 0951: Haole -- Kuwahine  
 *No Beckwith translation supplied.*  
@@ -831,145 +831,145 @@ Line 0972: Mau‘awa -- Kolokolo,
 *No Beckwith translation supplied.*  
 Mauawa (looks after, frequent use of awa).    Kolokolo (to persist).                      
 
-The husband.--The meaning  Wife.--The meaning.                        
-                                                                      
+The husband.--The meaning                     Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_                         
+                                                                  
 Line 0973: Kelelua -- ‘A‘a  
 *No Beckwith translation supplied.*  
-Kelelua (to dampen).                              Aa (dwarf, fearless, root of a tree or shrub). 
+Kelelua (to dampen).                          Aa (dwarf, fearless, root of a tree or shrub). 
 Line 0974: Mukana -- Mahi‘opu  
 *No Beckwith translation supplied.*  
-Makana (present).                                 Mahiopu (motion of digging).                   
+Makana (present).                             Mahiopu (motion of digging).                   
 Line 0975: Mahili -- Wili  
 *No Beckwith translation supplied.*  
-Mahili (braid of strands).                        Wili (twirl, twist).                           
+Mahili (braid of strands).                    Wili (twirl, twist).                           
 Line 0976: Kukona -- Naka  
 *No Beckwith translation supplied.*  
-Kukona (forbidding looks).                        Naka (shake, tremble with fear).               
+Kukona (forbidding looks).                    Naka (shake, tremble with fear).               
 Line 0977: Kanawai -- Hapele  
 *No Beckwith translation supplied.*  
-Kanawai (laws, to be warned).                     Hapele (loose ground like slush.)              
+Kanawai (laws, to be warned).                 Hapele (loose ground like slush.)              
 Line 0978: Lohilohi -- Hapeleau  
 *No Beckwith translation supplied.*  
-Lohilohi (slowly).                                Hapeleau (swim in slush).                      
+Lohilohi (slowly).                            Hapeleau (swim in slush).                      
 Line 0979: Apikili -- Nohilo  
 *No Beckwith translation supplied.*  
-Apikili.                                          Nohilo.                                        
+Apikili.                                      Nohilo.                                        
 Line 0980: Ho‘omaku -- Nohalau  
 *No Beckwith translation supplied.*  
-Hoomaku (lowering clouds).                        Nahalau.                                       
+Hoomaku (lowering clouds).                    Nahalau.                                       
 Line 0981: Olepe -- Makau  
 *No Beckwith translation supplied.*  
-Olepe (oysters, thrown over).                     Makau (fear, fish hooks).                      
+Olepe (oysters, thrown over).                 Makau (fear, fish hooks).                      
 Line 0982: Kala -- Heleana  
 *No Beckwith translation supplied.*  
-Kala (forgiven, wrench open).                     Heleaua (went with stinginess).                
+Kala (forgiven, wrench open).                 Heleaua (went with stinginess).                
 Line 0983: Hulipau -- Hulimakeau  
 *No Beckwith translation supplied.*  
-Hulipau (search thoroughly).                      Hulimakeau (turn with the tide).               
+Hulipau (search thoroughly).                  Hulimakeau (turn with the tide).               
 Line 0984: Makohi -- Hulimakele  
 *No Beckwith translation supplied.*  
-Makohi (dig, traces of footsteps).                Hulimakele (turn to swampy place).             
+Makohi (dig, traces of footsteps).            Hulimakele (turn to swampy place).             
 Line 0985: ‘O‘opuola -- Nahalau  
 *No Beckwith translation supplied.*  
-Oopuola (live mudfish).                           Nahalau (the sheds, large sheds).              
+Oopuola (live mudfish).                       Nahalau (the sheds, large sheds).              
 Line 0986: Niuhuli -- Nakuli‘i  
 *No Beckwith translation supplied.*  
-Niuhuli (upset cocoanut).                         Nakulii (grovellers, small stands).            
+Niuhuli (upset cocoanut).                     Nakulii (grovellers, small stands).            
 Line 0987: Ohao -- Nakumau  
 *No Beckwith translation supplied.*  
-Ohao (fasten a dog, tumor in the stomach).        Nakumau (the large calabashes).                
+Ohao (fasten a dog, tumor in the stomach).    Nakumau (the large calabashes).                
 Line 0988: Nu‘u -- Helemai  
 *No Beckwith translation supplied.*  
-Nuu (to gauge, steps, upper grade).               Helemai (come here).                           
+Nuu (to gauge, steps, upper grade).           Helemai (come here).                           
 Line 0989: Lena -- Palemo  
 *No Beckwith translation supplied.*  
-Lena (stare, bilious).                            Palemo (slip through, drowned).                
+Lena (stare, bilious).                        Palemo (slip through, drowned).                
 Line 0990: Ahiahi -- Opihi  
 *No Beckwith translation supplied.*  
-Ahiahi (evening).                                 Opihi (shell-fish).                            
+Ahiahi (evening).                             Opihi (shell-fish).                            
 Line 0991: Ahiahihia -- Ounauna,  
 *No Beckwith translation supplied.*  
-Ahiahihia (were belated last eve).                Ounauna (hermit crab).                         
+Ahiahihia (were belated last eve).            Ounauna (hermit crab).                         
 Line 0992: Ahiakane -- Wanaku  
 *No Beckwith translation supplied.*  
-Ahiakane (fire or light of Kane).                 Wanaku (standing sea egg).                     
+Ahiakane (fire or light of Kane).             Wanaku (standing sea egg).                     
 Line 0993: Ahiakapoloa -- Kikala  
 *No Beckwith translation supplied.*  
-Ahiakapoloa (fire of a long night).               Kikala (the thighs).                           
+Ahiakapoloa (fire of a long night).           Kikala (the thighs).                           
 
-The husband.--The meaning  Wife.--The meaning.                        
+The husband.--The meaning                        Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_                         
                                                                       
 Line 0994: Ahiakapokau -- Hapu‘u  
 *No Beckwith translation supplied.*  
-Ahiakapokau (fire of night in the season).                              Hapuu (fern-root, a mountain).           
+Ahiakapokau (fire of night in the season).       Hapuu (fern-root, a mountain).           
 Line 0995: Ahiakulumau -- Makani  
 *No Beckwith translation supplied.*  
-Ahiakulumau (constantly dropping fire).                                 Makani (wind).                           
+Ahiakulumau (constantly dropping fire).          Makani (wind).                           
 Line 0996: Ahiakamake -- Kilau  
 *No Beckwith translation supplied.*  
-Ahiakamake (fire of death).                                             Kilou (hook on).                         
+Ahiakamake (fire of death).                      Kilou (hook on).                         
 Line 0997: Ahiaka‘olu -- Honika  
 *No Beckwith translation supplied.*  
-Ahiakaolu (fire of comfort).                                            Honika (kiss with emphasis).             
+Ahiakaolu (fire of comfort).                     Honika (kiss with emphasis).             
 Line 0998: Pohinakau -- Hilahea  
 *No Beckwith translation supplied.*  
-Pohinakau (misty).                                                      Hilahea.                                 
+Pohinakau (misty).                               Hilahea.                                 
 Line 0999: Moulikaina -- Ho‘omaka  
 *No Beckwith translation supplied.*  
-Moulikaina.                                                             Hoomaka (to begin).                      
+Moulikaina.                                      Hoomaka (to begin).                      
 Line 1000: Ho‘oku -- Nanana  
 *No Beckwith translation supplied.*  
-Hooku (to fit, to be made to stand).                                    Nanana (spider).                         
+Hooku (to fit, to be made to stand).             Nanana (spider).                         
 Line 1001: Manaweulani -- Laukunu  
 *No Beckwith translation supplied.*  
-Manaweulani (by the tasselly heaven).                                   Laukunu (broiled leaf).                  
+Manaweulani (by the tasselly heaven).            Laukunu (broiled leaf).                  
 Line 1002: Ho‘omailu -- Puluea  
 *No Beckwith translation supplied.*  
-Hoomailu (make small).                                                  Puluea (dust of Pulu).                   
+Hoomailu (make small).                           Puluea (dust of Pulu).                   
 Line 1003: Mailu -- Lehuane  
 *No Beckwith translation supplied.*  
-Mailu (small, insignificant).                                           Lehuane (dust of ashes).                 
+Mailu (small, insignificant).                    Lehuane (dust of ashes).                 
 Line 1004: Polehua -- Keahu  
 *No Beckwith translation supplied.*  
-Polehua (night of lehua).                                               Keahu (the pile).                        
+Polehua (night of lehua).                        Keahu (the pile).                        
 Line 1005: Pu‘ulele -- Noelo  
 *No Beckwith translation supplied.*  
-Puulele (flying lump).                                                  Noelo (insinuate, tease).                
+Puulele (flying lump).                           Noelo (insinuate, tease).                
 Line 1006: Hamohulu -- Noe‘ula  
 *No Beckwith translation supplied.*  
-Hamohulu (brush with feather).                                          Noeula (red mist).                       
+Hamohulu (brush with feather).                   Noeula (red mist).                       
 Line 1007: I‘amama -- Noenoe  
 *No Beckwith translation supplied.*  
-Iamama (’tis finished).                                                 Noenoe (misty, foggy).                   
+Iamama (’tis finished).                          Noenoe (misty, foggy).                   
 Line 1008: Kuinewa -- Pilimau‘u  
 *No Beckwith translation supplied.*  
-Kuinewa (blow from a club).                                             Pilimauu (flower grass).                 
+Kuinewa (blow from a club).                      Pilimauu (flower grass).                 
 Line 1009: Holopulau -- Hinakona,  
 *No Beckwith translation supplied.*  
-Holopulau (run altogether).                                             Hinakona (he will slip up).              
+Holopulau (run altogether).                      Hinakona (he will slip up).              
 Line 1010: Makanewanewa -- Helepuau  
 *No Beckwith translation supplied.*  
-Makanewanewa (moving eyes).                                             Helepuau (I went also).                  
+Makanewanewa (moving eyes).                      Helepuau (I went also).                  
 Line 1011: Melia -- Melemele  
 *No Beckwith translation supplied.*  
-Melia (with Lia).                                                       Melemele (yellow).                       
+Melia (with Lia).                                Melemele (yellow).                       
 Line 1012: Humuhumu -- Palamau  
 *No Beckwith translation supplied.*  
-Humuhumu (sew, to stitch together).                                     Palamau (always ripe).                   
+Humuhumu (sew, to stitch together).              Palamau (always ripe).                   
 Line 1013: Ukianu -- Nenue  
 *No Beckwith translation supplied.*  
-Ukianu (coarse grass growing in cold places).                           Nenue (a fish of the kind called perch). 
+Ukianu (coarse grass growing in cold places).    Nenue (a fish of the kind called perch). 
 Line 1014: Ukinala -- Ilimaka  
 *No Beckwith translation supplied.*  
-Ukinala (coarse grass plaited).                                         Ilimaka (raw skin or hide).              
+Ukinala (coarse grass plaited).                  Ilimaka (raw skin or hide).              
 Line 1015: Ukikamau -- Keohoko  
 *No Beckwith translation supplied.*  
-Ukiakamau (coarse grass, often shaken).                                 Keohoko (leaves of sugarcane).           
+Ukiakamau (coarse grass, often shaken).          Keohoko (leaves of sugarcane).           
 Line 1016: Ukilelewa -- Laumeki  
 *No Beckwith translation supplied.*  
-Ukilelewa (coarse grass hanging).                                       Laumeki (a kind of eel).                 
+Ukilelewa (coarse grass hanging).                Laumeki (a kind of eel).                 
 
-The husband.--The meaning  Wife.--The meaning.                        
+The husband.--The meaning                                       Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_                         
                                                                       
 Line 1017: Ukinahina -- Nilea  
 *No Beckwith translation supplied.*  
@@ -1044,7 +1044,7 @@ Line 1040: Hei‘aumana -- Ho‘ohiwa
 *No Beckwith translation supplied.*  
 Heiaumana (powerful temple).                                    Hoohiwa (to make much of).                
 
-The husband.--The meaning  Wife.--The meaning.                        
+The husband.--The meaning                                 Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_                         
                                                                       
 Line 1041: Pulemo -- Maluolua  
 *No Beckwith translation supplied.*  
@@ -1116,11 +1116,11 @@ Line 1063: Ha‘iola -- Laulaha
 *No Beckwith translation supplied.*  
 Haiola (life offered for sacrifice).                      Laulaha (spread abroad).                          
 
-The husband.--The meaning  Wife.--The meaning.                        
+The husband.--The meaning                            Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_                         
                                                                       
 Line 1064: Kalelemauliaka -- Miloha  
 *No Beckwith translation supplied.*  
-Kalelemauliaka (last breath of vapor).                    Miloha (rope of four-strand twist).               
+Kalelemauliaka (last breath of vapor).               Miloha (rope of four-strand twist).               
 Line 1065: Ko‘iniho -- Naku  
 *No Beckwith translation supplied.*  
 Koiniho (axe of teeth).                              Naku (wallow, wade).                       
@@ -1185,7 +1185,7 @@ Line 1085: Panaikaluakahinalea -- Painaina
 *No Beckwith translation supplied.*  
 Panaikaluakahinlea (second stroke by Hinalea).       Painaina (crackling noise).                
 
-The husband.--The meaning  Wife.--The meaning.                        
+The husband.--The meaning                                                 Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_                         
                                                                       
 Line 1086: Pu‘ukoluakukahinalea -- Noakawalu  
 *No Beckwith translation supplied.*  
@@ -1236,70 +1236,70 @@ Line 1101: Koieleakaewe -- Ulupo
 *No Beckwith translation supplied.*  
 Koielea Kaewe (swung in relation or generation).                          Ulupo (dense forest, darkness).            
 
-The husband.--The meaning  Wife.--The meaning.                        
+The husband.--The meaning                                               Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_                         
                                                                       
 Line 1102: Kuaiwaakaewe -- Newaiku  
 *No Beckwith translation supplied.*  
-Kuaiwaa Kaewe (ground by canoes the numbers relation or generation).                              Newaiku (stagger’d from a stroke).            
+Kuaiwaa Kaewe (ground by canoes the numbers relation or generation).    Newaiku (stagger’d from a stroke).            
 Line 1103: Henahuno -- Puhemo  
 *No Beckwith translation supplied.*  
-Henahuno (it does bite, stomach ache).                                                            Puhemo (weakly, fainting).                    
+Henahuno (it does bite, stomach ache).                                  Puhemo (weakly, fainting).                    
 Line 1104: Panakahikenahu -- Lahilahi  
 *No Beckwith translation supplied.*  
-Panakahikenahu (one stroke and then a bite).                                                      Lahilahi (delicate, thin).                    
+Panakahikenahu (one stroke and then a bite).                            Lahilahi (delicate, thin).                    
 Line 1105: Panaluakenahu -- Kaukeahu  
 *No Beckwith translation supplied.*  
-Panaluakenahu (two strokes and then a bite).                                                      Kaukeahu (heap in a pile).                    
+Panaluakenahu (two strokes and then a bite).                            Kaukeahu (heap in a pile).                    
 Line 1106: Panakolukenahu -- ‘Ulalena  
 *No Beckwith translation supplied.*  
-Panakolukenahu (three strokes and then a bite).                                                   Ulalena (name of a wind on Maui).             
+Panakolukenahu (three strokes and then a bite).                         Ulalena (name of a wind on Maui).             
 Line 1107: Panahakenahu -- Eiawale  
 *No Beckwith translation supplied.*  
-Panahakenahu (four strokes and then a bite).                                                      Eiawale (there it is, they have arrived).     
+Panahakenahu (four strokes and then a bite).                            Eiawale (there it is, they have arrived).     
 Line 1108: Lewelimakenahu -- Konukonu  
 *No Beckwith translation supplied.*  
-Lewelimakenahu (five swings and then a bite).                                                     Konukonu (deep).                              
+Lewelimakenahu (five swings and then a bite).                           Konukonu (deep).                              
 Line 1109: Paakaeakenahu -- Uli  
 *No Beckwith translation supplied.*  
-Paakaeakenahu (held the breath and then a bite).                                                  Uli (black, dark, bruise).                    
+Paakaeakenahu (held the breath and then a bite).                        Uli (black, dark, bruise).                    
 Line 1110: Omaulikenahu -- Na‘ina‘i  
 *No Beckwith translation supplied.*  
-Omaulikekenahu (all hold together and then a bite).                                               Nainai (shallow, prominent chest).            
+Omaulikekenahu (all hold together and then a bite).                     Nainai (shallow, prominent chest).            
 Line 1111: Ko‘ielehakenahu -- Pilomoku  
 *No Beckwith translation supplied.*  
-Koielehakenahu (four swings and then a bite).                                                     Pilomoku (bad odor from a ship).              
+Koielehakenahu (four swings and then a bite).                           Pilomoku (bad odor from a ship).              
 Line 1112: Kuaiwakelekenahu -- Nahae  
 *No Beckwith translation supplied.*  
-Kuaiwakelekenahu (nine watery bites).                                                             Nahae (torn, slit).                           
+Kuaiwakelekenahu (nine watery bites).                                   Nahae (torn, slit).                           
 Line 1113: Hekaunano -- Welawela  
 *No Beckwith translation supplied.*  
-Hekaunano (only four).                                                                            Welawela (heat warm).                         
+Hekaunano (only four).                                                  Welawela (heat warm).                         
 Line 1114: Papio -- Lo‘ilo‘i  
 *No Beckwith translation supplied.*  
-Papio (to face downwards).                                                                        Loiloi (fastidious).                          
+Papio (to face downwards).                                              Loiloi (fastidious).                          
 Line 1115: Manu‘akele -- Kealo  
 *No Beckwith translation supplied.*  
-Manuakele.                                                                                        Kealo (the right side of anything, or front). 
+Manuakele.                                                              Kealo (the right side of anything, or front). 
 Line 1116: Kaunuka -- Kukamaka  
 *No Beckwith translation supplied.*  
-Kaunuka (draw up the thighs).                                                                     Kukamaka (pierced the eye or face).           
+Kaunuka (draw up the thighs).                                           Kukamaka (pierced the eye or face).           
 Line 1117: Maki‘i -- Auhe‘e  
 *No Beckwith translation supplied.*  
-Makii (flattened).                                                                                Auhee (scatter, flee).                        
+Makii (flattened).                                                      Auhee (scatter, flee).                        
 Line 1118: Kupololi‘ili -- Ha‘ihae  
 *No Beckwith translation supplied.*  
-Kupololiili (dark night of changing pebbles).                                                     Haihae (traitor).                             
+Kupololiili (dark night of changing pebbles).                           Haihae (traitor).                             
 Line 1119: Kupoka -- Milio  
 *No Beckwith translation supplied.*  
-Kupoka (so it is night).                                                                          Milio.                                        
+Kupoka (so it is night).                                                Milio.                                        
 Line 1120: Kupokanaha -- Hamunu  
 *No Beckwith translation supplied.*  
-Kupokanaha (forty standing nights).                                                               Hamunu.                                       
+Kupokanaha (forty standing nights).                                     Hamunu.                                       
 Line 1121: Kupone‘e -- Naia  
 *No Beckwith translation supplied.*  
-Koponee (the night of your removal).                                                              Naia (porpoise, the fishes).                  
+Koponee (the night of your removal).                                    Naia (porpoise, the fishes).                  
 
-The husband.--The meaning  Wife.--The meaning.                        
+The husband.--The meaning                                      Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_                         
                                                                       
 Line 1122: Kupohaha -- Pakau  
 *No Beckwith translation supplied.*  
@@ -1359,7 +1359,7 @@ Line 1140: Kupoloha‘iha‘i -- Luli
 *No Beckwith translation supplied.*  
 Kupolohaihai (dark night of breaking).                         Luli (roll, turn one way or the other).                   
 
-The husband.--The meaning  Wife.--The meaning.                        
+The husband.--The meaning                                       Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_                         
                                                                       
 Line 1141: Kupolokeleau -- Makeamo  
 *No Beckwith translation supplied.*  
@@ -1416,7 +1416,7 @@ Line 1158: Kupolo‘ale -- Leleiluna
 *No Beckwith translation supplied.*  
 Kupoloale (dark night of Lo swallowing).                        Leleiluna (flew upwards).                    
 
-The husband.--The meaning  Wife.--The meaning.                        
+The husband.--The meaning                                          Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_                         
                                                                       
 Line 1159: Kupolo‘imo -- Holo‘oko‘a  
 *No Beckwith translation supplied.*  
@@ -1476,7 +1476,7 @@ Line 1177: Polopolo -- Hamu
 *No Beckwith translation supplied.*  
 Polopolo.                                                          Hamu (eating this, that, and everything, to search). 
 
-The husband.--The meaning  Wife.--The meaning.                        
+The husband.--The meaning                                          Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_                         
                                                                       
 Line 1178: Polohamu -- Nini  
 *No Beckwith translation supplied.*  
@@ -1560,7 +1560,7 @@ Line 1204: Poloahiwa -- Hiwa
 *No Beckwith translation supplied.*  
 Poloahiwa.                                                         Hiwa (choice, precious).                  
 
-The husband.--The meaning  Wife.--The meaning.                        
+The husband.--The meaning                                       Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_                         
                                                                       
 Line 1205: Polo‘ula -- ‘Ula  
 *No Beckwith translation supplied.*  
@@ -1632,7 +1632,7 @@ Line 1227: Poloikanahele -- Kukulu
 *No Beckwith translation supplied.*  
 Poloikanahele (Polo of the forest).                             Kukulu (build, implant).                    
 
-The husband.--The meaning  Wife.--The meaning.                        
+The husband.--The meaning                                  Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_                         
                                                                       
 Line 1228: Poloikukulu -- Ho‘omoe  
 *No Beckwith translation supplied.*  
@@ -1722,7 +1722,7 @@ Line 1256: Li‘iliaolo -- ‘Olo‘olo
 *No Beckwith translation supplied.*  
 Liiliaolo.                                                 Oloolo (baggy, hang loosely).                 
 
-The husband.--The meaning  Wife.--The meaning.                        
+The husband.--The meaning                   Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_                         
                                                                       
 Line 1257: Li‘ilipihapiha -- Nu‘unu‘u  
 *No Beckwith translation supplied.*  
@@ -1815,7 +1815,7 @@ Line 1286: Li‘lli-kahuli -- Kulana
 *No Beckwith translation supplied.*  
 Liilikahuli.                                Kulana (unsteady, position).              
 
-The husband.--The meaning  Wife.--The meaning.                        
+The husband.--The meaning                 Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_                         
                                                                       
 Line 1287: Li‘ili-homole -- ‘Iwa‘iwa  
 *No Beckwith translation supplied.*  
@@ -1905,7 +1905,7 @@ Line 1315: Li‘i‘ohinu -- ‘Omaka
 *No Beckwith translation supplied.*  
 Liiohinu.                                 Omaka (sprout, budding, sowing of).         
 
-The husband.--The meaning  Wife.--The meaning.                        
+The husband.--The meaning                        Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_                         
                                                                       
 Line 1316: Li‘i‘omaka -- ‘Olua  
 *No Beckwith translation supplied.*  
@@ -1977,7 +1977,7 @@ Line 1338: Ali‘ileleiona -- Lopiana
 *No Beckwith translation supplied.*  
 Aliileleiona (flyaway chief).                    _NOTE: This word does not seem to have a matching word_
 
-The husband.--The meaning  Wife.--The meaning.                        
+The husband.--The meaning                              Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_                         
                                                                       
 Line 1339: Ali‘iwala‘au -- Kukeleau  
 *No Beckwith translation supplied.*  
@@ -2046,530 +2046,530 @@ Line 1360: Ali‘ikiloau -- Kanamu
 *No Beckwith translation supplied.*  
 Aliikiloau (chief skilled in swimming).                Kanamu (little gods).                        
 
-The husband.--The meaning  Wife.--The meaning.                        
-                                                                      
+The husband.--The meaning                                      Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_                         
+                                                               
 Line 1361: Ali‘ikilohonua -- Heanaipu  
 *No Beckwith translation supplied.*  
-Aliikilohonua (chief skilled in the earth).                              Heanaipu (cave of gourds).     
+Aliikilohonua (chief skilled in the earth).                    Heanaipu (cave of gourds).     
 Line 1362: Ali‘ikilouli -- Ho‘owili  
 *No Beckwith translation supplied.*  
-Aliikilouli (chief skilled in prophesying).                              Hoowili (repetition).          
+Aliikilouli (chief skilled in prophesying).                    Hoowili (repetition).          
 Line 1363: Ali‘ikilokai -- ‘Ume  
 *No Beckwith translation supplied.*  
-Aliikilokai (chief skilled about the seas).                              Ume (draw downwards).          
+Aliikilokai (chief skilled about the seas).                    Ume (draw downwards).          
 Line 1364: Ali‘ikilonalu -- ‘Ohi  
 *No Beckwith translation supplied.*  
-Aliikilonalu (chief skilled about surfs).                                Ohi (gather, collect).         
+Aliikilonalu (chief skilled about surfs).                      Ohi (gather, collect).         
 Line 1365: Ali‘ikilohulu -- Pelapela  
 *No Beckwith translation supplied.*  
-Aliikilohulu (chief skilled about feathers).                             Pelapela (filthy, smutty).     
+Aliikilohulu (chief skilled about feathers).                   Pelapela (filthy, smutty).     
 Line 1366: Ali‘ikiloahu -- Oheohe  
 *No Beckwith translation supplied.*  
-Aliikiloahu (chief skilled about mounds).                                Oheohe (slight, slim).         
+Aliikiloahu (chief skilled about mounds).                      Oheohe (slight, slim).         
 Line 1367: Ali‘ikilomakani -- Malumalu  
 *No Beckwith translation supplied.*  
-Aliikilomakani (chief skilled about the wind).                           Malumalu (shade, safety).      
+Aliikilomakani (chief skilled about the wind).                 Malumalu (shade, safety).      
 Line 1368: Ali‘ikilola -- Lipoa  
 *No Beckwith translation supplied.*  
-Aliikilola (chief skilled about observing the sun).                      Lipoa (a seaweed).             
+Aliikilola (chief skilled about observing the sun).            Lipoa (a seaweed).             
 Line 1369: Ali‘ikilohoku -- Kanulau  
 *No Beckwith translation supplied.*  
-Aliikilohoku (chief skilled about observing the stars).                  Kanulau (plant sprouts).       
+Aliikilohoku (chief skilled about observing the stars).        Kanulau (plant sprouts).       
 Line 1370: Ali‘ikilomalama -- Nahele  
 *No Beckwith translation supplied.*  
-Aliikilomalama (chief skilled about observing the months).               Nahele (weeds or forest).      
+Aliikilomalama (chief skilled about observing the months).     Nahele (weeds or forest).      
 Line 1371: Ali‘ikilomakali‘i -- Ho‘opulu  
 *No Beckwith translation supplied.*  
-Aliikilomakalii (chief skilled about observing the winter).              Hoopulu (make damp).           
+Aliikilomakalii (chief skilled about observing the winter).    Hoopulu (make damp).           
 Line 1372: Ali‘ikilokau -- Kakeli‘i  
 *No Beckwith translation supplied.*  
-Alliikilokau (chief skilled about observing the seasons).                Kakelii (belong to the chief). 
+Alliikilokau (chief skilled about observing the seasons).      Kakelii (belong to the chief). 
 Line 1373: Ali‘ikiloho‘oilo -- Hulu  
 *No Beckwith translation supplied.*  
-Aliikilohooilo (chief skilled about summer).                             Hulu (feather, down).          
+Aliikilohooilo (chief skilled about summer).                   Hulu (feather, down).          
 Line 1374: Ali‘ika‘ana‘au -- Lono  
 *No Beckwith translation supplied.*  
-Aliikaanaau (chief skilled about hearts or thoughts).                    Lono (heard).                  
+Aliikaanaau (chief skilled about hearts or thoughts).          Lono (heard).                  
 Line 1375: Ali‘ika‘anamalama -- Kea  
 *No Beckwith translation supplied.*  
-Aliikaanamalama (chief skilled about dividing months).                   Kea (white, to be crossed).    
+Aliikaanamalama (chief skilled about dividing months).         Kea (white, to be crossed).    
 
-The husband.--The meaning  Wife.--The meaning.                        
-                                                                      
+The husband.--The meaning                          Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_                         
+                                                   
 Line 1376: Ali‘ika‘anaua -- Papahuli  
 *No Beckwith translation supplied.*  
-Aliikaanaua (chief who divides the rain).                              Papahuli (overturned board).                 
+Aliikaanaua (chief who divides the rain).          Papahuli (overturned board).                 
 Line 1377: Ali‘ikilomo‘o -- Mo‘olio  
 *No Beckwith translation supplied.*  
-Aliikilomoo (chief skilled about serpents).                            Moolio (taut).                               
+Aliikilomoo (chief skilled about serpents).        Moolio (taut).                               
 Line 1378: Ali‘ikilokua -- Kilohi  
 *No Beckwith translation supplied.*  
-Aliikilokua (chief skilled about one's back).                          Kilohi (look backward with self-admiration). 
+Aliikilokua (chief skilled about one's back).      Kilohi (look backward with self-admiration). 
 Line 1379: Ali‘ikiloalo -- Anapu  
 *No Beckwith translation supplied.*  
-Aliikiloalo (chief skilled about one's front).                         Anapu (flash).                               
+Aliikiloalo (chief skilled about one's front).     Anapu (flash).                               
 Line 1380: Ali‘ikilohope -- A-aa  
 *No Beckwith translation supplied.*  
-Aliikilohope (chief skilled about one's fate).                         A-aa (veins).                                
+Aliikilohope (chief skilled about one's fate).     A-aa (veins).                                
 Line 1381: Ali‘ikilomua -- Pehe  
 *No Beckwith translation supplied.*  
-Aliikilomua (chief skilled about one's future).                        Pehe.                                        
+Aliikilomua (chief skilled about one's future).    Pehe.                                        
 Line 1382: Mua -- Wanaku  
 *No Beckwith translation supplied.*  
-Mua (first, future).                                                   Wanaku (pierced by wana).                    
+Mua (first, future).                               Wanaku (pierced by wana).                    
 Line 1383: Muapo -- Haina  
 *No Beckwith translation supplied.*  
-Muapo (future darkness).                                               Haina (betrayed).                            
+Muapo (future darkness).                           Haina (betrayed).                            
 Line 1384: Muahaka -- Kulamau  
 *No Beckwith translation supplied.*  
-Muahaka (future of war).                                               Kulamau (forgiven repeatedly).               
+Muahaka (future of war).                           Kulamau (forgiven repeatedly).               
 Line 1385: Mualele -- Hilipo  
 *No Beckwith translation supplied.*  
-Mualele (future of escape).                                            Hilipo (slash in the night).                 
+Mualele (future of escape).                        Hilipo (slash in the night).                 
 Line 1386: Muakaukeha -- Keanukapu  
 *No Beckwith translation supplied.*  
-Muakaukeha (future of pride).                                          Keanukapu.                                   
+Muakaukeha (future of pride).                      Keanukapu.                                   
 Line 1387: Muahale -- La‘apilo  
 *No Beckwith translation supplied.*  
-Muahale (future of house).                                             Laapilo.                                     
+Muahale (future of house).                         Laapilo.                                     
 Line 1388: Muahalekapu -- Ho‘ohali  
 *No Beckwith translation supplied.*  
-Muahalekapu (future of sacred house).                                  Hoohali (draw out to betray).                
+Muahalekapu (future of sacred house).              Hoohali (draw out to betray).                
 Line 1389: Muaanoano -- Nauia  
 *No Beckwith translation supplied.*  
-Muaanoano (sacred future).                                             Nauia (that is yours; chew it).              
+Muaanoano (sacred future).                         Nauia (that is yours; chew it).              
 Line 1390: Muakekele -- Ipu  
 *No Beckwith translation supplied.*  
-Muakekele.                                                             Ipu (container, a vessel or dish).           
+Muakekele.                                         Ipu (container, a vessel or dish).           
 Line 1391: Muahaipu -- Kahiko  
 *No Beckwith translation supplied.*  
-Muahaipu (first to break).                                             Kahiko (old, stale).                         
+Muahaipu (first to break).                         Kahiko (old, stale).                         
 Line 1392: Muakahiko -- Wa‘awa‘a  
 *No Beckwith translation supplied.*  
 _NOTE: Line missing from translation?_
 Line 1393: Muawa‘a -- Po‘i  
 *No Beckwith translation supplied.*  
-Muawaa (prow of a canoe).                                              Po-i (cover up the dish, cover of a dish).   
+Muawaa (prow of a canoe).                          Po-i (cover up the dish, cover of a dish).   
 Line 1394: Muapo‘ipo‘i -- Helenaku  
 *No Beckwith translation supplied.*  
-Muapoipoi (first to fondle).                                           Helenaku (walk shuffling).                   
+Muapoipoi (first to fondle).                       Helenaku (walk shuffling).                   
 Line 1395: Muakamalulu -- Kaukahi  
 *No Beckwith translation supplied.*  
-Muakamalulu.                                                           Kaukahi (singly).                            
+Muakamalulu.                                       Kaukahi (singly).                            
 Line 1396: Muahele‘i -- Lulu  
 *No Beckwith translation supplied.*  
-Muahelei (first to stretch).                                           Lulu (shake, lull).                          
+Muahelei (first to stretch).                       Lulu (shake, lull).                          
 Line 1397: Muakohukohu -- Mo‘olelo  
 *No Beckwith translation supplied.*  
-Muakohukohu.                                                           Moolelo (a tale, history).                   
+Muakohukohu.                                       Moolelo (a tale, history).                   
 Line 1398: Muakahukahu -- Kapili  
 *No Beckwith translation supplied.*  
-Muakahukahu.                                                           Kapili (to join together).                   
+Muakahukahu.                                       Kapili (to join together).                   
 Line 1399: Muaoma -- Kahu  
 *No Beckwith translation supplied.*  
-Muaoma.                                                                Kahu (servant).                              
+Muaoma.                                            Kahu (servant).                              
 
-The husband.--The meaning.  Wife.--The meaning.                                   
+The husband.--The meaning.             Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_                                    
                                                                                   
 Line 1400: Muanalu -- Anoano  
 *No Beckwith translation supplied.*  
-Muanalu.                    Anoano (holy).                               
+Muanalu.                               Anoano (holy).                               
 Line 1401: Muanaluhaki -- Nalu  
 *No Beckwith translation supplied.*  
-Muanaluhaki.                Nalu (surf).                                          
+Muanaluhaki.                           Nalu (surf).                                          
 Line 1402: Muanalupopo‘i -- Poki‘i  
 *No Beckwith translation supplied.*  
-Muanalupopoi.               Pokii (younger in birth).                             
+Muanalupopoi.                          Pokii (younger in birth).                             
 Line 1403: Muanalukalohe -- Nanaku  
 *No Beckwith translation supplied.*  
-Muanalukalohe.              Nanaku.                                               
+Muanalukalohe.                         Nanaku.                                               
 Line 1404: Muanaluha‘ikakala -- Moku  
 *No Beckwith translation supplied.*  
-Muanaluhaikakala.           Moku (island, cut, pulled apart).                     
+Muanaluhaikakala.                      Moku (island, cut, pulled apart).                     
 Line 1405: Mualala -- Ho‘onahu  
 *No Beckwith translation supplied.*  
-Mualala.                    Hoonahu (pretend to bite).                            
+Mualala.                               Hoonahu (pretend to bite).                            
 Line 1406: Muahaipu -- ‘Api‘api  
 *No Beckwith translation supplied.*  
-Muahaipu.                   Apiapi (gills of a fish).                             
+Muahaipu.                              Apiapi (gills of a fish).                             
 Line 1407: Muapule -- Mahoa  
 *No Beckwith translation supplied.*  
-Muapule.                    Mahoa.                                                
+Muapule.                               Mahoa.                                                
 Line 1408: Muahanu‘ala -- Ahia  
 *No Beckwith translation supplied.*  
-Muahanuala.                 Ahia (lighter color, how many).                       
+Muahanuala.                            Ahia (lighter color, how many).                       
 Line 1409: Muaikekele -- Mulemule  
 *No Beckwith translation supplied.*  
-Muaikekele.                 Mulemule (easily offended).                           
+Muaikekele.                            Mulemule (easily offended).                           
 Line 1410: Muaipoipo -- ‘Akia  
 *No Beckwith translation supplied.*  
-Muaipoipo.                  Akia (bit in two, a tree).                            
+Muaipoipo.                             Akia (bit in two, a tree).                            
 Line 1411: Muakalaiki‘i -- Lena  
 *No Beckwith translation supplied.*  
-Muakalaikii.                Lena (yellowish).                                     
+Muakalaikii.                           Lena (yellowish).                                     
 Line 1412: Muakawa‘a -- ‘Auhuhu  
 *No Beckwith translation supplied.*  
-Muaikawaa.                  Auhuhu (poisonous shrub).                             
+Muaikawaa.                             Auhuhu (poisonous shrub).                             
 Line 1413: Muaiopele -- La‘aumele  
 *No Beckwith translation supplied.*  
-Muaiopele.                  Laaumele (singing wood).                              
+Muaiopele.                             Laaumele (singing wood).                              
 Line 1414: Muaiopola -- La‘ala‘au  
 *No Beckwith translation supplied.*  
-Muaiopola.                  Laalaau (woody, branches).                            
+Muaiopola.                             Laalaau (woody, branches).                            
 Line 1415: Muapali -- Wahine  
 *No Beckwith translation supplied.*  
-Muapali.                    Wahine (woman, female).                               
+Muapali.                               Wahine (woman, female).                               
 Line 1416: Muaho‘opo -- Kikana  
 *No Beckwith translation supplied.*  
-Muahoopo.                   Kikana.                                               
+Muahoopo.                              Kikana.                                               
 Line 1417: Muaunu -- Ui-a  
 *No Beckwith translation supplied.*  
-Muaunu.                     Ui-a (beautiful or charming).                         
+Muaunu.                                Ui-a (beautiful or charming).                         
 Line 1418: Muaha‘i -- Kahuli  
 *No Beckwith translation supplied.*  
-Muahai.                     Kahuli (changeable, overturned).                      
+Muahai.                                Kahuli (changeable, overturned).                      
 Line 1419: Mualupe -- ‘Eli‘eli  
 *No Beckwith translation supplied.*  
-Mualupe.                    Elieli (dig, dug).                                    
+Mualupe.                               Elieli (dig, dug).                                    
 Line 1420: Muakala -- Mo‘omo‘o  
 *No Beckwith translation supplied.*  
-Muakala.                    Moomoo (soaking and bundling of tapa before pounding).  
+Muakala.                               Moomoo (soaking and bundling of tapa before pounding).  
 Line 1421: Muawekea -- Kapu  
 *No Beckwith translation supplied.*  
-Muawekea.                   Kapu (sacred).                                        
+Muawekea.                              Kapu (sacred).                                        
 Line 1422: Muahilo -- Lau  
 *No Beckwith translation supplied.*  
-Muahilo.                    Lau (leaf).                                           
+Muahilo.                               Lau (leaf).                                           
 Line 1423: Muakahu -- Eiwa  
 *No Beckwith translation supplied.*  
-Muakahu.                    Eiwa (nine).                                          
+Muakahu.                               Eiwa (nine).                                          
 Line 1424: Muakahukahu -- Hiliahu  
 *No Beckwith translation supplied.*  
-Muakahukahu.                Hiliahu (weave the cloth).                            
+Muakahukahu.                           Hiliahu (weave the cloth).                            
 Line 1425: Mua‘ama‘ama -- Kaomi  
 *No Beckwith translation supplied.*  
-Muaamama.                   Kaomi (press down).                                   
+Muaamama.                              Kaomi (press down).                                   
 Line 1426: Muaahilo -- Auwe  
 *No Beckwith translation supplied.*  
-Muaahilu.                   Auwe (an exclamation, oh!).                           
+Muaahilu.                              Auwe (an exclamation, oh!).                           
 Line 1427: Muaanoa -- Olopule  
 *No Beckwith translation supplied.*  
-Muaanoa.                    Olopule.                                              
+Muaanoa.                               Olopule.                                              
 Line 1428: Muaale‘ale‘a -- Ka‘imai  
 *No Beckwith translation supplied.*  
-Muaalealea.                 Kaimai (led hither).                                  
+Muaalealea.                            Kaimai (led hither).                                  
 Line 1429: Muainakalo -- Kinika  
 *No Beckwith translation supplied.*  
-Muainakalo.                 Kinika.                                               
+Muainakalo.                            Kinika.                                               
 Line 1430: Muaohupu -- Niniha  
 *No Beckwith translation supplied.*  
-Muaohupu.                   Niniha (cross, ill temper).                           
+Muaohupu.                              Niniha (cross, ill temper).                           
 Line 1431: Muaikauka -- Niniahu  
 *No Beckwith translation supplied.*  
-Muaikauka.                  Niniahu.                                              
+Muaikauka.                             Niniahu.                                              
 
-The husband.--The meaning.  Wife.--The meaning.          
+The husband.--The meaning.             Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_           
                                                          
 Line 1432: Muaikumuka -- Moemole  
 *No Beckwith translation supplied.*  
-Muaikumuka.                 Moemole.                     
+Muaikumuka.                            Moemole.                     
 Line 1433: Muaikaunukukanaka -- Mokukaha  
 *No Beckwith translation supplied.*  
-Muaikaunukukanaka.          Mokukaha (wide cut).         
+Muaikaunukukanaka.                     Mokukaha (wide cut).         
 Line 1434: Muaokalele -- Opilopilo  
 *No Beckwith translation supplied.*  
-Muaokalele.                 Opilopilo (stench).          
+Muaokalele.                            Opilopilo (stench).          
 Line 1435: Muaokahaiku -- Meheia  
 *No Beckwith translation supplied.*  
-Muaokahaiku.                Meheia.                      
+Muaokahaiku.                           Meheia.                      
 Line 1436: Muaokahanu‘u -- Kamanuha‘aha‘a  
 *No Beckwith translation supplied.*  
-Muaokahanuu.                Kamanuhaahaa (humble-bird).  
+Muaokahanuu.                           Kamanuhaahaa (humble-bird).  
 Line 1437: Muaokalani -- Lele‘amio  
 *No Beckwith translation supplied.*  
-Muaokalani.                 Leleamio (jump sprightly).   
+Muaokalani.                            Leleamio (jump sprightly).   
 Line 1438: Muamamao -- Aumalani  
 *No Beckwith translation supplied.*  
-Muamamao.                   Aumalani.                    
+Muamamao.                              Aumalani.                    
 Line 1439: Muanu‘unu‘u -- Kahakaua  
 *No Beckwith translation supplied.*  
-Muanuunuu.                  Kahakaua (division of war).  
+Muanuunuu.                             Kahakaua (division of war).  
 Line 1440: Muaokamoi -- Holi  
 *No Beckwith translation supplied.*  
-Muaokamoi.                  Holi (thin).                 
+Muaokamoi           .                  Holi (thin).                 
 Line 1441: Muaokaha‘i -- Haehae  
 *No Beckwith translation supplied.*  
-Muaokahai.                  Haehae (to tear).            
+Muaokahai.                             Haehae (to tear).            
 Line 1442: Muaokeoma -- Mano  
 *No Beckwith translation supplied.*  
-Muaokeoma.                  Mano (four thousand).        
+Muaokeoma.                             Mano (four thousand).        
 Line 1443: Muaokekahai -- Opelele  
 *No Beckwith translation supplied.*  
-Muaokepahai.                Opelele (flying bundle).     
+Muaokepahai.                           Opelele (flying bundle).     
 Line 1444: Muaoka‘oliko -- Ehu  
 *No Beckwith translation supplied.*  
-Muaokaoliko.                Ehu (yellow).                
+Muaokaoliko.                           Ehu (yellow).                
 Line 1445: Muaokapahu -- Kapilipili  
 *No Beckwith translation supplied.*  
-Muaokapahu.                 Kapilipili (paste together). 
+Muaokapahu.                            Kapilipili (paste together). 
 Line 1446: Muaokahana -- Hapoe  
 *No Beckwith translation supplied.*  
-Muaokahana.                 Hapoe.                       
+Muaokahana.                            Hapoe.                       
 Line 1447: Muaokahanai -- Hunu  
 *No Beckwith translation supplied.*  
-Muaokahanai.                Hunu.                        
+Muaokahanai.                           Hunu.                        
 Line 1448: Muaokaipu -- Ohekele  
 *No Beckwith translation supplied.*  
-Muaokaipu.                  Ohekele (watery tube).       
+Muaokaipu.                             Ohekele (watery tube).       
 Line 1449: Mua‘ume‘umeke -- Pukapu  
 *No Beckwith translation supplied.*  
-Muaumeumeke.                Pukapu (sacred couch).       
+Muaumeumeke.                           Pukapu (sacred couch).       
 Line 1450: Muapo‘i -- Ponouli  
 *No Beckwith translation supplied.*  
-Muaapoi.                    Ponouli.                     
+Muaapoi.                               Ponouli.                     
 Line 1451: Muaahuliau -- Lehiwa  
 *No Beckwith translation supplied.*  
-Muaahuliau.                 Lehiwa (to admire).          
+Muaahuliau.                            Lehiwa (to admire).          
 Line 1452: Muaipapio -- Keleauma  
 *No Beckwith translation supplied.*  
-Muaipapio.                  Keleauma.                    
+Muaipapio.                             Keleauma.                    
 Line 1453: Muailoiloi -- Pohopoho  
 *No Beckwith translation supplied.*  
-Muailoiloi.                 Pohopoho (exposing the back).  
+Muailoiloi.                            Pohopoho (exposing the back).  
 Line 1454: Lo‘imua -- Nanio  
 *No Beckwith translation supplied.*  
-Loimua.                     Nanio.                       
+Loimua.                                Nanio.                       
 Line 1455: Lo‘ikahi -- Pae  
 *No Beckwith translation supplied.*  
-Loikahi.                    Pa-e (heard).                
+Loikahi.                               Pa-e (heard).                
 Line 1456: Lo‘ilua -- Pililauhea  
 *No Beckwith translation supplied.*  
-Loilua.                     Pililauhea.                  
+Loilua.                                Pililauhea.                  
 Line 1457: Lo‘ilo‘i -- Manukoha  
 *No Beckwith translation supplied.*  
-Loiloi.                     Manukoha (chirping bird).    
+Loiloi.                                Manukoha (chirping bird).    
 Line 1458: Lo‘ikalakala -- Kanaia  
 *No Beckwith translation supplied.*  
-Loikalakala.                Kanaia (it is his).          
+Loikalakala.                           Kanaia (it is his).          
 Line 1459: Lo‘iloloi -- Naio  
 *No Beckwith translation supplied.*  
-Loiloloi.                   Naio (worms).                
+Loiloloi.                              Naio (worms).                
 Line 1460: Lo‘ilolohi -- Puhimaka  
 *No Beckwith translation supplied.*  
-Loilolohi.                  Puhimaka (raw eels).         
+Loilolohi.                             Puhimaka (raw eels).         
 Line 1461: Lo‘inuilo‘i -- Kalino  
 *No Beckwith translation supplied.*  
-Loinuiloi.                  Kalino (rope for throttling).  
+Loinuiloi.                             Kalino (rope for throttling).  
 Line 1462: Lo‘ilo‘ikaka -- Kalaniahu  
 *No Beckwith translation supplied.*  
-Loiloikaka.                 Kalaniahu (robe of heaven).  
+Loiloikaka.                            Kalaniahu (robe of heaven).  
 Line 1463: Lo‘iakama -- Poepoe  
 *No Beckwith translation supplied.*  
-Loiakama.                   Poepoe (round).              
+Loiakama.                              Poepoe (round).              
 Line 1464: Lo‘iiopoe -- Hiloauama  
 *No Beckwith translation supplied.*  
-Loiiopoe.                   Hiloauama.                   
+Loiiopoe.                              Hiloauama.                   
 Line 1465: Lo‘ilo‘inui -- Uhuau  
 *No Beckwith translation supplied.*  
-Loiloinui.                  Uhuau.                       
+Loiloinui.                             Uhuau.                       
 
-The husband.--The meaning.  Wife.--The meaning.                        
+The husband.--The meaning.             Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_                         
                                                                        
 Line 1466: Lo‘ipouli -- Moku  
 *No Beckwith translation supplied.*  
-Loipouli.                   Muku (short, stubby).                      
+Loipouli.                              Muku (short, stubby).                      
 Line 1467: Lo‘imia -- Leleiona  
 *No Beckwith translation supplied.*  
-Loimia.                     Leleiona (fly towards him).                
+Loimia.                                Leleiona (fly towards him).                
 Line 1468: Lo‘iapele -- Haikala  
 *No Beckwith translation supplied.*  
-Loiapele.                   Haikala.                                   
+Loiapele.                              Haikala.                                   
 Line 1469: Lo‘iahemahema -- Nakulu  
 *No Beckwith translation supplied.*  
-Loiahemahema.               Nakulu (the drops).                        
+Loiahemahema.                          Nakulu (the drops).                        
 Line 1470: Lo‘iakio -- Kukala  
 *No Beckwith translation supplied.*  
-Loiakio.                    Kukala (proclaim).                         
+Loiakio.                               Kukala (proclaim).                         
 Line 1471: Lo‘ialuluka -- Hi‘ipoi  
 *No Beckwith translation supplied.*  
-Loialuluka.                 Hiipoi.                                    
+Loialuluka.                            Hiipoi.                                    
 Line 1472: Lo‘iahamahamau -- Olo  
 *No Beckwith translation supplied.*  
-Loiahamahamau.              Olo (baggy, water jug).                    
+Loiahamahamau.                         Olo (baggy, water jug).                    
 Line 1473: Lo‘i‘olo‘olo -- Papa‘a  
 *No Beckwith translation supplied.*  
-Loioloolo.                  Papaa (slab).                              
+Loioloolo.                             Papaa (slab).                              
 Line 1474: Lo‘ikolohonua -- Hano  
 *No Beckwith translation supplied.*  
-Loikolohonua.               Hano (asthma).                             
+Loikolohonua.                          Hano (asthma).                             
 Line 1475: Lo‘iipulau -- Mahoe  
 *No Beckwith translation supplied.*  
-Loiipulau.                  Mahoe (twins).                             
+Loiipulau.                             Mahoe (twins).                             
 Line 1476: Lo‘ianomeha -- Kaloa  
 *No Beckwith translation supplied.*  
-Loianomeha.                 Kaloa (24th, 25th, 26th night of the moon).  
+Loianomeha.                            Kaloa (24th, 25th, 26th night of the moon).  
 Line 1477: Lo‘ikinikini -- Pokipoki  
 *No Beckwith translation supplied.*  
-Loikinikini.                Pokipoki (a bug).                          
+Loikinikini.                           Pokipoki (a bug).                          
 Line 1478: Lo‘imanomano -- Kinikahi  
 *No Beckwith translation supplied.*  
-Loimanomano.                Kinikahi.                                  
+Loimanomano.                           Kinikahi.                                  
 Line 1479: Lo‘ilo‘imai -- Holiolio  
 *No Beckwith translation supplied.*  
-Loiloimai.                  Holiolio (passing objects).                
+Loiloimai.                             Holiolio (passing objects).                
 Line 1480: Lo‘ilo‘ikapu -- Alohi  
 *No Beckwith translation supplied.*  
-Loiloikapu.                 Alohi (dazzling).                          
+Loiloikapu.                            Alohi (dazzling).                          
 Line 1481: Lo‘ilo‘ikala -- Aheaka  
 *No Beckwith translation supplied.*  
-Loiloikala.                 Aheaka (it is a shadow).                   
+Loiloikala.                            Aheaka (it is a shadow).                   
 Line 1482: Lo‘ilo‘inahu -- Niao  
 *No Beckwith translation supplied.*  
-Loiloinahu.                 Naio (sill, edge).                         
+Loiloinahu.                            Naio (sill, edge).                         
 Line 1483: Lo‘ilo‘ipili -- Wali  
 *No Beckwith translation supplied.*  
-Loiloipili.                 Wali (ground).                             
+Loiloipili.                            Wali (ground).                             
 Line 1484: Lo‘iahuahu -- Waleho‘oke  
 *No Beckwith translation supplied.*  
-Loiahuahu.                  Walihooke.                                 
+Loiahuahu.                             Walihooke.                                 
 Line 1485: Lo‘ikulukulu -- Nohopali  
 *No Beckwith translation supplied.*  
-Loikulukulu.                Nohopali (sit on precipice).               
+Loikulukulu.                           Nohopali (sit on precipice).               
 Line 1486: Lo‘ipilipa -- Nohinohi  
 *No Beckwith translation supplied.*  
-Loipilipa.                  Nohinohi (variegated).                     
+Loipilipa.                             Nohinohi (variegated).                     
 Line 1487: Lo‘ipilipili -- Mahealani  
 *No Beckwith translation supplied.*  
-Loipilipili.                Mahealani (16th night of the moon).        
+Loipilipili.                           Mahealani (16th night of the moon).        
 Line 1488: Lo‘ihalalu -- Palimu  
 *No Beckwith translation supplied.*  
-Loihalalu.                  Palimu (mount of midgets).                 
+Loihalalu.                             Palimu (mount of midgets).                 
 Line 1489: Lo‘ihalululu -- Kahiona  
 *No Beckwith translation supplied.*  
-Loihalululu.                Kahiona (countenance).                     
+Loihalululu.                           Kahiona (countenance).                     
 Line 1490: Lo‘ilo‘ilele -- Lukama  
 *No Beckwith translation supplied.*  
-Loiloilele.                 Lukama.                                    
+Loiloilele.                            Lukama.                                    
 Line 1491: Lo‘ilo‘ipa -- Kahikahi  
 *No Beckwith translation supplied.*  
-Loiloipa.                   Kahikahi (to rub, smooth).                 
+Loiloipa.                              Kahikahi (to rub, smooth).                 
 Line 1492: Lo‘ipakeke -- Waikeha  
 *No Beckwith translation supplied.*  
-Loipakeke.                  Waikeha.                                   
+Loipakeke.                             Waikeha.                                   
 Line 1493: Lo‘iloipo -- Manini  
 *No Beckwith translation supplied.*  
-Loiloipo.                   Manini (a fish).                           
+Loiloipo.                              Manini (a fish).                           
 Line 1494: Lo‘ilo‘ipololo -- Hinalo  
 *No Beckwith translation supplied.*  
-Loiloipololo.               Hinalo (the flower of the pandanus).       
+Loiloipololo.                          Hinalo (the flower of the pandanus).       
 Line 1495: Lo‘iipololo -- Oamaamaku  
 *No Beckwith translation supplied.*  
-Loiipololo.                 Oamaamaku (schools of mullet).             
+Loiipololo.                            Oamaamaku (schools of mullet).             
 Line 1496: Lo‘ikamakele -- Lahi  
 *No Beckwith translation supplied.*  
-Loikamakele.                Lahi (a species of banana).                
+Loikamakele.                           Lahi (a species of banana).                
 Line 1497: Lo‘ihi‘aloa -- Keleakaku  
 *No Beckwith translation supplied.*  
-Loihialoa.                  Keleakaku.                                 
+Loihialoa.                             Keleakaku.                                 
 
-The husband.--The meaning  Wife.--The meaning.                        
+The husband.--The meaning                    Wife.--The meaning.  _Italicized Header in Queen Liliʻuokalani's translation_                         
                                                                       
 Line 1498: Lo‘imanuwa -- Lahipoko  
 *No Beckwith translation supplied.*  
-Loimanuwa.                 Lahipoko (short banana).                   
+Loimanuwa.                                   Lahipoko (short banana).                   
 Line 1499: Lo‘ikalokalo -- Pauha  
 *No Beckwith translation supplied.*  
-Loikalokalo.               Pauha (disappoint).                        
+Loikalokalo.                                 Pauha (disappoint).                        
 Line 1500: Lo‘i‘ihi‘ihi -- Kaheka  
 *No Beckwith translation supplied.*  
-Loiihiihi.                 Kaheka (pits in the rocks on seashores).   
+Loiihiihi.                                   Kaheka (pits in the rocks on seashores).   
 Line 1501: Lo‘ihilimau -- Pi‘opi‘o  
 *No Beckwith translation supplied.*  
-Loihilimau.                Piopio (the cry of chicks).                
+Loihilimau.                                  Piopio (the cry of chicks).                
 Line 1502: Lo‘imoemoe -- Ho‘okaukau  
 *No Beckwith translation supplied.*  
-Loimoemoe.                 Hookaukau (about to sleep).                
+Loimoemoe.                                   Hookaukau (about to sleep).                
 Line 1503: Lo‘ipilopilo -- Ho‘oiloli  
 *No Beckwith translation supplied.*  
-Loipilopilo.               Hooiloli (pregnancy).                      
+Loipilopilo.                                 Hooiloli (pregnancy).                      
 Line 1504: Lo‘iko‘iko‘i -- Puapua  
 *No Beckwith translation supplied.*  
-Loikoikoi.                 Puapua (birds' tail feathers).             
+Loikoikoi.                                   Puapua (birds' tail feathers).             
 Line 1505: Lo‘iko‘i‘i‘i -- Mahiapo  
 *No Beckwith translation supplied.*  
-Loikoiii.                  Mahiapo (work till night).                 
+Loikoiii.                                    Mahiapo (work till night).                 
 Line 1506: Lo‘iloloilo -- Kulukau  
 *No Beckwith translation supplied.*  
-Loiloloilo.                Kulukau (hanging drops).                   
+Loiloloilo.                                  Kulukau (hanging drops).                   
 Line 1507: Lo‘iloloilo[?] -- Kupe‘e  
 *No Beckwith translation supplied.*  
-Loiloloilo.                Kupee (bracelets, anklets).                
+Loiloloilo.                                  Kupee (bracelets, anklets).                
 Line 1508: Lo‘iloloikapu -- Kealanu‘u  
 *No Beckwith translation supplied.*  
-Loiloloikapu.              Kealanuu (terraced path).                  
+Loiloloikapu.                                Kealanuu (terraced path).                  
 Line 1509: Lo‘ilalolo -- Kinana  
 *No Beckwith translation supplied.*  
-Loilalolo.                 Kinana (brood of chickens).                
+Loilalolo.                                   Kinana (brood of chickens).                
 Line 1510: Lo‘ilo‘inaka -- Pulelehu  
 *No Beckwith translation supplied.*  
-Loiloinaka.                Pulelehu (like ashes).                     
+Loiloinaka.                                  Pulelehu (like ashes).                     
 Line 1511: Lo‘ilo‘ila -- Milimili  
 *No Beckwith translation supplied.*  
-Loiloila.                  Milimili (handle, fondle).                 
+Loiloila.                                    Milimili (handle, fondle).                 
 Line 1512: Lo‘ilo‘ikopea -- Apoapoahi  
 *No Beckwith translation supplied.*  
-Loiloikopea.               Apoapoahi (catching fire).                 
+Loiloikopea.                                 Apoapoahi (catching fire).                 
 Line 1513: Lo‘iimauamaua -- Pola  
 *No Beckwith translation supplied.*  
-Loiimaumaua.               Pola (centre platform of a double canoe).  
+Loiimaumaua.                                 Pola (centre platform of a double canoe).  
 Line 1514: Lo‘iikuki‘i -- Houpo  
 *No Beckwith translation supplied.*  
-Loiikukii.                 Houpo (breast, bosom).                     
+Loiikukii.                                   Houpo (breast, bosom).                     
 Line 1515: Lo‘iimanini -- Kakiwi  
 *No Beckwith translation supplied.*  
-Loiimanini.                Kakiwi (plant slips of branches).          
+Loiimanini.                                  Kakiwi (plant slips of branches).          
 Line 1516: Lo‘iipukapuka -- Polinahe  
 *No Beckwith translation supplied.*  
-Loiipukapuka.              Polinahe (small stomach).                  
+Loiipukapuka.                                Polinahe (small stomach).                  
 Line 1517: Lo‘iomilu -- Ipulau  
 *No Beckwith translation supplied.*  
-Loiomilu.                  Ipulau (bowl of leaves).                   
+Loiomilu.                                    Ipulau (bowl of leaves).                   
 Line 1518: Lo‘iomiliapo -- Nahawiliea  
 *No Beckwith translation supplied.*  
-Loiomiliapo.               Nahawiliea.                                
+Loiomiliapo.                                 Nahawiliea.                                
 Line 1519: Lo‘iomakana -- Ho‘olaumiki  
 *No Beckwith translation supplied.*  
-Loiomakana.                Hoolaumiki.                                
+Loiomakana.                                  Hoolaumiki.                                
 Line 1520: Lo‘iokanaloa -- Palahalaha  
 *No Beckwith translation supplied.*  
-Loiokanaloa.               Palahalaha (flat).                         
+Loiokanaloa.                                 Palahalaha (flat).                         
 Line 1521: Lo‘ioki‘iki‘i -- Hulikahikeoma  
 *No Beckwith translation supplied.*  
-Loiokiikii.                Hulikahikeoma.                             
+Loiokiikii.                                  Hulikahikeoma.                             
 Line 1522: Lo‘iihi‘ikua -- Kahiliapoapo  
 *No Beckwith translation supplied.*  
-Loiihiikua.                Kahiliapoapo (brush and catch).            
+Loiihiikua.                                  Kahiliapoapo (brush and catch).            
 Line 1523: Lo‘iihi‘ialo -- Kaheihei  
 *No Beckwith translation supplied.*  
-Loiihiialo.                Kaheihei (the race).                       
+Loiihiialo.                                  Kaheihei (the race).                       
 Line 1524: Lo‘iokanaha -- Hilipalahalaha  
 *No Beckwith translation supplied.*  
-Loiokanaha.                Hilipalahalaha (broad braid).              
+Loiokanaha.                                  Hilipalahalaha (broad braid).              
 Line 1525: Lo‘iikeluea -- Apuwaiolika  
 *No Beckwith translation supplied.*  
-Loiikeluea.                Apuwaiolika (draught of water).            
+Loiikeluea.                                  Apuwaiolika (draught of water).            
 Line 1526: Lo‘iopilihala -- Ohiohikahanu  
 *No Beckwith translation supplied.*  
-Loiopilihala.              Ohiohikahanu (quick breath).               
+Loiopilihala.                                Ohiohikahanu (quick breath).               
 Line 1527: Lo‘iomalelewa‘a -- Palakeaka  
 *No Beckwith translation supplied.*  
-Loiomalelewaa.             Palakeaka (stained shadow).                
+Loiomalelewaa.                               Palakeaka (stained shadow).                
 Line 1528: Lo‘ii‘ele‘ele -- Mimika  
 *No Beckwith translation supplied.*  
-Loiieleele.                Mimika.                                    
+Loiieleele.                                  Mimika.                                    
 Line 1529: Lo‘ipo -- Kilika, hanau o  
 *No Beckwith translation supplied.*  
-Loipo.                     Kilika (thrash around).                    
+Loipo.                                       Kilika (thrash around).                    
 
 Line 1530: Pola‘a--  
 Born was Pola‘a  
