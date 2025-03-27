@@ -27,7 +27,7 @@ Line 0385: O ke alo o ku‘u milimili nanea
 The front of my cherished one [?]  
 With faces in front and claws to feel  
 Line 0386: O panoia, o panopano  
-He is dark, splendid,
+He is dark, splendid,  
 Of darkness, of darkness,  
 Line 0387: O kane o ka Popanopano i hanau  
 Popanopano is born as a male [?]  
@@ -109,7 +109,7 @@ The night gives birth to mud dwellers
 Night gave birth to slush,  
 Line 0412: Kali ka po ia mehe[u]he[u]  
 The night lingers for track leavers  
-So the night must wait for motion.
+So the night must wait for motion.  
 
 ### Third verse
 
@@ -142,7 +142,7 @@ Born is the sea-borer [Wili] living in the sea
 The Wili was born and lived in the sea;  
 Line 0421: Kia‘i ia e ka Wiliwili noho i uka  
 Guarded by the Wiliwili tree living on land  
-Guarded by the Wiliwili that grew on land (tiger's claws tree). p. 17  
+Guarded by the Wiliwili that grew on land (tiger's claws tree).  
 Line 0422: He po uhe‘e i ka wawa  
 Darkness slips into light  
 A night of flight by noises  
@@ -277,7 +277,7 @@ Earth and water are the food of the plant
 Through a channel; la-i is food and creeps;  
 Line 0460: O ke Akua ke komo, ‘a‘oe komo kanaka  
 The god enters, man can not enter  
-So the gods may enter, but not man.
+So the gods may enter, but not man.  
 
 ### Eleventh verse
 
