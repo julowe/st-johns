@@ -1,0 +1,79 @@
+1735. Paliku ke kane -- Paliha‘i ka wahine  ASDF_No Beckwith translation supplied._  
+1736. Palika‘a -- Palihiolo  ASDF_No Beckwith translation supplied._  
+1737. Lakaunihau -- Keaona  ASDF_No Beckwith translation supplied._  
+1738. Nalaunu‘u -- Pu‘ukahalelo  ASDF_No Beckwith translation supplied._  
+1739. Kapapanuinuiauakea -- Ka‘ina‘inakea  ASDF_No Beckwith translation supplied._  
+1740. Kapapaku -- Kapapamoe  ASDF_No Beckwith translation supplied._  
+1741. Kapapaluna -- Kapapailalo  ASDF_No Beckwith translation supplied._  
+1742. ‘Olekailuna -- Kapapapa‘a  ASDF_No Beckwith translation supplied._  
+1743. Kapapanuialeka -- Kapapahanauua  ASDF_No Beckwith translation supplied._  
+1744. Kapapanuikahulipali -- Kapapai‘anapa  ASDF_No Beckwith translation supplied._  
+1745. Kapapanuiakalaula -- Kapapaholahola  ASDF_No Beckwith translation supplied._  
+1746. Kapapaki‘ilaula -- Kapapaiakea  ASDF_No Beckwith translation supplied._  
+1747. Kapapai‘aoa -- Kapapapoukahi  ASDF_No Beckwith translation supplied._  
+1748. Kapapauli -- Kapapapoha  ASDF_No Beckwith translation supplied._  
+1749.     [Hanau] o Kapapa-pahu ka mua, Ka-po-he‘enalu mai kona hope noho  ASDF_No Beckwith translation supplied._  
+1750. Ka-po-he‘enalu ke kane -- Kamaulika‘ina‘ina ka wahine  ASDF_No Beckwith translation supplied._  
+1751. Kaho‘okokohipapa -- Mehakuakoko  ASDF_No Beckwith translation supplied._  
+1752. Papa‘iao -- Mauluikonanui  ASDF_No Beckwith translation supplied._  
+1753. Papahe‘enalu -- Hanauna  ASDF_No Beckwith translation supplied._  
+1754.     Hanau a iloko o Pu‘ukahonualani o Li‘aikuhonua, o kona muli mai, o Ohomaila  ASDF_No Beckwith translation supplied._  
+1755. Ohomaili ke kane -- Honuakau ka wahine  ASDF_No Beckwith translation supplied._  
+1756. Kehaukea -- Kualeikahu  ASDF_No Beckwith translation supplied._  
+1757. Mohala -- Lu‘ukaualani  ASDF_No Beckwith translation supplied._  
+1758. Kahakuiaweaukelekele -- Hinawainonolo  ASDF_No Beckwith translation supplied._  
+1759. Kahokukelemoana -- Hinawai‘oki  ASDF_No Beckwith translation supplied._  
+1760. Mulinaha -- ‘Ipo‘iASDF          Mulinaha was the husband, ‘Ipo‘i the wife  
+1761.     Hanau o Laumiha he wahine, i noho ia KekahakualaniASDF              Born was Laumiha a woman, lived with Ku-ka-haku-a-lani ["Ku-the-lord-of-heaven"]  
+1762.     Hanau o Kaha‘ula he wahine, i noho ia KuhulionuaASDF              Born was Kaha‘ula a woman, lived with Ku-huli-honua ["Ku-overturning-earth"]  
+1763.     Hanau o Kahakauakoko he wahine, i noho ia Kulani‘ehuASDF              Born was Kahakauakoko a woman, lived with Ku-lani-‘ehu ["Ku-(the)-brown-haired-chief"]  
+1764.     Hanau o Haumea he wahine, i noho ia Kanaloa-akuaASDF              Born was Haumea a woman, lived with the god Kanaloa  
+1765.     Hanau o Kuleauakahi he kane, i noho ia Kuaimehani he wahineASDF              Born was Ku-kaua-kahi a male, lived with Kuaimehani  
+1766.     Hanau o KauahulihonuaASDF              Born was Kaua-huli-honua  
+1767.     Hanau o Hinamanoulua‘e he wahineASDF              Born was Hina-mano-ulua‘e ["Woman-of-abundance-of food-plants"] a woman  
+1768.     Hanau o Huhune he wahineASDF              Born was Huhune ["Dainty"] a woman  
+1769.     Hanau o Haunu‘u he wahineASDF              Born was Haunu‘u a woman  
+1770.     Hanau o Haulani he wahineASDF              Born was Haulani a woman  
+1771.     Hanau o Hikapuanaiea he wahine, ike [i]a Haumea, o Haumea no iaASDF              Born was Hikapuanaiea ["Sickly"] a woman; Haumea was recognized, this was Haumea  
+1772. O Haumea kino paha‘oha‘o, o Haumea kino papawaluASDF          Haumea of mysterious forms, Haumea of eightfold forms  
+1773. O Haumea kino papalehu, o Haumea kino papamanoASDF          Haumea of four-hundred-thousand-fold forms, Haumea of four-thousand-fold forms  
+1774. I manomano i ka lehulehu o na kinoASDF          With thousands upon thousands of forms  
+1775. Ia Hikapuanaiea pa umauma ka laniASDF          With Hikapuanaiea the heavenly one became barren  
+1776. Pa ilio ia wahine o Nu‘umeaASDF          She lived like a dog, this woman of Nu‘umea [?]  
+1777. O Nu‘umea ka ‘aina, o Nu‘upapakini lea honuaASDF          Nu‘umea the land, Nu‘u-papa-kini the division  
+1778. Laha Haumea i na mo‘opunaASDF          Haumea spread through her grandchildren  
+1779. I‘o Ki‘o pale ka ma‘i, ka‘a ka loloASDF          With Ki‘o she became barren, ceased bearing children  
+1780. Oia wahine hanau manawa i na keikiASDF          This woman bore children through the fontanel  
+1781. Hanau keiki puka ma ka loloASDF          Her children came out from the brain  
+1782. Oia wahine no o ‘I‘ilipo o Nu‘umeaASDF          She was a woman of ‘I‘ilipo in Nu‘umea  
+1783. I noho io MulinahaASDF          She lived with Mulinaha  
+1784. Hanau Laumiha hanau ma ka loloASDF          Born was Laumiha ["Intense-silence"] born from the brain  
+1785. O Kaha‘ula wahine hanau ma ka loloASDF          Born was the woman Kaha‘ula ["Erotic-dreams"] from the brain  
+1786. O Kahakauakoko hanau ma ka loloASDF          Born was Ka-haka-uakoko ["The-perch-of-the-low-lying rainbow"] from the brain  
+1787. O Haumea o ua wahine la no iaASDF          Haumea was this, that same woman  
+1788. Noho ia Kanaloa-akuaASDF          She lived with the god Kanaloa  
+1789. O Kauakahi-akua no a ka loloASDF          The god Kaua-kai ["First-strife"] was born from the brain  
+1790. Ho‘ololo ka hanauna a ia wahineASDF          Born from the brain were the offspring of that woman  
+1791. Ha‘ae wale ka hanauna loloASDF          Drivelers were the offspring from the brain  
+1792. O Papa-huli-honuaASDF          Papa-seeking-earth  
+1793. O Papa-huli-laniASDF          Papa-seeking-heaven  
+1794. O Papa-nui-hanau-mokuASDF          Great-Papa-giving-birth-to-islands  
+1795. O Papa i noho ia WakeaASDF          Papa lived with Wakea  
+1796. Hanau Ha‘alolo ka wahineASDF          Born was the woman Ha‘alolo  
+1797. Hanau inaina ke ke‘uASDF          Born was jealousy, anger  
+1798. Ho‘opunini ia Papa e WakeaASDF          Papa was deceived by Wakea  
+1799. Kauoha i ka la i ka malamaASDF          He ordered the sun, the moon  
+1800. O ka po io Kane no muli neiASDF          The night to Kane for the younger  
+1801. O ka po io Hilo no mua iaASDF          The night to Hilo for the first-born  
+1802. Kapu kipaepae ka hanu‘uASDF          Taboo was the house platform, the place for sitting  
+1803. Ka hale io Wakea i noho aiASDF          Taboo the house where Wakea lived  
+1804. Kapu ka ‘ai lani makuaASDF          Taboo was intercourse with the divine parent  
+1805. Kapu ka ‘ape ka mane‘one‘oASDF          Taboo the taro plant, the acrid one  
+1806. Kapu ka ‘akia ka ‘awa‘awaASDF          Taboo the poisonous ‘akia plant  
+1807. Kapu ka ‘auhuhu ka mulemuleaASDF          Taboo the narcotic auhuhu plant  
+1808. Kapu ka ‘uhaloa no ke ola loaASDF          Taboo the medicinal uhaloa  
+1809. Kapu ka la‘alo ka manewanewaASDF          Taboo the bitter part of the taro leaf  
+1810. Kapu ka haloa ku ma ka pe‘aASDF          Taboo the taro stalk that stood by the woman’s taboo house  
+1811. Kanu ia Haloa ulu hahaloaASDF          Haloa was buried [there], a long taro stalk grew  
+1812. O ka lau o Haloa i ke ao laASDF          The offspring of Haloa [born] into the day  
+1813.     Pu--ka--ASDF              Came forth  
