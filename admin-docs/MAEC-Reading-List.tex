@@ -1,0 +1,1223 @@
+\documentclass{article}
+\usepackage[calc,useregional]{datetime2}
+
+% \usepackage[T1]{fontenc}
+% \usepackage[utf8]{inputenc}
+    % \usepackage{ucs}
+    % \usepackage[utf8x]{inputenc}
+% \usepackage{fontspec}
+ % \usepackage{fontsetup} % New Computer Modern
+% \usepackage{cm-unicode} % not installed by default with texworks at least
+\usepackage{fontspec}
+% \setmainfont{Times New Roman}
+
+% TODO:
+% check all dashes are -- not just -.
+% check spacing around dashes
+% check for more diacritics??
+% update the comemntary and opponent sections that don't quite make sense
+% get feedback on changes to commentary and opponent section and if they make more sense with new changes
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%         Edit these values
+%%
+
+\title{Eastern Classics Reading List 2024-2025}
+\author{St. John's Santa Fe Graduate Institute}
+\date{Updated: 2025-01-25}
+
+\DTMsavedate{fall-start}{2024-09-02}
+\DTMsavedate{spring-start}{2025-01-20}
+\DTMsavedate{summer-start}{2025-06-16}
+\DTMsavedate{fall-precept1-start}{2024-09-03}
+\DTMsavedate{fall-precept2-start}{2024-10-29}
+\DTMsavedate{summer-precept-start}{2025-06-16}
+
+%date for break are inclusive, i.e. there are no classes on start or end dates
+\DTMsavedate{break-start-thanksgiving}{2024-11-27}
+\DTMsavedate{break-end-thanksgiving}{2024-12-01}
+\DTMsavedate{break-start-spring}{2025-03-15}
+\DTMsavedate{break-end-spring}{2025-03-30}
+% 2024-12-20 no classes, end of fall semester
+% 2025-05-23 no classes, end of spring semester
+
+%%
+%%
+%%        END: Edit these values 
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% From http://tex.stackexchange.com/questions/34040/graphics-logo-in-headers
+\usepackage{geometry}
+\geometry{letterpaper, margin=0.75in}
+
+%\usepackage{layout}
+%\usepackage{blindtext}
+\usepackage{multicol}
+\usepackage{comment}
+
+% Insert header image
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{fancyhdr} % https://www.overleaf.com/learn/latex/Headers_and_footers#Using_the_fancyhdr_package
+\pagestyle{fancy}
+\fancyhead{} % This is the text to show in the header, right now we want none
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength\headheight{92.0pt}
+\addtolength{\textheight}{-92.0pt}
+\chead{\includegraphics[width=\textwidth]{MAEC-header.png}}
+
+
+% Tex automaticaly adds numbers to the beginning of section, subsections etc (e.g. "1.3 Session 3") but we don't want this, so setting it to 0
+\setcounter{secnumdepth}{0}
+
+% only show first level of sections in Table of Contents (i.e. only `\section{}` commands)
+\setcounter{tocdepth}{1}
+
+% how far apart do we want the columns?
+\setlength{\columnsep}{1cm}
+
+% TODO:
+% make smaller margins
+% possible to use subsection X.n as variable?
+% use uneven columns? https://www.overleaf.com/learn/latex/Multiple_columns#Unbalanced_columns
+% italicize titles
+% copy in text with diacritics etc
+
+\usepackage[calc,useregional]{datetime2}
+
+% TODO:
+% function - \getNextBiweeklyClassDate: just take DoW of date and advance it to next specified day of a class
+% function - \checkIfHoliday - check if date is betwen holidays, if so return last day of holidays+1 - pass output to get next class day
+% function - \printHeaderWithSessionAndDate: increments cntSession (since it starts at 0), then prints text for Session <cntSession> - <currentClassDate> 
+% function - \printHeaderForNextSeminarClassDate: helper function that just runs `\checkIfHoliday{#1}` and then with output, runs `\getNextBiweeklyClassDate{#1}{0}{3}` so that user doesn't need to know about the 0=Monday and 3=Thursday nomenclature.
+% function - \printHeaderForNextPreceptClassDate: helper function that just runs `\checkIfHoliday{#1}` and then with output, runs `\getNextBiweeklyClassDate{#1}{1}{3}` so that user doesn't need to know about the 1=Tuesday and 3=Thursday nomenclature.
+
+% run this at begin of document, so they exist. overwrite currentClassDate later, prob with one of the fall/spring/summer-start dates.
+\newcount\myNextClassRegister
+\DTMsavenow{currentClassDate}%
+\DTMsavenow{lastPrintedClassDate}%
+
+
+% NOTE: "<dow> is the day of the week number starting from 0 for Monday"
+
+
+% function - \printHeaderForNextSeminarClassDate: helper function that just runs `\checkIfHoliday{#1}` and then with output, runs `\getNextBiweeklyClassDate{#1}{0}{3}` so that user doesn't need to know about the 0=Monday and 3=Thursday nomenclature.
+\newcommand{\printHeaderForNextSeminarClassDate}[1]{%
+  %TODO: make checkIfHoliday function, and use it here.
+ %test%\DTMusedate{currentClassDate}%
+  \getNextBiweeklyClassDate{0}{3}{#1}%
+}
+
+
+% function - \printHeaderForNextPreceptClassDate: helper function that just runs `\checkIfHoliday{#1}` and then with output, runs `\getNextBiweeklyClassDate{#1}{1}{3}` so that user doesn't need to know about the 1=Tuesday and 3=Thursday nomenclature.
+\newcommand{\printHeaderForNextPreceptClassDate}[1]{%
+  %TODO: make checkIfHoliday function, and use it here.
+ %test%\DTMusedate{currentClassDate}%
+  \getNextBiweeklyClassDate{1}{3}{#1}%
+}
+
+% TODO: make function to check if session is in holidays?
+% if date is between the two, then return break-end... + 1, else return date
+%
+% Is \texttt{mydate2} (\DTMusedate{mydate2}) before
+% \texttt{mydate} (\DTMusedate{mydate})?
+% \DTMifdate
+% {mydate2}
+% {at most=
+% \DTMfetchyear{mydate}-\DTMfetchmonth{mydate}-\DTMfetchday{mydate}}
+% {yes}{no}.
+
+% function - \checkIfHoliday - check if date is betwen holidays, if so return last day of holidays+1 - pass output to get next class day
+
+
+
+%\getNextBiweeklyClassDate: pass in <DoW of 1st class day>, <DoW of 2nd class day>, and <a Date for which you want to know the next class Date on the appropriate DoW>
+% e.g. :
+%    \DTMsavedate{fall-start}{2024-09-02} % Note: a monday
+%    Usage: type in document `\getNextBiweeklyClassDate{0}{3}{fall-start}`
+%        Notes: 0 and 3 indicate classes are Monday (0), and Thursday (3).
+%    Function Result: In above example, saves the date of "2024-09-05" (because that is the Thursday after the Monday provided) to the variable `currentClassDate` (equivalent to running `\DTMsavedate{currentClassDate}{2024-09-05}`)
+\newcounter{DoWfirst}%
+\newcounter{DoWsecond}%
+\newcounter{daysToAdvance}%
+\newcommand{\getNextBiweeklyClassDate}[3]{%
+  % put DoW for classes in order, in case user inputs {3}{0}{date}
+  \ifnum #1<#2%
+    \setcounter{DoWfirst}{#1}%
+    \setcounter{DoWsecond}{#2}%
+  \else%
+    \setcounter{DoWfirst}{#2}%
+    \setcounter{DoWsecond}{#1}%
+  \fi%
+
+  %figure out how many days to advance any date to get the next biweekly class DoW date
+  \ifnum \DTMfetchdow{#3}<\value{DoWfirst}%
+    % increment date to DoW of DoWfirst
+    \DTMsaveddateoffsettojulianday{#3}{\numexpr\value{DoWfirst}-\DTMfetchdow{#3}}{\myNextClassRegister}%
+    \DTMsavejulianday{currentClassDate}{\number\myNextClassRegister}%
+  \else%
+    \ifnum \DTMfetchdow{#3}<\value{DoWsecond}% %i.e. DoW of currentClassDate is NOT less than DoWfirst, and IS less than DoWsecond
+      % increment date to DoW of DoWsecond
+      \DTMsaveddateoffsettojulianday{#3}{\numexpr\value{DoWsecond}-\DTMfetchdow{#3}}{\myNextClassRegister}%
+      \DTMsavejulianday{currentClassDate}{\number\myNextClassRegister}%
+    \else% %i.e. DoW of currentClassDate is NOT less than DoWfirst, and is NOT less than DoWsecond
+      %advance the date to next DoWfirst after date's DoW
+      %\the\numexpr(7+\value{DoWfirst}-\DTMfetchdow{#3})
+      \setcounter{daysToAdvance}{\numexpr(7+\value{DoWfirst}-\DTMfetchdow{#3})}%
+      \DTMsaveddateoffsettojulianday{#3}{\value{daysToAdvance}}{\myNextClassRegister}%
+      \DTMsavejulianday{currentClassDate}{\number\myNextClassRegister}% 
+    \fi%
+  \fi%
+
+  %now pass that date on to be printed out
+  \printHeaderWithSessionAndDate{currentClassDate}%
+}
+
+
+%% function - \printHeaderForFirstSeminarClassDate: helper function that takes in a specified date, saves it to `currentClassDate`, then just runs \printHeaderWithSessionAndDate - yeah this is an ugly workaround to the function flow I already started coding, but it's what you get at this late hour.
+%\newcommand{\printHeaderForFirstSeminarClassDate}[1]{%
+%  \DTMsavedate{currentClassDate}{#1}
+%}
+
+\newcount\myLastPrintedClassRegister
+%function - \printHeaderWithSessionAndDate: increments cntSession (since it starts at 0), then prints text for Session <cntSession> - <currentClassDate> 
+\newcommand{\printHeaderWithSessionAndDate}[1]{%
+	\stepcounter{cntSession}%
+	\subsection{Session \arabic{cntSession} - \DTMusedate{#1}}%
+
+  \DTMsaveddateoffsettojulianday{#1}{0}{\myLastPrintedClassRegister}%
+  \DTMsavejulianday{lastPrintedClassDate}{\number\myLastPrintedClassRegister}%
+  %These don't work, hence doing the dumb julian dance
+  %\DTMsavedate{lastPrintedClassDate}{#1}
+  %\DTMsavedate{lastPrintedClassDate}{\DTMusedate{#1}}
+}
+
+%function - \printHeaderWithSession: increments cntSession (since it starts at 0), then prints text for Session <cntSession>
+% just in case one doesn't want the dates that I wrote so much code to calculate... Don't use this function and \printHeaderWithSessionAndDate in same doc, it will prob mess up counters/registerss
+\newcommand{\printHeaderWithSession}{%
+	\stepcounter{cntSession}%
+	\subsection{Session \arabic{cntSession}}%
+}
+
+
+
+
+% TODO: make skip session function - advance cntClassOffset (& cntWeek if needed)
+
+% set counter/variable to keep track of which week it is
+\newcounter{cntSemester} % mostly used to reset class session counter
+\newcounter{cntSession}
+\counterwithin{cntSession}{cntSemester}
+
+% Load this package last?!
+\usepackage{hyperref} % make clickable links, e.g. for table of contents https://www.overleaf.com/learn/latex/Hyperlinks
+
+% End - Introductory typesetting configuration
+
+
+
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\thispagestyle{fancy} % instead of a `plain` pagestyle this set it to a style which includes the header on the Table of Contents page
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                              %%
+%%         Fall Seminar         %%
+%%                              %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%page break
+\clearpage
+
+\begin{center}
+	\section{Fall Seminar}
+\end{center}
+\stepcounter{cntSemester}
+
+Chinese names are given in two transliteration systems.
+The Pinyin system is the one in use today both for ordinary life and academic publications, but the older and obsolete Wade-Giles system can be found in some of our available editions, many of which were published more than fifty years ago.
+Both systems are attempts to render the same pronunciations.
+\textbf{Please use translations carried by the campus bookstore and/or those specifically mentioned.}
+
+\begin{multicols}{2}
+
+	\printHeaderWithSessionAndDate{fall-start}
+	Confucius, \emph{Analects}, \#1-7. Skip commentary where present.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Confucius, \emph{Analects}, \#8-13. Skip commentary where present.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Confucius, \emph{Analects}, \#14-20. Skip commentary where present.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Mozi (Mo Tzu), Fascicles 11, 14-17, 19, 20, 26, 27, 31, 32, 35, 39, and 50.
+	Translations by Burton Watson (\emph{Mo Tzu Basic Writings}), Ian Johnston (\emph{The Book of Master Mo}) or Chris Fraser (\emph{The Essential Mozi}) are acceptable.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\emph{Mengzi (Meng Tzu, Mencius)}, Books I -- II (1A, 1B, 2A, 2B).
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\emph{Mengzi (Meng Tzu, Mencius)}, Books III-IV (3A, 3B, 4A, 4B).
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\emph{Mengzi (Meng Tzu, Mencius)}, Books V -VII (5A, 5B, 6A, 6B, 7A, 7B).
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Xunzi (Hsun Tzu), Sections 1, 2, 9, 17. Use translations by Burton Watson or Eric L. Hutton.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Xunzi (Hsun Tzu), Sections 19-23.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Zhuangzi (Chuang Tzu), Chapters 1-3
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Zhuangzi (Chuang Tzu), Chapters 4-7
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Zhuangzi (Chuang Tzu), Chapters 17-19, 26
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Laozi (Lao Tzu), \emph{Dao De Jing (Tao Te Ching),} Chapters 1-37. Commentaries are not necessary.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Laozi (Lao Tzu), \emph{Dao De Jing (Tao Te Ching),} Chapters 38-81. Commentaries are not necessary.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Han Feizi (Han Fei Tzu), Fascicles 20, 21. Available in EC Manual.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\emph{Han Feizi~: Basic Writings,} Translated by Burton Watson. Sections 5-10.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\emph{Han Feizi~: Basic Writings,} Translated by Burton Watson. Sections 12, 13, 17, 18, 49, 50.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\emph{The Rig Veda~: An Anthology} Translated by Wendy Doniger. Sections 10.129, 10.121, 10.90, 10.130, 10.190, 10.81-82, 10.72, 10.14, 10.16, 10.18, 10.154, 10.135, 10.58, 10.71, 10.125, 10.101, 10.151, 1.164, 1.163, 1.162, 10.56
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\emph{The Rig Veda~: An Anthology}. Sections 1.1, 1.26, 5.2, 2.35, 10.51, 10.124, 10.5, 8.79, 9.74, 4.58, 8.48, 10.136, 4.18, 10.28, 1.32, 2.12, 5.83, 7.101, 1.50, 1.160, 1.185, 6.70; 10.10, 1.179, 10.95, 10.85.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\emph{Bṛhadāraṇyaka Upaniṣad,''} Parts I \& II
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\emph{Bṛhadāraṇyaka Upaniṣad,''} Parts III \& IV
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\emph{Bṛhadāraṇyaka Upaniṣad,''} Parts V \& VI
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\begin{center}
+		\textbf{\textit{[ESSAYS DUE]}}
+	\end{center}
+	``Katha Upanisad''
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	% FIXME: what is this from?
+	``Kena Upaniṣad'' and ``Mundaka Upanisad''
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	%FIXME: don't italicize?
+	\emph{``The Nyāya Sūtra,''} in \emph{A Sourcebook in Indian Philosophy}, edited by Sarvepalli Radhakrishnan and Charles A. Moore pp. 358 -- 379.24.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	%FIXME: don't italicize?
+	% FIXME: ṁ Missing character: There is no ṁ (U+1E41) in font [lmroman10-italic]:+tlig;!
+	\emph{``The Vaiśeṣika Sūtra''} and \emph{``The Padārthadharmasaṁgraha,'' in A Sourcebook in Indian Philosophy}, pp. 387 -- 423.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Tattva-Kaumudî, karikas 1 -- 29. Including commentary by Vacaspati Misra. Available in EC Manual.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Tattva-Kaumudî, karikas 30 -- End.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	``The Yoga Philosophy of Patañjali'' in \emph{A Sourcebook in Indian Philosophy}, pp. 454 - 485
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\emph{The Bhagavadgītā in the Mahābhārata} translated by J.A.B. van Buitenen. Pp. 39-107
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\emph{The Bhagavadgītā in the Mahābhārata} translated by J.A.B. van Buitenen. Pp. 107 - 157
+
+
+
+	\begin{comment}
+	Session 1Session 8
+	Confucius, Analects, \#1-7. Skip commentary
+	where present.Xunzi (Hsun Tzu), Sections 1, 2, 9, 17. Use
+	translations by Burton Watson or Eric L.
+	Hutton.
+	Session 2
+	Confucius, Analects, \#8-13. Skip commentary
+	where present.Session 9
+	Session 3Session 10
+	Xunzi (Hsun Tzu), Sections 19-23.
+	Confucius, Analects, \#14-20. Skip
+	commentary where present.
+	Zhuangzi (Chuang Tzu), Chapters 1-3
+	Session 11
+	Session 4
+	Mozi (Mo Tzu), Fascicles 11, 14-17, 19, 20, 26,
+	27, 31, 32, 35, 39, and 50. Translations by
+	Burton Watson (Mo Tzu Basic Writings), Ian
+	Johnston (The Book of Master Mo) or Chris
+	Fraser (The Essential Mozi) are acceptable.
+	Session 5
+	Mengzi (Meng Tzu, Mencius), Books I – II (1A, 1B,
+	2A, 2B).
+	Session 6
+	Zhuangzi (Chuang Tzu), Chapters 4-7
+	Session 12
+	Zhuangzi (Chuang Tzu), Chapters 17-19, 26
+	Session 13
+	Laozi (Lao Tzu), Dao De Jing (Tao Te Ching),
+	Chapters 1-37. Commentaries are not
+	necessary.
+	Session 14
+	Mengzi (Meng Tzu, Mencius), Books III-IV (3A,
+	3B, 4A, 4B).Laozi (Lao Tzu), Dao De Jing (Tao Te Ching),
+	Chapters 38-81. Commentaries are not
+	necessary.
+	Session 7Session 15
+	Mengzi (Meng Tzu, Mencius), Books V -VII (5A,
+	5B, 6A, 6B, 7A, 7B).
+	Han Feizi (Han Fei Tzu), Fascicles 20, 21.
+	Available in EC Manual.
+
+
+	P a g e |2EASTERN CLASSICS
+	SEMINAR
+	FALL – SEMINAR
+	(Continued)
+	Session 16
+	Session 24
+	Han Feizi : Basic Writings, Translated by Burton
+	Watson. Sections 5-10.
+	“Kena Upaniṣ ad” and “Mundaka Upanisad”
+	Session 25
+	Session 17
+	“The Nyāya Sūtra,” in A Sourcebook in Indian
+	Philosophy, edited by Sarvepalli
+	Radhakrishnan and Charles A. Moore pp. 358
+	– 379.24.
+	Han Feizi : Basic Writings, Translated by Burton
+	Watson. Sections 12, 13, 17, 18, 49, 50.
+	Session 18
+	The Rig Veda : An Anthology Translated by
+	Wendy Doniger. Sections 10.129, 10.121,
+	10.90, 10.130, 10.190, 10.81-82, 10.72, 10.14,
+	10.16, 10.18, 10.154, 10.135, 10.58, 10.71,
+	10.125, 10.101, 10.151, 1.164, 1.163, 1.162,
+	10.56Session 26
+	Session 19Tattva-Kaumudî, karikas 1 – 29. Including
+	commentary by Vacaspati Misra. Available in
+	EC Manual.
+	The Rig Veda : An Anthology. Sections 1.1, 1.26,
+	5.2, 2.35, 10.51, 10.124, 10.5, 8.79, 9.74, 4.58,
+	8.48, 10.136, 4.18, 10.28, 1.32, 2.12, 5.83,
+	7.101, 1.50, 1.160, 1.185, 6.70; 10.10, 1.179,
+	“The Vaiśeṣika Sūtra” and “The
+	Padārthadharmasaṁgraha,” in A Sourcebook in
+	Indian Philosophy, pp. 387– 423.
+	Session 27
+	Session 28
+	Tattva-Kaumudî, karikas 30 - End.
+	10.95, 10.85.
+	Session 20
+	Session 29
+	Bṛhadāraṇyaka Upaniṣad,” Parts I \& II“The Yoga Philosophy of Patañjali” in A
+	Sourcebook in Indian Philosophy, pp. 454 - 485
+	Session 21Session 30
+	Bṛhadāraṇyaka Upaniṣad,” Parts III \& IV
+	Session 22
+	The Bhagavadgītā in the Mahābhārata translated
+	by J.A.B. van Buitenen. Pp. 39-107
+	Bṛhadāraṇyaka Upaniṣad,” Parts V \& VISession 31
+	Session 23 [ESSAYS DUE]The Bhagavadgītā in the Mahābhārata translated
+	by J.A.B. van Buitenen. Pp. 107 - 157
+	“Katha Upanisad”
+
+	\end{comment}
+
+\end{multicols}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                              %%
+%%       Spring Seminar         %%
+%%                              %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%page break
+\clearpage
+
+% increment semester count
+\stepcounter{cntSemester}
+
+
+\begin{center}
+	\section{Spring Seminar}
+\end{center}
+
+\begin{multicols}{2}
+
+
+	\printHeaderWithSessionAndDate{spring-start}
+	Kālidāsa, \emph{Kumārasaṃbhava}, in \emph{The Origin of the Young God}, translated by Hank Hifetz. Available in EC Manual.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Kālidāsa, \emph{The Recognition of Śhakuntalā,} translated by W.J. Johnson.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	``The \emph{Dhvanyāloka} of Ānandavardhana with the \emph{Locana} of Abhinavagupta'' selections with supplemental material by Keith and Perry. Through pp. 119. Available in EC Manual.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	``The \emph{Dhvanyāloka} of Ānandavardhana with the \emph{Locana} of Abhinavagupta'' selections with supplemental material by Keith and Perry. Sections through pp. 696. Available in EC Manual.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	%FIXME: m dot is not printing well... 
+	% Missing character: There is no ṁ (U+1E41) in font [lmroman10-italic]:+tlig;!
+	% Missing character: There is no ṁ (U+1E41) in font [lmroman10-regular]:+tlig;!
+	``Pūrva Mīmāṁsā'' in \emph{A Sourcebook in Indian Philosophy} edited by Sarvepalli Radhakrishnan and Charles A. Moore\emph{.} Pp. 486 -- 505.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	``Cārvāka'' in \emph{A Sourcebook in Indian Philosophy.} Pp. 227 -- 249.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	``Discourses on the Nobel Quest,'' ``Discourse to Kālāmas,'' and ``The Greater Discourse on Cause'' from \emph{Early Buddhist Discourses} by John Holder\textbf{.}
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	``The Greater Discourse on the Foundations of Mindfulness,'' ``The Greater Discourse on the Destruction of Craving,'' ``Discourse of the Honeyball'' from \emph{Early Buddhist Discourses.}
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	``Short Discourses from the Saṃyutta Nikāya,'' ``The Shorter Discourse to Māluṅkyaputta,'' ``Discourse on the Parable of the Water Snake,'' ``Discourse to Vacchagotta on Fire,'' from \emph{Early Buddhist Discourses.}
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	``Discourse to Prince Abhaya,'' ``Discourse to Poṭṭhapāda,'' ``Discourse on the Threefold Knowledge,'' from \emph{Early Buddhist Discourses.}
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	``Discourse to Assalāyana,'' ``Discourse to the Layman Sigāla,'' from \emph{Early Buddhist Discourses. Samannaphala Sutta} (``Fruits of the Homeless Life''), available in EC Manual.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\emph{The Lotus Sutra}, Translated by Burton Watson. Chapters 1 (prose portion), 2-7 (only the parable in the last nine paragraphs of the final prose section, beginning with ``Monks, you must understand this.''), and 8.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\emph{The Lotus Sutra}, Translated by Burton Watson. Chapters 10 (prose portion), 11 (verse only), 12-14, 16, 20, 21, 23, 25, 28 (all prose portion).
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Nāgārjuna, Chapters 1, 2, 7.
+
+	Translation options:
+
+	(A)\emph{Mūlamadhyamakakārikā of Nāgārjuna: The
+		Fundamental Wisdom of the Middle Way}, translated by Jay L. Garfield OR
+
+	(B)\emph{The Philosophy of the Middle Way} translation by David J.
+	Kalupahana.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Nāgārjuna, Chapters 10, 12, 17, 18
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Nāgārjuna, Chapters 24, 25, 27
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Vimalakīrti Sūtra, \emph{The Holy Teaching of Vimalakīrti}, translated by Thurman. Sections 1 -- 6.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Vimalakīrti Sūtra, \emph{The Holy Teaching of Vimalakīrti}, translated by Thurman. Sections 7 -- End.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Gauḍapāda, \emph{``Māndukya} Upanishad with the Kārikā of Gauḍapāda\emph{''} in Vol. II of \emph{The Upanishads} translated by Swami Nikhilananda (Ramakrishna-Vivekananda Center), pp. 223 -- 368.
+	Read both the Māndukya Upanishad and Gauḍapāda commentary. Ignore other commentaries.
+	In Chapter 1, after the Hari Om paragraph, read the paragraph following each heading numeral, following the woven threads of Upanishad and Karika (Gaudapada's commentary). For example, ``Now the Upanishad is resumed,'' or ``Now the Karika is resumed.'' From Chapter 2 on, the paragraph following the number is Gaudapada.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Saṅkarâkârya's commentary on the Vedânta Sūtras. pp. 2 -- 67, \emph{Sacred Books of the East, Vol. 34,} translated by George Thibaut.
+	Available as a photocopy in the bookstore.
+	% FIXME: add diacritics to purvapakshin and names?
+	In reading Sankara and Rāmānujā pay close attention to whether you are hearing their own (Siddhanta) positions or their opponents' (Purvapaksha) arguments. The latter can be lengthy and detailed (and plausible).
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Saṅkara, pp. 183 -- 191, 199 -- 216, 283 -- 289, 299 -- 308, 312 -- 320, 355 -- 362.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Rāmānujā's commentary on the Vedânta Sūtras, pp. 3 -- 73, \emph{Sacred Books of the East, Vol. 48}, translated by George Thibaut. Available in EC Manual
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\begin{center}
+		\textbf{\textit{[ESSAYS DUE]}}
+	\end{center}
+	Rāmānujā's commentary on the Vedânta Sūtras, pp. 102 -119, 129 -- 138, 255- 273, 296- 308.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Jayadeva's ``The \emph{Gītagovinda}'' in \emph{Love Song of the Dark Lord}, edited and translated by Barbara Stoler Miller, pp. 69 -- 125.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	``The \emph{Diamond Sūtra}'' in \emph{The Diamond Sūtra \& the Sūtra of Hui-Neng}, translated by A.F. Price and Wong Mou-lam (Shambhala).
+
+	``The \emph{Heart Sūtra''} pp. 17 -- 53. Available in EC Manual.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Hui-Neng, ``Commentary on the Diamond Sūtra,'' in \emph{The Sutra of Hui-neng, Grand Master of Zen: With Hui-neng\textquotesingle s Commentary on the Diamond Sutra}, translated by Thomas Cleary (Shambhala), pp. 85-144.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Hui-Neng, \emph{The Platform Sutra of the Sixth Patriarch}, translated by Philip Yampolsky (Columbia University Press), paragraphs 1 -- 30.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Hui-Neng, \emph{The Platform Sutra of the Sixth Patriarch}, 31 -- 57.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	``The \emph{Great Learning}'' and ``The \emph{Doctrine of the Mean},'' in \emph{A Sourcebook in Chinese Philosophy}, translated and edited by Wing-tsit Chan, pp. 84 -- 114.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Zhu Xi (Chu Hsi), ``The Complete Works of Chu Hsi'' in \emph{A Sourcebook in Chinese} \emph{Philosophy}, pp. 605 -- 632 (stop at \emph{Jen}).
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Zhu Xi (Chu Hsi), ``The Complete Works of Chu Hsi'' in \emph{A Sourcebook in Chinese Philosophy}, pp. 632-653, 693-604\emph{.}
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Wang Yang-Ming, ``Inquiry on the Great Learning'' and selections from ``Instructions for Practical Living,'' in \emph{A Sourcebook in Chinese Philosophy}, pp. 659 -- 691.
+
+
+	\begin{comment}
+
+	Session 1
+	Kālidāsa, Kumārasaṃbhava, in The Origin of the
+	Young God, translated by Hank Hifetz.
+	Available in EC Manual.
+	Session 2
+	Kālidāsa, The Recognition of Śhakuntalā,
+	translated by W.J. Johnson.
+	Session 3
+	“The Dhvanyāloka of Ānandavardhana with
+	the Locana of Abhinavagupta” selections with
+	supplemental material by Keith and Perry.
+	Through pp. 119. Available in EC Manual.
+	Session 4
+	“The Dhvanyāloka of Ānandavardhana with
+	the Locana of Abhinavagupta” selections with
+	supplemental material by Keith and Perry.
+	Sections through pp. 696. Available in EC
+	Manual.
+	Session 5
+	“Pūrva Mīmāṁsā” in A Sourcebook in Indian
+	Philosophy edited by Sarvepalli
+	Radhakrishnan and Charles A. Moore.
+	Pp. 486 – 505.
+	Session 6
+	“Cārvāka” in A Sourcebook in Indian
+	Philosophy. Pp. 227 – 249.
+	Session 7
+	“Discourses on the Nobel Quest,” “Discourse
+	to Kālāmas,” and “The Greater Discourse on
+	Cause” from Early Buddhist Discourses by
+	John Holder.
+	Session 8
+	“The Greater Discourse on the Foundations of
+	Mindfulness,” “The Greater Discourse on the
+	Destruction of Craving,” “Discourse of the
+	Honeyball” from Early Buddhist Discourses.
+	Session 9
+	“Short Discourses from the Saṃyutta Nikāya,”
+	“The Shorter Discourse to Māluṅ kyaputta,”
+	“Discourse on the Parable of the Water
+	Snake,” “Discourse to Vacchagotta on Fire,”
+	from Early Buddhist Discourses.
+	Session 10
+	“Discourse to Prince Abhaya,” “Discourse to
+	Poṭṭhapāda,” “Discourse on the Threefold
+	Knowledge,” from Early Buddhist Discourses.
+	Session 11
+	“Discourse to Assalāyana,” “Discourse to the
+	Layman Sigāla,” from Early Buddhist
+	Discourses. Samannaphala Sutta (“Fruits of
+	the Homeless Life”), available in EC Manual.
+	Session 12
+	The Lotus Sutra, Translated by Burton Watson.
+	Chapters 1 (prose portion), 2-7 (only the parable
+	in the last nine paragraphs of the final prose section,
+	beginning with “Monks, you must understand this.”),
+	and 8.
+	Session 13
+	The Lotus Sutra, Translated by Burton Watson.
+	Chapters 10 (prose portion), 11 (verse only),
+	12-14, 16, 20, 21, 23, 25, 28 (all prose
+	portion).
+	P a g e |4EASTERN CLASSICS
+	SEMINAR
+	SPRING - SEMINAR
+	(Continued)
+	Session 14
+	Session 20
+	Nāgārjuna, Chapters 1, 2, 7.
+	Saṅ karâkârya’s commentary on the Vedânta
+	Sūtras. pp. 2 – 67, Sacred Books of the East, Vol.
+	34, translated by George Thibaut. Available as
+	a photocopy in the bookstore. In reading Sankara
+	Translation options:
+	(A)Mūlamadhyamakakārikā of Nāgārjuna:
+	The Fundamental Wisdom of the Middle Way,
+	translated by Jay L. Garfield OR
+	(B)The Philosophy of the Middle Way
+	translation by David J. Kalupahana.
+	and Rāmānujā pay close attention to whether you are
+	hearing their own (Siddhanta) positions or their
+	opponents’ (Purvapaksha) arguments. The latter can be
+	lengthy and detailed (and plausible).
+	Session 15
+	Session 21
+	Nāgārjuna, Chapters 10, 12, 17, 18
+	Saṅkara, pp. 183 – 191, 199 – 216, 283 – 289,
+	299 – 308, 312 – 320, 355 – 362.
+	Session 16
+	Nāgārjuna, Chapters 24, 25, 27
+	Session 22
+	Vimalakīrti Sūtra, The Holy Teaching of
+	Vimalakīrti, translated by Thurman.
+	Sections 1 – 6.Rāmānujā’s commentary on the Vedânta
+	Sūtras, pp. 3 – 73, Sacred Books of the East, Vol.
+	48, translated by George Thibaut. Available in
+	EC Manual
+	Session 18Session 23 [ESSAYS DUE]
+	Session 17
+	Vimalakīrti Sūtra, The Holy Teaching of
+	Vimalakīrti, translated by Thurman.
+	Sections 7 – End.
+	Rāmānujā’s commentary on the Vedânta
+	Sūtras, pp. 102 -119, 129 – 138, 255- 273,
+	296- 308.
+	Session 19
+	Gauḍ apāda, “Māndukya Upanishad with the
+	Kārikā of Gauḍ apāda” in Vol. II of The
+	Upanishads translated by Swami Nikhilananda
+	(Ramakrishna-Vivekananda Center), pp. 223
+	– 368. Read both the Māndukya Upanishad and
+	Gauḍ apāda commentary. Ignore other commentaries. In
+	Chapter 1, after the Hari Om paragraph, read the
+	paragraph following each heading numeral, following the
+	woven threads of Upanishad and Karika (Gaudapada’s
+	commentary). For example, “Now the Upanishad is
+	resumed,” or “Now the Karika is resumed.” From Chapter
+	2 on, the paragraph following the number is Gaudapada.
+	Session 24
+	Jayadeva’s “The Gītagovinda” in Love Song of the
+	Dark Lord, edited and translated by Barbara
+	Stoler Miller, pp. 69 – 125.
+	Session 25
+	“The Diamond Sūtra” in The Diamond Sūtra \&
+	the Sūtra of Hui-Neng, translated by A.F. Price
+	and Wong Mou-lam (Shambhala).
+	“The Heart Sūtra” pp. 17 – 53. Available in EC
+	Manual.
+	P a g e |5EASTERN CLASSICS
+	SEMINAR
+	SPRING - SEMINAR
+	(Continued)
+	Session 26
+	Hui-Neng, “Commentary on the Diamond
+	Sūtra,” in The Sutra of Hui-neng, Grand Master of
+	Zen: With Hui-neng's Commentary on the Diamond
+	Sutra, translated by Thomas Cleary
+	(Shambhala), pp. 85-144.
+	Session 27
+	Hui-Neng, The Platform Sutra of the Sixth
+	Patriarch, translated by Philip Yampolsky
+	(Columbia University Press), paragraphs 1 –
+	30.
+	Session 28
+	Session 30
+	Zhu Xi (Chu Hsi), “The Complete Works of
+	Chu Hsi” in A Sourcebook in Chinese
+	Philosophy, pp. 605 – 632 (stop at Jen).
+	Session 31
+	Zhu Xi (Chu Hsi), “The Complete Works of
+	Chu Hsi” in A Sourcebook in Chinese
+	Philosophy, pp. 632-653, 693-604.
+	Session 32
+	Wang Yang-Ming, “Inquiry on the Great
+	Learning” and selections from “Instructions
+	for Practical Living,” in A Sourcebook in
+	Chinese Philosophy, pp. 659 – 691.
+	Hui-Neng, The Platform Sutra of the Sixth
+	Patriarch, 31 – 57.
+	Session 29
+	“The Great Learning” and “The Doctrine of the
+	Mean,” in A Sourcebook in Chinese Philosophy,
+	translated and edited by Wing-tsit Chan,
+	pp. 84 – 114.
+
+	\end{comment}
+
+\end{multicols}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                              %%
+%%       Summer Seminar         %%
+%%                              %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%page break
+\clearpage
+
+% increment semester count
+\stepcounter{cntSemester}
+
+\begin{center}
+	\section{Summer Seminar}
+\end{center}
+
+
+\begin{multicols}{2}
+
+
+	\printHeaderWithSessionAndDate{summer-start}
+	\emph{The Tale of the Heike,} translated by Helen Craig McCullough. Chapters 1 -- 8.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\emph{The Tale of the Heike,} Chapters 9 -- 10.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\emph{The Tale of the Heike,} Chapters 11 -- end.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Kūkai \emph{Major Works} translated by Yoshito S. Hakeda (Columbia University Press), ``The Difference Between Exoteric and Esoteric Buddhism'', ``Attaining Enlightenment in This Very Existence, ``The Meanings of Sound, Word, and Reality.'' Available in EC Manual.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Sei Shōnagon, \emph{The Pillow Book}, translated by Meredith McKinney (Penguin Classics), sections 1-100, pp. 3-113
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\emph{The Pillow Book}, sections 101-206, 243, 258, 273, pp. 113-190
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Kamo no Chōmei, ``Hōjōki or the Record of the Ten-Foot Square Hut''
+
+	\emph{Kenkō and Chōmei: Essays in Idleness and Hōjōki,} translated by
+	Meredith McKinney (Penguin) OR
+
+	\emph{Four Huts: Asian Writings on the Simple Life}, translated by
+	Burton Watson (Shambhala)
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Dōgen, ``Bendōwa,'' in \emph{The Heart of Dōgen's Shōbōgenzō}, translated by Waddell and Abe (SUNY Press).
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Dōgen, ``Busshō,'' in \emph{The Heart of Dōgen's Shōbōgenzō}, pp. 59 -- bottom of 84.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Dōgen, ``Busshō,'' in \emph{The Heart of Dōgen's Shōbōgenzō}, pp. 84 -- 98.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Dōgen, ``Genjōkōan,'' in \emph{The Heart of Dōgen's Shōbōgenzō}
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Dōgen, ``Uji,'' in \emph{The Heart of Dōgen's Shōbōgenzō}
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Kenkō, sections 1 -- 38, 43 -- 49, 52, 53, 58 -- 60, 66. In \emph{Kenkō and Chōmei: Essays in Idleness and Hōjōki,} translated by Meredith McKinney (Penguin)
+
+	OR
+
+	\emph{Essays in Idleness}, translated by Donald Keene (Columbia University Press)
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Kenkō, sections 69 -- 75, 81 -- 85, 89, 92, 97 -- 98, 104 -- 122, 127 -- 130, 133, 137, 154, 162, 166, 184, 188, 190,191, 235 -- 237.
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Bashō, ``Journey of Bleached Bones in a Field,'' ``Kashima Journal,'' ``Knapsack Notebook, ``Sarashina Journal'' in Bashō's Journey: The Literary Prose of Matsuo Bashō, translated by David Landis Barnhill (SUNY Press)
+
+	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	Bashō, ``The Narrow Road to the Deep North.'' in Bashō's Journey: The Literary Prose of Matsuo Bashō, translated by David Landis Barnhill (SUNY Press)
+
+
+	\begin{comment}
+
+	P a g e |6EASTERN CLASSICS
+	SEMINAR
+	SUMMER - SEMINAR
+	Session 1
+	Session 8
+	The Tale of the Heike, translated by Helen Craig
+	McCullough. Chapters 1 – 8.
+	Dōgen, “Bendōwa,” in The Heart of Dōgen’s
+	Shōbōgenzō, translated by Waddell and Abe
+	(SUNY Press).
+	Session 2
+	The Tale of the Heike, Chapters 9 – 10.Session 9
+	Session 3Dōgen, “Busshō,” in The Heart of Dōgen’s
+	Shōbōgenzō, pp. 59 – bottom of 84.
+	The Tale of the Heike, Chapters 11 – end.
+	Session 10
+	Session 4
+	Dōgen, “Busshō,” in The Heart of Dōgen’s
+	Shōbōgenzō, pp. 84 - 98.
+	Kūkai Major Works translated by Yoshito S.
+	Hakeda (Columbia University Press), “The
+	Difference Between Exoteric and Esoteric
+	Buddhism”, “Attaining Enlightenment in This
+	Very Existence, “The Meanings of Sound,
+	Word, and Reality.” Available in EC Manual.
+	Session 11
+	Dōgen, “Genjōkōan,” in The Heart of Dōgen’s
+	Shōbōgenzō,
+	Session 12
+	Session 5
+	Dōgen, “Uji,” in The Heart of Dōgen’s Shōbōgenzō,
+	Sei Shōnagon, The Pillow Book, translated by
+	Meredith McKinney (Penguin Classics),
+	sections 1-100, pp. 3-113
+	Session 13
+	Session 6
+	The Pillow Book, sections 101-206, 243, 258,
+	273, pp. 113-190
+	Session 7
+	Kamo no Chōmei, “Hōjōki or the Record of the
+	Ten-Foot Square Hut”
+	Kenkō and Chōmei: Essays in Idleness and Hōjōki,
+	translated by Meredith McKinney (Penguin)
+	OR
+	Four Huts: Asian Writings on the Simple Life,
+	translated by Burton Watson (Shambhala)
+	Kenkō, sections 1 – 38, 43 – 49, 52, 53, 58 –
+	60, 66. In Kenkō and Chōmei: Essays in Idleness
+	and Hōjōki, translated by Meredith McKinney
+	(Penguin)
+	OR
+	Essays in Idleness, translated by Donald Keene
+	(Columbia University Press)
+	Session 14
+	Kenkō, sections 69 – 75, 81 – 85, 89, 92, 97 –
+	98, 104 – 122, 127 – 130, 133, 137, 154, 162,
+	166, 184, 188, 190,191, 235 – 237.
+	P a g e |7EASTERN CLASSICS
+	SEMINAR
+	SUMMER - SEMINAR
+	(Continued)
+	Session 15Session 16
+	Bashō, “Journey of Bleached Bones in a
+	Field,” “Kashima Journal,” “Knapsack
+	Notebook, “Sarashina Journal” in Bashō’s
+	Journey: The Literary Prose of Matsuo Bashō,
+	translated by David Landis Barnhill (SUNY
+	Press)Bashō, “The Narrow Road to the Deep North.”
+	in Bashō’s Journey: The Literary Prose of
+	Matsuo Bashō, translated by David Landis
+	Barnhill (SUNY Press)
+
+	\end{comment}
+
+\end{multicols}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                              %%
+%%      Fall Preceptorial 1     %%
+%%                              %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%page break
+\clearpage
+
+% increment semester count
+\stepcounter{cntSemester}
+
+\begin{center}
+	\section{Fall Preceptorial – Sima Qian, \textit{Records of the Grand Historian (Shi Ji)}}
+	 (First Eight Weeks)
+\end{center}
+
+% TODO: make list below
+\textbf{Required Texts:}
+\begin{itemize}
+	\item (In EC Manual): “The Grand Scribes Records” Vol 1, translated by Neinhauser, Jr. (pp 1-86)
+	\item \textit{Records of the Grand Historian}, translated by Burton Watson (Columbia University Press), Volumes:
+	      \begin{itemize}
+		      \item \textit{Quin Dynasty} (ISBN: 0231081693)
+		      \item \textit{Han Dynasty I} (ISBN: 0231081650)
+		      \item \textit{Han Dynasty II} (ISBN: 0231081677)
+	      \end{itemize}
+\end{itemize}
+
+
+\begin{multicols}{2}
+
+	\printHeaderWithSessionAndDate{fall-precept1-start}
+	% FIXME: add detail that it is in EC manual?
+	\emph{Shi Ji} Ch 1 -- 2 (Nienhauser, Vol 1)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\emph{Shi Ji} Ch 3 - 4 (Nienhauser, Vol 1)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	% FIXME: italicize titles
+	\emph{Shi Ji} Ch 6 (Quin Dynasty, pp. 35-83)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\emph{Shi Ji} Ch 15, 61, 68, 79 (Quin Dynasty, pp. 85-99, 131-157, photocopy of section 61)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	% FIXME: add note location letter, pages? preface?
+	\emph{Shi Ji} Ch 85-88, 126 (Quin Dynasty, pp. 159-216, plus Sima Qian's Letter to Ren An)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\emph{Shi Ji} Ch 48, 7 (Han Dynasty I, pp. 1-38)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\emph{Shi Ji} Ch 8, 16 (Han Dynasty I, pp. 51-88)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\emph{Shi Ji} Ch 53, 55, 56 (Han Dynasty I, pp 91-128)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\emph{Shi Ji} Ch 89-91 (Han Dynasty I, pp 131-162)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\emph{Shi Ji} Ch 92-94 (Han Dynasty I, pp 163-202)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\emph{Shi Ji} Ch 9-12, 106 (Han Dynasty I, 267-319, 403-422)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\emph{Shi Ji} Ch 28 (Han Dynasty II, 3-52)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\emph{Shi Ji} Ch 110 (Han Dynasty II, 129-162)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\emph{Shi Ji} Ch 117 (Han Dynasty II, 259-306)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\emph{Shi Ji} Ch 121, 119, 122 (Han Dynasty II, 355-407)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\emph{Shi Ji} Ch 124, 125, 127, 129 (Han Dynasty II, 409-454)
+
+\end{multicols}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                              %%
+%%      Fall Preceptorial 2     %%
+%%                              %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%page break
+\clearpage
+
+% increment semester count
+\stepcounter{cntSemester}
+
+\begin{center}
+	\section{Fall Preceptorial - Mahābhārata}
+	 (Second Eight Weeks of Semester)
+\end{center}
+
+\textbf{Required Texts}:
+\begin{itemize}
+	\item \textit{Mahābhārata} translated by J.A.B. van Buitenen (University of Chicago Press)
+	      \begin{itemize}
+		      \item Volume 1, \textit{The Book of the Beginning} (ISBN: 9780226846637)
+		      \item Volume 2, \textit{The Book of the Assembly Hall, The Book of the Forest} (ISBN: 9780226846644)
+		      \item Volume 3, \textit{The Book of the Virata, The Book of the Effort} (ISBN: 9780226846651)
+	      \end{itemize}
+	\item \textit{The Sauptikaparvan of the Mahbharata} translated by W.J. Johnson (Oxford World’s Classics) (ISBN: 978-0192823618)
+	      \begin{itemize}
+		      \item Out of print, but photocopies are available in the EC Manual sold in the bookstore
+	      \end{itemize}
+\end{itemize}
+
+\begin{multicols}{2}
+
+
+	\printHeaderWithSessionAndDate{fall-precept2-start}
+	\emph{The Book of the Beginning}, pp. 19-63
+
+	(Lists -- Puloman)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\emph{The Book of the Beginning}, pp. 63-123
+
+	(Astika)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\emph{The Book of the Beginning}, pp. 123-210
+
+	(The Descent -- Latter Days of Yayati)
+
+	% FIXME: make small
+	(pp 145-154 may be skimmed)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\emph{The Book of the Beginning}, pp. 210-273
+
+	(Latter Days of Yayati -- The Origins)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\emph{The Book of the Beginning}, pp. 274-344
+
+	(The Fire in the Lacquer House - Citraratha)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\emph{The Book of the Beginning}, pp. 344-405
+
+	(Draupadi's Bridegroom Choice -- Arjuna's Sojourn in the Forest)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\emph{The Book of the Beginning}, pp. 405-431
+
+	(Abduction of Subhadra -- Burning of the Khandava Forest). Discussion of whole of Book 1
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+
+	\emph{The Book of the Assembly Hall:} Read italicized summaries pp.33-106, then read whole pp.106-69 (The Dicing -- The Sequel to the Dicing).
+
+	At this point note that the \emph{Sauptikaparvan} volume has narrative summaries in the back: read summary for Book 4\emph{, The Book of Virata.}
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\emph{The Book of the Effort}, pp 187-254
+
+	(Embassy of Samjaya)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\emph{The Book of the Effort}, pp 254-294
+
+	(Dhrtarastra's Vigil -- Sanatsujata)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\emph{The Book of the Effort}, pp 294-339
+
+	(The Suing for Peace)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\emph{The Book of the Effort} pp 344-382
+
+	(The Coming of the Lord);
+
+	\emph{The Book of the Effort} pp 415-442
+
+	(The Coming of the Lord, continued)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	In Volume 3\emph{, The Book of the Forest,} pp. 780-795
+
+	(The Robbing of the Earrings), then
+
+	% FIXME: make a blank line and don't indent this next line
+	\emph{The Book of the Effort}, pp. 442-461
+
+	(The Temptation of Karna)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\emph{The Book of the Effort}, pp.461-532
+
+	(The Marching Out -- Amba)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\emph{The Sauptikaparvan}, read Summaries in Appendix, then main text pp 5 -- 86
+
+\end{multicols}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                              %%
+%%      Summer Preceptorial     %%
+%%                              %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%page break
+\clearpage
+
+% increment semester count
+\stepcounter{cntSemester}
+
+\begin{center}
+	\section{Summer Preceptorial – The Tale of Genji}
+\end{center}
+
+\textbf{Required Text:}
+
+\emph{The Tale of Genji} by Murasaki Shikibu, translated by Edward G. Seidensticker (ISBN: 978-0679417385)
+
+\begin{multicols}{2}
+
+	\printHeaderWithSessionAndDate{summer-precept-start}
+	Chapters 1-4 (80 pages)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	Chapters 5-6 (47 pages)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	Chapters 7-10 (82 pages)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	Chapters 11-13 (55 pages)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	Chapters 14-19 (76 pages)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	Chapters 20-22 (60 pages)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	Chapters 23-29 (72 pages)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	Chapters 30-33 (54 pages)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	Chapters 34-35 (98 pages)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	Chapters 36-38 (39 pages)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	Chapters 39-43 (74 pages)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	Chapters 44-46 (69 pages)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	Chapters 47-48 (63 pages)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	Chapters 49-50 (87 pages)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	Chapters 51-52 (70 pages)
+
+	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	Chapters 53-54 (47 pages)
+
+\end{multicols}
+
+\textit{Note: During the spring term students will be provided with a list of options for preceptorials.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                              %%
+%%          Book List           %%
+%%                              %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%page break
+\clearpage
+\section{Booklist}
+
+Books for Seminar are listed in order they are encountered in class.
+
+TODO...?
+
+% TODO: add QR code to some survey/form through which people can easily submit changes/errors/etc?
+
+\end{document}
