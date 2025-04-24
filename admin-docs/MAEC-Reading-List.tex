@@ -1,15 +1,7 @@
+% Typeset/compile with pdfLaTeX or XeLaTeX
 \documentclass{article}
+\DeclareUnicodeCharacter{1E41}{\d{m}} %works in pdfLaTeX, but not LuaLaTeX
 \usepackage[calc,useregional]{datetime2}
-
-% \usepackage[T1]{fontenc}
-% \usepackage[utf8]{inputenc}
-    % \usepackage{ucs}
-    % \usepackage[utf8x]{inputenc}
-% \usepackage{fontspec}
- % \usepackage{fontsetup} % New Computer Modern
-% \usepackage{cm-unicode} % not installed by default with texworks at least
-\usepackage{fontspec}
-% \setmainfont{Times New Roman}
 
 % TODO:
 % check all dashes are -- not just -.
@@ -17,6 +9,11 @@
 % check for more diacritics??
 % update the comemntary and opponent sections that don't quite make sense
 % get feedback on changes to commentary and opponent section and if they make more sense with new changes
+% FIX HEADERS!!
+% make smaller margins?
+% possible to use subsection X.n as variable?
+% use uneven columns? https://www.overleaf.com/learn/latex/Multiple_columns#Unbalanced_columns
+% italicize titles
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
@@ -27,24 +24,27 @@
 \author{St. John's Santa Fe Graduate Institute}
 \date{Updated: 2025-01-25}
 
-\DTMsavedate{fall-start}{2024-09-02}
-\DTMsavedate{spring-start}{2025-01-20}
-\DTMsavedate{summer-start}{2025-06-16}
-\DTMsavedate{fall-precept1-start}{2024-09-03}
-\DTMsavedate{fall-precept2-start}{2024-10-29}
-\DTMsavedate{summer-precept-start}{2025-06-16}
+\DTMsavedate{fallStart}{2024-09-02}
+\DTMsavedate{springStart}{2025-01-20}
+\DTMsavedate{summerStart}{2025-06-16}
+\DTMsavedate{fallPrecept1Start}{2024-09-03}
+\DTMsavedate{fallPrecept2Start}{2024-10-29}
+\DTMsavedate{summerPreceptStart}{2025-06-16}
 
 %date for break are inclusive, i.e. there are no classes on start or end dates
-\DTMsavedate{break-start-thanksgiving}{2024-11-27}
-\DTMsavedate{break-end-thanksgiving}{2024-12-01}
-\DTMsavedate{break-start-spring}{2025-03-15}
-\DTMsavedate{break-end-spring}{2025-03-30}
+\DTMsavedate{thanksgivingBreakStart}{2024-11-27}
+\DTMsavedate{thanksgivingBreakEnd}{2024-12-01}
+\DTMsavedate{springBreakStart}{2025-03-15}
+\DTMsavedate{springBreakEnd}{2025-03-30}
 % 2024-12-20 no classes, end of fall semester
 % 2025-05-23 no classes, end of spring semester
 
+%NOTE: trying to save one date as another doesn't work, need to do this little dance to get it into the right format:
+%\DTMsavedate{testDate}{\DTMfetchyear{springStart}-\DTMfetchmonth{springStart}-\DTMfetchday{springStart}}
+
 %%
 %%
-%%        END: Edit these values 
+%%        END: Edit these values
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -58,7 +58,7 @@
 \usepackage{comment}
 
 % Insert header image
-\usepackage{lipsum}
+% \usepackage{lipsum}
 \usepackage{graphicx}
 \usepackage{fancyhdr} % https://www.overleaf.com/learn/latex/Headers_and_footers#Using_the_fancyhdr_package
 \pagestyle{fancy}
@@ -67,7 +67,8 @@
 \renewcommand{\footrulewidth}{0pt}
 \setlength\headheight{92.0pt}
 \addtolength{\textheight}{-92.0pt}
-\chead{\includegraphics[width=\textwidth]{MAEC-header.png}}
+% \chead{\includegraphics[width=\textwidth]{MAEC-header.png}}
+\chead{\includegraphics[width=\textwidth]{header-blank.png}}
 
 
 % Tex automaticaly adds numbers to the beginning of section, subsections etc (e.g. "1.3 Session 3") but we don't want this, so setting it to 0
@@ -79,66 +80,75 @@
 % how far apart do we want the columns?
 \setlength{\columnsep}{1cm}
 
-% TODO:
-% make smaller margins
-% possible to use subsection X.n as variable?
-% use uneven columns? https://www.overleaf.com/learn/latex/Multiple_columns#Unbalanced_columns
-% italicize titles
-% copy in text with diacritics etc
-
-\usepackage[calc,useregional]{datetime2}
-
-% TODO:
-% function - \getNextBiweeklyClassDate: just take DoW of date and advance it to next specified day of a class
-% function - \checkIfHoliday - check if date is betwen holidays, if so return last day of holidays+1 - pass output to get next class day
-% function - \printHeaderWithSessionAndDate: increments cntSession (since it starts at 0), then prints text for Session <cntSession> - <currentClassDate> 
-% function - \printHeaderForNextSeminarClassDate: helper function that just runs `\checkIfHoliday{#1}` and then with output, runs `\getNextBiweeklyClassDate{#1}{0}{3}` so that user doesn't need to know about the 0=Monday and 3=Thursday nomenclature.
-% function - \printHeaderForNextPreceptClassDate: helper function that just runs `\checkIfHoliday{#1}` and then with output, runs `\getNextBiweeklyClassDate{#1}{1}{3}` so that user doesn't need to know about the 1=Tuesday and 3=Thursday nomenclature.
-
 % run this at begin of document, so they exist. overwrite currentClassDate later, prob with one of the fall/spring/summer-start dates.
 \newcount\myNextClassRegister
-\DTMsavenow{currentClassDate}%
-\DTMsavenow{lastPrintedClassDate}%
+\newcounter{dateChanged}
+\DTMsavenow{currentClassDate}
+\DTMsavenow{lastPrintedClassDate}
 
 
 % NOTE: "<dow> is the day of the week number starting from 0 for Monday"
 
 
+%% code/section flow: 
+%pass in date of last class (that was just printed), 
+%get the next class day with \getNextBiweeklyClassDate, 
+%then check to make sure the next class day is not during a break
+%	if no, cool, print it.
+%	if yes, ugh:
+%		hand back last day of break for which the previously computed 'next class' date was. We say that the break dates are inclusive, so just pass the last day of break to the \getNextBiweeklyClassDate command and we shoudl be good. then print that new date.
+
 % function - \printHeaderForNextSeminarClassDate: helper function that just runs `\checkIfHoliday{#1}` and then with output, runs `\getNextBiweeklyClassDate{#1}{0}{3}` so that user doesn't need to know about the 0=Monday and 3=Thursday nomenclature.
 \newcommand{\printHeaderForNextSeminarClassDate}[1]{%
-  %TODO: make checkIfHoliday function, and use it here.
- %test%\DTMusedate{currentClassDate}%
-  \getNextBiweeklyClassDate{0}{3}{#1}%
+  % save input to tempDate variable, don't really need to but looks prettier for code?
+  \DTMsavedate{tempDate}{\DTMfetchyear{#1}-\DTMfetchmonth{#1}-\DTMfetchday{#1}}%
+  % make sure dateChanged counter = 0 to properly record if any changes happen
+  \setcounter{dateChanged}{0}%
+
+  %test%\DTMusedate{currentClassDate}%
+  \getNextBiweeklyClassDate{0}{3}{tempDate}%
+  % \getNextBiweeklyClassDate{0}{3}{#1}%
+
+  \checkIfDateIsBetweenSchoolBreaks{tempDate}%
+
+  % check if date was changed
+  \ifnum \value{dateChanged}>0%
+    %date was changed, so now get next class day after
+    \getNextBiweeklyClassDate{0}{3}{tempDate}%
+  \fi%
+
+  %now pass that date on to be printed out
+  \printHeaderWithSessionAndDate{tempDate}%
 }
 
 
 % function - \printHeaderForNextPreceptClassDate: helper function that just runs `\checkIfHoliday{#1}` and then with output, runs `\getNextBiweeklyClassDate{#1}{1}{3}` so that user doesn't need to know about the 1=Tuesday and 3=Thursday nomenclature.
 \newcommand{\printHeaderForNextPreceptClassDate}[1]{%
-  %TODO: make checkIfHoliday function, and use it here.
- %test%\DTMusedate{currentClassDate}%
-  \getNextBiweeklyClassDate{1}{3}{#1}%
+  % save input to tempDate variable, don't really need to but looks prettier for code?
+  \DTMsavedate{tempDate}{\DTMfetchyear{#1}-\DTMfetchmonth{#1}-\DTMfetchday{#1}}%
+  % make sure dateChanged counter = 0 to properly record if any changes happen
+  \setcounter{dateChanged}{0}%
+
+  \getNextBiweeklyClassDate{1}{3}{tempDate}%
+
+  \checkIfDateIsBetweenSchoolBreaks{tempDate}%
+
+  % check if date was changed
+  \ifnum \value{dateChanged}>0%
+    %date was changed, so now get next class day after
+    \getNextBiweeklyClassDate{1}{3}{tempDate}%
+  \fi%
+
+  %now pass that date on to be printed out
+  \printHeaderWithSessionAndDate{tempDate}%
 }
-
-% TODO: make function to check if session is in holidays?
-% if date is between the two, then return break-end... + 1, else return date
-%
-% Is \texttt{mydate2} (\DTMusedate{mydate2}) before
-% \texttt{mydate} (\DTMusedate{mydate})?
-% \DTMifdate
-% {mydate2}
-% {at most=
-% \DTMfetchyear{mydate}-\DTMfetchmonth{mydate}-\DTMfetchday{mydate}}
-% {yes}{no}.
-
-% function - \checkIfHoliday - check if date is betwen holidays, if so return last day of holidays+1 - pass output to get next class day
-
 
 
 %\getNextBiweeklyClassDate: pass in <DoW of 1st class day>, <DoW of 2nd class day>, and <a Date for which you want to know the next class Date on the appropriate DoW>
 % e.g. :
-%    \DTMsavedate{fall-start}{2024-09-02} % Note: a monday
-%    Usage: type in document `\getNextBiweeklyClassDate{0}{3}{fall-start}`
-%        Notes: 0 and 3 indicate classes are Monday (0), and Thursday (3).
+%    \DTMsavedate{fallStart}{2024-09-02} % Note: a monday
+%    Usage: type in document `\getNextBiweeklyClassDate{0}{3}{fallStart}`
+%        Notes: 0 and 3 indicate classes are Monday (0), and Thursday (3).tempDate
 %    Function Result: In above example, saves the date of "2024-09-05" (because that is the Thursday after the Monday provided) to the variable `currentClassDate` (equivalent to running `\DTMsavedate{currentClassDate}{2024-09-05}`)
 \newcounter{DoWfirst}%
 \newcounter{DoWsecond}%
@@ -157,43 +167,54 @@
   \ifnum \DTMfetchdow{#3}<\value{DoWfirst}%
     % increment date to DoW of DoWfirst
     \DTMsaveddateoffsettojulianday{#3}{\numexpr\value{DoWfirst}-\DTMfetchdow{#3}}{\myNextClassRegister}%
-    \DTMsavejulianday{currentClassDate}{\number\myNextClassRegister}%
+    \DTMsavejulianday{tempDate}{\number\myNextClassRegister}%
   \else%
     \ifnum \DTMfetchdow{#3}<\value{DoWsecond}% %i.e. DoW of currentClassDate is NOT less than DoWfirst, and IS less than DoWsecond
       % increment date to DoW of DoWsecond
       \DTMsaveddateoffsettojulianday{#3}{\numexpr\value{DoWsecond}-\DTMfetchdow{#3}}{\myNextClassRegister}%
-      \DTMsavejulianday{currentClassDate}{\number\myNextClassRegister}%
+      \DTMsavejulianday{tempDate}{\number\myNextClassRegister}%
     \else% %i.e. DoW of currentClassDate is NOT less than DoWfirst, and is NOT less than DoWsecond
       %advance the date to next DoWfirst after date's DoW
       %\the\numexpr(7+\value{DoWfirst}-\DTMfetchdow{#3})
       \setcounter{daysToAdvance}{\numexpr(7+\value{DoWfirst}-\DTMfetchdow{#3})}%
       \DTMsaveddateoffsettojulianday{#3}{\value{daysToAdvance}}{\myNextClassRegister}%
-      \DTMsavejulianday{currentClassDate}{\number\myNextClassRegister}% 
+      \DTMsavejulianday{tempDate}{\number\myNextClassRegister}%
     \fi%
   \fi%
-
-  %now pass that date on to be printed out
-  \printHeaderWithSessionAndDate{currentClassDate}%
 }
 
 
-%% function - \printHeaderForFirstSeminarClassDate: helper function that takes in a specified date, saves it to `currentClassDate`, then just runs \printHeaderWithSessionAndDate - yeah this is an ugly workaround to the function flow I already started coding, but it's what you get at this late hour.
-%\newcommand{\printHeaderForFirstSeminarClassDate}[1]{%
-%  \DTMsavedate{currentClassDate}{#1}
-%}
+%function - \checkBreakRanges: takes in a date and the two Days of the week that a class is held on, check if date is between the defined school breaks.
+% returns nothing, but will change value of `tempDate` and `dateChanged` if needed.
+\newcommand{\checkIfDateIsBetweenSchoolBreaks}[1]{%
+  % check if date passed in is between two defined schools breaks
+  \checkIfDateBetweenDates{tempDate}{thanksgivingBreakStart}{thanksgivingBreakEnd}%
+  \checkIfDateBetweenDates{tempDate}{springBreakStart}{springBreakEnd}%
+}
 
-\newcount\myLastPrintedClassRegister
+
+%function - \checkIfDateBetweenDates: this command will check if a date is between two dates (inclusively). If it is not, functiondoes nothing. If it is between the two dates, this function will write a header of "No Classes from <first-date-in-range> - <last-date-in-range>" and then set a counter to mark that the date is change, and change the value of `tempDate` to <last-date-in-range>.
+% parameters: \checkIfDateBetweenDates{<date-to-check>}{<first-date-in-range>}{<last-date-in-range>}
+\newcommand{\checkIfDateBetweenDates}[3]{%
+  \DTMifdate
+  {#1}
+  {between=
+  \DTMfetchyear{#2}-\DTMfetchmonth{#2}-\DTMfetchday{#2}
+  and
+  \DTMfetchyear{#3}-\DTMfetchmonth{#3}-\DTMfetchday{#3}
+  } {\DTMsavedate{tempDate}{\DTMfetchyear{#3}-\DTMfetchmonth{#3}-\DTMfetchday{#3}} \setcounter{dateChanged}{1} \subsection{No Classes from \DTMusedate{#2} -- \DTMusedate{#3}}}{}
+}
+
+
 %function - \printHeaderWithSessionAndDate: increments cntSession (since it starts at 0), then prints text for Session <cntSession> - <currentClassDate> 
 \newcommand{\printHeaderWithSessionAndDate}[1]{%
 	\stepcounter{cntSession}%
 	\subsection{Session \arabic{cntSession} - \DTMusedate{#1}}%
 
-  \DTMsaveddateoffsettojulianday{#1}{0}{\myLastPrintedClassRegister}%
-  \DTMsavejulianday{lastPrintedClassDate}{\number\myLastPrintedClassRegister}%
-  %These don't work, hence doing the dumb julian dance
-  %\DTMsavedate{lastPrintedClassDate}{#1}
-  %\DTMsavedate{lastPrintedClassDate}{\DTMusedate{#1}}
+  % save date we just printed into lastPrintedClassDate to pass on to next header printing
+  \DTMsavedate{lastPrintedClassDate}{\DTMfetchyear{#1}-\DTMfetchmonth{#1}-\DTMfetchday{#1}}
 }
+
 
 %function - \printHeaderWithSession: increments cntSession (since it starts at 0), then prints text for Session <cntSession>
 % just in case one doesn't want the dates that I wrote so much code to calculate... Don't use this function and \printHeaderWithSessionAndDate in same doc, it will prob mess up counters/registerss
@@ -202,10 +223,6 @@
 	\subsection{Session \arabic{cntSession}}%
 }
 
-
-
-
-% TODO: make skip session function - advance cntClassOffset (& cntWeek if needed)
 
 % set counter/variable to keep track of which week it is
 \newcounter{cntSemester} % mostly used to reset class session counter
@@ -216,8 +233,6 @@
 \usepackage{hyperref} % make clickable links, e.g. for table of contents https://www.overleaf.com/learn/latex/Hyperlinks
 
 % End - Introductory typesetting configuration
-
-
 
 
 \begin{document}
@@ -250,7 +265,7 @@ Both systems are attempts to render the same pronunciations.
 
 \begin{multicols}{2}
 
-	\printHeaderWithSessionAndDate{fall-start}
+	\printHeaderWithSessionAndDate{fallStart}
 	Confucius, \emph{Analects}, \#1-7. Skip commentary where present.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
@@ -261,6 +276,7 @@ Both systems are attempts to render the same pronunciations.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
 	Mozi (Mo Tzu), Fascicles 11, 14-17, 19, 20, 26, 27, 31, 32, 35, 39, and 50.
+
 	Translations by Burton Watson (\emph{Mo Tzu Basic Writings}), Ian Johnston (\emph{The Book of Master Mo}) or Chris Fraser (\emph{The Essential Mozi}) are acceptable.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
@@ -351,106 +367,6 @@ Both systems are attempts to render the same pronunciations.
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
 	\emph{The Bhagavadgītā in the Mahābhārata} translated by J.A.B. van Buitenen. Pp. 107 - 157
 
-
-
-	\begin{comment}
-	Session 1Session 8
-	Confucius, Analects, \#1-7. Skip commentary
-	where present.Xunzi (Hsun Tzu), Sections 1, 2, 9, 17. Use
-	translations by Burton Watson or Eric L.
-	Hutton.
-	Session 2
-	Confucius, Analects, \#8-13. Skip commentary
-	where present.Session 9
-	Session 3Session 10
-	Xunzi (Hsun Tzu), Sections 19-23.
-	Confucius, Analects, \#14-20. Skip
-	commentary where present.
-	Zhuangzi (Chuang Tzu), Chapters 1-3
-	Session 11
-	Session 4
-	Mozi (Mo Tzu), Fascicles 11, 14-17, 19, 20, 26,
-	27, 31, 32, 35, 39, and 50. Translations by
-	Burton Watson (Mo Tzu Basic Writings), Ian
-	Johnston (The Book of Master Mo) or Chris
-	Fraser (The Essential Mozi) are acceptable.
-	Session 5
-	Mengzi (Meng Tzu, Mencius), Books I – II (1A, 1B,
-	2A, 2B).
-	Session 6
-	Zhuangzi (Chuang Tzu), Chapters 4-7
-	Session 12
-	Zhuangzi (Chuang Tzu), Chapters 17-19, 26
-	Session 13
-	Laozi (Lao Tzu), Dao De Jing (Tao Te Ching),
-	Chapters 1-37. Commentaries are not
-	necessary.
-	Session 14
-	Mengzi (Meng Tzu, Mencius), Books III-IV (3A,
-	3B, 4A, 4B).Laozi (Lao Tzu), Dao De Jing (Tao Te Ching),
-	Chapters 38-81. Commentaries are not
-	necessary.
-	Session 7Session 15
-	Mengzi (Meng Tzu, Mencius), Books V -VII (5A,
-	5B, 6A, 6B, 7A, 7B).
-	Han Feizi (Han Fei Tzu), Fascicles 20, 21.
-	Available in EC Manual.
-
-
-	P a g e |2EASTERN CLASSICS
-	SEMINAR
-	FALL – SEMINAR
-	(Continued)
-	Session 16
-	Session 24
-	Han Feizi : Basic Writings, Translated by Burton
-	Watson. Sections 5-10.
-	“Kena Upaniṣ ad” and “Mundaka Upanisad”
-	Session 25
-	Session 17
-	“The Nyāya Sūtra,” in A Sourcebook in Indian
-	Philosophy, edited by Sarvepalli
-	Radhakrishnan and Charles A. Moore pp. 358
-	– 379.24.
-	Han Feizi : Basic Writings, Translated by Burton
-	Watson. Sections 12, 13, 17, 18, 49, 50.
-	Session 18
-	The Rig Veda : An Anthology Translated by
-	Wendy Doniger. Sections 10.129, 10.121,
-	10.90, 10.130, 10.190, 10.81-82, 10.72, 10.14,
-	10.16, 10.18, 10.154, 10.135, 10.58, 10.71,
-	10.125, 10.101, 10.151, 1.164, 1.163, 1.162,
-	10.56Session 26
-	Session 19Tattva-Kaumudî, karikas 1 – 29. Including
-	commentary by Vacaspati Misra. Available in
-	EC Manual.
-	The Rig Veda : An Anthology. Sections 1.1, 1.26,
-	5.2, 2.35, 10.51, 10.124, 10.5, 8.79, 9.74, 4.58,
-	8.48, 10.136, 4.18, 10.28, 1.32, 2.12, 5.83,
-	7.101, 1.50, 1.160, 1.185, 6.70; 10.10, 1.179,
-	“The Vaiśeṣika Sūtra” and “The
-	Padārthadharmasaṁgraha,” in A Sourcebook in
-	Indian Philosophy, pp. 387– 423.
-	Session 27
-	Session 28
-	Tattva-Kaumudî, karikas 30 - End.
-	10.95, 10.85.
-	Session 20
-	Session 29
-	Bṛhadāraṇyaka Upaniṣad,” Parts I \& II“The Yoga Philosophy of Patañjali” in A
-	Sourcebook in Indian Philosophy, pp. 454 - 485
-	Session 21Session 30
-	Bṛhadāraṇyaka Upaniṣad,” Parts III \& IV
-	Session 22
-	The Bhagavadgītā in the Mahābhārata translated
-	by J.A.B. van Buitenen. Pp. 39-107
-	Bṛhadāraṇyaka Upaniṣad,” Parts V \& VISession 31
-	Session 23 [ESSAYS DUE]The Bhagavadgītā in the Mahābhārata translated
-	by J.A.B. van Buitenen. Pp. 107 - 157
-	“Katha Upanisad”
-
-	\end{comment}
-
 \end{multicols}
 
 
@@ -474,7 +390,7 @@ Both systems are attempts to render the same pronunciations.
 \begin{multicols}{2}
 
 
-	\printHeaderWithSessionAndDate{spring-start}
+	\printHeaderWithSessionAndDate{springStart}
 	Kālidāsa, \emph{Kumārasaṃbhava}, in \emph{The Origin of the Young God}, translated by Hank Hifetz. Available in EC Manual.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
@@ -487,9 +403,9 @@ Both systems are attempts to render the same pronunciations.
 	``The \emph{Dhvanyāloka} of Ānandavardhana with the \emph{Locana} of Abhinavagupta'' selections with supplemental material by Keith and Perry. Sections through pp. 696. Available in EC Manual.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	%FIXME: m dot is not printing well... 
 	% Missing character: There is no ṁ (U+1E41) in font [lmroman10-italic]:+tlig;!
 	% Missing character: There is no ṁ (U+1E41) in font [lmroman10-regular]:+tlig;!
+	%FIXME: ṁ doesn't print right
 	``Pūrva Mīmāṁsā'' in \emph{A Sourcebook in Indian Philosophy} edited by Sarvepalli Radhakrishnan and Charles A. Moore\emph{.} Pp. 486 -- 505.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
@@ -591,176 +507,6 @@ Both systems are attempts to render the same pronunciations.
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
 	Wang Yang-Ming, ``Inquiry on the Great Learning'' and selections from ``Instructions for Practical Living,'' in \emph{A Sourcebook in Chinese Philosophy}, pp. 659 -- 691.
 
-
-	\begin{comment}
-
-	Session 1
-	Kālidāsa, Kumārasaṃbhava, in The Origin of the
-	Young God, translated by Hank Hifetz.
-	Available in EC Manual.
-	Session 2
-	Kālidāsa, The Recognition of Śhakuntalā,
-	translated by W.J. Johnson.
-	Session 3
-	“The Dhvanyāloka of Ānandavardhana with
-	the Locana of Abhinavagupta” selections with
-	supplemental material by Keith and Perry.
-	Through pp. 119. Available in EC Manual.
-	Session 4
-	“The Dhvanyāloka of Ānandavardhana with
-	the Locana of Abhinavagupta” selections with
-	supplemental material by Keith and Perry.
-	Sections through pp. 696. Available in EC
-	Manual.
-	Session 5
-	“Pūrva Mīmāṁsā” in A Sourcebook in Indian
-	Philosophy edited by Sarvepalli
-	Radhakrishnan and Charles A. Moore.
-	Pp. 486 – 505.
-	Session 6
-	“Cārvāka” in A Sourcebook in Indian
-	Philosophy. Pp. 227 – 249.
-	Session 7
-	“Discourses on the Nobel Quest,” “Discourse
-	to Kālāmas,” and “The Greater Discourse on
-	Cause” from Early Buddhist Discourses by
-	John Holder.
-	Session 8
-	“The Greater Discourse on the Foundations of
-	Mindfulness,” “The Greater Discourse on the
-	Destruction of Craving,” “Discourse of the
-	Honeyball” from Early Buddhist Discourses.
-	Session 9
-	“Short Discourses from the Saṃyutta Nikāya,”
-	“The Shorter Discourse to Māluṅ kyaputta,”
-	“Discourse on the Parable of the Water
-	Snake,” “Discourse to Vacchagotta on Fire,”
-	from Early Buddhist Discourses.
-	Session 10
-	“Discourse to Prince Abhaya,” “Discourse to
-	Poṭṭhapāda,” “Discourse on the Threefold
-	Knowledge,” from Early Buddhist Discourses.
-	Session 11
-	“Discourse to Assalāyana,” “Discourse to the
-	Layman Sigāla,” from Early Buddhist
-	Discourses. Samannaphala Sutta (“Fruits of
-	the Homeless Life”), available in EC Manual.
-	Session 12
-	The Lotus Sutra, Translated by Burton Watson.
-	Chapters 1 (prose portion), 2-7 (only the parable
-	in the last nine paragraphs of the final prose section,
-	beginning with “Monks, you must understand this.”),
-	and 8.
-	Session 13
-	The Lotus Sutra, Translated by Burton Watson.
-	Chapters 10 (prose portion), 11 (verse only),
-	12-14, 16, 20, 21, 23, 25, 28 (all prose
-	portion).
-	P a g e |4EASTERN CLASSICS
-	SEMINAR
-	SPRING - SEMINAR
-	(Continued)
-	Session 14
-	Session 20
-	Nāgārjuna, Chapters 1, 2, 7.
-	Saṅ karâkârya’s commentary on the Vedânta
-	Sūtras. pp. 2 – 67, Sacred Books of the East, Vol.
-	34, translated by George Thibaut. Available as
-	a photocopy in the bookstore. In reading Sankara
-	Translation options:
-	(A)Mūlamadhyamakakārikā of Nāgārjuna:
-	The Fundamental Wisdom of the Middle Way,
-	translated by Jay L. Garfield OR
-	(B)The Philosophy of the Middle Way
-	translation by David J. Kalupahana.
-	and Rāmānujā pay close attention to whether you are
-	hearing their own (Siddhanta) positions or their
-	opponents’ (Purvapaksha) arguments. The latter can be
-	lengthy and detailed (and plausible).
-	Session 15
-	Session 21
-	Nāgārjuna, Chapters 10, 12, 17, 18
-	Saṅkara, pp. 183 – 191, 199 – 216, 283 – 289,
-	299 – 308, 312 – 320, 355 – 362.
-	Session 16
-	Nāgārjuna, Chapters 24, 25, 27
-	Session 22
-	Vimalakīrti Sūtra, The Holy Teaching of
-	Vimalakīrti, translated by Thurman.
-	Sections 1 – 6.Rāmānujā’s commentary on the Vedânta
-	Sūtras, pp. 3 – 73, Sacred Books of the East, Vol.
-	48, translated by George Thibaut. Available in
-	EC Manual
-	Session 18Session 23 [ESSAYS DUE]
-	Session 17
-	Vimalakīrti Sūtra, The Holy Teaching of
-	Vimalakīrti, translated by Thurman.
-	Sections 7 – End.
-	Rāmānujā’s commentary on the Vedânta
-	Sūtras, pp. 102 -119, 129 – 138, 255- 273,
-	296- 308.
-	Session 19
-	Gauḍ apāda, “Māndukya Upanishad with the
-	Kārikā of Gauḍ apāda” in Vol. II of The
-	Upanishads translated by Swami Nikhilananda
-	(Ramakrishna-Vivekananda Center), pp. 223
-	– 368. Read both the Māndukya Upanishad and
-	Gauḍ apāda commentary. Ignore other commentaries. In
-	Chapter 1, after the Hari Om paragraph, read the
-	paragraph following each heading numeral, following the
-	woven threads of Upanishad and Karika (Gaudapada’s
-	commentary). For example, “Now the Upanishad is
-	resumed,” or “Now the Karika is resumed.” From Chapter
-	2 on, the paragraph following the number is Gaudapada.
-	Session 24
-	Jayadeva’s “The Gītagovinda” in Love Song of the
-	Dark Lord, edited and translated by Barbara
-	Stoler Miller, pp. 69 – 125.
-	Session 25
-	“The Diamond Sūtra” in The Diamond Sūtra \&
-	the Sūtra of Hui-Neng, translated by A.F. Price
-	and Wong Mou-lam (Shambhala).
-	“The Heart Sūtra” pp. 17 – 53. Available in EC
-	Manual.
-	P a g e |5EASTERN CLASSICS
-	SEMINAR
-	SPRING - SEMINAR
-	(Continued)
-	Session 26
-	Hui-Neng, “Commentary on the Diamond
-	Sūtra,” in The Sutra of Hui-neng, Grand Master of
-	Zen: With Hui-neng's Commentary on the Diamond
-	Sutra, translated by Thomas Cleary
-	(Shambhala), pp. 85-144.
-	Session 27
-	Hui-Neng, The Platform Sutra of the Sixth
-	Patriarch, translated by Philip Yampolsky
-	(Columbia University Press), paragraphs 1 –
-	30.
-	Session 28
-	Session 30
-	Zhu Xi (Chu Hsi), “The Complete Works of
-	Chu Hsi” in A Sourcebook in Chinese
-	Philosophy, pp. 605 – 632 (stop at Jen).
-	Session 31
-	Zhu Xi (Chu Hsi), “The Complete Works of
-	Chu Hsi” in A Sourcebook in Chinese
-	Philosophy, pp. 632-653, 693-604.
-	Session 32
-	Wang Yang-Ming, “Inquiry on the Great
-	Learning” and selections from “Instructions
-	for Practical Living,” in A Sourcebook in
-	Chinese Philosophy, pp. 659 – 691.
-	Hui-Neng, The Platform Sutra of the Sixth
-	Patriarch, 31 – 57.
-	Session 29
-	“The Great Learning” and “The Doctrine of the
-	Mean,” in A Sourcebook in Chinese Philosophy,
-	translated and edited by Wing-tsit Chan,
-	pp. 84 – 114.
-
-	\end{comment}
-
 \end{multicols}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -783,7 +529,7 @@ Both systems are attempts to render the same pronunciations.
 \begin{multicols}{2}
 
 
-	\printHeaderWithSessionAndDate{summer-start}
+	\printHeaderWithSessionAndDate{summerStart}
 	\emph{The Tale of the Heike,} translated by Helen Craig McCullough. Chapters 1 -- 8.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
@@ -841,83 +587,6 @@ Both systems are attempts to render the same pronunciations.
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
 	Bashō, ``The Narrow Road to the Deep North.'' in Bashō's Journey: The Literary Prose of Matsuo Bashō, translated by David Landis Barnhill (SUNY Press)
 
-
-	\begin{comment}
-
-	P a g e |6EASTERN CLASSICS
-	SEMINAR
-	SUMMER - SEMINAR
-	Session 1
-	Session 8
-	The Tale of the Heike, translated by Helen Craig
-	McCullough. Chapters 1 – 8.
-	Dōgen, “Bendōwa,” in The Heart of Dōgen’s
-	Shōbōgenzō, translated by Waddell and Abe
-	(SUNY Press).
-	Session 2
-	The Tale of the Heike, Chapters 9 – 10.Session 9
-	Session 3Dōgen, “Busshō,” in The Heart of Dōgen’s
-	Shōbōgenzō, pp. 59 – bottom of 84.
-	The Tale of the Heike, Chapters 11 – end.
-	Session 10
-	Session 4
-	Dōgen, “Busshō,” in The Heart of Dōgen’s
-	Shōbōgenzō, pp. 84 - 98.
-	Kūkai Major Works translated by Yoshito S.
-	Hakeda (Columbia University Press), “The
-	Difference Between Exoteric and Esoteric
-	Buddhism”, “Attaining Enlightenment in This
-	Very Existence, “The Meanings of Sound,
-	Word, and Reality.” Available in EC Manual.
-	Session 11
-	Dōgen, “Genjōkōan,” in The Heart of Dōgen’s
-	Shōbōgenzō,
-	Session 12
-	Session 5
-	Dōgen, “Uji,” in The Heart of Dōgen’s Shōbōgenzō,
-	Sei Shōnagon, The Pillow Book, translated by
-	Meredith McKinney (Penguin Classics),
-	sections 1-100, pp. 3-113
-	Session 13
-	Session 6
-	The Pillow Book, sections 101-206, 243, 258,
-	273, pp. 113-190
-	Session 7
-	Kamo no Chōmei, “Hōjōki or the Record of the
-	Ten-Foot Square Hut”
-	Kenkō and Chōmei: Essays in Idleness and Hōjōki,
-	translated by Meredith McKinney (Penguin)
-	OR
-	Four Huts: Asian Writings on the Simple Life,
-	translated by Burton Watson (Shambhala)
-	Kenkō, sections 1 – 38, 43 – 49, 52, 53, 58 –
-	60, 66. In Kenkō and Chōmei: Essays in Idleness
-	and Hōjōki, translated by Meredith McKinney
-	(Penguin)
-	OR
-	Essays in Idleness, translated by Donald Keene
-	(Columbia University Press)
-	Session 14
-	Kenkō, sections 69 – 75, 81 – 85, 89, 92, 97 –
-	98, 104 – 122, 127 – 130, 133, 137, 154, 162,
-	166, 184, 188, 190,191, 235 – 237.
-	P a g e |7EASTERN CLASSICS
-	SEMINAR
-	SUMMER - SEMINAR
-	(Continued)
-	Session 15Session 16
-	Bashō, “Journey of Bleached Bones in a
-	Field,” “Kashima Journal,” “Knapsack
-	Notebook, “Sarashina Journal” in Bashō’s
-	Journey: The Literary Prose of Matsuo Bashō,
-	translated by David Landis Barnhill (SUNY
-	Press)Bashō, “The Narrow Road to the Deep North.”
-	in Bashō’s Journey: The Literary Prose of
-	Matsuo Bashō, translated by David Landis
-	Barnhill (SUNY Press)
-
-	\end{comment}
-
 \end{multicols}
 
 
@@ -953,7 +622,7 @@ Both systems are attempts to render the same pronunciations.
 
 \begin{multicols}{2}
 
-	\printHeaderWithSessionAndDate{fall-precept1-start}
+	\printHeaderWithSessionAndDate{fallPrecept1Start}
 	% FIXME: add detail that it is in EC manual?
 	\emph{Shi Ji} Ch 1 -- 2 (Nienhauser, Vol 1)
 
@@ -1041,7 +710,7 @@ Both systems are attempts to render the same pronunciations.
 \begin{multicols}{2}
 
 
-	\printHeaderWithSessionAndDate{fall-precept2-start}
+	\printHeaderWithSessionAndDate{fallPrecept2Start}
 	\emph{The Book of the Beginning}, pp. 19-63
 
 	(Lists -- Puloman)
@@ -1152,7 +821,7 @@ Both systems are attempts to render the same pronunciations.
 
 \begin{multicols}{2}
 
-	\printHeaderWithSessionAndDate{summer-precept-start}
+	\printHeaderWithSessionAndDate{summerPreceptStart}
 	Chapters 1-4 (80 pages)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
