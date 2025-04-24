@@ -1,6 +1,7 @@
 % Typeset/compile with pdfLaTeX or XeLaTeX
 \documentclass{article}
-\DeclareUnicodeCharacter{1E41}{\d{m}} %works in pdfLaTeX, but not LuaLaTeX
+%\DeclareUnicodeCharacter{1E41}{\d{m}} %works in pdfLaTeX, but not LuaLaTeX
+\DeclareUnicodeCharacter{1E41}{$\dot{m}$} %works in pdfLaTeX, but not LuaLaTeX
 \usepackage[calc,useregional]{datetime2}
 
 % TODO:
@@ -232,6 +233,24 @@
 % Load this package last?!
 \usepackage{hyperref} % make clickable links, e.g. for table of contents https://www.overleaf.com/learn/latex/Hyperlinks
 
+%% make links the color
+%\hypersetup{
+%  colorlinks   = true, %Colours links instead of ugly boxes
+%  urlcolor     = blue, %Colour for external hyperlinks
+%  linkcolor    = blue, %Colour of internal links
+%  citecolor   = red %Colour of citations
+%}
+
+%% underline the black text links with colored line
+\usepackage{xcolor}  
+\hypersetup{
+    pdfborderstyle={/S/U/W 1}, % underline links instead of boxes
+    linkbordercolor=red,       % color of internal links
+    citebordercolor=green,     % color of links to bibliography
+    filebordercolor=magenta,   % color of file links
+    urlbordercolor=cyan        % color of external links
+}
+
 % End - Introductory typesetting configuration
 
 
@@ -314,6 +333,7 @@ Both systems are attempts to render the same pronunciations.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
 	\emph{Han Feizi~: Basic Writings,} Translated by Burton Watson. Sections 5-10.
+	%FIXME: the ~ after Feizi? accent mark intended?
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
 	\emph{Han Feizi~: Basic Writings,} Translated by Burton Watson. Sections 12, 13, 17, 18, 49, 50.
@@ -388,6 +408,7 @@ Both systems are attempts to render the same pronunciations.
 \end{center}
 
 \begin{multicols}{2}
+	%\raggedcolumns
 
 
 	\printHeaderWithSessionAndDate{springStart}
@@ -406,13 +427,14 @@ Both systems are attempts to render the same pronunciations.
 	% Missing character: There is no ṁ (U+1E41) in font [lmroman10-italic]:+tlig;!
 	% Missing character: There is no ṁ (U+1E41) in font [lmroman10-regular]:+tlig;!
 	%FIXME: ṁ doesn't print right
-	``Pūrva Mīmāṁsā'' in \emph{A Sourcebook in Indian Philosophy} edited by Sarvepalli Radhakrishnan and Charles A. Moore\emph{.} Pp. 486 -- 505.
+	``Pūrva Mīmāṁsā'' in \emph{A Sourcebook in Indian Philosophy} edited by Sarvepalli Radhakrishnan and Charles A. Moore. Pp. 486 -- 505.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
 	``Cārvāka'' in \emph{A Sourcebook in Indian Philosophy.} Pp. 227 -- 249.
+	%FIXME: pp vs Pp 
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	``Discourses on the Nobel Quest,'' ``Discourse to Kālāmas,'' and ``The Greater Discourse on Cause'' from \emph{Early Buddhist Discourses} by John Holder\textbf{.}
+	``Discourses on the Nobel Quest,'' ``Discourse to Kālāmas,'' and ``The Greater Discourse on Cause'' from \emph{Early Buddhist Discourses} by John Holder.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
 	``The Greater Discourse on the Foundations of Mindfulness,'' ``The Greater Discourse on the Destruction of Craving,'' ``Discourse of the Honeyball'' from \emph{Early Buddhist Discourses.}
@@ -462,6 +484,7 @@ Both systems are attempts to render the same pronunciations.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
 	Saṅkarâkârya's commentary on the Vedânta Sūtras. pp. 2 -- 67, \emph{Sacred Books of the East, Vol. 34,} translated by George Thibaut.
+	%FIXME: use same language in everyplace for things in EC Manual. this made me think it was a seperate purchases
 	Available as a photocopy in the bookstore.
 	% FIXME: add diacritics to purvapakshin and names?
 	In reading Sankara and Rāmānujā pay close attention to whether you are hearing their own (Siddhanta) positions or their opponents' (Purvapaksha) arguments. The latter can be lengthy and detailed (and plausible).
@@ -502,7 +525,9 @@ Both systems are attempts to render the same pronunciations.
 	Zhu Xi (Chu Hsi), ``The Complete Works of Chu Hsi'' in \emph{A Sourcebook in Chinese} \emph{Philosophy}, pp. 605 -- 632 (stop at \emph{Jen}).
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	Zhu Xi (Chu Hsi), ``The Complete Works of Chu Hsi'' in \emph{A Sourcebook in Chinese Philosophy}, pp. 632-653, 693-604\emph{.}
+	Zhu Xi (Chu Hsi), ``The Complete Works of Chu Hsi'' in \emph{A Sourcebook in Chinese Philosophy}, pp. 632-653, 693-604.
+
+	\columnbreak %this is an unfortunate neccessity, otherwise the last few numbers of the previous section get pushe dover into the next column by themselves
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
 	Wang Yang-Ming, ``Inquiry on the Great Learning'' and selections from ``Instructions for Practical Living,'' in \emph{A Sourcebook in Chinese Philosophy}, pp. 659 -- 691.
@@ -725,8 +750,7 @@ Both systems are attempts to render the same pronunciations.
 
 	(The Descent -- Latter Days of Yayati)
 
-	% FIXME: make small
-	(pp 145-154 may be skimmed)
+	\small{\emph{(pp 145-154 may be skimmed)}}
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
 	\emph{The Book of the Beginning}, pp. 210-273
@@ -768,6 +792,9 @@ Both systems are attempts to render the same pronunciations.
 	\emph{The Book of the Effort}, pp 294-339
 
 	(The Suing for Peace)
+
+	\columnbreak
+	%\raggedcolumns
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
 	\emph{The Book of the Effort} pp 344-382
