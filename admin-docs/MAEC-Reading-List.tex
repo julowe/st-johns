@@ -1,12 +1,10 @@
 % Typeset/compile with pdfLaTeX or XeLaTeX
 \documentclass{article}
-%\DeclareUnicodeCharacter{1E41}{\d{m}} %works in pdfLaTeX, but not LuaLaTeX
+%\DeclareUnicodeCharacter{1E41}{\d{m}} %produces m with dot below it, not above %works in pdfLaTeX, but not LuaLaTeX
 \DeclareUnicodeCharacter{1E41}{$\dot{m}$} %works in pdfLaTeX, but not LuaLaTeX
 \usepackage[calc,useregional]{datetime2}
 
 % TODO:
-% check all dashes are -- not just -.
-% check spacing around dashes
 % check for more diacritics??
 % update the comemntary and opponent sections that don't quite make sense
 % get feedback on changes to commentary and opponent section and if they make more sense with new changes
@@ -14,7 +12,7 @@
 % make smaller margins?
 % possible to use subsection X.n as variable?
 % use uneven columns? https://www.overleaf.com/learn/latex/Multiple_columns#Unbalanced_columns
-% italicize titles
+% italicize titles and check that sections of readings aren't italicized, but quoted instead.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
@@ -285,16 +283,16 @@ Both systems are attempts to render the same pronunciations.
 \begin{multicols}{2}
 
 	\printHeaderWithSessionAndDate{fallStart}
-	Confucius, \emph{Analects}, \#1-7. Skip commentary where present.
+	Confucius, \emph{Analects}, \#1 -- 7. Skip commentary where present.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	Confucius, \emph{Analects}, \#8-13. Skip commentary where present.
+	Confucius, \emph{Analects}, \#8 -- 13. Skip commentary where present.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	Confucius, \emph{Analects}, \#14-20. Skip commentary where present.
+	Confucius, \emph{Analects}, \#14 -- 20. Skip commentary where present.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	Mozi (Mo Tzu), Fascicles 11, 14-17, 19, 20, 26, 27, 31, 32, 35, 39, and 50.
+	Mozi (Mo Tzu), Fascicles 11, 14 -- 17, 19, 20, 26, 27, 31, 32, 35, 39, and 50.
 
 	Translations by Burton Watson (\emph{Mo Tzu Basic Writings}), Ian Johnston (\emph{The Book of Master Mo}) or Chris Fraser (\emph{The Essential Mozi}) are acceptable.
 
@@ -311,35 +309,34 @@ Both systems are attempts to render the same pronunciations.
 	Xunzi (Hsun Tzu), Sections 1, 2, 9, 17. Use translations by Burton Watson or Eric L. Hutton.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	Xunzi (Hsun Tzu), Sections 19-23.
+	Xunzi (Hsun Tzu), Sections 19 -- 23.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	Zhuangzi (Chuang Tzu), Chapters 1-3
+	Zhuangzi (Chuang Tzu), Chapters 1 -- 3
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	Zhuangzi (Chuang Tzu), Chapters 4-7
+	Zhuangzi (Chuang Tzu), Chapters 4 -- 7
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	Zhuangzi (Chuang Tzu), Chapters 17-19, 26
+	Zhuangzi (Chuang Tzu), Chapters 17 -- 19, 26
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	Laozi (Lao Tzu), \emph{Dao De Jing (Tao Te Ching),} Chapters 1-37. Commentaries are not necessary.
+	Laozi (Lao Tzu), \emph{Dao De Jing (Tao Te Ching)}, Chapters 1 -- 37. Commentaries are not necessary.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	Laozi (Lao Tzu), \emph{Dao De Jing (Tao Te Ching),} Chapters 38-81. Commentaries are not necessary.
+	Laozi (Lao Tzu), \emph{Dao De Jing (Tao Te Ching)}, Chapters 38 -- 81. Commentaries are not necessary.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
 	Han Feizi (Han Fei Tzu), Fascicles 20, 21. Available in EC Manual.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	\emph{Han Feizi~: Basic Writings,} Translated by Burton Watson. Sections 5-10.
-	%FIXME: the ~ after Feizi? accent mark intended?
+	\emph{Han Feizi~: Basic Writings}, Translated by Burton Watson. Sections 5 -- 10.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	\emph{Han Feizi~: Basic Writings,} Translated by Burton Watson. Sections 12, 13, 17, 18, 49, 50.
+	\emph{Han Feizi~: Basic Writings}, Translated by Burton Watson. Sections 12, 13, 17, 18, 49, 50.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	\emph{The Rig Veda~: An Anthology} Translated by Wendy Doniger. Sections 10.129, 10.121, 10.90, 10.130, 10.190, 10.81-82, 10.72, 10.14, 10.16, 10.18, 10.154, 10.135, 10.58, 10.71, 10.125, 10.101, 10.151, 1.164, 1.163, 1.162, 10.56
+	\emph{The Rig Veda~: An Anthology} Translated by Wendy Doniger. Sections 10.129, 10.121, 10.90, 10.130, 10.190, 10.81 -- 82, 10.72, 10.14, 10.16, 10.18, 10.154, 10.135, 10.58, 10.71, 10.125, 10.101, 10.151, 1.164, 1.163, 1.162, 10.56
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
 	\emph{The Rig Veda~: An Anthology}. Sections 1.1, 1.26, 5.2, 2.35, 10.51, 10.124, 10.5, 8.79, 9.74, 4.58, 8.48, 10.136, 4.18, 10.28, 1.32, 2.12, 5.83, 7.101, 1.50, 1.160, 1.185, 6.70; 10.10, 1.179, 10.95, 10.85.
@@ -360,7 +357,7 @@ Both systems are attempts to render the same pronunciations.
 	``Katha Upanisad''
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	% FIXME: what is this from?
+	% FIXME: what is this from? book? EC Manual?
 	``Kena Upaniṣad'' and ``Mundaka Upanisad''
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
@@ -369,7 +366,6 @@ Both systems are attempts to render the same pronunciations.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
 	%FIXME: don't italicize?
-	% FIXME: ṁ Missing character: There is no ṁ (U+1E41) in font [lmroman10-italic]:+tlig;!
 	\emph{``The Vaiśeṣika Sūtra''} and \emph{``The Padārthadharmasaṁgraha,'' in A Sourcebook in Indian Philosophy}, pp. 387 -- 423.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
@@ -382,7 +378,7 @@ Both systems are attempts to render the same pronunciations.
 	``The Yoga Philosophy of Patañjali'' in \emph{A Sourcebook in Indian Philosophy}, pp. 454 - 485
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	\emph{The Bhagavadgītā in the Mahābhārata} translated by J.A.B. van Buitenen. Pp. 39-107
+	\emph{The Bhagavadgītā in the Mahābhārata} translated by J.A.B. van Buitenen. Pp. 39 -- 107
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
 	\emph{The Bhagavadgītā in the Mahābhārata} translated by J.A.B. van Buitenen. Pp. 107 - 157
@@ -415,7 +411,7 @@ Both systems are attempts to render the same pronunciations.
 	Kālidāsa, \emph{Kumārasaṃbhava}, in \emph{The Origin of the Young God}, translated by Hank Hifetz. Available in EC Manual.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	Kālidāsa, \emph{The Recognition of Śhakuntalā,} translated by W.J. Johnson.
+	Kālidāsa, \emph{The Recognition of Śhakuntalā}, translated by W.J. Johnson.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
 	``The \emph{Dhvanyāloka} of Ānandavardhana with the \emph{Locana} of Abhinavagupta'' selections with supplemental material by Keith and Perry. Through pp. 119. Available in EC Manual.
@@ -424,46 +420,41 @@ Both systems are attempts to render the same pronunciations.
 	``The \emph{Dhvanyāloka} of Ānandavardhana with the \emph{Locana} of Abhinavagupta'' selections with supplemental material by Keith and Perry. Sections through pp. 696. Available in EC Manual.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	% Missing character: There is no ṁ (U+1E41) in font [lmroman10-italic]:+tlig;!
-	% Missing character: There is no ṁ (U+1E41) in font [lmroman10-regular]:+tlig;!
-	%FIXME: ṁ doesn't print right
 	``Pūrva Mīmāṁsā'' in \emph{A Sourcebook in Indian Philosophy} edited by Sarvepalli Radhakrishnan and Charles A. Moore. Pp. 486 -- 505.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	``Cārvāka'' in \emph{A Sourcebook in Indian Philosophy.} Pp. 227 -- 249.
+	``Cārvāka'' in \emph{A Sourcebook in Indian Philosophy}. Pp. 227 -- 249.
 	%FIXME: pp vs Pp 
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
 	``Discourses on the Nobel Quest,'' ``Discourse to Kālāmas,'' and ``The Greater Discourse on Cause'' from \emph{Early Buddhist Discourses} by John Holder.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	``The Greater Discourse on the Foundations of Mindfulness,'' ``The Greater Discourse on the Destruction of Craving,'' ``Discourse of the Honeyball'' from \emph{Early Buddhist Discourses.}
+	``The Greater Discourse on the Foundations of Mindfulness,'' ``The Greater Discourse on the Destruction of Craving,'' ``Discourse of the Honeyball'' from \emph{Early Buddhist Discourses}.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	``Short Discourses from the Saṃyutta Nikāya,'' ``The Shorter Discourse to Māluṅkyaputta,'' ``Discourse on the Parable of the Water Snake,'' ``Discourse to Vacchagotta on Fire,'' from \emph{Early Buddhist Discourses.}
+	``Short Discourses from the Saṃyutta Nikāya,'' ``The Shorter Discourse to Māluṅkyaputta,'' ``Discourse on the Parable of the Water Snake,'' ``Discourse to Vacchagotta on Fire,'' from \emph{Early Buddhist Discourses}.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	``Discourse to Prince Abhaya,'' ``Discourse to Poṭṭhapāda,'' ``Discourse on the Threefold Knowledge,'' from \emph{Early Buddhist Discourses.}
+	``Discourse to Prince Abhaya,'' ``Discourse to Poṭṭhapāda,'' ``Discourse on the Threefold Knowledge,'' from \emph{Early Buddhist Discourses}.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
 	``Discourse to Assalāyana,'' ``Discourse to the Layman Sigāla,'' from \emph{Early Buddhist Discourses. Samannaphala Sutta} (``Fruits of the Homeless Life''), available in EC Manual.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	\emph{The Lotus Sutra}, Translated by Burton Watson. Chapters 1 (prose portion), 2-7 (only the parable in the last nine paragraphs of the final prose section, beginning with ``Monks, you must understand this.''), and 8.
+	\emph{The Lotus Sutra}, Translated by Burton Watson. Chapters 1 (prose portion), 2 -- 7 (only the parable in the last nine paragraphs of the final prose section, beginning with ``Monks, you must understand this.''), and 8.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	\emph{The Lotus Sutra}, Translated by Burton Watson. Chapters 10 (prose portion), 11 (verse only), 12-14, 16, 20, 21, 23, 25, 28 (all prose portion).
+	\emph{The Lotus Sutra}, Translated by Burton Watson. Chapters 10 (prose portion), 11 (verse only), 12 -- 14, 16, 20, 21, 23, 25, 28 (all prose portion).
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
 	Nāgārjuna, Chapters 1, 2, 7.
 
 	Translation options:
 
-	(A)\emph{Mūlamadhyamakakārikā of Nāgārjuna: The
-		Fundamental Wisdom of the Middle Way}, translated by Jay L. Garfield OR
+	(A)\emph{Mūlamadhyamakakārikā of Nāgārjuna: The Fundamental Wisdom of the Middle Way}, translated by Jay L. Garfield OR
 
-	(B)\emph{The Philosophy of the Middle Way} translation by David J.
-	Kalupahana.
+	(B)\emph{The Philosophy of the Middle Way} translation by David J. Kalupahana.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
 	Nāgārjuna, Chapters 10, 12, 17, 18
@@ -478,12 +469,12 @@ Both systems are attempts to render the same pronunciations.
 	Vimalakīrti Sūtra, \emph{The Holy Teaching of Vimalakīrti}, translated by Thurman. Sections 7 -- End.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	Gauḍapāda, \emph{``Māndukya} Upanishad with the Kārikā of Gauḍapāda\emph{''} in Vol. II of \emph{The Upanishads} translated by Swami Nikhilananda (Ramakrishna-Vivekananda Center), pp. 223 -- 368.
+	Gauḍapāda, ``\emph{Māndukya} Upanishad with the Kārikā of Gauḍapāda'' in Vol. II of \emph{The Upanishads} translated by Swami Nikhilananda (Ramakrishna-Vivekananda Center), pp. 223 -- 368.
 	Read both the Māndukya Upanishad and Gauḍapāda commentary. Ignore other commentaries.
 	In Chapter 1, after the Hari Om paragraph, read the paragraph following each heading numeral, following the woven threads of Upanishad and Karika (Gaudapada's commentary). For example, ``Now the Upanishad is resumed,'' or ``Now the Karika is resumed.'' From Chapter 2 on, the paragraph following the number is Gaudapada.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	Saṅkarâkârya's commentary on the Vedânta Sūtras. pp. 2 -- 67, \emph{Sacred Books of the East, Vol. 34,} translated by George Thibaut.
+	Saṅkarâkârya's commentary on the Vedânta Sūtras. pp. 2 -- 67, \emph{Sacred Books of the East, Vol. 34}, translated by George Thibaut.
 	%FIXME: use same language in everyplace for things in EC Manual. this made me think it was a seperate purchases
 	Available as a photocopy in the bookstore.
 	% FIXME: add diacritics to purvapakshin and names?
@@ -499,7 +490,7 @@ Both systems are attempts to render the same pronunciations.
 	\begin{center}
 		\textbf{\textit{[ESSAYS DUE]}}
 	\end{center}
-	Rāmānujā's commentary on the Vedânta Sūtras, pp. 102 -119, 129 -- 138, 255- 273, 296- 308.
+	Rāmānujā's commentary on the Vedânta Sūtras, pp. 102 -- 119, 129 -- 138, 255 -- 273, 296 -- 308.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
 	Jayadeva's ``The \emph{Gītagovinda}'' in \emph{Love Song of the Dark Lord}, edited and translated by Barbara Stoler Miller, pp. 69 -- 125.
@@ -510,7 +501,7 @@ Both systems are attempts to render the same pronunciations.
 	``The \emph{Heart Sūtra''} pp. 17 -- 53. Available in EC Manual.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	Hui-Neng, ``Commentary on the Diamond Sūtra,'' in \emph{The Sutra of Hui-neng, Grand Master of Zen: With Hui-neng\textquotesingle s Commentary on the Diamond Sutra}, translated by Thomas Cleary (Shambhala), pp. 85-144.
+	Hui-Neng, ``Commentary on the Diamond Sūtra,'' in \emph{The Sutra of Hui-neng, Grand Master of Zen: With Hui-neng's Commentary on the Diamond Sutra}, translated by Thomas Cleary (Shambhala), pp. 85 -- 144.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
 	Hui-Neng, \emph{The Platform Sutra of the Sixth Patriarch}, translated by Philip Yampolsky (Columbia University Press), paragraphs 1 -- 30.
@@ -519,13 +510,14 @@ Both systems are attempts to render the same pronunciations.
 	Hui-Neng, \emph{The Platform Sutra of the Sixth Patriarch}, 31 -- 57.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	%TODO: check if correct emph
 	``The \emph{Great Learning}'' and ``The \emph{Doctrine of the Mean},'' in \emph{A Sourcebook in Chinese Philosophy}, translated and edited by Wing-tsit Chan, pp. 84 -- 114.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	Zhu Xi (Chu Hsi), ``The Complete Works of Chu Hsi'' in \emph{A Sourcebook in Chinese} \emph{Philosophy}, pp. 605 -- 632 (stop at \emph{Jen}).
+	Zhu Xi (Chu Hsi), ``The Complete Works of Chu Hsi'' in \emph{A Sourcebook in Chinese Philosophy}, pp. 605 -- 632 (stop at \emph{Jen}).
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	Zhu Xi (Chu Hsi), ``The Complete Works of Chu Hsi'' in \emph{A Sourcebook in Chinese Philosophy}, pp. 632-653, 693-604.
+	Zhu Xi (Chu Hsi), ``The Complete Works of Chu Hsi'' in \emph{A Sourcebook in Chinese Philosophy}, pp. 632 -- 653, 693 -- 604.
 
 	\columnbreak %this is an unfortunate neccessity, otherwise the last few numbers of the previous section get pushe dover into the next column by themselves
 
@@ -555,27 +547,27 @@ Both systems are attempts to render the same pronunciations.
 
 
 	\printHeaderWithSessionAndDate{summerStart}
-	\emph{The Tale of the Heike,} translated by Helen Craig McCullough. Chapters 1 -- 8.
+	\emph{The Tale of the Heike}, translated by Helen Craig McCullough. Chapters 1 -- 8.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	\emph{The Tale of the Heike,} Chapters 9 -- 10.
+	\emph{The Tale of the Heike}, Chapters 9 -- 10.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	\emph{The Tale of the Heike,} Chapters 11 -- end.
+	\emph{The Tale of the Heike}, Chapters 11 -- end.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
 	Kūkai \emph{Major Works} translated by Yoshito S. Hakeda (Columbia University Press), ``The Difference Between Exoteric and Esoteric Buddhism'', ``Attaining Enlightenment in This Very Existence, ``The Meanings of Sound, Word, and Reality.'' Available in EC Manual.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	Sei Shōnagon, \emph{The Pillow Book}, translated by Meredith McKinney (Penguin Classics), sections 1-100, pp. 3-113
+	Sei Shōnagon, \emph{The Pillow Book}, translated by Meredith McKinney (Penguin Classics), sections 1 -- 100, pp. 3 -- 113
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	\emph{The Pillow Book}, sections 101-206, 243, 258, 273, pp. 113-190
+	\emph{The Pillow Book}, sections 101 -- 206, 243, 258, 273, pp. 113 -- 190
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
 	Kamo no Chōmei, ``Hōjōki or the Record of the Ten-Foot Square Hut''
 
-	\emph{Kenkō and Chōmei: Essays in Idleness and Hōjōki,} translated by
+	\emph{Kenkō and Chōmei: Essays in Idleness and Hōjōki}, translated by
 	Meredith McKinney (Penguin) OR
 
 	\emph{Four Huts: Asian Writings on the Simple Life}, translated by
@@ -597,7 +589,7 @@ Both systems are attempts to render the same pronunciations.
 	Dōgen, ``Uji,'' in \emph{The Heart of Dōgen's Shōbōgenzō}
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	Kenkō, sections 1 -- 38, 43 -- 49, 52, 53, 58 -- 60, 66. In \emph{Kenkō and Chōmei: Essays in Idleness and Hōjōki,} translated by Meredith McKinney (Penguin)
+	Kenkō, sections 1 -- 38, 43 -- 49, 52, 53, 58 -- 60, 66. In \emph{Kenkō and Chōmei: Essays in Idleness and Hōjōki}, translated by Meredith McKinney (Penguin)
 
 	OR
 
@@ -635,7 +627,7 @@ Both systems are attempts to render the same pronunciations.
 % TODO: make list below
 \textbf{Required Texts:}
 \begin{itemize}
-	\item (In EC Manual): “The Grand Scribes Records” Vol 1, translated by Neinhauser, Jr. (pp 1-86)
+	\item (In EC Manual): “The Grand Scribes Records” Vol 1, translated by Neinhauser, Jr. (pp 1 -- 86)
 	\item \textit{Records of the Grand Historian}, translated by Burton Watson (Columbia University Press), Volumes:
 	      \begin{itemize}
 		      \item \textit{Quin Dynasty} (ISBN: 0231081693)
@@ -656,47 +648,47 @@ Both systems are attempts to render the same pronunciations.
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
 	% FIXME: italicize titles
-	\emph{Shi Ji} Ch 6 (Quin Dynasty, pp. 35-83)
+	\emph{Shi Ji} Ch 6 (Quin Dynasty, pp. 35 -- 83)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	\emph{Shi Ji} Ch 15, 61, 68, 79 (Quin Dynasty, pp. 85-99, 131-157, photocopy of section 61)
+	\emph{Shi Ji} Ch 15, 61, 68, 79 (Quin Dynasty, pp. 85 -- 99, 131 -- 157, photocopy of section 61)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
 	% FIXME: add note location letter, pages? preface?
-	\emph{Shi Ji} Ch 85-88, 126 (Quin Dynasty, pp. 159-216, plus Sima Qian's Letter to Ren An)
+	\emph{Shi Ji} Ch 85 -- 88, 126 (Quin Dynasty, pp. 159 -- 216, plus Sima Qian's Letter to Ren An)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	\emph{Shi Ji} Ch 48, 7 (Han Dynasty I, pp. 1-38)
+	\emph{Shi Ji} Ch 48, 7 (Han Dynasty I, pp. 1 -- 38)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	\emph{Shi Ji} Ch 8, 16 (Han Dynasty I, pp. 51-88)
+	\emph{Shi Ji} Ch 8, 16 (Han Dynasty I, pp. 51 -- 88)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	\emph{Shi Ji} Ch 53, 55, 56 (Han Dynasty I, pp 91-128)
+	\emph{Shi Ji} Ch 53, 55, 56 (Han Dynasty I, pp 91 -- 128)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	\emph{Shi Ji} Ch 89-91 (Han Dynasty I, pp 131-162)
+	\emph{Shi Ji} Ch 89 -- 91 (Han Dynasty I, pp 131 -- 162)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	\emph{Shi Ji} Ch 92-94 (Han Dynasty I, pp 163-202)
+	\emph{Shi Ji} Ch 92 -- 94 (Han Dynasty I, pp 163 -- 202)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	\emph{Shi Ji} Ch 9-12, 106 (Han Dynasty I, 267-319, 403-422)
+	\emph{Shi Ji} Ch 9 -- 12, 106 (Han Dynasty I, 267 -- 319, 403 -- 422)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	\emph{Shi Ji} Ch 28 (Han Dynasty II, 3-52)
+	\emph{Shi Ji} Ch 28 (Han Dynasty II, 3 -- 52)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	\emph{Shi Ji} Ch 110 (Han Dynasty II, 129-162)
+	\emph{Shi Ji} Ch 110 (Han Dynasty II, 129 -- 162)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	\emph{Shi Ji} Ch 117 (Han Dynasty II, 259-306)
+	\emph{Shi Ji} Ch 117 (Han Dynasty II, 259 -- 306)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	\emph{Shi Ji} Ch 121, 119, 122 (Han Dynasty II, 355-407)
+	\emph{Shi Ji} Ch 121, 119, 122 (Han Dynasty II, 355 -- 407)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	\emph{Shi Ji} Ch 124, 125, 127, 129 (Han Dynasty II, 409-454)
+	\emph{Shi Ji} Ch 124, 125, 127, 129 (Han Dynasty II, 409 -- 454)
 
 \end{multicols}
 
@@ -736,60 +728,60 @@ Both systems are attempts to render the same pronunciations.
 
 
 	\printHeaderWithSessionAndDate{fallPrecept2Start}
-	\emph{The Book of the Beginning}, pp. 19-63
+	\emph{The Book of the Beginning}, pp. 19 -- 63
 
 	(Lists -- Puloman)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	\emph{The Book of the Beginning}, pp. 63-123
+	\emph{The Book of the Beginning}, pp. 63 -- 123
 
 	(Astika)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	\emph{The Book of the Beginning}, pp. 123-210
+	\emph{The Book of the Beginning}, pp. 123 -- 210
 
 	(The Descent -- Latter Days of Yayati)
 
-	\small{\emph{(pp 145-154 may be skimmed)}}
+	{\small \emph{(pp 145 -- 154 may be skimmed)}}
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	\emph{The Book of the Beginning}, pp. 210-273
+	\emph{The Book of the Beginning}, pp. 210 -- 273
 
 	(Latter Days of Yayati -- The Origins)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	\emph{The Book of the Beginning}, pp. 274-344
+	\emph{The Book of the Beginning}, pp. 274 -- 344
 
 	(The Fire in the Lacquer House - Citraratha)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	\emph{The Book of the Beginning}, pp. 344-405
+	\emph{The Book of the Beginning}, pp. 344 -- 405
 
 	(Draupadi's Bridegroom Choice -- Arjuna's Sojourn in the Forest)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	\emph{The Book of the Beginning}, pp. 405-431
+	\emph{The Book of the Beginning}, pp. 405 -- 431
 
 	(Abduction of Subhadra -- Burning of the Khandava Forest). Discussion of whole of Book 1
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
 
-	\emph{The Book of the Assembly Hall:} Read italicized summaries pp.33-106, then read whole pp.106-69 (The Dicing -- The Sequel to the Dicing).
+	\emph{The Book of the Assembly Hall}: Read italicized summaries pp.33 -- 106, then read whole pp.106 -- 69 (The Dicing -- The Sequel to the Dicing).
 
-	At this point note that the \emph{Sauptikaparvan} volume has narrative summaries in the back: read summary for Book 4\emph{, The Book of Virata.}
+	At this point note that the \emph{Sauptikaparvan} volume has narrative summaries in the back: read summary for Book 4, \emph{The Book of Virata}.
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	\emph{The Book of the Effort}, pp 187-254
+	\emph{The Book of the Effort}, pp 187 -- 254
 
 	(Embassy of Samjaya)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	\emph{The Book of the Effort}, pp 254-294
+	\emph{The Book of the Effort}, pp 254 -- 294
 
 	(Dhrtarastra's Vigil -- Sanatsujata)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	\emph{The Book of the Effort}, pp 294-339
+	\emph{The Book of the Effort}, pp 294 -- 339
 
 	(The Suing for Peace)
 
@@ -797,26 +789,26 @@ Both systems are attempts to render the same pronunciations.
 	%\raggedcolumns
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	\emph{The Book of the Effort} pp 344-382
+	\emph{The Book of the Effort} pp 344 -- 382
 
 	(The Coming of the Lord);
 
-	\emph{The Book of the Effort} pp 415-442
+	\emph{The Book of the Effort} pp 415 -- 442
 
 	(The Coming of the Lord, continued)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	In Volume 3\emph{, The Book of the Forest,} pp. 780-795
+	In Volume 3, \emph{The Book of the Forest}, pp. 780 -- 795
 
 	(The Robbing of the Earrings), then
 
 	% FIXME: make a blank line and don't indent this next line
-	\emph{The Book of the Effort}, pp. 442-461
+	\emph{The Book of the Effort}, pp. 442 -- 461
 
 	(The Temptation of Karna)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	\emph{The Book of the Effort}, pp.461-532
+	\emph{The Book of the Effort}, pp.461 -- 532
 
 	(The Marching Out -- Amba)
 
@@ -849,52 +841,52 @@ Both systems are attempts to render the same pronunciations.
 \begin{multicols}{2}
 
 	\printHeaderWithSessionAndDate{summerPreceptStart}
-	Chapters 1-4 (80 pages)
+	Chapters 1 -- 4 (80 pages)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	Chapters 5-6 (47 pages)
+	Chapters 5 -- 6 (47 pages)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	Chapters 7-10 (82 pages)
+	Chapters 7 -- 10 (82 pages)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	Chapters 11-13 (55 pages)
+	Chapters 11 -- 13 (55 pages)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	Chapters 14-19 (76 pages)
+	Chapters 14 -- 19 (76 pages)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	Chapters 20-22 (60 pages)
+	Chapters 20 -- 22 (60 pages)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	Chapters 23-29 (72 pages)
+	Chapters 23 -- 29 (72 pages)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	Chapters 30-33 (54 pages)
+	Chapters 30 -- 33 (54 pages)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	Chapters 34-35 (98 pages)
+	Chapters 34 -- 35 (98 pages)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	Chapters 36-38 (39 pages)
+	Chapters 36 -- 38 (39 pages)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	Chapters 39-43 (74 pages)
+	Chapters 39 -- 43 (74 pages)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	Chapters 44-46 (69 pages)
+	Chapters 44 -- 46 (69 pages)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	Chapters 47-48 (63 pages)
+	Chapters 47 -- 48 (63 pages)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	Chapters 49-50 (87 pages)
+	Chapters 49 -- 50 (87 pages)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	Chapters 51-52 (70 pages)
+	Chapters 51 -- 52 (70 pages)
 
 	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
-	Chapters 53-54 (47 pages)
+	Chapters 53 -- 54 (47 pages)
 
 \end{multicols}
 
