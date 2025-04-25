@@ -1,0 +1,6 @@
+#ignore old versions/backups of files
+*.old
+*.bak
+
+#ignore directories (or files) that end in `-test`
+*-test
