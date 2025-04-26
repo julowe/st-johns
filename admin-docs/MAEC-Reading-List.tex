@@ -1,18 +1,6 @@
 % Typeset/compile with pdfLaTeX or XeLaTeX
 \documentclass{article}
-%\DeclareUnicodeCharacter{1E41}{\d{m}} %produces m with dot below it, not above %works in pdfLaTeX, but not LuaLaTeX
-\DeclareUnicodeCharacter{1E41}{$\dot{m}$} %works in pdfLaTeX, but not LuaLaTeX
 \usepackage[calc,useregional]{datetime2}
-
-% TODO:
-% check for more diacritics??
-% update the comemntary and opponent sections that don't quite make sense
-% get feedback on changes to commentary and opponent section and if they make more sense with new changes
-% FIX HEADERS!!
-% make smaller margins?
-% possible to use subsection X.n as variable?
-% use uneven columns? https://www.overleaf.com/learn/latex/Multiple_columns#Unbalanced_columns
-% italicize titles and check that sections of readings aren't italicized, but quoted instead.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
@@ -46,6 +34,21 @@
 %%        END: Edit these values
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% TODO:
+% check for more diacritics??
+% update the comemntary and opponent sections that don't quite make sense
+% get feedback on changes to commentary and opponent section and if they make more sense with new changes
+% FIX HEADERS!!
+% make smaller margins?
+% possible to use subsection X.n as variable?
+% use uneven columns? https://www.overleaf.com/learn/latex/Multiple_columns#Unbalanced_columns
+% italicize titles and check that sections of readings aren't italicized, but quoted instead.
+
+
+%\DeclareUnicodeCharacter{1E41}{\d{m}} %produces m with dot below it, not above %works in pdfLaTeX, but not LuaLaTeX
+\DeclareUnicodeCharacter{1E41}{$\dot{m}$} %works in pdfLaTeX, but not LuaLaTeX
 
 % From http://tex.stackexchange.com/questions/34040/graphics-logo-in-headers
 \usepackage{geometry}
