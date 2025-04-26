@@ -12,9 +12,28 @@ and it's [source TeX file](admin-docs/MAEC-Reading-List.tex)
 
 ## Sanskrit
 
+### Devanagari Transliteration Schemes and Typing Characters
+
+There are a few transliteration schemes for Sanskrit, see
+[Wikipedia's Comparison Table](https://en.wikipedia.org/wiki/Devanagari_transliteration#Transliteration_comparison).
+
+Your textbook will likely teach IAST. This is easy to remember & write but hard
+to type, e.g. when search for words online in the [Monier-Williams dictionary](https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc1/index.php).
+That websites use SLP1 - where every Devanagari character is written in a
+single roman alphabet letter - for example:
+ड (ḍ in IAST) is typed as 'q',
+and ढ (ḍh in IAST) is typed as 'Q'
+
+TODO: add links or words about enabling other keyboards
+(on... pc mac linux ios android?), and keyboard map for less common characters.
+
+<!-- TODO: add keyboard map of characters,
+see: /tank/Learning/st-johns/india/ramanuja/keyboard-map -->
+
 ### Sanskrit Dictionaries online or loaded into phone apps
 
-Monier-Williams and other dictionaries are available online at the [Cologne Digital Sanskrit Dictionaries Site](https://www.sanskrit-lexicon.uni-koeln.de/).
+Monier-Williams and other dictionaries are available online at the
+[Cologne Digital Sanskrit Dictionaries Site](https://www.sanskrit-lexicon.uni-koeln.de/).
 But this can be a bit clunky on a phone.
 
 I found a number of dictionaries availabe at
