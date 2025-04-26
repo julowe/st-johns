@@ -639,18 +639,20 @@ Both systems are attempts to render the same pronunciations.
 	 (First Eight Weeks)
 \end{center}
 
-% TODO: make list below
-\textbf{Required Texts:}
-\begin{itemize}
-	\item (In EC Manual): “The Grand Scribes Records” Vol 1, translated by Neinhauser, Jr. (pp 1 -- 86)
-	\item \textit{Records of the Grand Historian}, translated by Burton Watson (Columbia University Press), Volumes:
-	      \begin{itemize}
-		      \item \textit{Quin Dynasty} (ISBN: 0231081693)
-		      \item \textit{Han Dynasty I} (ISBN: 0231081650)
-		      \item \textit{Han Dynasty II} (ISBN: 0231081677)
-	      \end{itemize}
-\end{itemize}
 
+\textbf{Required Texts:}
+\newcommand{\fallPreceptOneReadingList}{%
+	\begin{itemize}
+		\item (In EC Manual): “The Grand Scribes Records” Vol 1, translated by Neinhauser, Jr. (pp 1 -- 86)
+		\item \textit{Records of the Grand Historian}, translated by Burton Watson (Columbia University Press), Volumes:
+		      \begin{itemize}
+			      \item \textit{Quin Dynasty} (ISBN: 0231081693)
+			      \item \textit{Han Dynasty I} (ISBN: 0231081650)
+			      \item \textit{Han Dynasty II} (ISBN: 0231081677)
+		      \end{itemize}
+	\end{itemize}
+}
+\fallPreceptOneReadingList
 
 \begin{multicols}{2}
 
@@ -727,18 +729,22 @@ Both systems are attempts to render the same pronunciations.
 % TODO: make section title repeate if new page is needed?
 
 \textbf{Required Texts}:
-\begin{itemize}
-	\item \textit{Mahābhārata} translated by J.A.B. van Buitenen (University of Chicago Press)
-	      \begin{itemize}
-		      \item Volume 1, \textit{The Book of the Beginning} (ISBN: 9780226846637)
-		      \item Volume 2, \textit{The Book of the Assembly Hall, The Book of the Forest} (ISBN: 9780226846644)
-		      \item Volume 3, \textit{The Book of the Virata, The Book of the Effort} (ISBN: 9780226846651)
-	      \end{itemize}
-	\item \textit{The Sauptikaparvan of the Mahbharata} translated by W.J. Johnson (Oxford World’s Classics) (ISBN: 978-0192823618)
-	      \begin{itemize}
-		      \item Out of print, but photocopies are available in the EC Manual sold in the bookstore
-	      \end{itemize}
-\end{itemize}
+\newcommand{\fallPreceptTwoReadingList}{%
+	\begin{itemize}
+		\item \textit{Mahābhārata} translated by J.A.B. van Buitenen (University of Chicago Press)
+		      \begin{itemize}
+			      \item Volume 1, \textit{The Book of the Beginning} (ISBN: 9780226846637)
+			      \item Volume 2, \textit{The Book of the Assembly Hall, The Book of the Forest} (ISBN: 9780226846644)
+			      \item Volume 3, \textit{The Book of the Virata, The Book of the Effort} (ISBN: 9780226846651)
+		      \end{itemize}
+		\item \textit{The Sauptikaparvan of the Mahbharata} translated by W.J. Johnson (Oxford World’s Classics) (ISBN: 978-0192823618)
+		      \begin{itemize}
+			      \item Out of print, but photocopies are available as part of the EC Manual, which is sold in the bookstore
+		      \end{itemize}
+	\end{itemize}
+}
+\fallPreceptTwoReadingList
+
 
 \begin{multicols}{2}
 
@@ -851,9 +857,16 @@ Both systems are attempts to render the same pronunciations.
 	\section{Summer Preceptorial – \emph{The Tale of Genji}}
 \end{center}
 
-\textbf{Required Text:}
 
-\emph{The Tale of Genji} by Murasaki Shikibu, translated by Edward G. Seidensticker (ISBN: 978-0679417385)
+
+\textbf{Required Text:}
+% TODO: why is there such a small line space between these two??
+\newcommand{\summerPreceptReadingList}{%
+	\begin{itemize}
+		\item \emph{The Tale of Genji} by Murasaki Shikibu, translated by Edward G. Seidensticker (ISBN: 978-0679417385)
+	\end{itemize}
+}
+\summerPreceptReadingList
 
 \begin{multicols}{2}
 
@@ -919,10 +932,16 @@ Both systems are attempts to render the same pronunciations.
 \clearpage
 \section{Booklist}
 
+\subsection{Seminar Readings}
 Books for Seminar are listed in order they are encountered in class.
 
 TODO...?
+\subsection{Preceptorial Readings}
+\fallPreceptOneReadingList
+\fallPreceptTwoReadingList
+\summerPreceptReadingList
 
 % TODO: add QR code to some survey/form through which people can easily submit changes/errors/etc?
+% TODO: add QR to online HTML version??
 
 \end{document}
