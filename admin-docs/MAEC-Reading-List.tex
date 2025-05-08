@@ -71,7 +71,7 @@
 \chead{\includegraphics[width=\textwidth]{header-blank.png}}
 
 
-% Tex automaticaly adds numbers to the beginning of section, subsections etc (e.g. "1.3 Session 3") but we don't want this, so setting it to 0
+% Tex automatically adds numbers to the beginning of section, subsections etc (e.g. "1.3 Session 3") but we don't want this, so setting it to 0
 \setcounter{secnumdepth}{0}
 
 % only show first level of sections in Table of Contents (i.e. only `\section{}` commands)
@@ -94,7 +94,7 @@
 %then check to make sure the next class day is not during a break
 %	if no, cool, print it.
 %	if yes, ugh:
-%		hand back last day of break for which the previously computed 'next class' date was. We say that the break dates are inclusive, so just pass the last day of break to the \getNextBiweeklyClassDate command and we shoudl be good. then print that new date.
+%		hand back last day of break for which the previously computed 'next class' date was. We say that the break dates are inclusive, so just pass the last day of break to the \getNextBiweeklyClassDate command and we should be good. then print that new date.
 
 % function - \printHeaderForNextSeminarClassDate: helper function that just runs `\checkIfHoliday{#1}` and then with output, runs `\getNextBiweeklyClassDate{#1}{0}{3}` so that user doesn't need to know about the 0=Monday and 3=Thursday nomenclature.
 \newcommand{\printHeaderForNextSeminarClassDate}[1]{%
@@ -191,7 +191,7 @@
 }
 
 
-%function - \checkIfDateBetweenDates: this command will check if a date is between two dates (inclusively). If it is not, functiondoes nothing. If it is between the two dates, this function will write a header of "No Classes from <first-date-in-range> - <last-date-in-range>" and then set a counter to mark that the date is change, and change the value of `tempDate` to <last-date-in-range>.
+%function - \checkIfDateBetweenDates: this command will check if a date is between two dates (inclusively). If it is not, function does nothing. If it is between the two dates, this function will write a header of "No Classes from <first-date-in-range> - <last-date-in-range>" and then set a counter to mark that the date is change, and change the value of `tempDate` to <last-date-in-range>.
 % parameters: \checkIfDateBetweenDates{<date-to-check>}{<first-date-in-range>}{<last-date-in-range>}
 \newcommand{\checkIfDateBetweenDates}[3]{%
   \DTMifdate{#1}
@@ -199,7 +199,7 @@
   \DTMfetchyear{#2}-\DTMfetchmonth{#2}-\DTMfetchday{#2}
   and
   \DTMfetchyear{#3}-\DTMfetchmonth{#3}-\DTMfetchday{#3}
-  } {\DTMsavedate{tempDate}{\DTMfetchyear{#3}-\DTMfetchmonth{#3}-\DTMfetchday{#3}} \setcounter{dateChanged}{1} \subsection{No Classes from \DTMusedate{#2}--\DTMusedate{#3}}}{}
+  } {\DTMsavedate{tempDate}{\DTMfetchyear{#3}-\DTMfetchmonth{#3}-\DTMfetchday{#3}} \setcounter{dateChanged}{1} \subsection{No Classes from \DTMusedate{#2}--\DTMusedate{#3}}\vspace{0.4cm}}{}
 }
 
 
@@ -214,7 +214,7 @@
 
 
 %function - \printHeaderWithSession: increments cntSession (since it starts at 0), then prints text for Session <cntSession>
-% just in case one doesn't want the dates that I wrote so much code to calculate... Don't use this function and \printHeaderWithSessionAndDate in same doc, it will prob mess up counters/registerss
+% just in case one doesn't want the dates that I wrote so much code to calculate... Don't use this function and \printHeaderWithSessionAndDate in same doc, it will prob mess up counters/registers
 \newcommand{\printHeaderWithSession}{%
 	\stepcounter{cntSession}%
 	\subsection{Session \arabic{cntSession}}%
@@ -532,13 +532,13 @@ Both systems are attempts to render the same pronunciations.
 	\emph{Available in EC Manual}
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	Hui-Neng, ``Commentary on the Diamond Sūtra'' in \emph{The Sutra of Hui-neng, Grand Master of Zen: With Hui-neng's Commentary on the Diamond Sutra}, translated by Thomas Cleary (Shambhala), pp. 85--144.
+	Hui-neng, ``Commentary on the Diamond Sūtra'' in \emph{The Sutra of Hui-neng, Grand Master of Zen: With Hui-neng's Commentary on the Diamond Sutra}, translated by Thomas Cleary (Shambhala), pp. 85--144.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	Hui-Neng, \emph{The Platform Sutra of the Sixth Patriarch}, translated by Philip Yampolsky (Columbia University Press), paragraphs 1--30.
+	Hui-neng, \emph{The Platform Sutra of the Sixth Patriarch}, translated by Philip Yampolsky (Columbia University Press), paragraphs 1--30.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	Hui-Neng, \emph{The Platform Sutra of the Sixth Patriarch}, 31--57.
+	Hui-neng, \emph{The Platform Sutra of the Sixth Patriarch}, translated by Philip Yampolsky (Columbia University Press), paragraphs 31--57.
 
 	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
 	%TODO: check if correct emph
