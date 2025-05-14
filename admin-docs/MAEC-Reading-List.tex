@@ -1,6 +1,7 @@
 % Typeset/compile with pdfLaTeX or XeLaTeX
 \documentclass{article}
 \usepackage[calc,useregional]{datetime2}
+\newcounter{printSessionDate} %creates empty counter/variable for whether or not to print session dates. Do Not Change This.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
@@ -10,6 +11,8 @@
 \title{Eastern Classics Reading List 2024--2025}
 \author{St. John's College - Santa Fe Graduate Institute}
 \date{Updated: 2025-01-25}
+
+\setcounter{printSessionDate}{1}% setting to 0 will not print dates after "Session XYZ", setting to 1 will print dates (e.g. "Session XYZ - 2025-09-09")
 
 \DTMsavedate{fallStart}{2024-09-02}
 \DTMsavedate{springStart}{2025-01-20}
@@ -36,6 +39,8 @@
 %NOTE: trying to save one date as another doesn't work, need to do this little dance to get it into the right format:
 %\DTMsavedate{testDate}{\DTMfetchyear{springStart}-\DTMfetchmonth{springStart}-\DTMfetchday{springStart}}
 
+
+
 % TODO:
 % check for more diacritics??
 % update the commentary and opponent sections that don't quite make sense
@@ -45,6 +50,8 @@
 % possible to use subsection X.n as variable?
 % use uneven columns? https://www.overleaf.com/learn/latex/Multiple_columns#Unbalanced_columns
 % italicize titles and check that sections of readings aren't italicized, but quoted instead.
+
+
 
 
 %\DeclareUnicodeCharacter{1E41}{\d{m}} %produces m with dot below it, not above %works in pdfLaTeX, but not LuaLaTeX
@@ -199,32 +206,53 @@
   \DTMfetchyear{#2}-\DTMfetchmonth{#2}-\DTMfetchday{#2}
   and
   \DTMfetchyear{#3}-\DTMfetchmonth{#3}-\DTMfetchday{#3}
-  } {\DTMsavedate{tempDate}{\DTMfetchyear{#3}-\DTMfetchmonth{#3}-\DTMfetchday{#3}} \setcounter{dateChanged}{1} \subsection{No Classes from \DTMusedate{#2}--\DTMusedate{#3}}\vspace{0.4cm}}{}
+  } {\DTMsavedate{tempDate}{\DTMfetchyear{#3}-\DTMfetchmonth{#3}-\DTMfetchday{#3}} \setcounter{dateChanged}{1} \subsection{\emph{No Classes:} \DTMusedate{#2}--\DTMusedate{#3}}\vspace{0.4cm}}{}
 }
 
 
-%function - \printHeaderWithSessionAndDate: increments cntSession (since it starts at 0), then prints text for Session <cntSession> - <currentClassDate> 
+%function - \printHeaderWithSessionAndDate: increments countSession (since it starts at 0), then prints text for Session <countSession> - <currentClassDate> 
 \newcommand{\printHeaderWithSessionAndDate}[1]{%
-	\stepcounter{cntSession}%
-	\subsection{Session \arabic{cntSession} - \DTMusedate{#1}}%
+	\stepcounter{countSession}%
+	\subsection{Session \arabic{countSession} - \DTMusedate{#1}}%
 
   % save date we just printed into lastPrintedClassDate to pass on to next header printing
   \DTMsavedate{lastPrintedClassDate}{\DTMfetchyear{#1}-\DTMfetchmonth{#1}-\DTMfetchday{#1}}
 }
 
 
-%function - \printHeaderWithSession: increments cntSession (since it starts at 0), then prints text for Session <cntSession>
+%function - \printHeaderWithSession: increments countSession (since it starts at 0), then prints text for Session <countSession>
 % just in case one doesn't want the dates that I wrote so much code to calculate... Don't use this function and \printHeaderWithSessionAndDate in same doc, it will prob mess up counters/registers
 \newcommand{\printHeaderWithSession}{%
-	\stepcounter{cntSession}%
-	\subsection{Session \arabic{cntSession}}%
+	\stepcounter{countSession}%
+	\subsection{Session \arabic{countSession}}%
+}
+
+
+%function - \printPreceptHeader: checks variable to see if we should print a header with just session, or also with date - then runs appropriate function
+\newcommand{\printPreceptHeader}[1]{	
+	% check if we should print dates or not
+	\ifnum\value{printSessionDate}=0% nope!
+		\printHeaderWithSession%
+	\else% yep!
+		\printHeaderForNextPreceptClassDate{#1}
+	\fi
+}
+
+%function - \printSeminarHeader: checks variable to see if we should print a header with just session, or also with date - then runs appropriate function
+\newcommand{\printSeminarHeader}[1]{	
+	% check if we should print dates or not
+	\ifnum\value{printSessionDate}=0% nope!
+		\printHeaderWithSession%
+	\else% yep!
+		\printHeaderForNextSeminarClassDate{#1}
+	\fi
 }
 
 
 % set counter/variable to keep track of which week it is
-\newcounter{cntSemester} % mostly used to reset class session counter
-\newcounter{cntSession}
-\counterwithin{cntSession}{cntSemester}
+\newcounter{countSemester} % mostly used to reset class session counter
+\newcounter{countSession}
+\counterwithin{countSession}{countSemester}
 
 % Load this package last?!
 \usepackage{hyperref} % make clickable links, e.g. for table of contents https://www.overleaf.com/learn/latex/Hyperlinks
@@ -283,122 +311,129 @@
 %%                              %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% date dancing, don't change - this gives us the day befor ethe first day of classes
+%WHY?? well then all the function calls to print the session header below can be the same... confusing? a little, but hopefully void future errors in user-editable section below.
+\DTMsavedate{lastPrintedClassDate}{\DTMfetchyear{fallStart}-\DTMfetchmonth{fallStart}-\numexpr\DTMfetchday{fallStart}-1}
+% End - 'don't change' section
+
 %page break
 \clearpage
 
 \begin{center}
 	\section{Fall Seminar}
 \end{center}
-\stepcounter{cntSemester}
+\stepcounter{countSemester}
 
 Chinese names are given in two transliteration systems.
 The Pinyin system is the one in use today both for ordinary life and academic publications, but the older and obsolete Wade-Giles system can be found in some of our available editions, many of which were published more than fifty years ago.
+(e.g. Pinyin: Mozi, Wade-Giles: Mo Tzu)
+%TODO: give example? Mozi vs Mo Tzu? or too much detail right away?
 Both systems are attempts to render the same pronunciations.
 \textbf{Please use translations carried by the campus bookstore and/or those specifically mentioned.}
 
 \begin{multicols}{2}
 
-	\printHeaderWithSessionAndDate{fallStart}
+	\printSeminarHeader{lastPrintedClassDate}	
 	Confucius, \emph{Analects}, \#1--7. Skip commentary where present.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Confucius, \emph{Analects}, \#8--13. Skip commentary where present.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Confucius, \emph{Analects}, \#14--20. Skip commentary where present.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Mozi (Mo Tzu), Fascicles 11, 14--17, 19, 20, 26, 27, 31, 32, 35, 39, and 50.
 
 	Translations by Burton Watson (\emph{Mo Tzu Basic Writings}), Ian Johnston (\emph{The Book of Master Mo}) or Chris Fraser (\emph{The Essential Mozi}) are acceptable.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	\emph{Mengzi (Meng Tzu, Mencius)}, Books I--II (1A, 1B, 2A, 2B).
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	\emph{Mengzi (Meng Tzu, Mencius)}, Books III--IV (3A, 3B, 4A, 4B).
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	\emph{Mengzi (Meng Tzu, Mencius)}, Books V--VII (5A, 5B, 6A, 6B, 7A, 7B).
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Xunzi (Hsun Tzu), Sections 1, 2, 9, 17. Use translations by Burton Watson or Eric L. Hutton.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Xunzi (Hsun Tzu), Sections 19--23.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Zhuangzi (Chuang Tzu), Chapters 1--3
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Zhuangzi (Chuang Tzu), Chapters 4--7
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Zhuangzi (Chuang Tzu), Chapters 17--19, 26
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Laozi (Lao Tzu), \emph{Dao De Jing (Tao Te Ching)}, Chapters 1--37. Commentaries are not necessary.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Laozi (Lao Tzu), \emph{Dao De Jing (Tao Te Ching)}, Chapters 38--81. Commentaries are not necessary.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Han Feizi (Han Fei Tzu), Fascicles 20, 21.
 	\emph{Available in EC Manual}
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	\emph{Han Feizi~: Basic Writings}, Translated by Burton Watson. Sections 5--10.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	\emph{Han Feizi~: Basic Writings}, Translated by Burton Watson. Sections 12, 13, 17, 18, 49, 50.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	\emph{The Rig Veda~: An Anthology} Translated by Wendy Doniger. Sections 10.129, 10.121, 10.90, 10.130, 10.190, 10.81--82, 10.72, 10.14, 10.16, 10.18, 10.154, 10.135, 10.58, 10.71, 10.125, 10.101, 10.151, 1.164, 1.163, 1.162, 10.56
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	\emph{The Rig Veda~: An Anthology}. Sections 1.1, 1.26, 5.2, 2.35, 10.51, 10.124, 10.5, 8.79, 9.74, 4.58, 8.48, 10.136, 4.18, 10.28, 1.32, 2.12, 5.83, 7.101, 1.50, 1.160, 1.185, 6.70; 10.10, 1.179, 10.95, 10.85.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	\emph{``Bṛhadāraṇyaka Upaniṣad,''} Parts I \& II
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	\emph{``Bṛhadāraṇyaka Upaniṣad,''} Parts III \& IV
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	\emph{``Bṛhadāraṇyaka Upaniṣad,''} Parts V \& VI
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	\begin{center}
 		\textbf{\textit{[ESSAYS DUE]}}
 	\end{center}
 	``Katha Upanisad''
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	% FIXME: what is this from? book? EC Manual?
 	``Kena Upaniṣad'' and ``Mundaka Upanisad''
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	%FIXME: don't italicize?
 	``The Nyāya Sūtra'' in \emph{A Sourcebook in Indian Philosophy}, edited by Sarvepalli Radhakrishnan and Charles A. Moore pp. 358--379.24.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	%FIXME: don't italicize?
 	``The Vaiśeṣika Sūtra'' and ``The Padārthadharma\-saṁgraha'' in \emph{A Sourcebook in Indian Philosophy}, pp. 387--423.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Tattva-Kaumudî, Kārikās 1--29. Including commentary by Vacaspati Misra.
 	\emph{Available in EC Manual}
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Tattva-Kaumudî, Kārikās 30--End.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	``The Yoga Philosophy of Patañjali'' in \emph{A Sourcebook in Indian Philosophy}, pp. 454--485
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	\emph{The Bhagavadgītā in the Mahābhārata} translated by J.A.B. van Buitenen, pp. 39--107
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	\emph{The Bhagavadgītā in the Mahābhārata} translated by J.A.B. van Buitenen, pp. 107--157
 
 \end{multicols}
@@ -410,11 +445,16 @@ Both systems are attempts to render the same pronunciations.
 %%                              %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% date dancing, don't change - this gives us the day befor ethe first day of classes
+%WHY?? well then all the function calls to print the session header below can be the same... confusing? a little, but hopefully void future errors in user-editable section below.
+\DTMsavedate{lastPrintedClassDate}{\DTMfetchyear{springStart}-\DTMfetchmonth{springStart}-\numexpr\DTMfetchday{springStart}-1}
+% End - 'don't change' section
+
 %page break
 \clearpage
 
 % increment semester count
-\stepcounter{cntSemester}
+\stepcounter{countSemester}
 
 
 \begin{center}
@@ -425,51 +465,51 @@ Both systems are attempts to render the same pronunciations.
 	%\raggedcolumns
 
 
-	\printHeaderWithSessionAndDate{springStart}
+	\printSeminarHeader{lastPrintedClassDate}
 	Kālidāsa, \emph{Kumārasaṃbhava}, in \emph{The Origin of the Young God}, translated by Hank Hifetz.
 	\emph{Available in EC Manual}
 	% TODO: check m dot under in text
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Kālidāsa, \emph{The Recognition of Śhakuntalā}, translated by W.J. Johnson.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	``The \emph{Dhvanyāloka} of Ānandavardhana with the \emph{Locana} of Abhinavagupta'' selections with supplemental material by Keith and Perry. Through pp. 119.
 	\emph{Available in EC Manual}
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	``The \emph{Dhvanyāloka} of Ānandavardhana with the \emph{Locana} of Abhinavagupta'' selections with supplemental material by Keith and Perry. Sections through pp. 696.
 	\emph{Available in EC Manual}
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	``Pūrva Mīmāṁsā'' in \emph{A Sourcebook in Indian Philosophy} edited by Sarvepalli Radhakrishnan and Charles A. Moore, pp. 486--505.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	``Cārvāka'' in \emph{A Sourcebook in Indian Philosophy}, pp. 227--249.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	``Discourses on the Nobel Quest,'' ``Discourse to Kālāmas,'' and ``The Greater Discourse on Cause'' from \emph{Early Buddhist Discourses} by John Holder.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	``The Greater Discourse on the Foundations of Mindfulness,'' ``The Greater Discourse on the Destruction of Craving,'' ``Discourse of the Honeyball'' from \emph{Early Buddhist Discourses}.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	``Short Discourses from the Saṃyutta Nikāya,'' ``The Shorter Discourse to Māluṅkyaputta,'' ``Discourse on the Parable of the Water Snake,'' ``Discourse to Vacchagotta on Fire'' from \emph{Early Buddhist Discourses}.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	``Discourse to Prince Abhaya,'' ``Discourse to Poṭṭha\-pāda,'' ``Discourse on the Threefold Knowledge'' from \emph{Early Buddhist Discourses}.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	``Discourse to Assalāyana'' and ``Discourse to the Layman Sigāla'' from \emph{Early Buddhist Discourses. Samannaphala Sutta}, (``Fruits of the Homeless Life'').
 	\emph{Available in EC Manual}.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	\emph{The Lotus Sutra}, Translated by Burton Watson. Chapters 1 (prose portion), 2--7 (only the parable in the last nine paragraphs of the final prose section, beginning with ``Monks, you must understand this.''), and 8.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	\emph{The Lotus Sutra}, Translated by Burton Watson. Chapters 10 (prose portion), 11 (verse only), 12--14, 16, 20, 21, 23, 25, 28 (all prose portion).
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Nāgārjuna, Chapters 1, 2, 7.
 
 	\noindent Translation options:
@@ -477,82 +517,82 @@ Both systems are attempts to render the same pronunciations.
 	(A)\emph{Mūlamadhyamakakārikā of Nāgārjuna: The Fundamental Wisdom of the Middle Way}, translated by Jay L. Garfield OR
 
 	(B)\emph{The Philosophy of the Middle Way} translation by David J. Kalupahana.
-    %TODO: update to include the Siderits translation? remove kalupahana?
+	%TODO: update to include the Siderits translation? remove kalupahana?
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Nāgārjuna, Chapters 10, 12, 17, 18
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Nāgārjuna, Chapters 24, 25, 27
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	%TODO: quote V. Sutra? chapter title?
 	Vimalakīrti Sūtra, \emph{The Holy Teaching of Vimalakīrti}, translated by Thurman. Sections 1--6.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Vimalakīrti Sūtra, \emph{The Holy Teaching of Vimalakīrti}, translated by Thurman. Sections 7--End.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Gauḍapāda, ``\emph{Māndukya} Upanishad with the Kārikā of Gauḍapāda'' in Vol. II of \emph{The Upanishads} translated by Swami Nikhilananda (Ramakrishna-Vivekananda Center), pp. 223--368.
 
 	\textbf{Note}: Read both the Māndukya Upanishad and Gauḍapāda commentary. Ignore other commentaries.
 	In Chapter 1, after the Hari Om paragraph, read the paragraph following each heading numeral, following the woven threads of Upanishad and Karika (Gaudapada's commentary). For example, ``Now the Upanishad is resumed,'' or ``Now the Karika is resumed.'' From Chapter 2 on, the paragraph following the number is Gaudapada.
 	% TODO: check spelling of karika and Gaudapada in actual reading.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Saṅkarâkârya's commentary on the Vedânta Sūtras, pp. 2--67, \emph{Sacred Books of the East, Vol. 34}, translated by George Thibaut.
 	\emph{Available in EC Manual}
 	% FIXME: add diacritics to purvapakshin and names?
 
 	\textbf{Note}: In reading Sankara and Rāmānujā pay close attention to whether you are hearing their own (Siddhanta) positions or their opponents' (Purvapaksha) arguments. The latter can be lengthy and detailed (and plausible).
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	%TODO: make name same above below, mention EC Manual again?
 	Saṅkarâkârya's commentary on the Vedânta Sūtras, pp. 183--191, 199--216, 283--289, 299--308, 312--320, 355--362.
 	\emph{Available in EC Manual}
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Rāmānujā's commentary on the Vedânta Sūtras, pp. 3--73, \emph{Sacred Books of the East, Vol. 48}, translated by George Thibaut.
 	\emph{Available in EC Manual}
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	\begin{center}
 		\textbf{\textit{[ESSAYS DUE]}}
 	\end{center}
 	Rāmānujā's commentary on the Vedânta Sūtras, pp. 102--119, 129--138, 255--273, 296--308.
 	\emph{Available in EC Manual}
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Jayadeva's ``The \emph{Gītagovinda}'' in \emph{Love Song of the Dark Lord}, edited and translated by Barbara Stoler Miller, pp. 69--125.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	``The \emph{Diamond Sūtra}'' in \emph{The Diamond Sūtra \& the Sūtra of Hui-Neng}, translated by A.F. Price and Wong Mou-lam (Shambhala).
 
 	``The \emph{Heart Sūtra''}, pp. 17--53.
 	\emph{Available in EC Manual}
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Hui-neng, ``Commentary on the Diamond Sūtra'' in \emph{The Sutra of Hui-neng, Grand Master of Zen: With Hui-neng's Commentary on the Diamond Sutra}, translated by Thomas Cleary (Shambhala), pp. 85--144.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	Hui-neng, \emph{The Platform Sutra of the Sixth Patriarch}, translated by Philip Yampolsky (Columbia University Press), paragraphs 1--30.
+	\printSeminarHeader{lastPrintedClassDate}
+	Hui-neng, \emph{The Platform Sutra of the Sixth Patriarch}, translated by Philip Yampolsky (Columbia University Press), paragraphs 1--30, (pp. 125--151).
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
-	Hui-neng, \emph{The Platform Sutra of the Sixth Patriarch}, translated by Philip Yampolsky (Columbia University Press), paragraphs 31--57.
+	\printSeminarHeader{lastPrintedClassDate}
+	Hui-neng, \emph{The Platform Sutra of the Sixth Patriarch}, translated by Philip Yampolsky (Columbia University Press), paragraphs 31--57, (pp. 151--183).
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	%TODO: check if correct emph
 	``The Great Learning'' and ``The Doctrine of the Mean'' in \emph{A Sourcebook in Chinese Philosophy}, translated and edited by Wing-tsit Chan, pp. 84--114.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Zhu Xi (Chu Hsi), ``The Complete Works of Chu Hsi'' in \emph{A Sourcebook in Chinese Philosophy}, pp. 605--632 (stop at \emph{Jen}).
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Zhu Xi (Chu Hsi), ``The Complete Works of Chu Hsi'' in \emph{A Sourcebook in Chinese Philosophy}, pp. 632--653, 693--604.
 
-	\columnbreak% %this is an unfortunate neccessity, otherwise the last few numbers of the previous section get pushe dover into the next column by themselves
+	\columnbreak% %this is an unfortunate neccessity, otherwise the last few numbers of the previous section get pushed over into the next column by themselves
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Wang Yang-Ming, ``Inquiry on the Great Learning'' and selections from ``Instructions for Practical Living'' in \emph{A Sourcebook in Chinese Philosophy}, pp. 659--691.
 
 \end{multicols}
@@ -563,11 +603,16 @@ Both systems are attempts to render the same pronunciations.
 %%                              %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% date dancing, don't change - this gives us the day befor ethe first day of classes
+%WHY?? well then all the function calls to print the session header below can be the same... confusing? a little, but hopefully void future errors in user-editable section below.
+\DTMsavedate{lastPrintedClassDate}{\DTMfetchyear{summerStart}-\DTMfetchmonth{summerStart}-\numexpr\DTMfetchday{summerStart}-1}
+% End - 'don't change' section
+
 %page break
 \clearpage
 
 % increment semester count
-\stepcounter{cntSemester}
+\stepcounter{countSemester}
 
 \begin{center}
 	\section{Summer Seminar}
@@ -577,26 +622,26 @@ Both systems are attempts to render the same pronunciations.
 \begin{multicols}{2}
 
 
-	\printHeaderWithSessionAndDate{summerStart}
+	\printSeminarHeader{lastPrintedClassDate}
 	\emph{The Tale of the Heike}, translated by Helen Craig McCullough. Chapters 1--8.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	\emph{The Tale of the Heike}, Chapters 9--10.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	\emph{The Tale of the Heike}, Chapters 11--end.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Kūkai \emph{Major Works} translated by Yoshito S. Hakeda (Columbia University Press), ``The Difference Between Exoteric and Esoteric Buddhism,'' ``Attaining Enlightenment in This Very Existence,'' ``The Meanings of Sound, Word, and Reality''
 	\emph{Available in EC Manual}
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Sei Shōnagon, \emph{The Pillow Book}, translated by Meredith McKinney (Penguin Classics), sections 1--100, pp. 3--113
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	\emph{The Pillow Book}, sections 101--206, 243, 258, 273, pp. 113--190
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Kamo no Chōmei, ``Hōjōki or the Record of the Ten-Foot Square Hut''
 
 	\emph{Kenkō and Chōmei: Essays in Idleness and Hōjōki}, translated by
@@ -605,35 +650,35 @@ Both systems are attempts to render the same pronunciations.
 	\emph{Four Huts: Asian Writings on the Simple Life}, translated by
 	Burton Watson (Shambhala)
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Dōgen, ``Bendōwa'' in \emph{The Heart of Dōgen's Shōbō\-genzō}, translated by Waddell and Abe (SUNY Press).
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Dōgen, ``Busshō'' in \emph{The Heart of Dōgen's Shōbōgenzō}, pp. 59--bottom of 84.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Dōgen, ``Busshō'' in \emph{The Heart of Dōgen's Shōbōgenzō}, pp. 84--98.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Dōgen, ``Genjōkōan'' in \emph{The Heart of Dōgen's Shōbō\-genzō}
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Dōgen, ``Uji'' in \emph{The Heart of Dōgen's Shōbōgenzō}
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Kenkō, sections 1--38, 43--49, 52, 53, 58--60, 66. In \emph{Kenkō and Chōmei: Essays in Idleness and Hōjōki}, translated by Meredith McKinney (Penguin)
 
 	OR
 
 	\emph{Essays in Idleness}, translated by Donald Keene (Columbia University Press)
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Kenkō, sections 69--75, 81--85, 89, 92, 97--98, 104--122, 127--130, 133, 137, 154, 162, 166, 184, 188, 190,191, 235--237.
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Bashō, ``Journey of Bleached Bones in a Field,'' ``Kashima Journal,'' ``Knapsack Notebook'', ``Sarashina Journal'' in \emph{Bashō's Journey: The Literary Prose of Matsuo Bashō}, translated by David Landis Barnhill (SUNY Press)
 
-	\printHeaderForNextSeminarClassDate{lastPrintedClassDate}
+	\printSeminarHeader{lastPrintedClassDate}
 	Bashō, ``The Narrow Road to the Deep North'' in \emph{Bashō's Journey: The Literary Prose of Matsuo Bashō}, translated by David Landis Barnhill (SUNY Press)
 
 \end{multicols}
@@ -645,16 +690,21 @@ Both systems are attempts to render the same pronunciations.
 %%                              %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% date dancing, don't change - this gives us the day befor ethe first day of classes
+%WHY?? well then all the function calls to print the session header below can be the same... confusing? a little, but hopefully void future errors in user-editable section below.
+\DTMsavedate{lastPrintedClassDate}{\DTMfetchyear{fallPrecept1Start}-\DTMfetchmonth{fallPrecept1Start}-\numexpr\DTMfetchday{fallPrecept1Start}-1}
+% End - 'don't change' section
+
 %page break
 \clearpage
 
 % increment semester count
-\stepcounter{cntSemester}
+\stepcounter{countSemester}
 
 \begin{center}
-    \section[Fall Preceptorial 1]{Fall Preceptorial -- Sima Qian \\ \textit{Records of the Grand Historian (Shi Ji)}}
-    %\vspace{0.2cm}
-    (First Eight Weeks)
+	\section[Fall Preceptorial 1]{Fall Preceptorial -- Sima Qian \\ \textit{Records of the Grand Historian (Shi Ji)}}
+	 %\vspace{0.2cm}
+	 (First Eight Weeks)
 \end{center}
 
 
@@ -674,56 +724,56 @@ Both systems are attempts to render the same pronunciations.
 
 \begin{multicols}{2}
 
-	\printHeaderWithSessionAndDate{fallPrecept1Start}
+	\printPreceptHeader{lastPrintedClassDate}
 	% FIXME: add detail that it is in EC manual?
 	\emph{Shi Ji} Ch 1--2 (Nienhauser, Vol 1)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	\emph{Shi Ji} Ch 3--4 (Nienhauser, Vol 1)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	% FIXME: italicize titles
 	\emph{Shi Ji} Ch 6 (Quin Dynasty, pp. 35--83)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	\emph{Shi Ji} Ch 15, 61, 68, 79 (Quin Dynasty, pp. 85--99, 131--157, photocopy of section 61)
 	% TODO does 'photocopy' mean: in EC manual?
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	% FIXME: add note location letter, pages? preface?
 	\emph{Shi Ji} Ch 85--88, 126 (Quin Dynasty, pp. 159--216, plus Sima Qian's Letter to Ren An)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	\emph{Shi Ji} Ch 48, 7 (Han Dynasty I, pp. 1--38)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	\emph{Shi Ji} Ch 8, 16 (Han Dynasty I, pp. 51--88)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	\emph{Shi Ji} Ch 53, 55, 56 (Han Dynasty I, pp 91--128)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	\emph{Shi Ji} Ch 89--91 (Han Dynasty I, pp 131--162)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	\emph{Shi Ji} Ch 92--94 (Han Dynasty I, pp 163--202)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	\emph{Shi Ji} Ch 9--12, 106 (Han Dynasty I, 267--319, 403--422)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	\emph{Shi Ji} Ch 28 (Han Dynasty II, 3--52)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	\emph{Shi Ji} Ch 110 (Han Dynasty II, 129--162)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	\emph{Shi Ji} Ch 117 (Han Dynasty II, 259--306)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	\emph{Shi Ji} Ch 121, 119, 122 (Han Dynasty II, 355--407)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	\emph{Shi Ji} Ch 124, 125, 127, 129 (Han Dynasty II, 409--454)
 
 \end{multicols}
@@ -735,11 +785,16 @@ Both systems are attempts to render the same pronunciations.
 %%                              %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% date dancing, don't change - this gives us the day befor ethe first day of classes
+%WHY?? well then all the function calls to print the session header below can be the same... confusing? a little, but hopefully void future errors in user-editable section below.
+\DTMsavedate{lastPrintedClassDate}{\DTMfetchyear{fallPrecept2Start}-\DTMfetchmonth{fallPrecept2Start}-\numexpr\DTMfetchday{fallPrecept2Start}-1}
+% End - 'don't change' section
+
 %page break
 \clearpage
 
 % increment semester count
-\stepcounter{cntSemester}
+\stepcounter{countSemester}
 
 \begin{center}
 	\section[Fall Preceptorial 2]{Fall Preceptorial -- \emph{Mahābhārata}}
@@ -769,61 +824,61 @@ Both systems are attempts to render the same pronunciations.
 
 	%TODO: quote chapter titles?
 	%TODO: add Volume numbers? but some volumes have multiple boos, others don't
-	\printHeaderWithSessionAndDate{fallPrecept2Start}
+	\printPreceptHeader{lastPrintedClassDate}
 	\emph{The Book of the Beginning}, pp. 19--63
 
 	(Lists--Puloman)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	\emph{The Book of the Beginning}, pp. 63--123
 
 	(Astika)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	\emph{The Book of the Beginning}, pp. 123--210
 
 	(The Descent--Latter Days of Yayati)
 
 	{\small \emph{(pp 145--154 may be skimmed)}}
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	\emph{The Book of the Beginning}, pp. 210--273
 
 	(Latter Days of Yayati--The Origins)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	\emph{The Book of the Beginning}, pp. 274--344
 
 	(The Fire in the Lacquer House--Citraratha)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	\emph{The Book of the Beginning}, pp. 344--405
 
 	(Draupadi's Bridegroom Choice--Arjuna's Sojourn in the Forest)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	\emph{The Book of the Beginning}, pp. 405--431
 
 	(Abduction of Subhadra--Burning of the Khandava Forest). Discussion of whole of Book 1
 	%TODO: is 'discussion of whole of book 1' supposed to be a note on what the class will discuss?
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 
 	\emph{The Book of the Assembly Hall}: Read italicized summaries pp.33--106, then read whole pp.106--69 (The Dicing--The Sequel to the Dicing).
 
 	At this point note that the \emph{Sauptikaparvan} volume has narrative summaries in the back: read summary for Book 4, \emph{The Book of Virata}.
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	\emph{The Book of the Effort}, pp 187--254
 
 	(Embassy of Samjaya)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	\emph{The Book of the Effort}, pp 254--294
 
 	(Dhrtarastra's Vigil--Sanatsujata)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	\emph{The Book of the Effort}, pp 294--339
 
 	(The Suing for Peace)
@@ -831,7 +886,7 @@ Both systems are attempts to render the same pronunciations.
 	\columnbreak%
 	%\raggedcolumns
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	\emph{The Book of the Effort} pp 344--382
 
 	(The Coming of the Lord);
@@ -840,7 +895,7 @@ Both systems are attempts to render the same pronunciations.
 
 	(The Coming of the Lord, continued)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	In Volume 3, \emph{The Book of the Forest}, pp. 780--795
 
 	(The Robbing of the Earrings), then
@@ -849,13 +904,14 @@ Both systems are attempts to render the same pronunciations.
 	\emph{The Book of the Effort}, pp. 442--461
 
 	(The Temptation of Karna)
+    % FIXME: add columnbreak? or otherwise see if the parenthetical is still broken over to 2nd column after edits.
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	\emph{The Book of the Effort}, pp.461--532
 
 	(The Marching Out--Amba)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	\emph{The Sauptikaparvan}, read Summaries in Appendix, then main text pp 5--86
 
 \end{multicols}
@@ -867,11 +923,16 @@ Both systems are attempts to render the same pronunciations.
 %%                              %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% date dancing, don't change - this gives us the day befor ethe first day of classes
+%WHY?? well then all the function calls to print the session header below can be the same... confusing? a little, but hopefully void future errors in user-editable section below.
+\DTMsavedate{lastPrintedClassDate}{\DTMfetchyear{summerPreceptStart}-\DTMfetchmonth{summerPreceptStart}-\numexpr\DTMfetchday{summerPreceptStart}-1}
+% End - 'don't change' section
+
 %page break
 \clearpage
 
 % increment semester count
-\stepcounter{cntSemester}
+\stepcounter{countSemester}
 
 \begin{center}
 	\section[Summer Preceptorial]{Summer Preceptorial – \emph{The Tale of Genji}}
@@ -890,52 +951,52 @@ Both systems are attempts to render the same pronunciations.
 
 \begin{multicols}{2}
 
-	\printHeaderWithSessionAndDate{summerPreceptStart}
+	\printPreceptHeader{lastPrintedClassDate}
 	Chapters 1--4 (80 pages)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	Chapters 5--6 (47 pages)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	Chapters 7--10 (82 pages)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	Chapters 11--13 (55 pages)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	Chapters 14--19 (76 pages)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	Chapters 20--22 (60 pages)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	Chapters 23--29 (72 pages)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	Chapters 30--33 (54 pages)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	Chapters 34--35 (98 pages)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	Chapters 36--38 (39 pages)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	Chapters 39--43 (74 pages)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	Chapters 44--46 (69 pages)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	Chapters 47--48 (63 pages)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	Chapters 49--50 (87 pages)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	Chapters 51--52 (70 pages)
 
-	\printHeaderForNextPreceptClassDate{lastPrintedClassDate}
+	\printPreceptHeader{lastPrintedClassDate}
 	Chapters 53--54 (47 pages)
 
 \end{multicols}
@@ -951,13 +1012,13 @@ Both systems are attempts to render the same pronunciations.
 \clearpage
 
 \begin{center}
-    \section{Book List}
+	\section{Book List}
 \end{center}
 
-TODO?? Or is this even useful?? 
+TODO?? Or is this even useful??
 
-\subsection{Seminar Readings}
-Books for Seminar are listed in order they are encountered in class.
+\subsection{Eastern Classics Manuals}
+Below are listings of the contents of the ``EC Manual'' for quick reference or ease of acquiring the texts from the library, etc.
 
 %\textbf{Required Texts:}
 \begin{itemize}
@@ -974,14 +1035,21 @@ Books for Seminar are listed in order they are encountered in class.
 	      \end{enumerate}
 	\item \textit{Eastern Classic Photocopies -- Seminar, 2023}, (also referred to as the ``EC Manual'') -- collection of selected texts printed by St. John's for the Spring Seminar
 	      \begin{enumerate}
-			\item Kālidāsa, \emph{Kumārasaṃbhava}, in \emph{The Origin of the Young God}, translated by Hank Hifetz, pp. 3--60 in the EC Manual, pp. 21--131 in original text
-			\item ``The \emph{Dhvanyāloka} of Ānandavardhana with the \emph{Locana} of Abhinavagupta'' selections with supplemental material by Keith and Perry, pp. 61--160 in the EC Manual, various pages selected from original text
+		      \item Kālidāsa, \emph{Kumārasaṃbhava}, in \emph{The Origin of the Young God}, translated by Hank Hifetz, pp. 3--60 in the EC Manual, pp. 21--131 in original text
+		      \item ``The \emph{Dhvanyāloka} of Ānandavardhana with the \emph{Locana} of Abhinavagupta'' selections with supplemental material by Keith and Perry, pp. 61--160 in the EC Manual, various pages selected from original text
 		      \item TODO: fill out these selections
 	      \end{enumerate}
 	\item Kālidāsa, \emph{The Recognition of Śhakuntalā}, translated by W.J. Johnson.
 	\item TODO: add other books?
 \end{itemize}
 
+
+\subsection{Seminar Readings}
+Individual books for Seminar are listed in order they are encountered in class.
+
+\begin{itemize}
+	\item TODO: fill this out?
+\end{itemize}
 
 % TODO: Do i need this? any of this? or is specificity of the manual above useful?
 \subsection{Preceptorial Readings}
