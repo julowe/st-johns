@@ -36,7 +36,7 @@ Monier-Williams and other dictionaries are available online at the
 [Cologne Digital Sanskrit Dictionaries Site](https://www.sanskrit-lexicon.uni-koeln.de/).
 But this can be a bit clunky on a phone.
 
-I found a number of dictionaries availabe at
+I found a number of dictionaries available at
 [indic-dict/stardict-sanskrit](https://github.com/indic-dict/stardict-sanskrit),
 but I found the instructions a bit confusing.
 
@@ -90,3 +90,9 @@ can be found here:
 
 I am facilitating a reading group on the Kumulipo and have the source text here,
 which I am working to further interlinearize.
+
+## Chinese Poetry
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/julowe/st-johns/HEAD?urlpath=%2Fdoc%2Ftree%2Fchinese-poetry%2Fchinese_trots.ipynb)
+
+Go to this [interactive Jupyter Notebook, created/hosted through Binder](https://mybinder.org/v2/gh/julowe/st-johns/HEAD?urlpath=%2Fdoc%2Ftree%2Fchinese-poetry%2Fchinese_trots.ipynb) to easily create a crib/trot of a chinese poem. Instructions for usage in the notebook itself, it may take a minute for the server to fully load.
