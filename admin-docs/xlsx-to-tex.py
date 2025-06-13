@@ -3,18 +3,18 @@ import pandas as pd
 from datetime import datetime
 import re
 
+# excel file name, to use in tex file itself
+# xlsx_file_name = "MAMEC Curriculum 20250609.xlsx"
+xlsx_file_name = "MAMEC Curriculum 20250609-tbd.xlsx"
 
 # read by default 1st sheet of an excel file
-xlsx_df = pd.read_excel("admin-docs/MAMEC Curriculum 20250527.xlsx")
+# xlsx_df = pd.read_excel("admin-docs/MAMEC Curriculum 20250527.xlsx")
+xlsx_df = pd.read_excel("admin-docs/{0}".format(xlsx_file_name))
 
 # print(xlsx_df)
 
-# TODO: update the dates right below
-
 # This is just a big chunk of tex that we want to start the document with, no parsing, hence the raw string prefix 'r'
-tex_doc_start = r"""
-% Typeset/compile with XeLaTeX !!!
-\documentclass{article}
+tex_doc_start = r"""\documentclass{article}
 \usepackage[calc,useregional]{datetime2}
 \newcounter{printSessionDate} %creates empty counter/variable for whether or not to print session dates. Do Not Change This.
 
@@ -25,7 +25,7 @@ tex_doc_start = r"""
 
 \title{Middle Eastern Classics Reading List 2025--2026}
 \author{St. John's College - Santa Fe Graduate Institute}
-\date{Updated: 2025-06-05}
+\date{Updated: 2025-06-12}
 
 \setcounter{printSessionDate}{1}% setting to 0 will not print dates after "Session XYZ", setting to 1 will print dates (e.g. "Session XYZ - 2025-09-09")
 
@@ -55,33 +55,29 @@ tex_doc_start = r"""
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+% Typeset/compile with XeLaTeX !!!
+% why? LaTeX will give errors on the unicode characters. If you must use LaTeX, then you can get around the errors with declarations like the line below (that is commented out/not used currently) with the `\DeclareUnicodeCharacter` command...
+%% Examples:
+%% \DeclareUnicodeCharacter{1E41}{\d{m}} %produces m with dot below it, not above. It works in pdfLaTeX, but not LuaLaTeX
+%% \DeclareUnicodeCharacter{1E41}{\(\dot{m}\)} %works in pdfLaTeX, but not LuaLaTeX
+
+
 %NOTE: trying to save one date as another doesn't work, need to do this little dance to get it into the right format:
 %\DTMsavedate{testDate}{\DTMfetchyear{springStart}-\DTMfetchmonth{springStart}-\DTMfetchday{springStart}}
 
 
-
 % TODO:
-% check for more diacritics??
-% update the commentary and opponent sections that don't quite make sense
-% get feedback on changes to commentary and opponent section and if they make more sense with new changes
-% Check if people happy with headers - e.g. 'Fall Preceptorial 1' vs '1st Fall Preceptorial' etc
 % make smaller margins?
 % possible to use subsection X.n as variable?
 % use uneven columns? https://www.overleaf.com/learn/latex/Multiple_columns#Unbalanced_columns
 % italicize titles and check that sections of readings aren't italicized, but quoted instead.
 
-
-
-
-%\DeclareUnicodeCharacter{1E41}{\d{m}} %produces m with dot below it, not above %works in pdfLaTeX, but not LuaLaTeX
-%\DeclareUnicodeCharacter{1E41}{\(\dot{m}\)} %works in pdfLaTeX, but not LuaLaTeX
+\usepackage{multicol}
+\usepackage{comment}
 
 % From http://tex.stackexchange.com/questions/34040/graphics-logo-in-headers
 \usepackage{geometry}
 \geometry{letterpaper, margin=0.75in, headsep=15pt}
-
-\usepackage{multicol}
-\usepackage{comment}
 
 % Insert header image
 \usepackage{graphicx}
@@ -97,7 +93,7 @@ tex_doc_start = r"""
 \chead{\includegraphics[width=\textwidth]{header-blank.png}}
 
 
-% Tex automatically adds numbers to the beginning of section, subsections etc (e.g. "1.3 Session 3") but we don't want this, so setting it to 0
+% Tex automatically adds numbers to the beginning of typset sections, subsections, etc (e.g. the header for each assignment would be: "1.3 Session 3") but we don't want this, so setting this to 0 to stop that
 \setcounter{secnumdepth}{0}
 
 % only show first level of sections in Table of Contents (i.e. only `\section{}` commands)
@@ -115,6 +111,7 @@ tex_doc_start = r"""
 % NOTE: "<dow> is the day of the week number starting from 0 for Monday"
 
 %% code/section flow: 
+%
 %pass in date of last class (that was just printed), 
 %get the next class day with \getNextBiweeklyClassDate, 
 %then check to make sure the next class day is not during a break
@@ -325,11 +322,10 @@ tex_doc_start = r"""
 %\thispagestyle{empty} %use this instead of above 'fancy' line, if you do not want a header image on the first page of this document
 """
 
-# TODO: open a file name output-DATE-TIME.tex for writing and write into it with below code
-# TODO: loop through all rows of xlsx_df. if column 1 has word "PRECEPTORIAL" or "SEMINAR" in it, print this string "\begin{center}\n	\section[CELL_CONTENTS]{CELL_CONTENTS}\n\end{center}" where CELL_CONTENTS is the contents of first cell and save contents of first cell to variable named SECTIONAME. Then continue to next row. If row's first cell does not contain those strings then, do this: if variable SECTIONAME contains SEMINAR, print this string "	\printPreceptorialHeader{lastPrintedClassDate}\n	\emph{COLUMN2} COLUMN3\n", else print this string "	\printSeminarHeader{lastPrintedClassDate}\n	\emph{COLUMN2} COLUMN3\n"
-
-# TODO: escape quotes or apostrophes?
-# TODO: make string of all tex document preamble?
+# create a file name output-DATE-TIME.tex for writing and write into it with below code
+# loop through all rows of xlsx_df. if column 1 has word "PRECEPTORIAL" or "SEMINAR" in it, print this string "\begin{center}\n	\section[CELL_CONTENTS]{CELL_CONTENTS}\n\end{center}" where CELL_CONTENTS is the contents of first cell and save contents of first cell to variable named SECTIONAME.
+# Then continue to next row.
+# If row's first cell does not contain those strings from above, then do this: if variable SECTIONAME contains SEMINAR, print the command to make a seminar header (`\printSeminarHeader{lastPrintedClassDate}`), else print the command to make a precept header (`\printPreceptorialHeader{lastPrintedClassDate}`). Then print reading assignment as tex for that subsection.
 
 
 tex_section_header_start = """
@@ -353,6 +349,7 @@ tex_section_header_start = """
 
 \\begin{{center}}
 """
+# TODO: shrink vspace between header image and section name. do here or decrease header box size? ha or increase header box size and shrink vspace here a lot?
 # \section{{{1}}}{2}
 
 tex_section_header_end = r"""
@@ -361,12 +358,14 @@ tex_section_header_end = r"""
 
 tex_section_classes_start = r"""
 \begin{multicols}{2}
+%\begin{multicols*}{2} % uncomment this line and the matching begin or end line if columns are divided oddly on the last page of this section
     %\raggedcolumns
 
 """
 
 tex_section_classes_end = r"""
 \end{multicols}
+%\end{multicols*} % uncomment this line and the matching begin or end line if columns are divided oddly on the last page of this section
 """
 
 
@@ -376,23 +375,34 @@ def escape_tex(input_str):
     escaped_str = re.sub(tex_special_chars_regex, r"\\\1", input_str)
     escaped_str = escaped_str.replace("\u2013", "-")
     # undo english--only to english-only
-    #escaped_str = re.sub(r"(\w)--(\w)", r"\1-\2", escaped_str, flags=re.U)
-    #escaped_str = escaped_str.replace("-", "--")
+    # escaped_str = re.sub(r"(\w)--(\w)", r"\1-\2", escaped_str, flags=re.U)
+    # escaped_str = escaped_str.replace("-", "--")
     escaped_str = escaped_str.replace("\u00A0", " ")
-    escaped_str = re.sub("\"(.*)\"", r"``\1''", escaped_str)
+    escaped_str = re.sub('"(.*)"', r"``\1''", escaped_str)
     # remove spaces from 80 -- 90 or 80-- 90 or 80- 90
     escaped_str = re.sub(r"(\d)\s*-{1,2}\s*(\d)", r"\1--\2", escaped_str)
     # also roman numerals
     escaped_str = re.sub(r"([IVXLC])\s*-{1,2}\s*([IVXLC])", r"\1--\2", escaped_str)
 
-    # ok and now special cases
+    ## ok and now special cases - you shoudl prob always look to see if these are still needed if any content changed (and thus text may fit onto the line differently)
     # help tex not make weird underfull hbox spacing, replace Suhrawardi's Introduction with Suhra\-wardi's Introduction
-    escaped_str = escaped_str.replace("Suhrawardi's Introduction", "Suhra\\-wardi's Introduction")
+    escaped_str = escaped_str.replace(
+        "Suhrawardi's Introduction", "Suhra\\-wardi's Introduction"
+    )
+
     # replace ... with \ldots
     escaped_str = escaped_str.replace("...", r"\(\ldots\)")
+
+    # TODO: split hyperlinks at / not anywhere else...
+    # Put hyperlinks on their on lines, then go from there with line-breaks
+    escaped_str = escaped_str.replace(" http", r":\\ http")
+    escaped_str = escaped_str.replace(
+        " www", r":\\ www"
+    )  # this isn't used, but it's here for future reference
     return escaped_str
 
 
+# what characters are used in the spreadsheet to mark separation between book titles?
 book_split_regex = "[;&]"
 
 # Initialize Values
@@ -406,7 +416,20 @@ books_dict = dict()
 # Prob don't use this but we'll see
 col_names = xlsx_df.columns
 
-with open("output-" + datetime.now().strftime("%Y-%m-%d-%H-%M") + ".tex", "w") as f:
+with open(
+    "admin-docs/tex-output-test/output-"
+    + datetime.now().strftime("%Y-%m-%d-%H-%M")
+    + ".tex",
+    "w",
+) as f:
+    # write header on what file we used to generate this
+    f.write(
+        "% Generated by xlsx-to-tex.py on {0} from '{1}' by Justin Lowe.\n".format(
+            datetime.now().strftime("%Y-%m-%d-%H-%M"), xlsx_file_name
+        )
+    )
+
+    # write all the user-editable variables and functions before actual content
     f.write(tex_doc_start)
 
     for index, row in xlsx_df.iterrows():
@@ -414,7 +437,7 @@ with open("output-" + datetime.now().strftime("%Y-%m-%d-%H-%M") + ".tex", "w") a
         if isinstance(row["Week"], str):
             if "LANGUAGE" in row["Week"].upper():
                 class_name = row["Week"].title().strip()
-                
+
                 # create a new dict entry for books to be added to
                 books_dict[class_name] = []
 
@@ -464,6 +487,7 @@ with open("output-" + datetime.now().strftime("%Y-%m-%d-%H-%M") + ".tex", "w") a
                         "    \\section[{0}]{{{0}}}\n    ({1} Eight Weeks of {2})".format(
                             class_name, section_ordinal, section_semester
                         )
+                        # TODO: shrink vspace between section name and eight weeks part
                     )
                 else:
                     class_type = "Seminar"
@@ -484,7 +508,7 @@ with open("output-" + datetime.now().strftime("%Y-%m-%d-%H-%M") + ".tex", "w") a
                 # Build up a booklist as we go
                 # see if there are multiple books here
                 row_book_array = re.split(book_split_regex, row["Book"])
-                #print(row_book_array)
+                # print(row_book_array)
 
                 for book in row_book_array:
                     if escape_tex(book.strip()) not in books_dict[class_name]:
@@ -509,19 +533,24 @@ with open("output-" + datetime.now().strftime("%Y-%m-%d-%H-%M") + ".tex", "w") a
                 class_sessions_counter += 1
 
                 # Build up a booklist as we go
-                # see if there are multiple books here
-                row_book_array = re.split(book_split_regex, row["Book"])
-                #print(row_book_array)
+                # see if there are multiple books here (and replace new-lines with semicolons)
+                row_book_array = re.split(
+                    book_split_regex, row["Book"].replace("\n", "; ")
+                )
+                # print(row_book_array)
 
                 for book in row_book_array:
                     if escape_tex(book.strip()) not in books_dict[class_name]:
                         books_dict[class_name].append(escape_tex(book.strip()))
 
+                # constrcut and write actual text for session's assignment
                 f.write(
-                    "    \\print{0}Header{{lastPrintedClassDate}}\n	\\emph{{{1}}} {2}\n\n".format(
+                    "    \\print{0}Header{{lastPrintedClassDate}}\n	\\emph{{{1}}}, {2}\n\n".format(
                         class_type,
-                        escape_tex(row["Book"]),
-                        escape_tex(row["Reading Assignment"]),
+                        escape_tex(row["Book"].strip()),
+                        escape_tex(
+                            row["Reading Assignment"].strip().replace("\n", "; ")
+                        ),
                     )
                 )
                 # if class_type == "Preceptorial":
@@ -549,8 +578,20 @@ with open("output-" + datetime.now().strftime("%Y-%m-%d-%H-%M") + ".tex", "w") a
     # if class_sessions_counter > 0:
     #     f.write(tex_section_classes_end)
 
-    tex_booklist_start = r"""
+    tex_doc_end_MAMEC = r"""
 \end{multicols}
+%\end{multicols*} % uncomment this line and the matching begin or end line if columns are divided oddly on the last page of this section
+% TODO: add QR code to some survey/form through which people can easily submit changes/errors/etc?
+% TODO: add QR to online HTML version??
+
+\end{document}
+"""
+
+    booklist_print = False
+    if booklist_print:
+        tex_booklist_start = r"""
+\end{multicols}
+%\end{multicols*} % uncomment this line and the matching begin or end line if columns are divided oddly on the last page of this section
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -569,30 +610,22 @@ with open("output-" + datetime.now().strftime("%Y-%m-%d-%H-%M") + ".tex", "w") a
 Books are listed in the order in which they are encountered in class.
 
 \begin{multicols}{2}
+%\begin{multicols*}{2} % uncomment this line and the matching begin or end line if columns are divided oddly on the last page of this section
 """
 
-    f.write(tex_booklist_start)
+        f.write(tex_booklist_start)
 
-    for semester in books_dict:
-        #print(semester)
-        f.write(
-            "\n\\subsection{{{0} Books}}\n\\begin{{itemize}}\n".format(
-                semester
+        for semester in books_dict:
+            # print(semester)
+            f.write(
+                "\n\\subsection{{{0} Books}}\n\\begin{{itemize}}\n".format(semester)
             )
-        )
-        for book in books_dict[semester]:
-            #print(book)
-            f.write("    \\item {0}\n".format(book))
+            for book in books_dict[semester]:
+                # print(book)
+                f.write("    \\item {0}\n".format(book))
 
-        f.write("\\end{itemize}\n")
-
-    tex_doc_end_MAMEC = r"""
-\end{multicols}
-% TODO: add QR code to some survey/form through which people can easily submit changes/errors/etc?
-% TODO: add QR to online HTML version??
-
-\end{document}
-"""
+            f.write("\\end{itemize}\n")
+    # TODO: write booklist as seperate tex file?
 
     f.write(tex_doc_end_MAMEC)
 
