@@ -7,6 +7,10 @@ import re
 # xlsx_file_name = "MAMEC Curriculum 20250609.xlsx"
 xlsx_file_name = "MAMEC Curriculum 20250609-tbd.xlsx"
 
+# We capture book titles from reading assignments as we go.
+# Should we print a list of them at the end of doc?
+booklist_print = False
+
 # read by default 1st sheet of an excel file
 # xlsx_df = pd.read_excel("admin-docs/MAMEC Curriculum 20250527.xlsx")
 xlsx_df = pd.read_excel("admin-docs/{0}".format(xlsx_file_name))
@@ -24,7 +28,7 @@ tex_doc_start = r"""\documentclass{article}
 %%
 
 \title{Middle Eastern Classics Reading List 2025--2026}
-\author{St. John's College - Santa Fe Graduate Institute}
+\author{St.\ John's College --- Santa Fe Graduate Institute}
 \date{Updated: 2025-06-12}
 
 \setcounter{printSessionDate}{1}% setting to 0 will not print dates after "Session XYZ", setting to 1 will print dates (e.g. "Session XYZ - 2025-09-09")
@@ -66,14 +70,26 @@ tex_doc_start = r"""\documentclass{article}
 %\DTMsavedate{testDate}{\DTMfetchyear{springStart}-\DTMfetchmonth{springStart}-\DTMfetchday{springStart}}
 
 
-% TODO:
-% make smaller margins?
-% possible to use subsection X.n as variable?
-% use uneven columns? https://www.overleaf.com/learn/latex/Multiple_columns#Unbalanced_columns
-% italicize titles and check that sections of readings aren't italicized, but quoted instead.
-
 \usepackage{multicol}
-\usepackage{comment}
+\usepackage{titlesec} % for \titlespacing command
+
+%% Default spacing as said on page 25 of http://mirrors.ctan.org/macros/latex/contrib/titlesec/titlesec.pdf
+%% of form `\titlespacing*{⟨command ⟩}{⟨left⟩}{⟨before-sep⟩}{⟨after-sep⟩}[⟨right-sep⟩]`
+% \titleformat{\section}
+% {\normalfont\Large\bfseries}{\thesection}{1em}{}
+% \titleformat{\subsection}
+% {\normalfont\large\bfseries}{\thesubsection}{1em}{}
+%
+% \titlespacing*{\section} {0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+% \titlespacing*{\subsection} {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+%% new formatting and spacing to apply to this document
+\titleformat{\section}
+{\centering\normalfont\LARGE\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+\titlespacing*{\section} {0pt}{3.5ex plus 1ex minus 0.2ex}{1.0ex plus 0.2ex}
+\titlespacing*{\subsection} {0pt}{2.75ex plus 1ex minus 0.2ex}{0.75ex plus 0.2ex}
 
 % From http://tex.stackexchange.com/questions/34040/graphics-logo-in-headers
 \usepackage{geometry}
@@ -88,8 +104,6 @@ tex_doc_start = r"""\documentclass{article}
 \renewcommand{\footrulewidth}{0pt}
 \setlength\headheight{92.0pt}
 \addtolength{\textheight}{-92.0pt}
-%\setlength\headheight{148.0pt}
-%\addtolength{\textheight}{-148.0pt}
 \chead{\includegraphics[width=\textwidth]{header-blank.png}}
 
 
@@ -270,6 +284,7 @@ tex_doc_start = r"""\documentclass{article}
 \newcounter{countSession}
 \counterwithin{countSession}{countSemester}
 
+\usepackage{xcolor}  
 % Load this package last?!
 \usepackage{hyperref} % make clickable links, e.g. for table of contents https://www.overleaf.com/learn/latex/Hyperlinks
 
@@ -282,7 +297,6 @@ tex_doc_start = r"""\documentclass{article}
 %}
 
 %% underline the black text links with colored line
-\usepackage{xcolor}  
 \hypersetup{
     pdfborderstyle={/S/U/W 1}, % underline links instead of boxes
     linkbordercolor=red,       % color of internal links
@@ -315,12 +329,59 @@ tex_doc_start = r"""\documentclass{article}
 \renewcommand*\contentsname{Reading Lists}
 \tableofcontents
 
-\vspace{11mm}
+%\vspace{11mm}
 %\textit{\textbf{Note}: For the spring term, students will be provided with a list of options for preceptorials.}
 
 \thispagestyle{fancy} % instead of a `plain` pagestyle this set it to a style which includes the header on the Table of Contents page
 %\thispagestyle{empty} %use this instead of above 'fancy' line, if you do not want a header image on the first page of this document
 """
+
+
+tex_section_classes_start = r"""
+\begin{multicols}{2}
+%\begin{multicols*}{2} % uncomment this line and the matching begin or end line if columns are divided oddly on the last page of this section
+    %\raggedcolumns
+
+"""
+
+tex_section_classes_end = r"""
+\end{multicols}
+%\end{multicols*} % uncomment this line and the matching begin or end line if columns are divided oddly on the last page of this section
+"""
+
+tex_booklist_start = r"""
+\end{multicols}
+%\end{multicols*} % uncomment this line and the matching begin or end line if columns are divided oddly on the last page of this section
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                              %%
+%%          Book List           %%
+%%                              %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%page break
+\clearpage
+
+\begin{center}
+	\section{Book List}
+\end{center}
+
+Books are listed in the order in which they are encountered in class.
+
+\begin{multicols}{2}
+%\begin{multicols*}{2} % uncomment this line and the matching begin or end line if columns are divided oddly on the last page of this section
+"""
+
+tex_doc_end_MAMEC = r"""
+\end{multicols}
+%\end{multicols*} % uncomment this line and the matching begin or end line if columns are divided oddly on the last page of this section
+% TODO: add QR code to some survey/form through which people can easily submit changes/errors/etc?
+% TODO: add QR to online HTML version??
+
+\end{document}
+"""
+
 
 # create a file name output-DATE-TIME.tex for writing and write into it with below code
 # loop through all rows of xlsx_df. if column 1 has word "PRECEPTORIAL" or "SEMINAR" in it, print this string "\begin{center}\n	\section[CELL_CONTENTS]{CELL_CONTENTS}\n\end{center}" where CELL_CONTENTS is the contents of first cell and save contents of first cell to variable named SECTIONAME.
@@ -346,29 +407,12 @@ tex_section_header_start = """
 % increment semester count
 \\stepcounter{{countSemester}}
 
-
-\\begin{{center}}
 """
 # TODO: shrink vspace between header image and section name. do here or decrease header box size? ha or increase header box size and shrink vspace here a lot?
 # \section{{{1}}}{2}
 
-tex_section_header_end = r"""
-\end{center}
-"""
 
-tex_section_classes_start = r"""
-\begin{multicols}{2}
-%\begin{multicols*}{2} % uncomment this line and the matching begin or end line if columns are divided oddly on the last page of this section
-    %\raggedcolumns
-
-"""
-
-tex_section_classes_end = r"""
-\end{multicols}
-%\end{multicols*} % uncomment this line and the matching begin or end line if columns are divided oddly on the last page of this section
-"""
-
-
+# ok this has become more of 'escapeAndCorrectTex'...
 def escape_tex(input_str):
     """Escape TeX special characters in a given string."""
     tex_special_chars_regex = r"([#\$%\&\_\\{\}\~\^])"
@@ -378,9 +422,17 @@ def escape_tex(input_str):
     # escaped_str = re.sub(r"(\w)--(\w)", r"\1-\2", escaped_str, flags=re.U)
     # escaped_str = escaped_str.replace("-", "--")
     escaped_str = escaped_str.replace("\u00A0", " ")
+
+    # deal with unicode quotes: “”
+    escaped_str = escaped_str.replace("\u201c", "``")
+    escaped_str = escaped_str.replace("\u201d", "''")
+
+    # replace double quotes with tex-style quotes
     escaped_str = re.sub('"(.*)"', r"``\1''", escaped_str)
-    # remove spaces from 80 -- 90 or 80-- 90 or 80- 90
-    escaped_str = re.sub(r"(\d)\s*-{1,2}\s*(\d)", r"\1--\2", escaped_str)
+
+    # convert to double dashes and remove spaces from 80 -- 90 or 80-- 90 or 80- 90 or 80-90 etc.
+    # also: ] - S -> ]--S
+    escaped_str = re.sub(r"([\d\]])\s*-{1,2}\s*([\dS])", r"\1--\2", escaped_str)
     # also roman numerals
     escaped_str = re.sub(r"([IVXLC])\s*-{1,2}\s*([IVXLC])", r"\1--\2", escaped_str)
 
@@ -390,15 +442,15 @@ def escape_tex(input_str):
         "Suhrawardi's Introduction", "Suhra\\-wardi's Introduction"
     )
 
+    # … replace horizontal ellipsis with tex-dots
+    escaped_str = escaped_str.replace("\u2026", r"\(\ldots\)")
     # replace ... with \ldots
     escaped_str = escaped_str.replace("...", r"\(\ldots\)")
 
-    # TODO: split hyperlinks at / not anywhere else...
-    # Put hyperlinks on their on lines, then go from there with line-breaks
-    escaped_str = escaped_str.replace(" http", r":\\ http")
-    escaped_str = escaped_str.replace(
-        " www", r":\\ www"
-    )  # this isn't used, but it's here for future reference
+    # Wrap hyperlinks in \url{} command, which then manages line breaks and style
+    escaped_str = re.sub(r"http(\S*)/", r"\\url{http\1/}", escaped_str)
+    # or could do a directly negated whitespace class if we also want to add other characters to not match, like `([^\s{}]*)`
+
     return escaped_str
 
 
@@ -477,23 +529,16 @@ with open(
                     elif "3" in row["Week"] or "4" in row["Week"]:
                         section_semester = "Spring"
 
-                    # f.write(
-                    #     "\\begin{{center}}\n    \\section[{0}]{{{0} -- NAME \\\\ \\textit{{SUBNAME}}\n    ({1} Eight Weeks)\n\\end{{center}}".format(
-                    #         class_name, section_ordinal
-                    #     )
-                    # )
+                    # write the section header
+                    # NOTE: a double {{ is how to make it print a single {
                     f.write(
-                        # "    \\section[{0}]{{{0} -- NAME \\\\ \\textit{{SUBNAME}}}}\n    ({1} Eight Weeks)".format(
-                        "    \\section[{0}]{{{0}}}\n    ({1} Eight Weeks of {2})".format(
+                        "\\section[{0}]{{{0}}}\n\\begin{{center}}\n      \\vspace{{-0.5ex}}\n    ({1} Eight Weeks of {2})\n\\end{{center}}\n".format(
                             class_name, section_ordinal, section_semester
                         )
-                        # TODO: shrink vspace between section name and eight weeks part
                     )
                 else:
                     class_type = "Seminar"
-                    f.write("    \\section{{{0}}}".format(class_name))
-                # close the section header
-                f.write(tex_section_header_end)
+                    f.write("\\section{{{0}}}".format(class_name))
 
                 # If this was a 'section' type header then don't need to do anything else, go to next row
                 continue
@@ -553,18 +598,7 @@ with open(
                         ),
                     )
                 )
-                # if class_type == "Preceptorial":
-                #     f.write(
-                #         "    \\printPreceptHeader{{lastPrintedClassDate}}\n	\\emph{{{0}}} {1}\n\n".format(
-                #             escape_tex(row["Book"]), escape_tex(row["Reading Assignment"])
-                #         )
-                #     )
-                # else:
-                #     f.write(
-                #         "    \\printSeminarHeader{{lastPrintedClassDate}}\n	\\emph{{{0}}} {1}\n\n".format(
-                #             escape_tex(row["Book"]), escape_tex(row["Reading Assignment"])
-                #         )
-                #     )
+
             ## Saving this code for later in case useful, but no prob want to leave this logic for tex file. though it might be useful for catching weirdnesses like the " " in that one Thanksgiving row...
             # else:
             #     # holiday or weird row
@@ -578,40 +612,7 @@ with open(
     # if class_sessions_counter > 0:
     #     f.write(tex_section_classes_end)
 
-    tex_doc_end_MAMEC = r"""
-\end{multicols}
-%\end{multicols*} % uncomment this line and the matching begin or end line if columns are divided oddly on the last page of this section
-% TODO: add QR code to some survey/form through which people can easily submit changes/errors/etc?
-% TODO: add QR to online HTML version??
-
-\end{document}
-"""
-
-    booklist_print = False
     if booklist_print:
-        tex_booklist_start = r"""
-\end{multicols}
-%\end{multicols*} % uncomment this line and the matching begin or end line if columns are divided oddly on the last page of this section
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%                              %%
-%%          Book List           %%
-%%                              %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%page break
-\clearpage
-
-\begin{center}
-	\section{Book List}
-\end{center}
-
-Books are listed in the order in which they are encountered in class.
-
-\begin{multicols}{2}
-%\begin{multicols*}{2} % uncomment this line and the matching begin or end line if columns are divided oddly on the last page of this section
-"""
 
         f.write(tex_booklist_start)
 
@@ -625,8 +626,9 @@ Books are listed in the order in which they are encountered in class.
                 f.write("    \\item {0}\n".format(book))
 
             f.write("\\end{itemize}\n")
-    # TODO: write booklist as seperate tex file?
+        # TODO: write booklist as seperate tex file?
 
+    # all done, write closing code for tex file
     f.write(tex_doc_end_MAMEC)
 
 
