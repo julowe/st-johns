@@ -5,7 +5,8 @@ import re
 
 # excel file name, to use in tex file itself
 # xlsx_file_name = "MAMEC Curriculum 20250609.xlsx"
-xlsx_file_name = "MAMEC Curriculum 20250609-tbd.xlsx"
+# xlsx_file_name = "MAMEC Curriculum 20250609-tbd.xlsx"
+xlsx_file_name = "MAMEC Curriculum (final).xlsx"
 
 # We capture book titles from reading assignments as we go.
 # Should we print a list of them at the end of doc?
@@ -29,7 +30,7 @@ tex_doc_start = r"""\documentclass{article}
 
 \title{Middle Eastern Classics Reading List 2025--2026}
 \author{St.\ John's College --- Santa Fe Graduate Institute}
-\date{Updated: 2025-06-12}
+\date{Updated: 2025-06-16}
 
 \setcounter{printSessionDate}{1}% setting to 0 will not print dates after "Session XYZ", setting to 1 will print dates (e.g. "Session XYZ - 2025-09-09")
 
@@ -285,6 +286,7 @@ tex_doc_start = r"""\documentclass{article}
 \counterwithin{countSession}{countSemester}
 
 \usepackage{xcolor}  
+
 % Load this package last?!
 \usepackage{hyperref} % make clickable links, e.g. for table of contents https://www.overleaf.com/learn/latex/Hyperlinks
 
@@ -297,7 +299,7 @@ tex_doc_start = r"""\documentclass{article}
 %}
 
 %% underline the black text links with colored line
-\hypersetup{
+\hypersetup{%
     pdfborderstyle={/S/U/W 1}, % underline links instead of boxes
     linkbordercolor=red,       % color of internal links
     citebordercolor=green,     % color of links to bibliography
@@ -441,6 +443,26 @@ def escape_tex(input_str):
     escaped_str = escaped_str.replace(
         "Suhrawardi's Introduction", "Suhra\\-wardi's Introduction"
     )
+
+    escaped_str = escaped_str.replace(
+        r"(Parens and Macfarland), pp. 162--179)",
+        r"(Parens and Macfarland, pp. 162--179)",
+    )
+
+    # Spring Seminar Session 16, make it split onto a new page more nicely
+    escaped_str = escaped_str.replace(
+        "pp.311--316; First Discussion - The denial",
+        "pp.311--316; (\\emph{Readings continued on next page})\n\n    \\noindent First Discussion - The denial",
+    )
+
+    # replace ’s with 's for tex typsetting
+    escaped_str = escaped_str.replace(r"’s ", r"'s ")
+
+    # replace s’ with s' for tex typsetting
+    escaped_str = escaped_str.replace(r"s’ ", r"s' ")
+
+    # replace don’t with don't for tex typsetting
+    escaped_str = escaped_str.replace(r"don’t", r"don't")
 
     # … replace horizontal ellipsis with tex-dots
     escaped_str = escaped_str.replace("\u2026", r"\(\ldots\)")
