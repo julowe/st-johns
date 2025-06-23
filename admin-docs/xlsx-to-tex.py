@@ -6,7 +6,8 @@ import re
 # excel file name, to use in tex file itself
 # xlsx_file_name = "MAMEC Curriculum 20250609.xlsx"
 # xlsx_file_name = "MAMEC Curriculum 20250609-tbd.xlsx"
-xlsx_file_name = "MAMEC Curriculum (final).xlsx"
+# xlsx_file_name = "MAMEC Curriculum (final).xlsx"
+xlsx_file_name = "MAMEC Curriculum (final) 20250620.xlsx"
 
 # We capture book titles from reading assignments as we go.
 # Should we print a list of them at the end of doc?
@@ -19,7 +20,9 @@ xlsx_df = pd.read_excel("admin-docs/{0}".format(xlsx_file_name))
 # print(xlsx_df)
 
 # This is just a big chunk of tex that we want to start the document with, no parsing, hence the raw string prefix 'r'
-tex_doc_start = r"""\documentclass{article}
+tex_doc_start = r"""
+%\DocumentMetadata{}
+\documentclass{article}
 \usepackage[calc,useregional]{datetime2}
 \newcounter{printSessionDate} %creates empty counter/variable for whether or not to print session dates. Do Not Change This.
 
@@ -30,7 +33,7 @@ tex_doc_start = r"""\documentclass{article}
 
 \title{Middle Eastern Classics Reading List 2025--2026}
 \author{St.\ John's College --- Santa Fe Graduate Institute}
-\date{Updated: 2025-06-16}
+\date{Updated: 2025-06-20}
 
 \setcounter{printSessionDate}{1}% setting to 0 will not print dates after "Session XYZ", setting to 1 will print dates (e.g. "Session XYZ - 2025-09-09")
 
@@ -94,7 +97,9 @@ tex_doc_start = r"""\documentclass{article}
 
 % From http://tex.stackexchange.com/questions/34040/graphics-logo-in-headers
 \usepackage{geometry}
-\geometry{letterpaper, margin=0.75in, headsep=15pt}
+%\geometry{letterpaper, margin=0.75in, headsep=15pt}
+\geometry{letterpaper, margin=0.75in, headsep=-35pt}
+\addtolength{\topmargin}{-50pt}
 
 % Insert header image
 \usepackage{graphicx}
@@ -103,8 +108,10 @@ tex_doc_start = r"""\documentclass{article}
 \fancyhead{} % This is the text to show in the header, right now we want none
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
-\setlength\headheight{92.0pt}
-\addtolength{\textheight}{-92.0pt}
+\setlength\headheight{144.0pt}
+\addtolength{\textheight}{-94.0pt}
+%\setlength\headheight{92.0pt}
+%\addtolength{\textheight}{-92.0pt}
 \chead{\includegraphics[width=\textwidth]{header-blank.png}}
 
 
@@ -285,12 +292,13 @@ tex_doc_start = r"""\documentclass{article}
 \newcounter{countSession}
 \counterwithin{countSession}{countSemester}
 
+%\usepackage{transparent}% if you want to typeset transparent text, also uncomment the line at top of file `\DocumentMetadata{}`
 \usepackage{xcolor}  
 
 % Load this package last?!
 \usepackage{hyperref} % make clickable links, e.g. for table of contents https://www.overleaf.com/learn/latex/Hyperlinks
 
-%% make links the color
+%% make links a color
 %\hypersetup{
 %  colorlinks   = true, %Colours links instead of ugly boxes
 %  urlcolor     = blue, %Colour for external hyperlinks
@@ -299,6 +307,7 @@ tex_doc_start = r"""\documentclass{article}
 %}
 
 %% underline the black text links with colored line
+%% NOTE: underlined links in PDFs do not show up in chrome PDF viewer, it is a known bug that is not getting fixed. The underlinging does show in Firefox browser and Adobe Acrobat viewers.
 \hypersetup{%
     pdfborderstyle={/S/U/W 1}, % underline links instead of boxes
     linkbordercolor=red,       % color of internal links
@@ -331,7 +340,7 @@ tex_doc_start = r"""\documentclass{article}
 \renewcommand*\contentsname{Reading Lists}
 \tableofcontents
 
-%\vspace{11mm}
+%\vspace{2cm}
 %\textit{\textbf{Note}: For the spring term, students will be provided with a list of options for preceptorials.}
 
 \thispagestyle{fancy} % instead of a `plain` pagestyle this set it to a style which includes the header on the Table of Contents page
@@ -392,11 +401,13 @@ tex_doc_end_MAMEC = r"""
 
 
 tex_section_header_start = """
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
 %%
 %%         {0}
 %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % date dancing, don't change - this gives us the day before the first day of classes
 %WHY?? well then all the function calls to print the session header below can be the same... confusing? a little, but hopefully void future errors in user-editable section below.
@@ -410,8 +421,6 @@ tex_section_header_start = """
 \\stepcounter{{countSemester}}
 
 """
-# TODO: shrink vspace between header image and section name. do here or decrease header box size? ha or increase header box size and shrink vspace here a lot?
-# \section{{{1}}}{2}
 
 
 # ok this has become more of 'escapeAndCorrectTex'...
@@ -441,13 +450,14 @@ def escape_tex(input_str):
     ## ok and now special cases - you shoudl prob always look to see if these are still needed if any content changed (and thus text may fit onto the line differently)
     # help tex not make weird underfull hbox spacing, replace Suhrawardi's Introduction with Suhra\-wardi's Introduction
     escaped_str = escaped_str.replace(
-        "Suhrawardi's Introduction", "Suhra\\-wardi's Introduction"
+        "Suhrawardī's Introduction", "Suhra\\-wardī's Introduction"
     )
 
-    escaped_str = escaped_str.replace(
-        r"(Parens and Macfarland), pp. 162--179)",
-        r"(Parens and Macfarland, pp. 162--179)",
-    )
+    ## Changed in xlsx file on OneDrive
+    # escaped_str = escaped_str.replace(
+    #     r"(Parens and Macfarland), pp. 162--179)",
+    #     r"(Parens and Macfarland, pp. 162--179)",
+    # )
 
     # Spring Seminar Session 16, make it split onto a new page more nicely
     escaped_str = escaped_str.replace(
@@ -490,21 +500,48 @@ books_dict = dict()
 # Prob don't use this but we'll see
 col_names = xlsx_df.columns
 
+url_repo_script = (
+    r"https://github.com/julowe/st-johns/blob/main/admin-docs/xlsx-to-tex.py"
+)
+
+url_binder_typeset = r"https://mybinder.org/v2/gh/julowe/binder-reading-lists/HEAD?urlpath=%2Fdoc%2Ftree%2Findex.ipynb"
+
+typset_dtm = datetime.now().strftime("%Y-%m-%dT%H:%M")
+
+## Not used.
+# ugly bc to make \\ we need to escape both, so \\\\. and I do want the indents in the tex file, for readability.
+how_to_string = """\n\n\\begin{{center}}
+    \\texttransparent{{0}}{{%
+        This document typeset by: \\\\
+        {0} \\\\
+        on {1} \\\\
+        from `{2}' \\\\
+        by Justin Lowe.
+    }}
+\\end{{center}}
+""".format(
+    url_repo_script,
+    typset_dtm,
+    xlsx_file_name,
+)
+
 with open(
-    "admin-docs/tex-output-test/output-"
-    + datetime.now().strftime("%Y-%m-%d-%H-%M")
-    + ".tex",
+    "admin-docs/tex-output-test/output-{0}.tex".format(typset_dtm),
     "w",
 ) as f:
     # write header on what file we used to generate this
     f.write(
-        "% Generated by xlsx-to-tex.py on {0} from '{1}' by Justin Lowe.\n".format(
-            datetime.now().strftime("%Y-%m-%d-%H-%M"), xlsx_file_name
+        "% Generated by {0} on {1} from '{2}' by Justin Lowe. \n% Or use this binder notebook to upload an xlsx file and typeset it yourself: {3} \n".format(
+            url_repo_script, typset_dtm, xlsx_file_name, url_binder_typeset
         )
     )
 
     # write all the user-editable variables and functions before actual content
     f.write(tex_doc_start)
+
+    ## In the end, not used. Can't be sure transparency will really work with all printers etc. Need better way to unobtrusively indicate how to make this doc again...
+    # write transparent text to point to how to typeset this doc and the code to do so
+    # f.write(how_to_string)
 
     for index, row in xlsx_df.iterrows():
         # Check if this is a 'section' type row
