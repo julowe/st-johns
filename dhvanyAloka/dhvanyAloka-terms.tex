@@ -1,4 +1,6 @@
-\documentclass{article}
+\documentclass[12pt]{article}
+
+\usepackage[top=1in, bottom=1.25in, left=1.25in, right=1.25in]{geometry}
 
 \usepackage{indentfirst}
 \usepackage{multicol}
@@ -48,30 +50,32 @@ Bruce M. Perry
 
 \section{Terms}
 
-Some helpful items from Ingalls, Masson, and Patwardhan's translation. For additional explanation, see the following text's Introduction, photocopied from original text pages 15--17.
-% TODO: spell out this acronym, assume reading form following pages in EC manual oh. no it is the author's intials... are thse actual page numbers??
-% Ingalls, Masson, and Patwardhan, 
-% TODO: use page numbers from xerox original text, not EC manual pages, as we can see here they change...
-\vspace{-6pt}
+Some helpful terms from Ingalls, Masson, and Patwardhan's translation. Additional explanation is attached, from pages 15--17 of their Introduction to this text.
+
+% \vspace{-6pt}
+\setlength{\columnsep}{-3em}
 \begin{multicols}{2}
 	\begin{description}
-		\setlength{\itemsep}{-0.2em}
+		\setlength{\itemsep}{-0.25em}
 
 		\item[anubhāva] consequent
+
 		\item[bhāva] emotion
+
 		\item[vibhāva] determinant
 
 		      \vspace{-6pt}
 		      \begin{description}[
 				      itemindent=-3em
 			      ]
-			      \setlength{\itemsep}{-0.2em}
+			      \setlength{\itemsep}{-0.25em}
 			      \item[ālambanavibhāva] objective \\ determinant
+
 			      \item[uddīpanavibhāva] stimulative \\ determinant
 		      \end{description}
 
 		      \vspace{-4pt}
-		\item[vyabhicārin/vyabhicāribhāva] temporary/transient state of mind
+		\item[vyabhicārin/vyabhicāribhāva] temp\-orary/transient state of mind
 
 		\item[sthāyibhāva] abiding emotion
 
@@ -82,8 +86,9 @@ Some helpful items from Ingalls, Masson, and Patwardhan's translation. For addit
 
 
 
-
-\noindent{
+%TODO center table better
+\makebox[\textwidth][c]{
+	% \noindent{
 	\begin{tabular}{|c||c|c||c|c|}
 		\hline
 		  & \textit{Sanskrit}    & \textit{English Term}    & \textit{Sanskrit} & \textit{English Term}      \\
@@ -118,69 +123,42 @@ Some helpful items from Ingalls, Masson, and Patwardhan's translation. For addit
 	% TODO: check sthāyibhāva sanskrit term tṛṣṇākṣayasukha and translation for peace - EC page 159, text p695, 4.5 A.16 footnote. have 'cessation of desire' from EC p156
 	% Masson, J L; Patwardhan, M V (1969), SantaRasa and Abhinavagupta's Philosophy of Aesthetics, Bhandarkar Oriental research Institute, OCLC 844547798 p92 says: its stable emotion (sthāyibhāva) impassivity (sama) which culminates in detachment (Vairāgya) arising from knowledge of truth and purity of mind
 	% S K. De, Sushil Kumar (1960). History of Sanskrit Poetics- - Vol2. Firma K. L. Mukhopadhyay. pp30, 343 says tranquility (Sama) or Disenchantment (Nirveda) 
+	% }
 }
 
 
 \subsection{Abbreviations Used}
 
 \begin{description}
-	\setlength{\itemsep}{-0.2em}
+	\setlength{\itemsep}{-0.25em}
 
-	\item[K] \textit{Kārikā} (verse) and\dots
-	\item[A] \textit{Dhvanyāloka} (commentary: vṛtti) `Light on Suggestion', by Rājānaka \\ Ānandavardhana, Kashmiri [9th AD]
-	\item[L] \textit{Locana} `The Eye' by Abhinavagupta, Kashmiri [10th AD]
+	\item[K] \textit{\textbf{K}ārikā} (verse) of the \textit{Dhvanyāloka} (`Light on Suggestion'),
+	      by Rājānaka \\ Ānandavardhana, Kashmiri [9th AD]% and\dots
+
+	\item[A] \textbf{Ā}nandavardhana's \textit{vṛtti} (commentary) on the \textit{Kārikā} of their \textit{Dhvanyāloka}
+
+	\item[L] \textit{\textbf{L}ocana} (`The Eye'), commentary by Abhinavagupta, Kashmiri [10th AD]
 \end{description}
-% TODO: give the actual sanskrit word we get 'A' from for this commentary...
-% TODO: maybe reword this so it makes more obvious sense that guy wrote K and A at same time
+% TODO: maybe reword this so it makes more obvious sense that guy wrote K and A at same time? Or was there a time gap??
 
 
 \subsection{Some Authors Mentioned}
 
 \begin{description}
-	\setlength{\itemsep}{-0.2em}
+	\setlength{\itemsep}{-0.25em}
 
 	\item[Bhāmaha] author of works on literary criticism, largely concerned with the figures of speech [8th AD]
-	\item[Bharata] (legendary) author of the Nāṭyaśāstra (\textit{BhNŚ}), an ancient manual on dramaturgy, source of first eight sthāyibhāva and rasa
+
+	\item[Bharata] (legendary) author of the Nāṭyaśāstra (\textit{BhNŚ}), an ancient manual on dramaturgy, source of first eight sthāyibhāva and rasa noted above.
 	      % TODO: does 'legendary' mean 'reputed' or some such? Am I the only one who was confused by this?
+
 	\item[Bhattanayaka] critic of Ānandavardhana, apparently a Mīmāṃsaka, answered by Abhinavagupta
 \end{description}
 
 
 \end{document}
 
-% anubhāva: ‘consequent’
 
-% bhāva: ‘emotion’
-
-% vibhāva: ‘determinant’:
-%
-% a) ‘objective determinant’ (ālambanavibhāva);
-%
-% b) ‘stimulative determinant’ (uddīpanavibhāva)
-
-% vyabhicārin/vyabhicāribhāva: ‘temporary/transient state of mind’
-
-% rasa: ‘flavor’ / ‘sentiment’ — based on the sthāyibhāvas respectively.
-% 1) erotic (śṛṅgāra),
-% 2) comic (hāsya),
-% 3) tragic (karuṇa),
-% 4) furious/cruel (raudra),
-% 5) heroic (vīra),
-% 6) fearsome/timorous (bhayānaka),
-% 7) gruesome/loathsome (bībhatsā),
-% 8) wondrous (adbhuta),
-% 9) peace (śānta) [later addition]
-
-% sthāyibhāva: ‘abiding emotion’:
-% 1) sexual desire (rati),
-% 2) laughter (hāsa),
-% 3) grief (śoka),
-% 4) anger (krodha),
-% 5) heroic energy (utsāha),
-% 6) fear (bhaya),
-% 7) disgust (jugupsā),
-% 8) wonder/amazement (vismaya)
-%
 % Delete this section later, used for now for an easy palce to copy letters from for updates to works
 %
 % ś
