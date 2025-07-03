@@ -1,0 +1,423 @@
+\documentclass[12pt]{article}
+
+\usepackage[top=0.75in, bottom=0.75in, left=0.75in, right=0.75in]{geometry}
+
+\usepackage{indentfirst}
+\usepackage{multicol}
+\usepackage{enumitem}
+
+
+
+% Don't print page numbers - assuming some overall page number is added for EC Manual printing
+\pagenumbering{gobble}
+
+% if set to zero, do not print numbers before section headers
+\setcounter{secnumdepth}{0}
+
+\title{Some Notes on the Dhvanyāloka}
+\author{Bruce M. Perry \and Updated by Justin K. Lowe}
+\date{October 10, 2002, Updated: \today}
+
+
+
+
+\begin{document}
+
+% TODO uncomment following part if this is to be used more widely. or no matter what, since it did start from their work?
+
+% \maketitle
+
+% \section{Introduction}
+
+% One of the principal achievements of Indian aesthetics (\textit{alaṅkāra}) is its analysis of the nature of the poetic experience.
+% According to its two foremost theorists, poetry consists in the power of suggestion (\textit{dhvani}), and, conversely, produces in the audience an experience of relishing (\textit{rasa}) that is not emotional but transcendental (\textit{alaukika}).
+% The crucial texts of these theorists, however, do not lend themselves to a straightforward study.
+% Ānandavardhana wrote verses (\textit{kārikā}), upon which he composed a commentary (\textit{vṛtti}), the \textit{Dhvanyāloka}.
+% Abhinavagupta subsequently composed a commentary on both the verses and commentary of Ānandavardhana, called the \textit{Locana}.
+% Given the length, complexity, and seeming randomness of topics taken up in these works, a simplifying approach seems in order.
+% To provide a roadmap, as it were, of the rasa-theory, a chapter from A. B. Keith's \textit{The Sanskrit Drama}, ``The Sentiments'', is first provided.
+% Select passages from Ānandavardhana and Abhinavagupta, from the excellent translation of Ingalls, Masson, and Patwardhan, are then presented; these selections contain the most direct, if not exhaustive, formulations or discussions of \textit{dhvani} and \textit{rasa}.
+
+% Please note that the scholarly footnotes to the selections are supplied for completeness' sake only: they are not crucial to understanding the texts.
+% The complete translation will be on reserve in the library.
+
+
+% Bruce M. Perry
+
+% 10/23/02
+
+% % insert page break
+% \newpage
+
+
+\section{Terms}
+
+% Some helpful terms from Ingalls, Masson, and Patwardhan's translation. Additional explanation is attached, from pages 15--17 of their Introduction to this text.
+
+
+% TODO move table elsewhere?
+% TODO center table better
+\makebox[\textwidth][c]{%
+	% \noindent{
+	\begin{tabular}{|c||c|c||c|c|}
+		% \begin{tabular}{lrlrl}
+		\hline
+		  & \textit{Sanskrit}    & \textit{English Term}    & \textit{Sanskrit} & \textit{English Term}      \\
+		\hline
+		  & \textbf{sthāyibhāva} & \textbf{abiding emotion} & \textbf{rasa}     & \textbf{flavor, sentiment} \\
+		\hline
+		1 & rati                 & sexual desire            & śṛṅgāra           & erotic                     \\
+		\hline
+		2 & hāsa                 & laughter                 & hāsya             & comic                      \\
+		\hline
+		3 & śoka                 & grief                    & karuṇa            & tragic                     \\
+		\hline
+		4 & krodha               & anger                    & raudra            & furious,                   \\
+		  &                      &                          &                   & cruel                      \\
+		\hline
+		5 & utsāha               & heroic energy            & vīra              & heroic                     \\
+		\hline
+		6 & bhaya                & fear                     & bhayānaka         & fearsome,                  \\
+		  &                      &                          &                   & timorous                   \\
+		\hline
+		7 & jugupsā              & disgust                  & bībhatsā          & gruesome,                  \\
+		  &                      &                          &                   & loathsome                  \\
+		\hline
+		8 & vismaya              & wonder, amazement        & adbhuta           & wondrous                   \\
+		\hline
+		9 &                      &                          & śānta             & peace (\textit{this term}  \\
+		  &                      &                          &                   & \textit{added later})      \\
+		\hline
+	\end{tabular}
+	% TODO: intro of Dhvanyāloka says "To these Ānanda adds a ninth, the rasa of peace (śānta)." p16, EC p74
+	% TODO: or do something like: NB: the XYZ and peace were added later by SOEMONE in SOME TEXT. but yeah have to find that first...
+	% TODO: check sthāyibhāva sanskrit term tṛṣṇākṣayasukha and translation for peace - EC page 159, text p695, 4.5 A.16 footnote. have 'cessation of desire' from EC p156
+	% TODO: or 'liberation/moks.a' (4.5 A, EC p.155? 2nd line. also 3rd P, line 3)
+	% Masson, J L; Patwardhan, M V (1969), SantaRasa and Abhinavagupta's Philosophy of Aesthetics, Bhandarkar Oriental research Institute, OCLC 844547798 p92 says: its stable emotion (sthāyibhāva) impassivity (sama) which culminates in detachment (Vairāgya) arising from knowledge of truth and purity of mind
+	% S K. De, Sushil Kumar (1960). History of Sanskrit Poetics- - Vol2. Firma K. L. Mukhopadhyay. pp30, 343 says tranquility (Sama) or Disenchantment (Nirveda) 
+	% }
+}
+
+
+
+% \subsection{Abbreviations Used}
+
+% \begin{description}
+% 	\setlength{\itemsep}{-0.25em}
+
+% 	\item[K] \textit{\textbf{K}ārikā} (verse) of the \textit{Dhvanyāloka} (`Light on Suggestion'),
+% 	      by Rājānaka \\ Ānandavardhana, Kashmiri [9th AD]% and\dots
+
+% 	\item[A] \textbf{Ā}nandavardhana's \textit{vṛtti} (commentary) on the \textit{Kārikā} of their \textit{Dhvanyāloka}
+
+% 	\item[L] \textit{\textbf{L}ocana} (`The Eye'), commentary by Abhinavagupta, Kashmiri [10th AD]
+% \end{description}
+% % TODO: maybe reword this so it makes more obvious sense that guy wrote K and A at same time? Or was there a time gap??
+
+
+\subsection{Some Authors Mentioned}
+
+% TODO: add more authors??
+
+\begin{description}
+	\setlength{\itemsep}{-0.25em}
+
+	\item[Bhāmaha] author of works on literary criticism, largely concerned with the figures of speech [8th AD]
+
+	\item[Bharata] (legendary) author of the Nāṭyaśāstra (\textit{BhNŚ}), an ancient manual on dramaturgy, source of first eight sthāyibhāva and rasa noted above.
+	      % TODO: does 'legendary' mean 'reputed' or some such? Am I the only one who was confused by this?
+
+	\item[Bhattanayaka] critic of Ānandavardhana, apparently a Mīmāṃsaka, answered by Abhinavagupta
+\end{description}
+
+
+% insert page break
+\newpage
+
+
+\section{Expanded List of Terms}
+
+Words in ``quotes'' are from IMP translation, unless otherwise noted.
+Notation follows IMP sections, pages given when translation of K. Kris.\ is used.
+Footnotes are marked by a dot, e.g. ``1.1 L.1'' is footnote 1 for the Locana of 1.1.
+``(M.W. p.\#)'' refers to a page from Monier-Williams Sanskrit -- English Dictionary, 1899 printing.
+I have attempted to provide the reference from where each term is first encountered.
+
+
+% \newcommand\litem[1]{\item{\bfseries #1}}
+
+\newcommand\litem[1]{\item{\bfseries #1\label{#1}}}
+
+
+% TODO: ?? i forget...
+% \setlength{\columnsep}{-3em}
+\begin{multicols}{2}
+
+	\begin{enumerate}
+		\litem{dhvani} ``suggestion'' (1.1 K, 1.1 A)
+
+		\litem{bhākta} ``associated meaning'' (1.1 K), ``associated sense'' (1.1 L), ``regularly fed by another, a dependent'' (M.W. p.751)
+		% MW: (H1) [Printed book page 751,2]
+		% 1. bhākta mf(ī)n. (fr. bhakta) regularly fed by another, a dependent, retainer, Pāṇ. iv, 4, 68 [ID=149534]
+		% fit for food, ib., iv, 4, 100. [ID=149535]
+		% (H2) [Printed book page 751,2]
+		% 2. bhākta mf(ī)n., (fr. bhakti) inferior, secondary (opp. to mukhya), Śaṃk. ; ĀpŚr. Sch. [ID=149536]
+		% bhākta m. pl. ‘the faithful ones’, N. of a Vaiṣṇava and Śaiva sect, W. [ID=149537]
+		% oh, so 'fed by' another, or 'dependent' on something else (e.g. here in the 2nd alternative view it is saying dhvani is just created by some other functions, so just say it is those functions instead of making up sub-divisions of existent process/term)
+
+		% TODO: add references/pages for below few terms. in text, or just Intro?
+		\litem{rasa} flavor/sentiment -- based on the sthāyibhāvas respectively, as shown in following table.
+		% TODO: 'following' table, or above?
+		% TODO: rasa is referenced in (2.3 K), but not defined
+
+		% ``A rasa, bhāva, rasābhāsa, bhāvabhāsa, bhāvapraśānti, etc., \dots'' (2.3 K)
+		% and then, ``For these technical terms see Introduction, pp. 17--20, 37, and Abhinava's remarks on this section and on 2.4 and its various subdivisions. For bhāvadhvani Abhinava invents a whole new meaning.''
+
+		\litem{bhāva} ``emotion'' (2.3 K) [K. Kris. Also B. Perry's translation, from IMP's Introduction]
+
+
+		\litem{sthāyibhāva} ``abiding emotion''
+		% TODO: add reference
+
+		\litem{anubhāva} ``consequent''
+		% TODO: add reference
+		% TODO: rearrange order?
+
+		\litem{vibhāva} ``determinant''
+		% TODO: add reference
+		\begin{enumerate}
+			%\setlength{\itemsep}{-0.25em}
+			\litem{ālambanavibhāva} ``objective determinant''
+			% TODO: add reference
+
+			\litem{uddīpanavibhāva} ``stimulative determinant''
+			% TODO: add reference
+		\end{enumerate}
+
+		\litem{vyabhicārin} temporary/transient state of mind
+		% TODO: add reference
+		% TODO: rearrange order?
+
+		\litem{vyabhicāribhāva} See vyabhicārin, \#~\ref{vyabhicārin}
+		% TODO: which of the two vyabhic is more used? make that the primary def/label
+
+		\litem{---1} ``outside the scope of speech''? (1.1 K) TODO: a term, or just often used phrase?
+		% TODO: get term or definition
+
+		\litem{guṇa} the ``qualities'' (1.1 L, 1.1a A, 2.7 K \& A), ``virtues'' (EC p. 145?)
+
+		\litem{alaṅkāra} ``figures of speech'' (1.1 L, 1.1a A) also 2.4 A
+		% TODO: what is my note to 2.4 A doing/mean?
+
+		\litem{vṛtti} ``commentary'' used by Abhinavagupta to refer to Ānandavardhana commentary (versus their Kārikā), multiple meanings (1.1a A)
+		% TODO: clarify multiple meanings? or add some in that are used in text??
+
+		\litem{rīti} ``------''? (1.1a A)
+		% TODO: get term or definition
+
+		\litem{---2} ``sensitive reader'' (1.1e A, also 1.1 L.1)
+		% TODO: get term or definition
+
+		\litem{vastumātra} ``a simple thing'' (1.4a A)
+
+		\litem{``rasa, etc.''} this phrase renders the sanskrit \textit{rasādi} which is used in 1.4a A and elsewhere.
+		``The term refers to all elements that belong to \textit{rasadhvani}:
+		not only \textit{rasa}, but \textit{bhāva}, \textit{rasā\-bhāsa}, \textit{bhāvābhāsa}, \textit{bhāvodaya}, \textit{bhāvasandhi}, \textit{bhāva\-śabala}, \textit{bhā\-vapraśama}.
+		For definitions see 1.4g and for examples 2.3 L''
+		and 2.3 K
+		% TODO: what is this 2.3 K note? it's mine, but why?
+
+		\litem{vastudhvani} ``-----''? (1.4a A)
+		% TODO: get term or definition
+
+		\litem{---3} ``well known ornamented elements [of poetry]'', ``external constituents'' [K. Kris.\ p.8]
+		% TODO: get term or definition
+
+		\litem{alaṅkāradhvani} ``second variety of suggested meaning'' (1.4g A)
+		TODO: maybe wrong? see 1.1 K.2, EC p.77. Connected with bhākta?
+
+
+		\litem{three types of suggested meanings} ``vastumātra (simple thing), figure of speech, a rasa etc.'' (1.4a A)
+
+		\litem{guṇavṛtti} ``secondary usage'' (?), ``indication'' [K. Kris.\ p.35],
+		but K. Kris.: \textit{lakṣaṇayā} ``secondary usage'' (2.9 A, p51) which in IMP is ``metonymy''??
+		TODO see where metonymy used before in IMP.
+		``secondary or associated meaning'' by Ānanda (1.1 K.2)
+		Also see term \#~\ref{guṇa} and \#~\ref{vṛtti}
+		% TODO: get other refs to metonymy
+
+		\begin{itemize}
+			\item \textbf{Ānanda's two types of ``secondary/associated meaning''} (? TODO)
+			      \begin{enumerate}
+				      \litem{upacāra} ``metaphorical''
+				      \litem{lakṣaṇā} ``relational''
+				      % \item[upacāra] ``metaphorical type of secondary/associated meaning''
+				      % \item[lakṣaṇā] ``relational type of secondary/associated meaning'' 
+			      \end{enumerate}
+
+			\item \textbf{guṇavṛtti, Abhinava's two types of ``secondary/associated meaning''} (? TODO)
+			      \begin{enumerate}
+				      \litem{gauṇa} ``metaphorical''
+				      \litem{lakṣaṇika} ``relational''
+				      % \item[gauṇa] ``metaphorical type of secondary/associated meaning''
+				      % \item[lakṣaṇika] ``relational type of secondary/associated meaning''
+			      \end{enumerate}
+		\end{itemize}
+
+		\litem{bhāsa} ``correlate'' (4.5 A, from term \#~\ref{ābhāsa}),
+		``semblance'' (from usage in compounds, e.g.\ term \#~\ref{rasābhāsa}, etc.),
+		``impression made on the mind'' (M.W. p.756)
+		% (H2) [Printed book page 756,1]
+		% bhāsa m. light, lustre, brightness (often ifc.), MBh. ; Hariv. ; Kathās. [ID=150601]
+		% impression made on the mind, fancy, MW. [ID=150602]
+		% TODO: do we get bhasa or bhāsa alone in the text, or did i just back-assume this def. from ābhāsa?
+
+		\litem{ābhāsa} ``false or improper correlate'' (4.5 A)
+
+		\litem{rasābhāsa} ``semblance of sentiment'' [K. Kris.] (2.3 K) Also see term \#~\ref{rasa} \& \#~\ref{bhāsa}
+
+		\litem{bhāvabhāsa} ``semblance of mood'' [K. Kris.] (2.3 K) Also see term \#~\ref{bhāva}
+
+		\litem{bhāvapraśānti} ``(rise and) cessation'' of mood/emotion [\textit{bhāva}, term \#~\ref{bhāva}] (2.3 K) Also see ninth rasa, \textit{śānta} (`peace')
+		% TODO: not bhāvapraśama? 
+		% TODO: is connection to peace correct?
+		% praśānti
+		% (H3) [Printed book page 695,2]
+		% pra-śānti f. sinking to rest, rest, tranquillity (esp. of mind), calm, quiet, pacification, abatement, extinction, destruction, MBh. ; Kāv. &c. [ID=137533]
+		%
+		%
+		% praśānta
+		% (H3) [Printed book page 695,1]
+		% pra-°śānta a mfn. tranquillized, calm, quiet, composed, indifferent, Up. ; Mn. ; MBh. &c. [ID=137511]
+		% (in augury) auspicious, boni ominis, Var. [ID=137512]
+		% extinguished, ceased, allayed, removed, destroyed, dead, MBh. ; Kāv. &c. [ID=137513]
+		% (H1) [Printed book page 695,2]
+		% pra-śānta b &c. See under pra-√śam. [ID=137549]
+		%
+		%
+		% śānta
+		% (H2) [Printed book page 1064,2]
+		% 1. śānta mfn. (perhaps always w.r. for 1. śāta q.v.) = śānita, L. [ID=215264]
+		% thin, slender, Hariv. ; R. (Sch.) [ID=215265]
+		% (H1) [Printed book page 1064,2]
+		% 2. śānta mfn. (fr. √1. śam) appeased, pacified, tranquil, calm, free from passions, undisturbed, Up. ; MBh. &c. [ID=215270]
+		% soft, pliant, Hariv. [ID=215271]
+		% gentle, mild, friendly, kind, auspicious (in augury; opp. to dīpta), AV. &c. &c. [ID=215272]
+		% abated, subsided, ceased, stopped, extinguished, averted (śāntam or dhik śāntam or śāntam pāpam, may evil or sin be averted! may God forfend! Heaven forbid! not so!), ŚBr. ; MBh. ; Kāv. &c. [ID=215273]
+		% rendered ineffective, innoxious, harmless (said of weapons), MBh. ; R. [ID=215274]
+		% come to an end, gone to rest, deceased, departed, dead, died out, ib. ; Ragh. ; Rājat. [ID=215275]
+		% purified, cleansed, W. [ID=215276]
+		% śānta m. an ascetic whose passions are subdued, W. [ID=215277]
+		% tranquillity, contentment (as one of the Rasas q.v.) [ID=215278]
+		% N. of a son of Day, MBh. [ID=215279]
+		% of a son of Manu Tāmasa, MārkP. [ID=215280]
+		% of a son of Śambara, Hariv. [ID=215281]
+		% of a son of Idhma-jihva, BhP. [ID=215282]
+		% of a son of Āpa, VP. [ID=215283]
+		% of a Devaputra, Lalit. [ID=215284]
+		% (H1B) [Printed book page 1064,2]
+		% śāntā f. (in music) a partic. Śruti, Saṃgīt. [ID=215285]
+		% Emblica Officinalis, L. [ID=215286]
+		% Prosopis Spicigera and another species, L. [ID=215287]
+		% a kind of Dūrvā grass, L. [ID=215288]
+		% a partic. drug (= reṇukā), L. [ID=215289]
+		% N. of a daughter of Daśa-ratha (adopted daughter of Loma-pāda or Roma-pāda and wife of Ṛṣya-śṛṅga), MBh. ; Hariv. ; R. [ID=215290]
+		% (with Jainas) of a goddess who executes the orders of the 7th Arhat, L. [ID=215291]
+		% of a Śakti, MW. [ID=215292]
+		% (H1B) [Printed book page 1064,2]
+		% śānta n. tranquillity, peace of mind, BhP. [ID=215293]
+
+
+		\litem{rasavadalaṅkāra} ``figurative sentiment'' [K. Kris.\ p.41] (?)
+		% TODO: add reference
+
+		\litem{rasavat} ``------''? (2.4 A.1)
+		% TODO: get term or definition
+
+		\litem{non-sequential type} ``undiscerned sequentiality'' [K. Kris.\ p.41] (2.3 K), ``without apparent sequence'' [K. Kris.\ p.41, last paragraph] (2.4 Intro.A)
+		% TODO: fix up references
+
+		\litem{rasādi} ``----''? (2.5 L) EC p.143
+		% TODO: get term or definition
+
+		\litem{guṇa, 3 of Ānanda} ``mādhurya: sweetness, ojas: force, prasāda: clarity'' (2.7 K.1), ``prasāda: perspicuity'' [K. Kris.\ 2.10 K?]
+
+		\litem{---4} ``pleasing to the ear'' (2.7 A), ``sound-harmony'' [K. Kris.\ p.51], Note: ``found alike in force [and sweetness]'' WHERE FROM?
+		% TODO: where from?
+		% TODO: get term or definition
+
+		\litem{dīpti} ``excitement'' (2.9 K, A, L), ``fiery'' (1.1a L)
+
+		\litem{racanā} ``structures''? (2.10 A)
+		% Partial MW Def: [Printed book page 861,1]
+		% mostly f(ā). arrangement, disposition, management, accomplishment, performance, preparation, production, fabrication, MBh. ; Kāv. &c. [ID=173268]
+		% a literary production, work, composition, VarBṛS. ; Sāh. [ID=173269]
+		% style, Sāh. [ID=173270]
+		% putting on, wearing (of a garment), Mṛcch. [ID=173271]
+		% arrangement (of troops), array, Pañcat. [ID=173272]
+		% contrivance, invention, Kathās. ; BhP. [ID=173273]
+		% a creation of the mind, artificial image, Jaim. [ID=173274]
+
+
+
+		\litem{śabdaḥ} (a): ``a word which gives rise to suggestion'' (1.13 L)
+
+		\litem{arthaḥ} (b) ``a meaning which gives rise to a suggestion'' (1.13 L)
+
+		\litem{vyāpāraḥ} (c) ``the operation, the suggestion of the implicit meaning'' (1.13 L)
+
+		\litem{vyaṅgyam} (d) ``the suggested meaning itself'' (1.13 L)
+
+		\litem{samudāyaḥ} (e) ``the group; or a poem which embodies all the above factors'' (a--d) (1.13 L) Note: (a--e) given by Abhinavagupta (1.1 K.1, EC p.76)
+
+		\litem{samaya}  ``conventions by which words transmit meaning'' (1.1 L) \{Note: this is an alternative idea to dhvani, argued against in the Dhvanyāloka\}
+
+		\litem{anubandha} ``pertinent point'' (1.1 L.1, EC p.79)
+		% Partial MW Def: [Printed book page 36,2]
+		% anu-bandha m. binding, connection, attachment [ID=6866]
+		% uninterrupted succession [ID=6869]
+		% sequence, consequence, result [ID=6870]
+		% intention, design [ID=6871]
+		% motive, cause [ID=6872]
+		% (in phil.) an indispensable element of the Vedānta [ID=6880]
+		\begin{enumerate}
+			\litem{abhidheya} ``the subject to be treated''
+			\litem{prayojana} ``purpose''
+			\litem{sambandha} ``suppose that sambandha refers to the connection between the subject and the purpose''
+			\litem{adhikāra} ``the qualificcation required of the reader''
+		\end{enumerate}
+
+	\end{enumerate}
+\end{multicols}
+
+
+
+
+\end{document}
+
+
+% Delete this section later, used for now for an easy palce to copy letters from for updates to works
+%
+% ś
+% 
+% Ś
+% 
+% ṛ
+% 
+% ṅ
+% 
+% ṇ
+%
+% ṣ
+% 
+% ā
+% 
+% Ā
+% 
+% ī
+% 
+% ṭ
+% 
+% ṃ
+%
+% ḥ
