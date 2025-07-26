@@ -1,0 +1,90 @@
+Note: "-" shows that the keypress does not return any character, used to align the roman to devanagari characters. Some characters/keypresses modify or add to the character previously typed, hence the two spaces between all characters below.
+
+q  w  e  r  t
+ट  ड  ॆ  र  त  
+
+Q  W  E  R  T
+ठ  ढ  े  ृ  थ
+
+(Right-Alt)
+q  w  e  r  t
+-  ड़  ऎ  ऋ  -
+
+(Right-Alt)
+Q  W  E  R  T
+-  ढ़  ए  ऱ  -
+
+
+a  s  d  f  g
+ा  स  द  ्  ग
+
+A  S  D  F  G
+आ  श  ध  ॄ  घ  
+
+(Right-Alt)
+a  s  d  f  g
+अ  -  ॠ  ग़  -
+
+(Right-Alt)
+A  S  D  F  G
+ॲ  -  -  -  -      
+
+
+z  x  c  v  b
+ञ  ष  च  व  ब
+
+Z  X  C  V  B
+ङ  ़  छ  ौ  भ
+
+(Right-Alt)
+z  x  c  v  b
+-  ऴ  -  औ  -  
+
+(Right-Alt)
+Z  X  C  V  B
+-  -  -  -  -
+
+
+y  u  i  o  p
+य  ु  ि  ॊ  प
+
+Y  U  I  O  P
+ै  ू  ी  ो  फ  
+
+(Right-Alt)
+y  u  i  o  p
+ऐ  उ  इ  ऒ  फ़  
+
+(Right-Alt)
+Y  U  I  O  P
+य़  ऊ  ई  ओ  -
+
+
+h  j  k  l  ;
+ह  ज  क  ल  ;
+
+H  J  K  L  :
+ः  झ  ख  ळ  :
+
+(Right-Alt)
+h  j  k  l  ;
+ᳵ  ज़  क़  ॢ  ᳲ  
+
+(Right-Alt)
+H  J  K  L  :
+ᳶ  ख़  ऌ  ᳳ  -
+
+
+n  m  ,  .  /
+न  म  ,  .  /
+
+N  M  <  >  ?
+ण  ं  <  >  ?  
+
+(Right-Alt)
+n  m  ,  .  /
+ऩ  ऽ  ॅ  ॉ  
+
+(Right-Alt)
+N  M  <  >  ?
+-  ॐ  ऍ  ऑ  -
