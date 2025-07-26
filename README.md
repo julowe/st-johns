@@ -10,6 +10,43 @@ specific course. For example, the Eastern Classics Reading list created in TeX:
 [admin-docs/MAEC-Reading-List-2024-2025.pdf](admin-docs/MAEC-Reading-List-2024-2025.pdf)
 and it's [source TeX file](admin-docs/MAEC-Reading-List.tex)
 
+## Seminar Readings
+
+### Dhvanyāloka
+
+While writing a paper on the Dhvanyāloka I typeset the original terms sheet
+provided in the Eastern Classic Manual - [dhvanyAloka/dhvanyAloka-terms-orig.tex](dhvanyAloka/dhvanyAloka-terms-orig.tex) and [the PDF output](dhvanyAloka/dhvanyAloka-terms-orig.pdf).
+And then I converted some of the terms into a table format - [dhvanyAloka/dhvanyAloka-terms.tex](dhvanyAloka/dhvanyAloka-terms.tex) ([PDF output](dhvanyAloka/dhvanyAloka-terms.pdf)).
+
+And then I went pretty overboard with my updated version
+[dhvanyAloka/dhvanyAloka-terms-additional.tex](dhvanyAloka/dhvanyAloka-terms-additional.tex)
+([and PDF output](dhvanyAloka/dhvanyAloka-terms-additional.pdf))
+is very much a rough draft and contains far too many terms,
+as well as some incorrect definitions I think. Please see .tex file for the
+many, many TODO notes contained.
+
+To remain as consistent as possible, all `definitions' were taken directly from
+the text provided in the manual, not a dictionary (unless marked as such).
+
+### Tale of the Heike
+
+I copied the character list from our text along with some maps and diagrams - [heike-ref/heike-ref.tex](heike-ref/heike-ref.tex) ([PDF output](heike-ref/heike-ref.pdf))
+
+### Dōgen
+
+I tried out [https://github.com/moste00/PDF-Indexer](https://github.com/moste00/PDF-Indexer)
+on the Dōgen text we read, to see what it would produce.
+Typeset results - [.tex file](dogen/heart-dogen-index.tex) and [PDF output](dogen/heart-dogen-index.pdf).
+It is marginally useful in class to find a quote you are thinking of,
+but way too extensive for easy use. Would be better to create my own word list,
+and only return pages for those words. Project for another time...
+
+## Precept Readings
+
+### Tale of Genji
+
+I combined the character list from the Seidensticker translation with the character list and more information from the Tyler translation. Added the genealogical chart that Mr. Venkatesh emailed out, adn made a table of the difference in Chapter name translations between the two translations used by either precept group. [genji-ref/genji-ref.tex](genji-ref/genji-ref.tex) ([PDF output](genji-ref/genji-ref.pdf))
+
 ## Sanskrit
 
 ### Devanagari Transliteration Schemes and Typing Characters
