@@ -7,7 +7,10 @@ import re
 # xlsx_file_name = "MAMEC Curriculum 20250609.xlsx"
 # xlsx_file_name = "MAMEC Curriculum 20250609-tbd.xlsx"
 # xlsx_file_name = "MAMEC Curriculum (final).xlsx"
-xlsx_file_name = "MAMEC Curriculum (final) 20250620.xlsx"
+# xlsx_file_name = "MAMEC Curriculum (final) 20250620.xlsx"
+# xlsx_file_name = "MAMEC Curriculum (final) 20250623.xlsx"
+# xlsx_file_name = "MAMEC Curriculum (final) 20250625.xlsx"
+xlsx_file_name = "MAMEC Curriculum (final) 20250725.xlsx"
 
 # We capture book titles from reading assignments as we go.
 # Should we print a list of them at the end of doc?
@@ -20,7 +23,10 @@ xlsx_df = pd.read_excel("admin-docs/{0}".format(xlsx_file_name))
 # print(xlsx_df)
 
 # This is just a big chunk of tex that we want to start the document with, no parsing, hence the raw string prefix 'r'
-tex_doc_start = r"""
+# NOTE: For now, it is on purpose that the 'Updated:' date variable below is not auto-generated. I only want to change that date when I change the xlsx file, not every time I rerun this script - which might be for formatting changes or things we don't need to issue a full 'revision' for
+updated_date = "2025-07-25"
+
+tex_doc_start_1 = r"""
 %\DocumentMetadata{}
 \documentclass{article}
 \usepackage[calc,useregional]{datetime2}
@@ -31,11 +37,14 @@ tex_doc_start = r"""
 %%         Edit these values
 %%
 
-\title{Middle Eastern Classics Reading List 2025--2026}
+\title{Middle Eastern Classics Reading Lists 2025--2026}
 \author{St.\ John's College --- Santa Fe Graduate Institute}
-\date{Updated: 2025-06-20}
+"""
 
-\setcounter{printSessionDate}{1}% setting to 0 will not print dates after "Session XYZ", setting to 1 will print dates (e.g. "Session XYZ - 2025-09-09")
+tex_doc_start_date_updated_titlepage = "\\date{{Updated: {}}}".format(updated_date)
+
+tex_doc_start_2 = r"""
+\setcounter{printSessionDate}{0}% setting to 0 will not print dates after "Session XYZ", setting to 1 will print dates (e.g. "Session XYZ - 2025-09-09")
 
 \DTMsavedate{fallSeminarStart}{2025-09-01}
 \DTMsavedate{preceptorial1Start}{2025-09-02}
@@ -100,6 +109,9 @@ tex_doc_start = r"""
 %\geometry{letterpaper, margin=0.75in, headsep=15pt}
 \geometry{letterpaper, margin=0.75in, headsep=-35pt}
 \addtolength{\topmargin}{-50pt}
+
+
+\usepackage{setspace}
 
 % Insert header image
 \usepackage{graphicx}
@@ -345,8 +357,13 @@ tex_doc_start = r"""
 
 \thispagestyle{fancy} % instead of a `plain` pagestyle this set it to a style which includes the header on the Table of Contents page
 %\thispagestyle{empty} %use this instead of above 'fancy' line, if you do not want a header image on the first page of this document
+
 """
 
+tex_doc_start_date_updated_footer = """\\fancyfoot[R]{{\\textit{{Updated: {}}}}}
+""".format(
+    updated_date
+)
 
 tex_section_classes_start = r"""
 \begin{multicols}{2}
@@ -358,6 +375,14 @@ tex_section_classes_start = r"""
 tex_section_classes_end = r"""
 \end{multicols}
 %\end{multicols*} % uncomment this line and the matching begin or end line if columns are divided oddly on the last page of this section
+"""
+
+# TODO: instead of compressing all text, just change spacing between class sections. with variable set per section? another way?
+tex_section_classes_condensed_start = r"""    \begin{spacing}{0.98}
+    
+"""
+
+tex_section_classes_condensed_end = r"""    \end{spacing}
 """
 
 tex_booklist_start = r"""
@@ -459,11 +484,11 @@ def escape_tex(input_str):
     #     r"(Parens and Macfarland, pp. 162--179)",
     # )
 
-    # Spring Seminar Session 16, make it split onto a new page more nicely
-    escaped_str = escaped_str.replace(
-        "pp.311--316; First Discussion - The denial",
-        "pp.311--316; (\\emph{Readings continued on next page})\n\n    \\noindent First Discussion - The denial",
-    )
+    # # Spring Seminar Session 16, make it split onto a new page more nicely
+    # escaped_str = escaped_str.replace(
+    #     "pp.311--316; First Discussion - The denial",
+    #     "pp.311--316; (\\emph{Readings continued on next page})\n\n    \\noindent First Discussion - The denial",
+    # )
 
     # replace ’s with 's for tex typsetting
     escaped_str = escaped_str.replace(r"’s ", r"'s ")
@@ -483,6 +508,12 @@ def escape_tex(input_str):
     escaped_str = re.sub(r"http(\S*)/", r"\\url{http\1/}", escaped_str)
     # or could do a directly negated whitespace class if we also want to add other characters to not match, like `([^\s{}]*)`
 
+    # just special case this one
+    escaped_str = escaped_str.replace(
+        r"www.youtube.com/watch?v=2lgNAOFIJig",
+        r"\url{www.youtube.com/watch?v=2lgNAOFIJig}",
+    )
+
     return escaped_str
 
 
@@ -496,6 +527,12 @@ class_sessions_counter = 0
 books_dict = dict()
 
 # NOTE: use `\-` to give latex hints at where to breaks words if you gt under/over-full hbox warnings
+
+
+# Make column names into vars
+col_books = "Book Names (To Italicize)"
+col_week = "Week"
+col_reading = "Reading Assignment"
 
 # Prob don't use this but we'll see
 col_names = xlsx_df.columns
@@ -525,6 +562,7 @@ how_to_string = """\n\n\\begin{{center}}
     xlsx_file_name,
 )
 
+class_name = None
 with open(
     "admin-docs/tex-output-test/output-{0}.tex".format(typset_dtm),
     "w",
@@ -537,7 +575,10 @@ with open(
     )
 
     # write all the user-editable variables and functions before actual content
-    f.write(tex_doc_start)
+    f.write(tex_doc_start_1)
+    f.write(tex_doc_start_date_updated_titlepage)
+    f.write(tex_doc_start_2)
+    f.write(tex_doc_start_date_updated_footer)
 
     ## In the end, not used. Can't be sure transparency will really work with all printers etc. Need better way to unobtrusively indicate how to make this doc again...
     # write transparent text to point to how to typeset this doc and the code to do so
@@ -545,18 +586,23 @@ with open(
 
     for index, row in xlsx_df.iterrows():
         # Check if this is a 'section' type row
-        if isinstance(row["Week"], str):
-            if "LANGUAGE" in row["Week"].upper():
-                class_name = row["Week"].title().strip()
+        if isinstance(row[col_week], str):
+            if "LANGUAGE" in row[col_week].upper():
+                class_name = row[col_week].title().strip()
 
                 # create a new dict entry for books to be added to
                 books_dict[class_name] = []
 
             if (
-                "PRECEPTORIAL" in row["Week"].upper()
-                or "SEMINAR" in row["Week"].upper()
+                "PRECEPTORIAL" in row[col_week].upper()
+                or "SEMINAR" in row[col_week].upper()
             ):
-                class_name = row["Week"].title().strip()
+                # NOTE: run this check before we change the class_name variable from last run through
+                if class_name:
+                    if class_name == "Spring Seminar":
+                        f.write(tex_section_classes_condensed_end)
+
+                class_name = row[col_week].title().strip()
                 class_name_camelCase = class_name[0].lower() + class_name[1:].replace(
                     " ", ""
                 )
@@ -575,17 +621,17 @@ with open(
                     tex_section_header_start.format(class_name, class_name_camelCase)
                 )
 
-                if "PRECEPTORIAL" in row["Week"]:
+                if "PRECEPTORIAL" in row[col_week]:
                     class_type = "Preceptorial"
 
-                    if "1" in row["Week"] or "3" in row["Week"]:
+                    if "1" in row[col_week] or "3" in row[col_week]:
                         section_ordinal = "First"
-                    elif "2" in row["Week"] or "4" in row["Week"]:
+                    elif "2" in row[col_week] or "4" in row[col_week]:
                         section_ordinal = "Second"
 
-                    if "1" in row["Week"] or "2" in row["Week"]:
+                    if "1" in row[col_week] or "2" in row[col_week]:
                         section_semester = "Fall"
-                    elif "3" in row["Week"] or "4" in row["Week"]:
+                    elif "3" in row[col_week] or "4" in row[col_week]:
                         section_semester = "Spring"
 
                     # write the section header
@@ -601,17 +647,17 @@ with open(
 
                 # If this was a 'section' type header then don't need to do anything else, go to next row
                 continue
-            elif "WEEK" in row["Week"].upper():
+            elif "WEEK" in row[col_week].upper():
                 # record the week number, in case we need it later
-                week_number = row["Week"]
+                week_number = row[col_week]
                 # If this had a week number we want to process it. continue on.
 
         # Check if this row has a book assignment in it
-        if isinstance(row["Book"], str):
+        if isinstance(row[col_books], str):
             if "LANGUAGE" in class_name.upper():
                 # Build up a booklist as we go
                 # see if there are multiple books here
-                row_book_array = re.split(book_split_regex, row["Book"])
+                row_book_array = re.split(book_split_regex, row[col_books])
                 # print(row_book_array)
 
                 for book in row_book_array:
@@ -622,49 +668,82 @@ with open(
                 continue
 
             # check if this is a holiday or other weird row with no reading assignment in it
-            if isinstance(row["Reading Assignment"], str):
+            if isinstance(row[col_reading], str):
                 # normal row, make a subsection entry - NB: some of the \ characters are escaped (with a \), the newline (\n) is not
 
                 # Apparently one of the Thanksgiving rows gets read in as having a space. None in online xlsx file do...
-                if row["Reading Assignment"] == " ":
+                if row[col_reading] == " ":
                     continue
-                # print("Book: '{0}', Reading Assignment: '{1}'".format(row["Book"],row["Reading Assignment"]))
+                # print("Book: '{0}', Reading Assignment: '{1}'".format(row[col_books],row[col_reading]))
 
                 if class_sessions_counter == 0:
                     f.write(tex_section_classes_start)
+                    if class_name:
+                        if class_name == "Spring Seminar":
+                            f.write(tex_section_classes_condensed_start)
 
                 # not used now, but may be useful later - prob not, to make it easier to make small text changes we prob want the tex file we create here to be standalone on overleaf or a desktop tex instance. so leave data and sessio math to the tex file...
                 class_sessions_counter += 1
 
                 # Build up a booklist as we go
                 # see if there are multiple books here (and replace new-lines with semicolons)
-                row_book_array = re.split(
-                    book_split_regex, row["Book"].replace("\n", "; ")
-                )
-                # print(row_book_array)
+                # row_book_array = re.split(
+                #     book_split_regex, row[col_books].replace("\n", "; ")
+                # )
+
+                row_book_array = [
+                    x.strip() for x in re.split(book_split_regex, row[col_books])
+                ]
+
+                # string = "  blah, lots  ,  of ,  spaces, here "
+                # pattern = re.compile("^\s+|\s*,\s*|\s+$")
+                # print([x for x in pattern.split(string) if x])
 
                 for book in row_book_array:
                     if escape_tex(book.strip()) not in books_dict[class_name]:
                         books_dict[class_name].append(escape_tex(book.strip()))
 
-                # constrcut and write actual text for session's assignment
+                ## construct reading assignment string
+                # Get initial string
+                string_reading = row[col_reading].strip().replace("\n", "; ")
+
+                # Escape odd characters
+                string_reading = escape_tex(string_reading)
+
+                # italicize book names
+                # if member of row_book_array is in string string_reading, then enclose that substring in tex italics
+
+                # TODO: needed?
+                # Sort book titles by length (descending) to handle cases where one title is subset of another
+                sorted_books = sorted(row_book_array, key=len, reverse=True)
+
+                # Iterate through each book title
+                for book in sorted_books:
+                    # Escape any special LaTeX characters in the book title
+                    book_escaped = escape_tex(
+                        book
+                    )  # TODO i think this is already escaped
+
+                    # Replace the book title with its italicized version if found in the string
+                    string_reading = string_reading.replace(
+                        book_escaped, "\\textit{{{0}}}".format(book_escaped)
+                    )
+
+                # construct and write actual text for session's assignment
                 f.write(
-                    "    \\print{0}Header{{lastPrintedClassDate}}\n	\\emph{{{1}}}, {2}\n\n".format(
+                    "    \\print{0}Header{{lastPrintedClassDate}}\n	{1}\n\n".format(
                         class_type,
-                        escape_tex(row["Book"].strip()),
-                        escape_tex(
-                            row["Reading Assignment"].strip().replace("\n", "; ")
-                        ),
+                        string_reading,
                     )
                 )
 
             ## Saving this code for later in case useful, but no prob want to leave this logic for tex file. though it might be useful for catching weirdnesses like the " " in that one Thanksgiving row...
             # else:
             #     # holiday or weird row
-            #     if "THANKSGIVING" in row["Book"].upper():
-            #         # oh actually do nothing, this is handled fby TeX functions. for now, maybe move all that mess here?
-            #     if "SPRING BREAK" in row["Book"].upper():
-            #         # oh actually do nothing, this is handled fby TeX functions. for now, maybe move all that mess here?
+            #     if "THANKSGIVING" in row[col_books].upper():
+            #         # oh actually do nothing, this is handled by TeX functions. for now, maybe move all that mess here?
+            #     if "SPRING BREAK" in row[col_books].upper():
+            #         # oh actually do nothing, this is handled by TeX functions. for now, maybe move all that mess here?
 
     ## Not needed if we are adding a book list
     # # Check if class session counter is greater than 0, if so we are going to a new section and need to close out the previous one
@@ -685,13 +764,13 @@ with open(
                 f.write("    \\item {0}\n".format(book))
 
             f.write("\\end{itemize}\n")
-        # TODO: write booklist as seperate tex file?
+        # TODO: write booklist as separate tex file?
 
     # all done, write closing code for tex file
     f.write(tex_doc_end_MAMEC)
 
 
-## not used below this comment...
+## code/text not used below this comment...
 
 tex_doc_end_MAEC = r"""
 
