@@ -1,0 +1,98 @@
+\documentclass{article}
+\usepackage[landscape, margin=1in]{geometry}
+\usepackage{fontspec}
+\usepackage{multirow} % Add this in your preamble
+\setmainfont{Noto Kufi Arabic}
+% \newfontfamily\romanfont{TeX Gyre Termes} % doesn't support all IPA symbols
+% \newfontfamily\romanfont{Latin Modern Roman} % doesn't support all IPA symbols
+% \newfontfamily\romanfont{DejaVu Sans} % doesn't support sukun
+\newfontfamily\romanfont{Charis} % supports all IPA symbols
+% \newfontfamily\ipafont{Charis} % supports all IPA symbols
+
+\pagenumbering{gobble} % suppress page numbers
+
+\begin{document}
+
+
+
+% \vspace{1cm}
+
+\section*{{\romanfont Modern Standard Arabic Consonants on the IPA Table}}
+
+% NB: leaning on Wikipedia's Arabic phonology article https://en.wikipedia.org/wiki/Standard_Arabic_phonology#Consonants
+
+\begin{center}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{|r|r|c|c|c|c|c|c|c|c|}
+        \hline
+                                                                          & {\romanfont \textit{Manner}} & \multirow{2}{*}{{\romanfont \textbf{Nasal}}} & \multicolumn{2}{|c|}{{\romanfont \textbf{Plosive}}} & \multicolumn{2}{|c|}{{\romanfont \textbf{Fricative}}} & \multirow{2}{*}{{\romanfont \textbf{Trill}}} & \multirow{2}{*}{{\romanfont \textbf{Approximant}}}                                                               \\
+        \cline{1-2} \cline{4-7}
+        {\romanfont \textit{Place}}                                       &                                               &                                              & {\romanfont \textbf{Unvoiced}}                      & {\romanfont \textbf{Voiced}}                          & {\romanfont \textbf{Unvoiced}}               & {\romanfont \textbf{Voiced}}                       &                             &                               \\
+        \hline
+        \multicolumn{2}{|r|}{{\romanfont \textbf{Labial}}}                & م {\romanfont [mīm, m]}                       &                                              & ب {\romanfont [bāʾ, b]}                             & ف {\romanfont [fāʾ, f]}                               &                                              &                                                    &                                                             \\
+        \multicolumn{2}{|c|}{}                                            &                                               &                                              &                                                     & {\romanfont (labiodental)}                            &                                              &                                                    &                                                             \\
+        \hline
+        \multicolumn{2}{|r|}{{\romanfont \textbf{Dental}}}                &                                               &                                              &                                                     & ث {\romanfont [thāʾ, θ]}                              & ذ {\romanfont [dhāl, ð]}                     &                                                    &                                                             \\
+        \hline
+        \multirow{4}{*}{{\romanfont \textbf{Denti-Alveolar}}}             & {\romanfont \textbf{plain}}                   & ن {\romanfont [nūn, n]}                      & ت {\romanfont [tāʾ, t]}                             & د {\romanfont [dāl, d]}                               & س {\romanfont [sīn, s]}                      & ز {\romanfont [zāy, z]}                            & ر {\romanfont [rāʾ, r]}     & ل {\romanfont [lām, l]}       \\
+                                                                          &                                               &                                              &                                                     &                                                       &                                              &                                                    &                             & {\romanfont (Lateral Apprx.)} \\
+        \cline{2-9}
+                                                                          & {\romanfont \textbf{emphatic}}                &                                              & ط {\romanfont [ṭāʾ, tˤ]}                            & ض {\romanfont [ḍād, dˤ]}                              & ص {\romanfont [ṣād, sˤ]}                     & ظ {\romanfont [ẓāʾ, ðˤ]}                           &                             & ل {\romanfont [lām, l]}       \\
+                                                                          &                                               &                                              &                                                     &                                                       &                                              &                                                    &                             & {\romanfont (as in Allah)}    \\
+        \hline
+        \multicolumn{2}{|r|}{{\romanfont \textbf{Post-Alveolar/Palatal}}} &                                               &                                              & ج {\romanfont Jīm ([jīm, d͡ʒ])}                      & ش {\romanfont [shīn, ʃ]}                              &                                              &                                                    & ي {\romanfont [yāʾ, j]}                                     \\
+        \hline
+        \multicolumn{2}{|r|}{{\romanfont \textbf{Velar}}}                 &                                               & ك {\romanfont [kāf, k]}                      &                                                     &                                                       &                                              &                                                    & و {\romanfont [wāw, w]}                                     \\
+        \multicolumn{2}{|c|}{}                                            &                                               &                                              &                                                     &                                                       &                                              &                                                    & {\romanfont (labial-velar)}                                 \\
+        \hline
+        \multicolumn{2}{|r|}{{\romanfont \textbf{Uvular}}}                &                                               & ق {\romanfont [qāf, q]}                      &                                                     & خ {\romanfont [khāʾ, x]}                              & غ {\romanfont [ghayn, ɣ]}                    &                                                    &                                                             \\
+        \hline
+        \multicolumn{2}{|r|}{{\romanfont \textbf{Pharyngeal}}}            &                                               &                                              &                                                     & ح {\romanfont [ḥāʾ, ħ]}                               & ع {\romanfont [ʿayn, ʕ]}                     &                                                    &                                                             \\
+        \hline
+        \multicolumn{2}{|r|}{{\romanfont \textbf{Glottal}}}               &                                               & أ {\romanfont [hamza, ʔ]}                    &                                                     & ه {\romanfont [hāʾ, h]}                               &                                              &                                                    &                                                             \\
+        \multicolumn{2}{|c|}{}                                            &                                               &                                              &                                                     &                                                       &                                              &                                                    &                                                             \\
+        \hline
+    \end{tabular}
+\end{center}
+
+
+
+
+\begin{center}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{|r|r|c|c|c|c|c|}
+        \hline
+        \multirow{2}{*}{{\romanfont \textbf{Vowels}}} & {\romanfont \textbf{Short}} & ◌َ {\romanfont [fatha, a]}  & ◌ِ {\romanfont [kasra, i]} & ◌ُ {\romanfont [damma, u]} \\
+        \cline{2-5}
+                                                      & {\romanfont \textbf{Long}}  & ◌َا {\romanfont [alif, a:]} & ◌ِي {\romanfont [yāʾ, i:]} & ◌ُو {\romanfont [wāw, u:]} \\
+        \hline
+    \end{tabular}
+\end{center}
+
+% \vspace{0.5cm}
+
+\begin{center}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{|r|c|c|c|c|c|}
+        \hline
+        {\romanfont \textbf{Other Signs:}} &
+        ◌ً {\romanfont [tanwin fatha, an]}  & ◌ٍ {\romanfont [tanwin kasra, in]} & ◌ٌ {\romanfont [tanwin damma, un]} &
+        ◌ْ {\romanfont [sukun, ˺]}          & ◌ّ {\romanfont [shadda, ː]}                                              \\
+        \hline
+    \end{tabular}
+\end{center}
+\end{document}
+
+%\begin{center}
+%    \renewcommand{\arraystretch}{1.5}
+%    \begin{tabular}{|c|c|c|c|c|c|c|}
+%        \hline
+%        \multicolumn{6}{|c|}{{\romanfont Vowels}} & a                                                                       \\
+%        \hline
+%        \multicolumn{3}{|c|}{{\romanfont Short}}  & \multicolumn{3}{|c|}{{\romanfont Long}} & a                             \\
+%        \hline
+%        ◌َ {\romanfont [fatha, a]}                 & ◌ِ {\romanfont [kasra, i]}               & ◌ُ {\romanfont [damma, u]} &
+%        ◌َا {\romanfont [alif, a:]}                & ◌ِي {\romanfont [yāʾ, i:]}               & ◌ُو {\romanfont [wāw, u:]} & a \\
+%        \hline
+%    \end{tabular}
+%\end{center}
