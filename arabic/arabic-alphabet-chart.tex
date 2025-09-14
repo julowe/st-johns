@@ -5,6 +5,9 @@
 \usepackage{url}
 \usepackage{multirow} % Add this in your preamble
 \usepackage{makecell}
+% \usepackage{tablefootnote} % for table footnotes
+\usepackage{threeparttable} % for table footnotes
+
 \usepackage{color}
 \usepackage{polyglossia}
 
@@ -74,37 +77,47 @@
 % NB: leaning on Wikipedia's Arabic phonology article https://en.wikipedia.org/wiki/Standard_Arabic_phonology#Consonants
 
 \begin{center}
+  \begin{threeparttable}
   \renewcommand{\arraystretch}{1.5}
   \begin{tabular}{|r|r|c|c|c|c|c|c|c|c|}
     % tex-fmt: off
     \hline
-                                          & \textit{Manner}   & \multirow{2}{*}{\textbf{Nasal}} & \multicolumn{2}{|c|}{\textbf{Plosive}}                                        & \multicolumn{2}{|c|}{\textbf{Fricative}}                                                                         & \multirow{2}{*}{\textbf{Trill}} & \multirow{2}{*}{\textbf{Approximant}}                                                              \\
+                                          & \textit{Manner}   & \multirow{2}{*}{\textbf{Nasal}} & \multicolumn{2}{|c|}{\textbf{Plosive}}                                        & \multicolumn{2}{|c|}{\textbf{Fricative}}                                                                                                                 & \multirow{2}{*}{\textbf{Trill}} & \multirow{2}{*}{\textbf{Approximant}}                                                              \\
     \cline{1-2} \cline{4-7}
-    \textit{Place}                        &                   &                                 & \textbf{Unvoiced}                & \textbf{Voiced}                            & \textbf{Unvoiced}                                                             & \textbf{Voiced}                  &                                 &                                                                                                    \\
+    \textit{Place}                        &                   &                                 & \textbf{Unvoiced}\tnote{1}       & \textbf{Voiced}                            & \textbf{Unvoiced}                                                             & \textbf{Voiced}                                                          &                                 &                                                                                                    \\
     \hline
-    \multicolumn{2}{|r|}{\BWmoon \textbf{Labial}}             & \drawBaseline{\ar{م} [mīm, m]}  &                                  & \drawBaseline{\ar{ب} [bāʾ, b]}             & \makecell{\rule{0pt}{2.0ex} \drawBaseline{\ar{ف} [fāʾ, f]} \\ (labiodental) } &                                  &                                 &                                                                                                    \\
+    \multicolumn{2}{|r|}{\BWmoon \textbf{Labial}}             & \drawBaseline{\ar{م} [mīm, m]}  &                                  & \drawBaseline{\ar{ب} [bāʾ, b]}             & \makecell{\rule{0pt}{2.0ex} \drawBaseline{\ar{ف} [fāʾ, f]} \\ (labiodental) } &                                                                          &                                 &                                                                                                    \\
     \hline
-    \multicolumn{2}{|r|}{\BWsun \textbf{Dental}}              &                                 &                                  &                                            & \drawBaseline{\ar{ث} [thāʾ, θ]}                                               & \drawBaseline{\ar{ذ} [dhāl, ð]}  &                                 &                                                                                                    \\
+    \multicolumn{2}{|r|}{\BWsun \textbf{Dental}}              &                                 &                                  &                                            & \drawBaseline{\ar{ث} [thāʾ, θ]}                                               & \drawBaseline{\ar{ذ} [dhāl, ð]}                                          &                                 &                                                                                                    \\
     \hline
     \multirow{2}{*}{\makecell{
                       \BWsun \textbf{Denti-} \\
-                      \textbf{Alveolar}}} & \textbf{plain}    & \drawBaseline{\ar{ن} [nūn, n]}  & \drawBaseline{\ar{ت} [tāʾ, t]}   & \drawBaseline{\ar{د} [dāl, d]}             & \drawBaseline{\ar{س} [sīn, s]}                                                & \drawBaseline{\ar{ز} [zāy, z]}   & \drawBaseline{\ar{ر} [rāʾ, r]}  & \makecell{\rule{0pt}{2.0ex} \drawBaseline{\ar{ل} [lām, l]} \\ (Lateral Apprx.) } \rule{0pt}{2.0ex} \\
+                      \textbf{Alveolar}}} & \textbf{plain}    & \drawBaseline{\ar{ن} [nūn, n]}  & \drawBaseline{\ar{ت} [tāʾ, t]}   & \drawBaseline{\ar{د} [dāl, d]}             & \drawBaseline{\ar{س} [sīn, s]}                                                & \drawBaseline{\ar{ز} [zāy, z]}                                           & \drawBaseline{\ar{ر} [rāʾ, r]}  & \makecell{\rule{0pt}{2.0ex} \drawBaseline{\ar{ل} [lām, l]} \\ (Lateral Apprx.) } \rule{0pt}{2.0ex} \\
     \cline{2-9}
-                                          & \textbf{emphatic} &                                 & \drawBaseline{\ar{ط} [ṭāʾ, tˤ]}  & \drawBaseline{\ar{ض} [ḍād, dˤ]}            & \drawBaseline{\ar{ص} [ṣād, sˤ]}                                               & \drawBaseline{\ar{ظ} [ẓāʾ, ðˤ]}  &                                 & \makecell{\rule{0pt}{2.0ex} \drawBaseline{\ar{ل} [lām, l]} \\ (as in Allah) } \rule{0pt}{2.0ex}    \\
+                                          & \textbf{emphatic} &                                 & \drawBaseline{\ar{ط} [ṭāʾ, tˤ]}  & \drawBaseline{\ar{ض} [ḍād, dˤ]}            & \drawBaseline{\ar{ص} [ṣād, sˤ]}                                               & \drawBaseline{\ar{ظ} [ẓāʾ, ðˤ]}                                          &                                 & \makecell{\rule{0pt}{2.0ex} \drawBaseline{\ar{ل} [lām, ɫ]} \\ (as in Allah) } \rule{0pt}{2.0ex}    \\
     \hline
-    \multicolumn{2}{|r|}{\textbf{Post-Alveolar/Palatal}}      &                                 &                                  & \drawBaseline{\ar{ج} ([jīm, d͡ʒ])} \BWmoon & \drawBaseline{\ar{ش} [shīn, ʃ]} \BWsun                                        &                                  &                                 & \drawBaseline{\ar{ي} [yāʾ, j]} \BWmoon                                                             \\
+    \multicolumn{2}{|r|}{\textbf{Post-Alveolar/Palatal}}      &                                 &                                  & \drawBaseline{\ar{ج} ([jīm, d͡ʒ])} \BWmoon & \drawBaseline{\ar{ش} [shīn, ʃ]} \BWsun                                        &                                                                          &                                 & \drawBaseline{\ar{ي} [yāʾ, j]} \BWmoon                                                             \\
     \hline
-    \multicolumn{2}{|r|}{\BWmoon \textbf{Velar}}              &                                 & \drawBaseline{\ar{ك} [kāf, k]}   &                                            &                                                                               &                                  &                                 & \makecell{\rule{0pt}{2.0ex} \drawBaseline{\ar{و} [wāw, w]} \\ (labial-velar) }  \rule{0pt}{2.0ex}  \\
+    \multicolumn{2}{|r|}{\BWmoon \textbf{Velar}}              &                                 & \drawBaseline{\ar{ك} [kāf, k]}   &                                            &                                                                               &                                                                          &                                 & \makecell{\rule{0pt}{2.0ex} \drawBaseline{\ar{و} [wāw, w]} \\ (labial-velar) }  \rule{0pt}{2.0ex}  \\
     \hline
-    \multicolumn{2}{|r|}{\BWmoon \textbf{Uvular}}             &                                 & \drawBaseline{\ar{ق} [qāf, q]}   &                                            & \drawBaseline{\ar{خ} [khāʾ, x]}                                               & \drawBaseline{\ar{غ} [ghayn, ɣ]} &                                 &                                                                                                    \\
+    \multicolumn{2}{|r|}{\BWmoon \textbf{Uvular}}             &                                 & \drawBaseline{\ar{ق} [qāf, q]}   &                                            & \drawBaseline{\ar{خ} [khāʾ, χ]}\tnote{2} \textsuperscript{\:,}\tnote{3}       & \drawBaseline{\ar{غ} [ghayn, ʁ]}\tnote{2} \textsuperscript{\:,}\tnote{4} &                                 &                                                                                                    \\
     \hline
-    \multicolumn{2}{|r|}{\BWmoon \textbf{Pharyngeal}}         &                                 &                                  &                                            & \drawBaseline{\ar{ح} [ḥāʾ, ħ]}                                                & \drawBaseline{\ar{ع} [ʿayn, ʕ]}  &                                 &                                                                                                    \\
+    \multicolumn{2}{|r|}{\BWmoon \textbf{Pharyngeal}}         &                                 &                                  &                                            & \drawBaseline{\ar{ح} [ḥāʾ, ħ]}                                                & \drawBaseline{\ar{ع} [ʿayn, ʕ]}                                          &                                 &                                                                                                    \\
     \hline
-    \multicolumn{2}{|r|}{\BWmoon \textbf{Glottal}}            &                                 & \drawBaseline{\ar{أ} [hamza, ʔ]} &                                            & \drawBaseline{\ar{ه} [hāʾ, h]}                                                &                                  &                                 &                                                                                                    \\
-    \multicolumn{2}{|c|}{}                                    &                                 &                                  &                                            &                                                                               &                                  &                                 &                                                                                                    \\
+    \multicolumn{2}{|r|}{\BWmoon \textbf{Glottal}}            &                                 & \drawBaseline{\ar{أ} [hamza, ʔ]} &                                            & \drawBaseline{\ar{ه} [hāʾ, h]}                                                &                                                                          &                                 &                                                                                                    \\
+    \multicolumn{2}{|c|}{}                                    &                                 &                                  &                                            &                                                                               &                                                                          &                                 &                                                                                                    \\
     \hline
     % tex-fmt: on
   \end{tabular}
+    \begin{tablenotes}
+        \item[1] \ar{ت} [tāʾ, t] are \ar{ك} [kāf, k] are aspirated [tʰ] and [kʰ], whereas \ar{ط} [ṭāʾ, tˤ] and \ar{ق} [qāf, q] are unaspirated.
+        % this pin [aspirated voiceless], this spin [unaspirated voiceless], this bin [voiced]
+        % https://www.reddit.com/r/linguistics/comments/7m0twj/comment/drquw1n/
+        \item[2] In most regions, uvular fricatives of the classical period have become velar or post-velar.
+        \item[3] \ar{خ} the sound /χ/ (as in German ``Bach'') is uvular versus /x/ (as in ``loch'') is velar.
+        \item[4] \ar{غ} the sound /ʁ/ (close to French ``merde'') is uvular versus /ɣ/ (close to Spanish ``amigo'') is velar.
+    \end{tablenotes}
+\end{threeparttable}
 \end{center}
 
 \section*{Arabic Vowels and Other Signs}
