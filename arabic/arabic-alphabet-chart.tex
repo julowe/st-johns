@@ -34,6 +34,9 @@
 \newcommand{\ar}[1]{\textarabic{#1}}
 \newcommand{\arpar}[1]{\begin{Arabic}#1\end{Arabic}}
 
+\newcommand{\drawBaseline}[1]{\sbox0{#1}\rlap{\color{red}\vrule width\wd0 height.15pt depth.15pt}\usebox0}
+% \newcommand{\drawBaseline}[1]{#1} % uncomment this line to not drawbaselines
+
 \pagenumbering{gobble} % suppress page numbers
 
 %% NOTES
@@ -56,8 +59,6 @@
 
 \begin{document}
 
-
-
 % \vspace{1cm}
 
 \section*{Modern Standard Arabic Consonants on the IPA Table}
@@ -72,23 +73,23 @@
         \cline{1-2} \cline{4-7}
         \textit{Place}                                       &                                               &                                              & \textbf{Unvoiced}                      & \textbf{Voiced}                          & \textbf{Unvoiced}               & \textbf{Voiced}                       &                             &                               \\
         \hline
-        \multicolumn{2}{|r|}{\textbf{Labial}}                & \ar{م} [mīm, m]                       &                                              & \ar{ب} [bāʾ, b]                             & \makecell{\ar{ف} [fāʾ, f] \\ (labiodental) }                               &                                              &                                                    &                                                            \rule{0pt}{2.0ex} \\
+        \multicolumn{2}{|r|}{\textbf{Labial}}                & \drawBaseline{\ar{م} [mīm, m]}                       &                                              & \drawBaseline{\ar{ب} [bāʾ, b]}                             & \makecell{\drawBaseline{\ar{ف} [fāʾ, f]} \\ (labiodental) }                               &                                              &                                                    &                                                            \rule{0pt}{2.0ex} \\
         \hline
-        \multicolumn{2}{|r|}{\textbf{Dental}}                &                                               &                                              &                                                     & \ar{ث} [thāʾ, θ]                              & \ar{ذ} [dhāl, ð]                     &                                                    &                                                             \\
+        \multicolumn{2}{|r|}{\textbf{Dental}}                &                                               &                                              &                                                     & \drawBaseline{\ar{ث} [thāʾ, θ]}                              & \drawBaseline{\ar{ذ} [dhāl, ð]}                     &                                                    &                                                             \\
         \hline
-        \multirow{2}{*}{\textbf{Denti-Alveolar}}             & \textbf{plain}                   & \ar{ن} [nūn, n]                      & \ar{ت} [tāʾ, t]                             & \ar{د} [dāl, d]                               & \ar{س} [sīn, s]                      & \ar{ز} [zāy, z]                            & \ar{ر} [rāʾ, r]     & \makecell{\ar{ل} [lām, l] \\ (Lateral Apprx.) } \rule{0pt}{2.0ex}\\
+        \multirow{2}{*}{\textbf{Denti-Alveolar}}             & \textbf{plain}                   & \drawBaseline{\ar{ن} [nūn, n]}                      & \drawBaseline{\ar{ت} [tāʾ, t]}                             & \drawBaseline{\ar{د} [dāl, d]}                               & \drawBaseline{\ar{س} [sīn, s]}                      & \drawBaseline{\ar{ز} [zāy, z]}                            & \drawBaseline{\ar{ر} [rāʾ, r]}     & \makecell{\drawBaseline{\ar{ل} [lām, l]} \\ (Lateral Apprx.) } \rule{0pt}{2.0ex}\\
         \cline{2-9}
-                                                                          & \textbf{emphatic}                &                                              & \ar{ط} [ṭāʾ, tˤ]                            & \ar{ض} [ḍād, dˤ]                              & \ar{ص} [ṣād, sˤ]                     & \ar{ظ} [ẓāʾ, ðˤ]                           &                             & \makecell{\ar{ل} [lām, l] \\ (as in Allah) } \rule{0pt}{2.0ex}\\
+                                                                          & \textbf{emphatic}                &                                              & \drawBaseline{\ar{ط} [ṭāʾ, tˤ]}                            & \drawBaseline{\ar{ض} [ḍād, dˤ]}                              & \drawBaseline{\ar{ص} [ṣād, sˤ]}                     & \drawBaseline{\ar{ظ} [ẓāʾ, ðˤ]}                           &                             & \makecell{\drawBaseline{\ar{ل} [lām, l]} \\ (as in Allah) } \rule{0pt}{2.0ex}\\
         \hline
-        \multicolumn{2}{|r|}{\textbf{Post-Alveolar/Palatal}} &                                               &                                              & \ar{ج} Jīm ([jīm, d͡ʒ])                      & \ar{ش} [shīn, ʃ]                              &                                              &                                                    & \ar{ي} [yāʾ, j]                                     \\
+        \multicolumn{2}{|r|}{\textbf{Post-Alveolar/Palatal}} &                                               &                                              & \drawBaseline{\ar{ج} Jīm ([jīm, d͡ʒ])}                      & \drawBaseline{\ar{ش} [shīn, ʃ]}                              &                                              &                                                    & \drawBaseline{\ar{ي} [yāʾ, j]}                                     \\
         \hline
-        \multicolumn{2}{|r|}{\textbf{Velar}}                 &                                               & \ar{ك} [kāf, k]                      &                                                     &                                                       &                                              &                                                    & \makecell{\ar{و} [wāw, w] \\ (labial-velar) }  \rule{0pt}{2.0ex} \\
+        \multicolumn{2}{|r|}{\textbf{Velar}}                 &                                               & \drawBaseline{\ar{ك} [kāf, k]}                      &                                                     &                                                       &                                              &                                                    & \makecell{\drawBaseline{\ar{و} [wāw, w]} \\ (labial-velar) }  \rule{0pt}{2.0ex} \\
         \hline
-        \multicolumn{2}{|r|}{\textbf{Uvular}}                &                                               & \ar{ق} [qāf, q]                      &                                                     & \ar{خ} [khāʾ, x]                              & \ar{غ} [ghayn, ɣ]                    &                                                    &                                                             \\
+        \multicolumn{2}{|r|}{\textbf{Uvular}}                &                                               & \drawBaseline{\ar{ق} [qāf, q]}                      &                                                     & \drawBaseline{\ar{خ} [khāʾ, x]}                              & \drawBaseline{\ar{غ} [ghayn, ɣ]}                    &                                                    &                                                             \\
         \hline
-        \multicolumn{2}{|r|}{\textbf{Pharyngeal}}            &                                               &                                              &                                                     & \ar{ح} [ḥāʾ, ħ]                               & \ar{ع} [ʿayn, ʕ]                     &                                                    &                                                             \\
+        \multicolumn{2}{|r|}{\textbf{Pharyngeal}}            &                                               &                                              &                                                     & \drawBaseline{\ar{ح} [ḥāʾ, ħ]}                               & \drawBaseline{\ar{ع} [ʿayn, ʕ]}                     &                                                    &                                                             \\
         \hline
-        \multicolumn{2}{|r|}{\textbf{Glottal}}               &                                               & \ar{أ} [hamza, ʔ]                    &                                                     & \ar{ه} [hāʾ, h]                               &                                              &                                                    &                                                             \\
+        \multicolumn{2}{|r|}{\textbf{Glottal}}               &                                               & \drawBaseline{\ar{أ} [hamza, ʔ]}                    &                                                     & \drawBaseline{\ar{ه} [hāʾ, h]}                               &                                              &                                                    &                                                             \\
         \multicolumn{2}{|c|}{}                                            &                                               &                                              &                                                     &                                                       &                                              &                                                    &                                                             \\
         \hline
     \end{tabular}
@@ -101,9 +102,9 @@
     \renewcommand{\arraystretch}{1.5}
     \begin{tabular}{|r|r|c|c|c|c|c|}
         \hline
-        \multirow{2}{*}{\textbf{Vowels}} & \textbf{Short} & \ar{◌َ} [fatḥa, a]  & \ar{◌ِ} [kasra, i] & \ar{◌ُ} [ḍamma, u] \\
+        \multirow{2}{*}{\textbf{Vowels}} & \textbf{Short} & \drawBaseline{\ar{◌َ} [fatḥa, a]}  & \drawBaseline{\ar{◌ِ} [kasra, i]} & \drawBaseline{\ar{◌ُ} [ḍamma, u]} \\
         \cline{2-5}
-                                                      & \textbf{Long}  & \ar{◌َا} [fatḥa + alif, a:] & \ar{◌ِي} [kasra + yāʾ, i:] & \ar{◌ُو} [ḍamma + wāw, u:] \\
+                                                      & \textbf{Long}  & \drawBaseline{\ar{◌َا} [fatḥa + alif, a:]} & \drawBaseline{\ar{◌ِي} [kasra + yāʾ, i:]} & \drawBaseline{\ar{◌ُو} [ḍamma + wāw, u:]} \\
         \hline
     \end{tabular}
 \end{center}
@@ -115,23 +116,9 @@
     \begin{tabular}{|r|c|c|c|c|c|}
         \hline
         \textbf{Other Signs:} &
-        \ar{◌ً} [tanwīn fatḥa, an]  & \ar{◌ٍ} [tanwīn kasra, in] & \ar{◌ٌ} [tanwīn ḍamma, un] &
-        \ar{◌ْ} [sukūn, ˺]          & \ar{◌ّ} [shadda, ː]                                              \\
+        \drawBaseline{\ar{◌ً} [tanwīn fatḥa, an]}  & \drawBaseline{\ar{◌ٍ} [tanwīn kasra, in]} & \drawBaseline{\ar{◌ٌ} [tanwīn ḍamma, un]} &
+        \drawBaseline{\ar{◌ْ} [sukūn, ˺]}          & \drawBaseline{\ar{◌ّ} [shadda, ː]}                                              \\
         \hline
     \end{tabular}
 \end{center}
 \end{document}
-
-%\begin{center}
-%    \renewcommand{\arraystretch}{1.5}
-%    \begin{tabular}{|c|c|c|c|c|c|c|}
-%        \hline
-%        \multicolumn{6}{|c|}{{\romanfont Vowels}} & a                                                                       \\
-%        \hline
-%        \multicolumn{3}{|c|}{{\romanfont Short}}  & \multicolumn{3}{|c|}{{\romanfont Long}} & a                             \\
-%        \hline
-%        ◌َ {\romanfont [fatha, a]}                 & ◌ِ {\romanfont [kasra, i]}               & ◌ُ {\romanfont [damma, u]} &
-%        ◌َا {\romanfont [alif, a:]}                & ◌ِي {\romanfont [yāʾ, i:]}               & ◌ُو {\romanfont [wāw, u:]} & a \\
-%        \hline
-%    \end{tabular}
-%\end{center}
