@@ -41,7 +41,10 @@
 \newcommand{\BWmoon}{\BWsymbol{"262A}} % new moon symbol
 \newcommand{\BWmoonAlt}{\BWsymbol{"263D}} % quarter moon symbol
 
-\newcommand{\drawBaseline}[1]{\sbox0{#1}\rlap{\color{red}\vrule width\wd0 height.15pt depth.15pt}\usebox0}
+% Command to draw a baseline under text
+% NB: height is distance above baseline, depth is distance below baseline
+% \newcommand{\drawBaseline}[1]{\sbox0{#1}\rlap{\color{red}\vrule width\wd0 height.15pt depth.15pt}\usebox0}
+\newcommand{\drawBaseline}[1]{\sbox0{#1}\rlap{\color{red}\vrule width\wd0 height0.05pt depth0.05pt}\usebox0} 
 % \newcommand{\drawBaseline}[1]{#1} % uncomment this line to not drawbaselines
 
 \pagenumbering{gobble} % suppress page numbers
@@ -68,7 +71,7 @@
 
 % \vspace{1cm}
 
-\section*{Modern Standard Arabic Consonants on the IPA Table}
+\section*{Arabic Consonants on the IPA Table}
 
 % NB: leaning on Wikipedia's Arabic phonology article https://en.wikipedia.org/wiki/Standard_Arabic_phonology#Consonants
 
@@ -103,7 +106,7 @@
 \end{center}
 
 
-
+\section*{Arabic Vowels and Other Signs}
 
 \begin{center}
     \renewcommand{\arraystretch}{1.5}
