@@ -33,9 +33,9 @@
 % \newfontfamily\romanfont{Charis} % supports all IPA symbols
 % \newfontfamily\ipafont{Charis} % supports all IPA symbols
 
-\newcommand{\ar}[1]{\textarabic{#1}}
+\newcommand{\ar}[1]{{\Large \textarabic{#1}}}
 \newcommand{\arpar}[1]{
-  \begin{Arabic}#1
+  \begin{Arabic}{\Large #1}
 \end{Arabic}}
 
 \newcommand{\BWsymbol}[1]{{\symbolfont \symbol{#1}}}
@@ -52,8 +52,6 @@
 \pagenumbering{gobble} % suppress page numbers
 
 %% NOTES
-% TODO: correct emphatic ل to be like in الله ?
-% TODO: make table or initial medial etc forms?
 % TODO: is there an accepted order for letters in the alphabet chart?
 % TODO: add ligatures table? (sort of did this... used AI to make a list that I don't fully trust)
     % http://mstbob.net/arabic/arabic2.html
@@ -67,6 +65,11 @@
 % TODO: group the tanwins?
 % TODO: add dipthongs?
 % TODO: add atun?
+% TODO: put baseline only on those forms with no obvioux tail/leader showing where the baseline is? or make baseline only on a non-joining space I put before and after each arabic letter?
+% TODO: add a top or mid-line??
+% TODO: add ASA transliteration to alphabet table
+% TODO: add aspiration sigsn vs table-note 1?
+% TODO: add something about hamza position with diff vowel or shadda combos?
 
 % NOTE: lots of good character info here: https://en.wikipedia.org/wiki/Arabic_script_in_Unicode
 
@@ -86,15 +89,15 @@
     \cline{1-2} \cline{4-7}
     \textit{Place}                        &                   &                                 & \textbf{Unvoiced}\tnote{1}       & \textbf{Voiced}                            & \textbf{Unvoiced}                                                             & \textbf{Voiced}                                                          &                                 &                                                                                                    \\
     \hline
-    \multicolumn{2}{|r|}{\BWmoon \textbf{Labial}}             & \drawBaseline{\ar{م} [mīm, m]}  &                                  & \drawBaseline{\ar{ب} [bāʾ, b]}             & \makecell{\rule{0pt}{2.0ex} \drawBaseline{\ar{ف} [fāʾ, f]} \\ (labiodental) } &                                                                          &                                 &                                                                                                    \\
+    \multicolumn{2}{|r|}{\BWmoon \textbf{Labial}}             & \drawBaseline{\ar{م} [mīm, m]}  &                                  & \drawBaseline{\ar{ب} [bāʾ, b]}             & \makecell{\rule{0pt}{2.5ex} \drawBaseline{\ar{ف} [fāʾ, f]} \\ (labiodental) } &                                                                          &                                 &                                                                                                    \\
     \hline
     \multicolumn{2}{|r|}{\BWsun \textbf{Dental}}              &                                 &                                  &                                            & \drawBaseline{\ar{ث} [thāʾ, θ]}                                               & \drawBaseline{\ar{ذ} [dhāl, ð]}                                          &                                 &                                                                                                    \\
     \hline
     \multirow{2}{*}{\makecell{
                       \BWsun \textbf{Denti-} \\
-                      \textbf{Alveolar}}} & \textbf{plain}    & \drawBaseline{\ar{ن} [nūn, n]}  & \drawBaseline{\ar{ت} [tāʾ, t]}   & \drawBaseline{\ar{د} [dāl, d]}             & \drawBaseline{\ar{س} [sīn, s]}                                                & \drawBaseline{\ar{ز} [zāy, z]}                                           & \drawBaseline{\ar{ر} [rāʾ, r]}  & \makecell{\rule{0pt}{2.0ex} \drawBaseline{\ar{ل} [lām, l]} \\ (Lateral Apprx.) } \rule{0pt}{2.0ex} \\
+                      \textbf{Alveolar}}} & \textbf{plain}    & \drawBaseline{\ar{ن} [nūn, n]}  & \drawBaseline{\ar{ت} [tāʾ, t]}   & \drawBaseline{\ar{د} [dāl, d]}             & \drawBaseline{\ar{س} [sīn, s]}                                                & \drawBaseline{\ar{ز} [zāy, z]}                                           & \drawBaseline{\ar{ر} [rāʾ, r]}  & \makecell{\rule{0pt}{2.5ex} \drawBaseline{\ar{ل} [lām, l]} \\ (Lateral Apprx.) } \rule{0pt}{2.0ex} \\
     \cline{2-9}
-                                          & \textbf{emphatic} &                                 & \drawBaseline{\ar{ط} [ṭāʾ, tˤ]}  & \drawBaseline{\ar{ض} [ḍād, dˤ]}            & \drawBaseline{\ar{ص} [ṣād, sˤ]}                                               & \drawBaseline{\ar{ظ} [ẓāʾ, ðˤ]}                                          &                                 & \makecell{\rule{0pt}{2.0ex} \drawBaseline{\ar{ل} [lām, ɫ]} \\ (as in Allah) } \rule{0pt}{2.0ex}    \\
+                                          & \textbf{emphatic} &                                 & \drawBaseline{\ar{ط} [ṭāʾ, tˤ]}  & \drawBaseline{\ar{ض} [ḍād, dˤ]}            & \drawBaseline{\ar{ص} [ṣād, sˤ]}                                               & \drawBaseline{\ar{ظ} [ẓāʾ, ðˤ]}                                          &                                 & \makecell{\rule{0pt}{2.5ex} \drawBaseline{\ar{ل} [lām, ɫ]} \\ (as in Allah) } \rule{0pt}{2.0ex}    \\
     \hline
     \multicolumn{2}{|r|}{\textbf{Post-Alveolar/Palatal}}      &                                 &                                  & \drawBaseline{\ar{ج} ([jīm, d͡ʒ])} \BWmoon & \drawBaseline{\ar{ش} [shīn, ʃ]} \BWsun                                        &                                                                          &                                 & \drawBaseline{\ar{ي} [yāʾ, j]} \BWmoon                                                             \\
     \hline
