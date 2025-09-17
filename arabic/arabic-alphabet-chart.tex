@@ -1,6 +1,7 @@
 \documentclass{article}
 % \usepackage[landscape, margin=1in]{geometry}
-\usepackage[margin=1in]{geometry}
+% \usepackage[margin=1in]{geometry}
+\usepackage[margin=0.75in]{geometry}
 \usepackage{pdflscape} % using this vs geometry landscape so that I can have portait orientations pages for long tables
 \usepackage{url}
 \usepackage{multirow} % Add this in your preamble
@@ -51,7 +52,7 @@
 % Draw baseline only on non-joining space before and after text
 \newcommand{\drawBaselineOnlyAround}[1]{\sbox0{ ‌}\rlap{\color{red}\vrule width\wd0 height0.25pt depth0.25pt}\usebox0#1\sbox1{‌ }\rlap{\color{red}\vrule width\wd0 height0.25pt depth0.25pt}\usebox1}
 
-\newcommand{\arB}[1]{\drawBaseline{\ar{#1}}} %shortcut for arabic character(s) with baseline drawn 
+\newcommand{\arB}[1]{\drawBaseline{\ar{#1}}} %shortcut for arabic character(s) with baseline drawn
 \newcommand{\arBA}[1]{\drawBaselineAround{\ar{#1}}} %shortcut for arabic character(s) with baseline drawn around and under the character(s)
 \newcommand{\arBOA}[1]{\drawBaselineOnlyAround{\ar{#1}}} %shortcut for arabic character(s) with baseline drawn only around the character(s)
 % NOTE: regex for baseline ar \\drawBaseline\{\\ar\{(.*?)\} \[(.*?)\]\}
@@ -64,8 +65,8 @@
 % TODO: verufy ipa table is transferred to IPA column of alphabet table
 % TODO: is there an accepted order for letters in the alphabet chart?
 % TODO: add ligatures table? (sort of did this... used AI to make a list that I don't fully trust)
-    % http://mstbob.net/arabic/arabic2.html
-    % https://alphabet.quranacademy.org/en/lesson/additional-rules/arabic-ligatures
+% http://mstbob.net/arabic/arabic2.html
+% https://alphabet.quranacademy.org/en/lesson/additional-rules/arabic-ligatures
 % TODO: add ta marbuta ة ? p.1
 % TODO: add hamzat al-wasl (ٱ) ?
 % TODO: add alif maqṣūra (ى) ?
@@ -85,151 +86,154 @@
 
 \begin{document}
 \begin{landscape}
-\section*{Arabic Consonants on the IPA Table \footnote{This table was based off of Wikipedia's Arabic phonology article \url{https://en.wikipedia.org/wiki/Standard_Arabic_phonology#Consonants} and added to by Justin Lowe. Last Updated: 2025-09-16}}
+    \section*{Arabic Consonants on the IPA Table \footnote{This table was based off of Wikipedia's Arabic phonology article \url{https://en.wikipedia.org/wiki/Standard_Arabic_phonology#Consonants} and added to by Justin Lowe. Last Updated: 2025-09-17}}
 
-% NB: leaning on Wikipedia's Arabic phonology article https://en.wikipedia.org/wiki/Standard_Arabic_phonology#Consonants
+    % NB: leaning on Wikipedia's Arabic phonology article https://en.wikipedia.org/wiki/Standard_Arabic_phonology#Consonants
 
-\begin{center}
-  \begin{threeparttable}
-  \renewcommand{\arraystretch}{1.5}
-  \begin{tabular}{|r|r|c|c|c|c|c|c|c|c|}
-    % tex-fmt: off
-    \hline
-                                          & \textit{Manner}   & \multirow{2}{*}{\textbf{Nasal}} & \multicolumn{2}{|c|}{\textbf{Plosive}}                                        & \multicolumn{2}{|c|}{\textbf{Fricative}}                                                                                                                 & \multirow{2}{*}{\textbf{Trill}} & \multirow{2}{*}{\textbf{Approximant}}                                                              \\
-    \cline{1-2} \cline{4-7}
-    \textit{Place}                        &                   &                                 & \textbf{Unvoiced}\tnote{1}       & \textbf{Voiced}                            & \textbf{Unvoiced}                                                             & \textbf{Voiced}                                                          &                                 &                                                                                                    \\
-    \hline
-    \multicolumn{2}{|r|}{\BWmoon \textbf{Labial}}             & \drawBaseline{\ar{م} [mīm, m]}  &                                  & \drawBaseline{\ar{ب} [bāʾ, b]}             & \makecell{\rule{0pt}{2.5ex} \drawBaseline{\ar{ف} [fāʾ, f]} \\ (labiodental) } &                                                                          &                                 &                                                                                                    \\
-    \hline
-    \multicolumn{2}{|r|}{\BWsun \textbf{Dental}}              &                                 &                                  &                                            & \drawBaseline{\ar{ث} [thāʾ, θ]}                                               & \drawBaseline{\ar{ذ} [dhāl, ð]}                                          &                                 &                                                                                                    \\
-    \hline
-    \multirow{2}{*}{\makecell{
-                      \BWsun \textbf{Denti-} \\
-                      \textbf{Alveolar}}} & \textbf{plain}    & \drawBaseline{\ar{ن} [nūn, n]}  & \drawBaseline{\ar{ت} [tāʾ, t]}   & \drawBaseline{\ar{د} [dāl, d]}             & \drawBaseline{\ar{س} [sīn, s]}                                                & \drawBaseline{\ar{ز} [zāy, z]}                                           & \drawBaseline{\ar{ر} [rāʾ, r]}  & \makecell{\rule{0pt}{2.5ex} \drawBaseline{\ar{ل} [lām, l]} \\ (Lateral Apprx.) } \rule{0pt}{2.0ex} \\
-    \cline{2-9}
-                                          & \textbf{emphatic} &                                 & \drawBaseline{\ar{ط} [ṭāʾ, tˤ]}  & \drawBaseline{\ar{ض} [ḍād, dˤ]}            & \drawBaseline{\ar{ص} [ṣād, sˤ]}                                               & \drawBaseline{\ar{ظ} [ẓāʾ, ðˤ]}                                          &                                 & \makecell{\rule{0pt}{2.5ex} \drawBaseline{\ar{ل} [lām, ɫ]} \\ (as in Allah) } \rule{0pt}{2.0ex}    \\
-    \hline
-    \multicolumn{2}{|r|}{\textbf{Post-Alveolar/Palatal}}      &                                 &                                  & \drawBaseline{\ar{ج} ([jīm, d͡ʒ])} \BWmoon & \drawBaseline{\ar{ش} [shīn, ʃ]} \BWsun                                        &                                                                          &                                 & \drawBaseline{\ar{ي} [yāʾ, j]} \BWmoon                                                             \\
-    \hline
-    \multicolumn{2}{|r|}{\BWmoon \textbf{Velar}}              &                                 & \drawBaseline{\ar{ك} [kāf, k]}   &                                            &                                                                               &                                                                          &                                 & \makecell{\rule{0pt}{2.0ex} \drawBaseline{\ar{و} [wāw, w]} \\ (labial-velar) }  \rule{0pt}{2.0ex}  \\
-    \hline
-    \multicolumn{2}{|r|}{\BWmoon \textbf{Uvular}}             &                                 & \drawBaseline{\ar{ق} [qāf, q]}   &                                            & \drawBaseline{\ar{خ} [khāʾ, χ]}\tnote{2} \textsuperscript{\:,}\tnote{3}       & \drawBaseline{\ar{غ} [ghayn, ʁ]}\tnote{2} \textsuperscript{\:,}\tnote{4} &                                 &                                                                                                    \\
-    \hline
-    \multicolumn{2}{|r|}{\BWmoon \textbf{Pharyngeal}}         &                                 &                                  &                                            & \drawBaseline{\ar{ح} [ḥāʾ, ħ]}                                                & \drawBaseline{\ar{ع} [ʿayn, ʕ]}                                          &                                 &                                                                                                    \\
-    \hline
-    \multicolumn{2}{|r|}{\BWmoon \textbf{Glottal}}            &                                 & \drawBaseline{\ar{أ} [hamza, ʔ]} &                                            & \drawBaseline{\ar{ه} [hāʾ, h]}                                                &                                                                          &                                 &                                                                                                    \\
-    \hline
-    % tex-fmt: on
-  \end{tabular}
-    \begin{tablenotes}
-        \item[1] \ar{ت} [tāʾ, t] are \ar{ك} [kāf, k] are aspirated [tʰ] and [kʰ], whereas \ar{ط} [ṭāʾ, tˤ] and \ar{ق} [qāf, q] are unaspirated.
-        % this pin [aspirated voiceless], this spin [unaspirated voiceless], this bin [voiced]
-        % https://www.reddit.com/r/linguistics/comments/7m0twj/comment/drquw1n/
-        \item[2] In most regions, uvular fricatives of the classical period have become velar or post-velar.
-        \item[3] \ar{خ} the sound /χ/ (as in German ``Bach'') is uvular, versus /x/ (as in ``loch'') is velar.
-        \item[4] \ar{غ} the sound /ʁ/ (close to French ``merde'') is uvular, versus /ɣ/ (close to Spanish ``amigo'') is velar.
-    \end{tablenotes}
-\end{threeparttable}
-\end{center}
+    \begin{center}
+        \begin{threeparttable}
+            \renewcommand{\arraystretch}{1.5}
+            \begin{tabular}{|r|r|c|c|c|c|c|c|c|c|}
+                \hline
+                %\begin{noindent} % so LaTeX-indent doesn't change table formatting
+                                                                     & \textit{Manner}   & \multirow{2}{*}{\textbf{Nasal}} & \multicolumn{2}{|c|}{\textbf{Plosive}}                     & \multicolumn{2}{|c|}{\textbf{Fricative}}                                                                                       & \multirow{2}{*}{\textbf{Trill}} & \multirow{2}{*}{\textbf{Approximant}}                                                  \\
+                \cline{1-2} \cline{4-7}
+                \textit{Place}                                       &                   &                                 & \textbf{Unvoiced}\tnote{1} & \textbf{Voiced}               & \textbf{Unvoiced}                                                & \textbf{Voiced}                                             &                                 &                                                                                        \\
+                \hline
+                \multicolumn{2}{|r|}{\BWmoon \textbf{Labial}}                            & \arBA{م}[mīm, m]                &                            & \arBA{ب} [bāʾ, b]             & \makecell{\rule{0pt}{2.5ex} \arBA{ف} [fāʾ, f] \\ (labiodental) } &                                                             &                                 &                                                                                        \\
+                \hline
+                \multicolumn{2}{|r|}{\BWsun \textbf{Dental}}                             &                                 &                            &                               & \arBA{ث} [thāʾ, θ]                                               & \arBA{ذ} [dhāl, ð]                                          &                                 &                                                                                        \\
+                \hline
+                \multirow{2}{*}{\makecell{
+                \BWsun \textbf{Denti-}                                                                                                                                                                                                                                                                                                                                                                                                              \\
+                \textbf{Alveolar}}}                                  & \textbf{plain}    & \arBA{ن} [nūn, n]               & \arBA{ت} [tāʾ, t]          & \arBA{د} [dāl, d]             & \arBA{س} [sīn, s]                                                & \arBA{ز} [zāy, z]                                           & \arBA{ر} [rāʾ, r]               & \makecell{\rule{0pt}{2.5ex}  \arBA{ل} [lām, l] \\ (Lateral Apprx.) } \rule{0pt}{2.0ex} \\
+                \cline{2-9}
+                                                                     & \textbf{emphatic} &                                 & \arBA{ط} [ṭāʾ, tˤ]         & \arBA{ض} [ḍād, dˤ]            & \arBA{ص} [ṣād, sˤ]                                               & \arBA{ظ} [ẓāʾ, ðˤ]                                          &                                 & \makecell{\rule{0pt}{2.5ex}  \arBA{ل} [lām, ɫ] \\ (as in Allah) } \rule{0pt}{2.0ex}    \\
+                \hline
+                \multicolumn{2}{|r|}{\textbf{Post-Alveolar/Palatal}}                     &                                 &                            & \arBA{ج} ([jīm, d͡ʒ]) \BWmoon & \arBA{ش} [shīn, ʃ] \BWsun                                        &                                                             &                                 & \arBA{ي} [yāʾ, j] \BWmoon                                                              \\
+                \hline
+                \multicolumn{2}{|r|}{\BWmoon \textbf{Velar}}                             &                                 & \arBA{ك} [kāf, k]          &                               &                                                                  &                                                             &                                 & \makecell{\rule{0pt}{2.0ex}  \arBA{و} [wāw, w] \\ (labial-velar) }  \rule{0pt}{2.0ex}  \\
+                \hline
+                \multicolumn{2}{|r|}{\BWmoon \textbf{Uvular}}                            &                                 & \arBA{ق} [qāf, q]          &                               & \arBA{خ} [khāʾ, χ]\tnote{2} \textsuperscript{\:,}\tnote{3}       & \arBA{غ} [ghayn, ʁ]\tnote{2} \textsuperscript{\:,}\tnote{4} &                                 &                                                                                        \\
+                \hline
+                \multicolumn{2}{|r|}{\BWmoon \textbf{Pharyngeal}}                        &                                 &                            &                               & \arBA{ح} [ḥāʾ, ħ]                                                & \arBA{ع} [ʿayn, ʕ]                                          &                                 &                                                                                        \\
+                \hline
+                \multicolumn{2}{|r|}{\BWmoon \textbf{Glottal}}                           &                                 & \arBA{أ} [hamza, ʔ]        &                               & \arBA{ه} [hāʾ, h]                                                &                                                             &                                 &                                                                                        \\
+                %\end{noindent} % so LaTeX-indent doesn't change table formatting
+                \hline
+            \end{tabular}
+            \begin{tablenotes}
+                \item[1] \ar{ت} [tāʾ, t] are \ar{ك} [kāf, k] are aspirated [tʰ] and [kʰ], whereas \ar{ط} [ṭāʾ, tˤ] and \ar{ق} [qāf, q] are unaspirated.
+                % this pin [aspirated voiceless], this spin [unaspirated voiceless], this bin [voiced]
+                % https://www.reddit.com/r/linguistics/comments/7m0twj/comment/drquw1n/
+                \item[2] In most regions, uvular fricatives of the classical period have become velar or post-velar.
+                \item[3] \ar{خ} the sound /χ/ (as in German ``Bach'') is uvular, versus /x/ (as in ``loch'') is velar.
+                \item[4] \ar{غ} the sound /ʁ/ (close to French ``merde'') is uvular, versus /ɣ/ (close to Spanish ``amigo'') is velar.
+            \end{tablenotes}
+        \end{threeparttable}
+    \end{center}
 
-\section*{Arabic Vowels and Other Signs}
+    \section*{Arabic Vowels and Other Signs}
 
-\begin{center}
-  \renewcommand{\arraystretch}{1.5}
-  \begin{tabular}{|r|r|c|c|c|c|c|}
-    % tex-fmt: off
-    \hline
-    \multirow{2}{*}{\textbf{Vowels}} & \textbf{Short} & \drawBaseline{\ar{◌َ} [fatḥa, a]}          & \drawBaseline{\ar{◌ِ} [kasra, i]}         & \drawBaseline{\ar{◌ُ} [ḍamma, u]}         \\
-    \cline{2-5}
-                                     & \textbf{Long}  & \drawBaseline{\ar{◌َا} [fatḥa + alif, a:]} & \drawBaseline{\ar{◌ِي} [kasra + yāʾ, i:]} & \drawBaseline{\ar{◌ُو} [ḍamma + wāw, u:]} \\
-    \hline
-    % tex-fmt: on
-  \end{tabular}
-\end{center}
+    \begin{center}
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{|r|r|c|c|c|c|c|}
+            % tex-fmt: off
+            \hline
+            \multirow{2}{*}{\textbf{Vowels}} & \textbf{Short} & \arBA{◌َ} [fatḥa, a]          & \arBA{◌ِ} [kasra, i]         & \arBA{◌ُ} [ḍamma, u]         \\
+            \cline{2-5}
+                                             & \textbf{Long}  & \arBA{◌َا} [fatḥa + alif, a:] & \arBA{◌ِي} [kasra + yāʾ, i:] & \arBA{◌ُو} [ḍamma + wāw, u:] \\
+            % NOTE: inside \ar{} the ◌ (combining character) and the other letters is written left to write in code but typset right to left.
+            \hline
+            % tex-fmt: on
+        \end{tabular}
+    \end{center}
 
-% \vspace{0.5cm}
+    % \vspace{0.5cm}
 
-\begin{center}
-  \renewcommand{\arraystretch}{1.5}
-  \begin{tabular}{|r|c|c|c|c|c|}
-    \hline
-    \textbf{Other Signs:} & \drawBaseline{\ar{◌ً} [tanwīn fatḥa, an]} & \drawBaseline{\ar{◌ٍ} [tanwīn kasra, in]} & \drawBaseline{\ar{◌ٌ} [tanwīn ḍamma, un]} & \drawBaseline{\ar{◌ْ} [sukūn, ˺]} & \drawBaseline{\ar{◌ّ} [shadda, ː]} \\
-    \hline
-  \end{tabular}
-\end{center}
+    \begin{center}
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{|r|c|c|c|c|c|}
+            \hline
+            \textbf{Other Signs:} & \arBA{◌ً}, \arBA{◌ًا} [tanwīn fatḥa, an] & \arBA{◌ٍ} [tanwīn kasra, in] & \arBA{◌ٌ} [tanwīn ḍamma, un] & \arBA{◌ْ} [sukūn, ˺] & \arBA{◌ّ} [shadda, ː] \\
+            % NOTE: inside \ar{} the ◌ (combining character) and the other letters is written left to write in code but typset right to left.
+            \hline
+        \end{tabular}
+    \end{center}
 
-% \vspace{1cm}
+    % \vspace{1cm}
 
 \end{landscape}
 
-\section*{Arabic Alphabet Chart with all written forms \footnote{Last Updated: 2025-09-17 JKL}}
+\section*{Arabic Alphabet Chart with all written forms \footnote{Based off textbook and ALA-LC Arabic Romanization Table. Last Updated: 2025-09-17 JKL}}
 
 \begin{center}
     \begin{threeparttable}
-  \renewcommand{\arraystretch}{1.5}
-  \begin{tabular}{|c|c|c|c|l|l|l|}
-    \hline
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{|c|c|c|c|l|l|l|}
+            \hline
             \textbf{Isolated} & \textbf{Final}     & \textbf{Medial}    & \textbf{Initial}             & \textbf{Name}\tnote{1} & \textbf{IPA} & \textbf{Articulation}                                         \\
-    \hline
-    \drawBaseline{\ar{ا}} & \drawBaseline{\ar{ـا}} &                         &                        & alif & [aː] & (Nil. Bearer for \textit{hamza} or sign of a long \textit{ā})\\
-    \hline
-    \drawBaseline{\ar{ب}} & \drawBaseline{\ar{ـب}} & \drawBaseline{\ar{ـبـ}} & \drawBaseline{\ar{بـ}} & \textbf{b}āʾ & [b] &    labial, voiced, unaspirated \\
-    \hline
-    \drawBaseline{\ar{ت}} & \drawBaseline{\ar{ـت}} & \drawBaseline{\ar{ـتـ}} & \drawBaseline{\ar{تـ}} & \textbf{t}āʾ & [t] &    dental, unvoiced, unaspirated \\
-    \hline
-    \drawBaseline{\ar{ث}} & \drawBaseline{\ar{ـث}} & \drawBaseline{\ar{ـثـ}} & \drawBaseline{\ar{ثـ}} & \textbf{th}āʾ & [θ] &   dental, unvoiced, unaspirated \\
-    \hline
-    \drawBaseline{\ar{ج}} & \drawBaseline{\ar{ـج}} & \drawBaseline{\ar{ـجـ}} & \drawBaseline{\ar{جـ}} & \textbf{j}īm & [d͡ʒ] &  palatal, voiced, unaspirated \\
-    \hline
-    \drawBaseline{\ar{ح}} & \drawBaseline{\ar{ـح}} & \drawBaseline{\ar{ـحـ}} & \drawBaseline{\ar{حـ}} & \textbf{ḥ}āʾ & [ħ] &    pharyngeal, unvoiced, unaspirated \\
-    \hline
-    \drawBaseline{\ar{خ}} & \drawBaseline{\ar{ـخ}} & \drawBaseline{\ar{ـخـ}} & \drawBaseline{\ar{خـ}} & \textbf{kh}āʾ & [χ] &   velar, unvoiced, unaspirated \\
-    \hline
-    \drawBaseline{\ar{د}} & \drawBaseline{\ar{ـد}} &                         &                        & \textbf{d}āl & [d] &      dental, voiced, unaspirated \\
-    \hline
-    \drawBaseline{\ar{ذ}} & \drawBaseline{\ar{ـذ}} &                         &                        & \textbf{dh}āl & [ð] &     dental, voiced, unaspirated \\
-    \hline
-    \drawBaseline{\ar{ر}} & \drawBaseline{\ar{ـر}} &                         &                        & \textbf{r}āʾ & [r] &      alveolar, voiced, unaspirated \\
-    \hline
-    \drawBaseline{\ar{ز}} & \drawBaseline{\ar{ـز}} &                         &                        & \textbf{z}āy & [z] &      alveolar, voiced, unaspirated \\
-    \hline
-    \drawBaseline{\ar{س}} & \drawBaseline{\ar{ـس}} & \drawBaseline{\ar{ـسـ}} & \drawBaseline{\ar{سـ}} & \textbf{s}īn & [s] &    alveolar, unvoiced, unaspirated \\
-    \hline
-    \drawBaseline{\ar{ش}} & \drawBaseline{\ar{ـش}} & \drawBaseline{\ar{ـشـ}} & \drawBaseline{\ar{شـ}} & \textbf{sh}īn & [ʃ] &   palatal, unvoiced, unaspirated \\
-    \hline
-    \drawBaseline{\ar{ص}} & \drawBaseline{\ar{ـص}} & \drawBaseline{\ar{ـصـ}} & \drawBaseline{\ar{صـ}} & \textbf{ṣ}ād & [sˤ] &   emphatic dental, unvoiced, unaspirated \\
-    \hline
-    \drawBaseline{\ar{ض}} & \drawBaseline{\ar{ـض}} & \drawBaseline{\ar{ـضـ}} & \drawBaseline{\ar{ضـ}} & \textbf{ḍ}ād & [dˤ] &   emphatic dental, voiced, unaspirated \\
-    \hline
-    \drawBaseline{\ar{ط}} & \drawBaseline{\ar{ـط}} & \drawBaseline{\ar{ـطـ}} & \drawBaseline{\ar{طـ}} & \textbf{ṭ}āʾ & [tˤ] &   emphatic dental, unvoiced, unaspirated \\
-    \hline
-    \drawBaseline{\ar{ظ}} & \drawBaseline{\ar{ـظ}} & \drawBaseline{\ar{ـظـ}} & \drawBaseline{\ar{ظـ}} & \textbf{ẓ}āʾ & [ðˤ] &   emphatic dental, voiced, unaspirated \\
-    \hline
-    \drawBaseline{\ar{ع}} & \drawBaseline{\ar{ـع}} & \drawBaseline{\ar{ـعـ}} & \drawBaseline{\ar{عـ}} & \textbf{ʿ}ayn & [ʕ] &   pharyngeal, voiced, unaspirated \\
-    \hline
-    \drawBaseline{\ar{غ}} & \drawBaseline{\ar{ـغ}} & \drawBaseline{\ar{ـغـ}} & \drawBaseline{\ar{غـ}} & \textbf{gh}ayn & [ʁ] &  velar, voiced, unaspirated \\
-    \hline
-    \drawBaseline{\ar{ف}} & \drawBaseline{\ar{ـف}} & \drawBaseline{\ar{ـفـ}} & \drawBaseline{\ar{فـ}} & \textbf{f}āʾ & [f] &    labial, unvoiced, unaspirated \\
-    \hline
-    \drawBaseline{\ar{ق}} & \drawBaseline{\ar{ـق}} & \drawBaseline{\ar{ـقـ}} & \drawBaseline{\ar{قـ}} & \textbf{q}āf & [q] &    uvular, unvoiced, unaspirated \\
-    \hline
-    \drawBaseline{\ar{ك}} & \drawBaseline{\ar{ـك}} & \drawBaseline{\ar{ـكـ}} & \drawBaseline{\ar{كـ}} & \textbf{k}āf & [k] &    velar, unvoiced, unaspirated \\
-    \hline
-    \drawBaseline{\ar{ل}} & \drawBaseline{\ar{ـل}} & \drawBaseline{\ar{ـلـ}} & \drawBaseline{\ar{لـ}} & \textbf{l}ām & [l] &    alveolar, voiced, unaspirated \\
-    \hline
-    \drawBaseline{\ar{م}} & \drawBaseline{\ar{ـم}} & \drawBaseline{\ar{ـمـ}} & \drawBaseline{\ar{مـ}} & \textbf{m}īm & [m] &    labial, voiced, unaspirated \\
-    \hline
-    \drawBaseline{\ar{ن}} & \drawBaseline{\ar{ـن}} & \drawBaseline{\ar{ـنـ}} & \drawBaseline{\ar{نـ}} & \textbf{n}ūn & [n] &    alveolar, voiced, unaspirated \\
-    \hline
-    \drawBaseline{\ar{ه}} & \drawBaseline{\ar{ـه}} & \drawBaseline{\ar{ـهـ}} & \drawBaseline{\ar{هـ}} & \textbf{h}āʾ & [h] &    glottal, unvoiced, unaspirated \\
-    \hline
-    \drawBaseline{\ar{و}} & \drawBaseline{\ar{ـو}} &                         &                        & \textbf{w}āw & [w] &      labial-velar, voiced, unaspirated \\
-    \hline
-    \drawBaseline{\ar{ي}} & \drawBaseline{\ar{ـي}} & \drawBaseline{\ar{ـيـ}} & \drawBaseline{\ar{يـ}} & \textbf{y}āʾ & [j] & palatal, voiced approximant  \\
-    \hline
-    \drawBaseline{\ar{ء}} & \drawBaseline{\ar{ء}}  & \drawBaseline{\ar{ء}}   & \drawBaseline{\ar{ء}}  & hamza & [ʔ] & glottal, unvoiced, unaspirated \\
-    \hline
-  \end{tabular}
+            \hline
+            \arBA{ا}          & \arBA{ـا}          &                    &                              & alif                   & [aː]         & (Nil. Bearer for \textit{hamza} or sign of a long \textit{ā}) \\
+            \hline
+            \arBA{ب}          & \arBA{ـب}          & \arBA{ـبـ}         & \arBA{بـ}                    & \textbf{b}āʾ           & [b]          & labial, voiced, unaspirated                                   \\
+            \hline
+            \arBA{ت}          & \arBA{ـت}          & \arBA{ـتـ}         & \arBA{تـ}                    & \textbf{t}āʾ           & [t]          & dental, unvoiced, unaspirated                                 \\
+            \hline
+            \arBA{ث}          & \arBA{ـث}          & \arBA{ـثـ}         & \arBA{ثـ}                    & \textbf{th}āʾ          & [θ]          & dental, unvoiced, unaspirated                                 \\
+            \hline
+            \arBA{ج}          & \arBA{ـج}          & \arBA{ـجـ}         & \arBA{جـ}                    & \textbf{j}īm           & [d͡ʒ]         & palatal, voiced, unaspirated                                  \\
+            \hline
+            \arBA{ح}          & \arBA{ـح}          & \arBA{ـحـ}         & \arBA{حـ}                    & \textbf{ḥ}āʾ           & [ħ]          & pharyngeal, unvoiced, unaspirated                             \\
+            \hline
+            \arBA{خ}          & \arBA{ـخ}          & \arBA{ـخـ}         & \arBA{خـ}                    & \textbf{kh}āʾ          & [χ]          & velar, unvoiced, unaspirated                                  \\
+            \hline
+            \arBA{د}          & \arBA{ـد}          &                    &                              & \textbf{d}āl           & [d]          & dental, voiced, unaspirated                                   \\
+            \hline
+            \arBA{ذ}          & \arBA{ـذ}          &                    &                              & \textbf{dh}āl          & [ð]          & dental, voiced, unaspirated                                   \\
+            \hline
+            \arBA{ر}          & \arBA{ـر}          &                    &                              & \textbf{r}āʾ           & [r]          & alveolar, voiced, unaspirated                                 \\
+            \hline
+            \arBA{ز}          & \arBA{ـز}          &                    &                              & \textbf{z}āy           & [z]          & alveolar, voiced, unaspirated                                 \\
+            \hline
+            \arBA{س}          & \arBA{ـس}          & \arBA{ـسـ}         & \arBA{سـ}                    & \textbf{s}īn           & [s]          & alveolar, unvoiced, unaspirated                               \\
+            \hline
+            \arBA{ش}          & \arBA{ـش}          & \arBA{ـشـ}         & \arBA{شـ}                    & \textbf{sh}īn          & [ʃ]          & palatal, unvoiced, unaspirated                                \\
+            \hline
+            \arBA{ص}          & \arBA{ـص}          & \arBA{ـصـ}         & \arBA{صـ}                    & \textbf{ṣ}ād           & [sˤ]         & emphatic dental, unvoiced, unaspirated                        \\
+            \hline
+            \arBA{ض}          & \arBA{ـض}          & \arBA{ـضـ}         & \arBA{ضـ}                    & \textbf{ḍ}ād           & [dˤ]         & emphatic dental, voiced, unaspirated                          \\
+            \hline
+            \arBA{ط}          & \arBA{ـط}          & \arBA{ـطـ}         & \arBA{طـ}                    & \textbf{ṭ}āʾ           & [tˤ]         & emphatic dental, unvoiced, unaspirated                        \\
+            \hline
+            \arBA{ظ}          & \arBA{ـظ}          & \arBA{ـظـ}         & \arBA{ظـ}                    & \textbf{ẓ}āʾ           & [ðˤ]         & emphatic dental, voiced, unaspirated                          \\
+            \hline
+            \arBA{ع}          & \arBA{ـع}          & \arBA{ـعـ}         & \arBA{عـ}                    & \textbf{ʿ}ayn          & [ʕ]          & pharyngeal, voiced, unaspirated                               \\
+            \hline
+            \arBA{غ}          & \arBA{ـغ}          & \arBA{ـغـ}         & \arBA{غـ}                    & \textbf{gh}ayn         & [ʁ]          & velar, voiced, unaspirated                                    \\
+            \hline
+            \arBA{ف}          & \arBA{ـف}          & \arBA{ـفـ}         & \arBA{فـ}                    & \textbf{f}āʾ           & [f]          & labial, unvoiced, unaspirated                                 \\
+            \hline
+            \arBA{ق}          & \arBA{ـق}          & \arBA{ـقـ}         & \arBA{قـ}                    & \textbf{q}āf           & [q]          & uvular, unvoiced, unaspirated                                 \\
+            \hline
+            \arBA{ك}          & \arBA{ـك}          & \arBA{ـكـ}         & \arBA{كـ}                    & \textbf{k}āf           & [k]          & velar, unvoiced, unaspirated                                  \\
+            \hline
+            \arBA{ل}          & \arBA{ـل}          & \arBA{ـلـ}         & \arBA{لـ}                    & \textbf{l}ām           & [l]          & alveolar, voiced, unaspirated                                 \\
+            \hline
+            \arBA{م}          & \arBA{ـم}          & \arBA{ـمـ}         & \arBA{مـ}                    & \textbf{m}īm           & [m]          & labial, voiced, unaspirated                                   \\
+            \hline
+            \arBA{ن}          & \arBA{ـن}          & \arBA{ـنـ}         & \arBA{نـ}                    & \textbf{n}ūn           & [n]          & alveolar, voiced, unaspirated                                 \\
+            \hline
+            \arBA{ه}          & \arBA{ـه}          & \arBA{ـهـ}         & \arBA{هـ}                    & \textbf{h}āʾ           & [h]          & glottal, unvoiced, unaspirated                                \\
+            \hline
+            \arBA{و}          & \arBA{ـو}          &                    &                              & \textbf{w}āw           & [w]          & labial-velar, voiced, unaspirated                             \\
+            \hline
+            \arBA{ي}          & \arBA{ـي}          & \arBA{ـيـ}         & \arBA{يـ}                    & \textbf{y}āʾ           & [j]          & palatal, voiced approximant                                   \\
+            \hline
+                              & \arBA{ء}, \arBA{◌ٔ} & \arBA{ء}, \arBA{◌ٔ} & \arBA{ٱ}, \arBA{◌ٔ}, \arBA{◌ٕ} & hamza \tnote{2}        & [ʔ]          & glottal, unvoiced, unaspirated                                \\
+            % TODO: add hamzat al-wasl (ٱ) and hamzat al-qat' (ء) ?  ◌ ◌ٔ
+            \hline
+        \end{tabular}
         \begin{tablenotes}
             \item[1] the \textbf{b}old letter in the name indicates the letter's typical English transliteration.
             \item[2] ALA-LC: ``In initial position
@@ -242,53 +246,53 @@
 \end{center}
 \vspace{0.5cm}
 
-\section*{Common Arabic Ligatures \footnote{(List generated by AI: Claude Sonnet 3.5) Last Updated: 2025-09-16 JKL}}
+\section*{Common Arabic Ligatures \footnote{(List generated by AI: Claude Sonnet 3.5, not yet reviewed or added to) Last Updated: 2025-09-16 JKL}}
 
 \begin{center}
-  \renewcommand{\arraystretch}{1.5}
-  \begin{tabular}{|c|c|l|}
-    \hline
-    \textbf{Ligature}        & \textbf{Components}                               & \textbf{Transliteration}                     \\
-    \hline
-    % Two-letter ligatures
-    \drawBaseline{\ar{ﻻ}}    & \drawBaseline{\ar{ل ا}}                           & lām-alif (initial/medial)                    \\
-    \hline
-    \drawBaseline{\ar{لإ}}   & \drawBaseline{\ar{ل إ}}                           & lām-alif with hamza below                    \\
-    \hline
-    \drawBaseline{\ar{لأ}}   & \drawBaseline{\ar{ل أ}}                           & lām-alif with hamza above                    \\
-    \hline
-    \drawBaseline{\ar{لآ}}   & \drawBaseline{\ar{ل آ}}                           & lām-alif with madda                          \\
-    \hline
-    % Common letter pairs that form ligatures
-    \drawBaseline{\ar{جح}}   & \drawBaseline{\ar{ج ح}}                           & jīm-ḥāʾ                                      \\
-    \hline
-    \drawBaseline{\ar{حج}}   & \drawBaseline{\ar{ح ج}}                           & ḥāʾ-jīm                                      \\
-    \hline
-    \drawBaseline{\ar{حم}}   & \drawBaseline{\ar{ح م}}                           & ḥāʾ-mīm                                      \\
-    \hline
-    \drawBaseline{\ar{سح}}   & \drawBaseline{\ar{س ح}}                           & sīn-ḥāʾ                                      \\
-    \hline
-    \drawBaseline{\ar{صح}}   & \drawBaseline{\ar{ص ح}}                           & ṣād-ḥāʾ                                      \\
-    \hline
-    \drawBaseline{\ar{لح}}   & \drawBaseline{\ar{ل ح}}                           & lām-ḥāʾ                                      \\
-    \hline
-    % Three-letter combinations
-    \drawBaseline{\ar{بسم}}  & \drawBaseline{\ar{ب س م}}                         & bāʾ-sīn-mīm                                  \\
-    \hline
-    % Special word ligatures
-    \drawBaseline{\ar{ﷲ}}   & \drawBaseline{\ar{ا ل ل ه}}                       & Allah (word ligature)                        \\
-    \hline
-    \drawBaseline{\ar{ﷺ}}   & \drawBaseline{\ar{ص ل ى ا ل ل ه ع ل ي ه و س ل م}} & ṣallā llāhu ʿalayhi wa-sallam                \\
-    \hline
-    \drawBaseline{\ar{ﷶ}} & \drawBaseline{\ar{ص ل ع م}}                       & ṣallā llāhu ʿalayhi wa-sallam (abbreviation) \\
-    \hline
-    \drawBaseline{\ar{ﷳ}}   & \drawBaseline{\ar{ا ك ب ر}}                       & akbar                                        \\
-    \hline
-    \drawBaseline{\ar{ﷴ}} & \drawBaseline{\ar{م ح م د}}                       & muḥammad                                     \\
-    \hline
-    \drawBaseline{\ar{ﷻ}}   & \drawBaseline{\ar{ج ل ج ل ا ل ه}}                 & jalla jalāluhu                               \\
-    \hline
-  \end{tabular}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{|c|c|l|}
+        \hline
+        \textbf{Ligature} & \textbf{Components}                  & \textbf{Transliteration}                     \\
+        \hline
+        % Two-letter ligatures
+        \arBA{ﻻ}          & \arBA{ل ا}                           & lām-alif (initial/medial)                    \\
+        \hline
+        \arBA{لإ}         & \arBA{ل إ}                           & lām-alif with hamza below                    \\
+        \hline
+        \arBA{لأ}         & \arBA{ل أ}                           & lām-alif with hamza above                    \\
+        \hline
+        \arBA{لآ}         & \arBA{ل آ}                           & lām-alif with madda                          \\
+        \hline
+        % Common letter pairs that form ligatures
+        \arBA{جح}         & \arBA{ج ح}                           & jīm-ḥāʾ                                      \\
+        \hline
+        \arBA{حج}         & \arBA{ح ج}                           & ḥāʾ-jīm                                      \\
+        \hline
+        \arBA{حم}         & \arBA{ح م}                           & ḥāʾ-mīm                                      \\
+        \hline
+        \arBA{سح}         & \arBA{س ح}                           & sīn-ḥāʾ                                      \\
+        \hline
+        \arBA{صح}         & \arBA{ص ح}                           & ṣād-ḥāʾ                                      \\
+        \hline
+        \arBA{لح}         & \arBA{ل ح}                           & lām-ḥāʾ                                      \\
+        \hline
+        % Three-letter combinations
+        \arBA{بسم}        & \arBA{ب س م}                         & bāʾ-sīn-mīm                                  \\
+        \hline
+        % Special word ligatures
+        \arBA{ﷲ}          & \arBA{ا ل ل ه}                       & Allah (word ligature)                        \\
+        \hline
+        \arBA{ﷺ}          & \arBA{ص ل ى ا ل ل ه ع ل ي ه و س ل م} & ṣallā llāhu ʿalayhi wa-sallam                \\
+        \hline
+        \arBA{ﷶ}          & \arBA{ص ل ع م}                       & ṣallā llāhu ʿalayhi wa-sallam (abbreviation) \\
+        \hline
+        \arBA{ﷳ}          & \arBA{ا ك ب ر}                       & akbar                                        \\
+        \hline
+        \arBA{ﷴ}          & \arBA{م ح م د}                       & muḥammad                                     \\
+        \hline
+        \arBA{ﷻ}          & \arBA{ج ل ج ل ا ل ه}                 & jalla jalāluhu                               \\
+        \hline
+    \end{tabular}
 \end{center}
 
 \end{document}
