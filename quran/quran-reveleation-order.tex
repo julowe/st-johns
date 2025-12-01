@@ -1,0 +1,226 @@
+\documentclass{article}
+
+\usepackage{longtable}
+\usepackage{geometry}
+\usepackage{multicol}
+\geometry{letterpaper, margin=0.5in}
+
+\usepackage{threeparttable} % for table footnotes
+
+% hide page numbers
+\pagestyle{empty}
+
+% make footnote text smaller throughout
+\renewcommand{\footnotesize}{\scriptsize}
+
+% data from: https://tanzil.net/docs/Revelation_Order
+% (\d{2,3}\s*&\s*)([\w-]*)\s*(\d{1,3})\s*(.*)
+\begin{document}
+
+% Put table into three columns using multicols; use real \footnote entries so footnotes appear in the page footnote area.
+\begin{center}
+    \small
+    \setlength{\tabcolsep}{3pt}
+    \renewcommand{\arraystretch}{0.85}
+    \begin{multicols}{3}
+        % column 1
+
+        \begin{threeparttable}
+            \begin{tabular}{@{}r l c l@{}}
+                \textbf{Rev.} & \textbf{Sura}         & \textbf{No.} & \textbf{Type} \\
+                \hline
+                1             & Al-Alaq               & 96           & Meccan        \\
+                4             & Al-Muddaththir        & 74           & Meccan        \\
+                5             & Al-Faatiha            & 1            & Meccan        \\
+                6             & Al-Masad              & 111          & Meccan        \\
+                7             & At-Takwir             & 81           & Meccan        \\
+                8             & Al-A'laa              & 87           & Meccan        \\
+                9             & Al-Lail               & 92           & Meccan        \\
+                10            & Al-Fajr               & 89           & Meccan        \\
+                11            & Ad-Dhuhaa             & 93           & Meccan        \\
+                12            & Ash-Sharh             & 94           & Meccan        \\
+                13            & Al-Asr                & 103          & Meccan        \\
+                14            & Al-Aadiyaat           & 100          & Meccan        \\
+                15            & Al-Kawthar            & 108          & Meccan        \\
+                16            & At-Takaathur          & 102          & Meccan        \\
+                18            & Al-Kaafiroon          & 109          & Meccan        \\
+                19            & Al-Fil                & 105          & Meccan        \\
+                20            & Al-Falaq              & 113          & Meccan        \\
+                21            & An-Naas               & 114          & Meccan        \\
+                22            & Al-Ikhlaas            & 112          & Meccan        \\
+                24            & Abasa                 & 80           & Meccan        \\
+                25            & Al-Qadr               & 97           & Meccan        \\
+                26            & Ash-Shams             & 91           & Meccan        \\
+                27            & Al-Burooj             & 85           & Meccan        \\
+                28            & At-Tin                & 95           & Meccan        \\
+                29            & Quraish               & 106          & Meccan        \\
+                30            & Al-Qaari'a            & 101          & Meccan        \\
+                31            & Al-Qiyaama            & 75           & Meccan        \\
+                32            & Al-Humaza             & 104          & Meccan        \\
+                35            & Al-Balad              & 90           & Meccan        \\
+                36            & At-Taariq             & 86           & Meccan        \\
+                2             & Al-Qalam\tnote{1}     & 68           & Meccan        \\
+                3             & Al-Muzzammil\tnote{2} & 73           & Meccan        \\
+                17            & Al-Maa'un\tnote{3}    & 107          & Meccan        \\
+                23            & An-Najm\tnote{4}      & 53           & Meccan        \\
+                33            & Al-Mursalaat\tnote{5} & 77           & Meccan        \\
+                34            & Qaaf\tnote{6}         & 50           & Meccan        \\
+                37            & Al-Qamar\tnote{7}     & 54           & Meccan        \\
+                38            & Saad                  & 38           & Meccan        \\
+            \end{tabular}
+            \begin{tablenotes}
+                \footnotesize
+                \item[1] Except 17-33 and 48-50, from Medina.
+                \item[2] Except 10, 11 and 20, from Medina.
+                \item[3] Only 1--3 from Mecca; the rest from Medina.
+                \item[4] Except 32, from Medina.
+                \item[5] Except 48, from Medina.
+                \item[6] Except 38, from Medina.
+                \item[7] Except 44--46, from Medina.
+            \end{tablenotes}
+        \end{threeparttable}
+
+        \columnbreak
+        % column 2
+
+        \begin{threeparttable}
+            \begin{tabular}{@{}r l c l@{}}
+                \textbf{Rev.} & \textbf{Sura}          & \textbf{No.} & \textbf{Type} \\
+                \hline
+                39            & Al-A'raaf\tnote{8}     & 7            & Meccan        \\
+                40            & Al-Jinn                & 72           & Meccan        \\
+                43            & Faatir                 & 35           & Meccan        \\
+                48            & An-Naml                & 27           & Meccan        \\
+                56            & As-Saaffaat            & 37           & Meccan        \\
+                58            & Saba                   & 34           & Meccan        \\
+                59            & Az-Zumar               & 39           & Meccan        \\
+                61            & Fussilat               & 41           & Meccan        \\
+                64            & Ad-Dukhaan             & 44           & Meccan        \\
+                67            & Adh-Dhaariyat          & 51           & Meccan        \\
+                68            & Al-Ghaashiya           & 88           & Meccan        \\
+                71            & Nooh                   & 71           & Meccan        \\
+                41            & Yaseen\tnote{9}        & 36           & Meccan        \\
+                42            & Al-Furqaan\tnote{10}   & 25           & Meccan        \\
+                44            & Maryam\tnote{11}       & 19           & Meccan        \\
+                45            & Taa-Haa\tnote{12}      & 20           & Meccan        \\
+                46            & Al-Waaqia\tnote{13}    & 56           & Meccan        \\
+                47            & Ash-Shu'araa\tnote{14} & 26           & Meccan        \\
+                49            & Al-Qasas\tnote{15}     & 28           & Meccan        \\
+                50            & Al-Israa\tnote{16}     & 17           & Meccan        \\
+                51            & Yunus\tnote{17}        & 10           & Meccan        \\
+                52            & Hud\tnote{18}          & 11           & Meccan        \\
+                53            & Yusuf\tnote{19}        & 12           & Meccan        \\
+                54            & Al-Hijr\tnote{20}      & 15           & Meccan        \\
+                55            & Al-An'aam\tnote{21}    & 6            & Meccan        \\
+                57            & Luqman\tnote{22}       & 31           & Meccan        \\
+                60            & Al-Ghaafir\tnote{23}   & 40           & Meccan        \\
+                62            & Ash-Shura\tnote{24}    & 42           & Meccan        \\
+                63            & Az-Zukhruf\tnote{25}   & 43           & Meccan        \\
+                65            & Al-Jaathiya\tnote{26}  & 45           & Meccan        \\
+                66            & Al-Ahqaf\tnote{27}     & 46           & Meccan        \\
+                69            & Al-Kahf\tnote{28}      & 18           & Meccan        \\
+                70            & An-Nahl\tnote{29}      & 16           & Meccan        \\
+                72            & Ibrahim\tnote{30}      & 14           & Meccan        \\
+                73            & Al-Anbiyaa             & 21           & Meccan        \\
+            \end{tabular}
+            \begin{tablenotes}
+                \footnotesize
+                \item[8] Except 163--170, from Medina.
+                \item[9] Except 45, from Medina.
+                \item[10] Except 68--70, from Medina.
+                \item[11] Except 58 and 71, from Medina.
+                \item[12] Except 130 and 131, from Medina.
+                \item[13] Except 81 and 82, from Medina.
+                \item[14] Except 197 and 224--227, from Medina.
+                \item[15] Except 52--55 from Medina and 85 from Juhfa at the time of the Hijra.
+                \item[16] Except 26, 32, 33, 57, 73--80, from Medina.
+                \item[17] Except 40, 94, 95, 96, from Medina.
+                \item[18] Except 12, 17, 114, from Medina.
+                \item[19] Except 1, 2, 3, 7, from Medina.
+                \item[20] Except 87, from Medina.
+                \item[21] Except 20, 23, 91, 93, 114, 151, 152, 153, from Medina.
+                \item[22] Except 27--29, from Medina.
+                \item[23] Except 56, 57, from Medina.
+                \item[24] Except 23, 24, 25, 27, from Medina.
+                \item[25] Except 54, from Medina.
+                \item[26] Except 14, from Medina.
+                \item[27] Except 10, 15, 35, from Medina.
+                \item[28] Except 28, 83--101, from Medina.
+                \item[29] Except the last three verses from Medina.
+                \item[30] Except 28, 29, from Medina.
+            \end{tablenotes}
+        \end{threeparttable}
+
+        \columnbreak
+        % column 3
+
+        \begin{threeparttable}
+            \begin{tabular}{@{}r l c l@{}}
+                \textbf{Rev.} & \textbf{Sura}         & \textbf{No.} & \textbf{Type} \\
+                \hline
+                74            & Al-Muminoon           & 23           & Meccan        \\
+                75            & As-Sajda\tnote{31}    & 32           & Meccan        \\
+                76            & At-Tur                & 52           & Meccan        \\
+                77            & Al-Mulk               & 67           & Meccan        \\
+                78            & Al-Haaqqa             & 69           & Meccan        \\
+                79            & Al-Ma'aarij           & 70           & Meccan        \\
+                80            & An-Naba               & 78           & Meccan        \\
+                81            & An-Naazi'aat          & 79           & Meccan        \\
+                82            & Al-Infitaar           & 82           & Meccan        \\
+                83            & Al-Inshiqaaq          & 84           & Meccan        \\
+                86            & Al-Mutaffifin         & 83           & Meccan        \\
+                89            & Aal-i-Imraan          & 3            & Medinan       \\
+                90            & Al-Ahzaab             & 33           & Medinan       \\
+                91            & Al-Mumtahana          & 60           & Medinan       \\
+                92            & An-Nisaa              & 4            & Medinan       \\
+                93            & Az-Zalzala            & 99           & Medinan       \\
+                94            & Al-Hadid              & 57           & Medinan       \\
+                96            & Ar-Ra'd               & 13           & Medinan       \\
+                97            & Ar-Rahmaan            & 55           & Medinan       \\
+                98            & Al-Insaan             & 76           & Medinan       \\
+                99            & At-Talaaq             & 65           & Medinan       \\
+                100           & Al-Bayyina            & 98           & Medinan       \\
+                101           & Al-Hashr              & 59           & Medinan       \\
+                102           & An-Noor               & 24           & Medinan       \\
+                104           & Al-Munaafiqoon        & 63           & Medinan       \\
+                105           & Al-Mujaadila          & 58           & Medinan       \\
+                106           & Al-Hujuraat           & 49           & Medinan       \\
+                107           & At-Tahrim             & 66           & Medinan       \\
+                108           & At-Taghaabun          & 64           & Medinan       \\
+                109           & As-Saff               & 61           & Medinan       \\
+                110           & Al-Jumu'a             & 62           & Medinan       \\
+                84            & Ar-Room\tnote{32}     & 30           & Meccan        \\
+                85            & Al-Ankaboot\tnote{33} & 29           & Meccan        \\
+                87            & Al-Baqara\tnote{34}   & 2            & Medinan       \\
+                88            & Al-Anfaal\tnote{35}   & 8            & Medinan       \\
+                95            & Muhammad\tnote{36}    & 47           & Medinan       \\
+                103           & Al-Hajj\tnote{37}     & 22           & Medinan       \\
+                111           & Al-Fath\tnote{38}     & 48           & Medinan       \\
+                112           & Al-Maaida\tnote{39}   & 5            & Medinan       \\
+                113           & At-Tawba\tnote{40}    & 9            & Medinan       \\
+                114           & An-Nasr\tnote{41}     & 110          & Medinan       \\
+            \end{tabular}
+            \begin{tablenotes}
+                \footnotesize
+                \item[31] Except 16--20, from Medina.
+                \item[32] Except 17, from Medina.
+                \item[33] Except 1--11, from Medina.
+                \item[34] Except 281 from Mina at the time of the Last Hajj.
+                \item[35] Except 30--36 from Mecca.
+                \item[36] Except 13, revealed during the Prophet's Hijrah.
+                \item[37] Except 52--55, revealed between Mecca and Medina.
+                \item[38] Revealed while returning from Hudaybiyya.
+                \item[39] Except 3, revealed at Arafat on Last Hajj.
+                \item[40] Except last two verses from Mecca.
+                \item[41] Revealed at Mina on Last Hajj, but regarded as Medinan sura.
+            \end{tablenotes}
+        \end{threeparttable}
+
+    \end{multicols}
+\end{center}
+
+% Place the footnote texts here (use \footnotetext in the same sequence as the \footnotemark markers above)
+\vspace*{\fill}
+\noindent
+% end document
+\end{document}
