@@ -3,6 +3,34 @@
 A collection of various files related to St. John's classes, reading groups,
 or just general education in that vein.
 
+**Table of Contents:**
+
+<!--toc:start-->
+
+- [Admin Documents](#admin-documents)
+- [Seminar Readings](#seminar-readings)
+  - [Dhvanyāloka](#dhvanyāloka)
+  - [Tale of the Heike](#tale-of-the-heike)
+  - [Dōgen](#dōgen)
+- [Precept Readings](#precept-readings)
+  - [Tale of Genji](#tale-of-genji)
+- [Kumulipo Reading Group](#kumulipo-reading-group)
+- [Languages](#languages)
+  - [Loading Dictionary files onto your phone](#loading-dictionary-files-onto-your-phone)
+  - [Using Dictionary files on your computer](#using-dictionary-files-on-your-computer)
+  - [Arabic](#arabic)
+    - [Arabic Dictionary Websites](#arabic-dictionary-websites)
+    - [Arabic Dictionary files](#arabic-dictionary-files)
+  - [Sanskrit](#sanskrit)
+    - [Sanskrit Dictionary Websites](#sanskrit-dictionary-websites)
+    - [Sanskrit Dictionary files](#sanskrit-dictionary-files)
+    - [Devanagari Transliteration Schemes and Typing Characters](#devanagari-transliteration-schemes-and-typing-characters)
+    - [Sanskrit Grammar Reference Tables](#sanskrit-grammar-reference-tables)
+    - [Nāgārjuna Chapter 25 packet](#nāgārjuna-chapter-25-packet)
+    - [Scharf's Rāmopākhyāna](#scharfs-rāmopākhyāna)
+  - [Chinese](#chinese) - [Chinese Poetry Glosses/Trots/Cribs Notebook](#chinese-poetry-glossestrotscribs-notebook)
+  <!--toc:end-->
+
 ## Admin Documents
 
 `admin-docs` will contain miscellaneous useful files that aren't for one
@@ -86,6 +114,12 @@ StarDict dictionaries should usually have 3 files:
 And they should be loaded into the app as the compressed (zip) file -
 do not extract the files unless the app specifically says to do so.
 
+### Using Dictionary files on your computer
+
+I've found [GoldenDict-ng](https://xiaoyifang.github.io/goldendict-ng/install/)
+to be the best dictionary application.
+It is the "next generation" of GoldenDict, which is no longer maintained.
+
 ### Arabic
 
 #### Arabic Dictionary Websites
@@ -110,6 +144,10 @@ they are compressed in .7z format, which Dictionary Universal doesn't support.
 So you need to extract the files and then compress them in a .zip file first.
 I have not tested if the .7z file work in Dicty.
 
+To use these files, please see
+[Loading Dictionary files onto your phone](#loading-dictionary-files-onto-your-phone)
+or [Using Dictionary files on your computer](#using-dictionary-files-on-your-computer)
+
 ### Sanskrit
 
 #### Sanskrit Dictionary Websites
@@ -128,6 +166,10 @@ You can find Sanskrit dictionary files here:
 [indic-dict/stardict-sanskrit's index of dictionary files](https://raw.githubusercontent.com/indic-dict/stardict-sanskrit/gh-pages/sa-head/en-entries/tars/tars.MD)
 (which was copied from : [indic-dict/stardict-index's larger index of indexes](https://raw.githubusercontent.com/indic-dict/stardict-index/master/dictionaryIndices.md))
 and download the [Monier-Williams compressed file](https://github.com/indic-dict/stardict-sanskrit/raw/gh-pages/sa-head/en-entries/tars/mw-cologne__2024-01-17_03-14-56Z__14MB.tar.gz)
+
+To use these files, please see
+[Loading Dictionary files onto your phone](#loading-dictionary-files-onto-your-phone)
+or [Using Dictionary files on your computer](#using-dictionary-files-on-your-computer)
 
 #### Devanagari Transliteration Schemes and Typing Characters
 
