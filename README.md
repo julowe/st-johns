@@ -20,12 +20,12 @@ or just general education in that vein.
   - [Using Dictionary files on your computer](#using-dictionary-files-on-your-computer)
   - [Arabic](#arabic)
     - [Arabic Dictionary Websites](#arabic-dictionary-websites)
-    - [Arabic Dictionary files](#arabic-dictionary-files)
+    - [Arabic Dictionary Files](#arabic-dictionary-files)
   - [Sanskrit](#sanskrit)
-    - [Sanskrit Dictionary Websites](#sanskrit-dictionary-websites)
-    - [Sanskrit Dictionary files](#sanskrit-dictionary-files)
-    - [Devanagari Transliteration Schemes and Typing Characters](#devanagari-transliteration-schemes-and-typing-characters)
     - [Sanskrit Grammar Reference Tables](#sanskrit-grammar-reference-tables)
+    - [Sanskrit Dictionary Websites](#sanskrit-dictionary-websites)
+    - [Sanskrit Dictionary Files](#sanskrit-dictionary-files)
+    - [Devanagari Transliteration Schemes and Typing Characters](#devanagari-transliteration-schemes-and-typing-characters)
     - [Nāgārjuna Chapter 25 packet](#nāgārjuna-chapter-25-packet)
     - [Scharf's Rāmopākhyāna](#scharfs-rāmopākhyāna)
   - [Chinese](#chinese) - [Chinese Poetry Glosses/Trots/Cribs Notebook](#chinese-poetry-glossestrotscribs-notebook)
@@ -136,7 +136,7 @@ And some [documentation on how to use it](https://laneslexicon.github.io/lexicon
 
 [A number of Arabic dictionaries/lexicons as PDFs](https://lanelexicon.com/arabic-lexicons/)
 
-#### Arabic Dictionary files
+#### Arabic Dictionary Files
 
 The [downloads page on this website](https://abu-dju.github.io/dl.html)
 has Lane's Lexicon, Salmoné's, and Al-Mawrid Arabic-English Dictionary, but
@@ -150,13 +150,56 @@ or [Using Dictionary files on your computer](#using-dictionary-files-on-your-com
 
 ### Sanskrit
 
+I've collected a number of random resources for Sanskrit study here.
+Dictionaries, and how to use them on desktop or mobile devices,
+are in their own sections below.
+
+Here is a list of all of the
+[Clay Sanskrit Library's texts](https://claysanskritlibrary.org/volumes/)
+(the equivalents of the Loeb Classical Library).
+
+The
+[Digital Corpus of Sanskrit (DCS)](http://sanskrit-linguistics.org/dcs/index.php)
+is a wonderful, if a bit confusing, resource.
+If you click on a line of text (which looks just like regular text...),
+you will get a breakdown in CoNLL-U format of the un-sandhied words in that
+line, with grammar information.
+You can also click on each broken-apart word and get definitions of it and
+occurrences of it in the current text and all texts in the corpus.
+Here is their
+[list of all texts in the corpus](http://sanskrit-linguistics.org/dcs/index.php?contents=corpus)
+For example, here is
+[Chapter 1 of Nāgārjuna's Mūlamadhyamakārikāḥ](http://sanskrit-linguistics.org/dcs/index.php?contents=texte&PhraseID=388393)
+or a linked list of
+[all instances of 'has' / हस् (verb: to laugh at) in the Mahābhārata](http://sanskrit-linguistics.org/dcs/index.php?contents=fundstellen&IDWord=158488&IDText=154)
+
+There are more texts avaiable at the
+[Göttingen Register of Electronic Texts in Indian Languages (GRETIL)](https://gretil.sub.uni-goettingen.de/gretil.html)
+
+#### Sanskrit Grammar Reference Tables
+
+I originally copied the tables from the book, or retyped them myself, but after
+a while I wanted a more complete reference sheet.
+
+I found the [Sanskrit Garden of Paradigms](https://www.yesvedanta.com/sanskrit/garden/)
+to be incredibly useful. Also look at the
+[Fancy Sanskrit Grammar Tables](https://www.yesvedanta.com/sanskrit/tenses/)
+to remind you of more details. The two tables reference each other.
+
+A classmate had the
+_The Little Red Book of Sanskrit Paradigms (with a yellow cover)_
+which I scanned and will upload once I format it.
+It is based on
+[The Little Red Book of Sanskrit Paradigms](https://archive.org/details/the-little-red-book/mode/2up)
+and is (mostly?) just a condensing of the text into fewer pages.
+
 #### Sanskrit Dictionary Websites
 
 Monier-Williams and other dictionaries are available online at the
 [Cologne Digital Sanskrit Dictionaries Site](https://www.sanskrit-lexicon.uni-koeln.de/).
 But this can be a bit clunky on a phone.
 
-#### Sanskrit Dictionary files
+#### Sanskrit Dictionary Files
 
 I found a number of dictionaries available at
 [indic-dict/stardict-sanskrit](https://github.com/indic-dict/stardict-sanskrit),
@@ -187,16 +230,6 @@ If you install a devanagari keyboard on your computer,
 try Right-Alt and Right-Alt+Shift to get the various less common characters.
 And/or for the 'Sanskrit (KaGaPa, Phonetic)' keyboard see my
 [sanskrit/devanagari-keyboard-map.txt](sanskrit/devanagari-keyboard-map.txt)
-
-#### Sanskrit Grammar Reference Tables
-
-I originally copied the tables from the book, or retyped them myself, but after
-a while I wanted a more complete reference sheet.
-
-I found the [Sanskrit Garden of Paradigms](https://www.yesvedanta.com/sanskrit/garden/)
-to be incredibly useful. Also look at the
-[Fancy Sanskrit Grammar Tables](https://www.yesvedanta.com/sanskrit/tenses/)
-to remind you of more details. The two tables reference each other.
 
 #### Nāgārjuna Chapter 25 packet
 
