@@ -1,0 +1,28 @@
+# Corrections to MAMEC Manual
+
+## Quran Readings
+
+Looking at:
+https://archive.org/details/qurn01palm/
+https://archive.org/details/qurn02palm/
+
+FORMAT:
+Manual Page, Surah:Ayah; Palmer Volume Number-page number
+correct word/phrase
+original word/phrase with some context
+
+pg 104, 36:8; v2-162
+Verily
+Verity, we...
+
+pg 108, 36:65; v2-166
+seal
+On that day we will seat...
+
+pg 162, 7:128; v1-152
+God's!
+...verily, the earth is Gods!
+
+pg 165, 9:8; v1-174
+clientship (or "client-ship" as it is broken at the end of a line in the pdf)
+...ties of blood or ties of client ship;...
