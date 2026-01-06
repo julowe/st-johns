@@ -1,4 +1,39 @@
-\documentclass[letterpaper, notitlepage, openany, DIV = 14]{scrbook}
+%\documentclass[letterpaper, notitlepage, openany, DIV = 14]{scrbook}
+%\documentclass[fontsize=14pt, letterpaper, notitlepage, openany]{scrbook} % very small margins
+% \documentclass[letterpaper, notitlepage, openany, DIV=14]{scrbook} % text looks a bit small, only 123 pages
+% \documentclass[fontsize=12pt, letterpaper, notitlepage, openany, DIV=14]{scrbook} % text looks a bit small, only 138 pages
+% \documentclass[fontsize=14pt, letterpaper, notitlepage, openany, DIV=14]{scrbook} % 182 pages, but bad header size, would rather not add custom formatting code yet
+% \documentclass[fontsize=14pt, letterpaper, notitlepage, openany, DIV=13]{scrbook} % 186 pages, still bad header size, would rather not add custom formatting code yet
+\documentclass[fontsize=14pt, letterpaper, notitlepage, openany, DIV=12]{scrbook} % 194 pages. made header and most of footer text \small size. Looks ok now?
+%% Original scanned doc had about 230 pages
+
+%% what do the various DIV=## levels mean:
+% Type area Margins
+% DIV width height top inner
+% 6 105.00 148.50 49.50 35.00
+% 7 120.00 169.71 42.43 30.00
+% 8 131.25 185.63 37.13 26.25
+% 9 140.00 198.00 33.00 23.33
+% 10 147.00 207.90 29.70 21.00
+% 11 152.73 216.00 27.00 19.09
+% 12 157.50 222.75 24.75 17.50
+% 13 161.54 228.46 22.85 16.15
+% 14 165.00 233.36 21.21 15.00
+% 15 168.00 237.60 19.80 14.00
+% (all lengths in mm)
+
+%% Font Sizes:
+% \Huge
+% \huge
+% \LARGE
+% \Large
+% \large
+% \normalsize
+% \small
+% \footnotesize
+% \scriptsize
+% \tiny
+
 % \usepackage{changepage}   % for the adjustwidth environment
 \usepackage[x11names]{xcolor}
 \usepackage{hyperref}
@@ -35,8 +70,8 @@
         #1}}}} 
 \makeatother
 
-\ohead{\leftmark}
-\rohead{\rightmark}
+\ohead{{\small \leftmark}}
+\rohead{{\small \rightmark}}
 
 \pagestyle{scrheadings}
 
@@ -45,24 +80,10 @@
 % \chead{}            % empty header
 % \ohead{}            % empty header
 %-------- footer
-\ifoot{\textit{DRAFT 20251120}}   % inner footer with a fixed text
-\cfoot{\hyperlink{toc}{Link back to: Table of Contents}}   % central footer
+\ifoot{{\small \textit{DRAFT 20251120}}}   % inner footer with a fixed text
+\cfoot{{\small \hyperlink{toc}{Link back to: Table of Contents}}}  % central footer
 % \cfoot{\headmark}   % central footer with heading on level 1 (section)
 % \ofoot{\pagemark}   % outer footer with the page number
-
-\usepackage{polyglossia}
-% Set up languages
-\setmainlanguage{english}
-\setotherlanguage{arabic}
-% Set up fonts
-\setmainfont{Charis} % supports all IPA symbols
-\newfontfamily\arabicfont[Script=Arabic]{Noto Naskh Arabic}  % For Arabic text
-\newfontfamily\arabicfonttt[Script=Arabic]{Noto Kufi Arabic} % For Arabic monospace
-\newfontfamily\symbolfont{Symbola} % For emojis/symbols
-\newcommand{\ar}[1]{{\textarabic{#1}}}
-\newcommand{\arpar}[1]{
-\begin{Arabic}{\Large #1}
-\end{Arabic}}
 
 
 % \setcounter{secnumdepth}{0} % sections are level 1
