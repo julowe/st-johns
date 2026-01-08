@@ -101,7 +101,7 @@ jobs:
           EOF
 
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@v6
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.create_tag.outputs.tag_name }}
           name: Dhvanyaloka Text and Terms Lists - ${{ steps.create_tag.outputs.timestamp }}
