@@ -2,6 +2,9 @@
 *.old
 *.bak
 
+# ignore all pdf files, use github actions to generate them
+*.pdf
+
 #ignore directories (or files) that end in `-test`
 *-test
 # and ignore files that start with `test`
