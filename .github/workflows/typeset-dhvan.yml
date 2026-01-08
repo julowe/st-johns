@@ -1,0 +1,115 @@
+name: Typset all .tex files in dhvanyAloka and Create Release
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "dhvanyAloka/*.tex"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "dhvanyAloka/*.tex"
+
+permissions:
+  contents: write
+
+jobs:
+  generate-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout dhvanyAloka files from repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: GitHub Action with TeXLive
+        uses: xu-cheng/texlive-action@v3
+        with:
+          run: |
+            latexmk -synctex=1 -interaction=nonstopmode -file-line-error -xelatex dhvanyAloka/*.tex -output-directory=dhvanyAloka/
+            #latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode main.tex # original command in example
+
+      - name: Get commit hashes of input files
+        id: get_commits
+        run: |
+          COMMIT_TEXT_LOKA=$(git log -1 --format="%H" -- dhvanyAloka/dhvanyAloka-text-english-krishnamoorthy.pdf)
+          COMMIT_TERMS_ORIG=$(git log -1 --format="%H" -- dhvanyAloka/dhvanyAloka-terms-orig.pdf)
+          COMMIT_TERMS_FORMATTED=$(git log -1 --format="%H" -- dhvanyAloka/dhvanyAloka-terms.pdf)
+          COMMIT_TERMS_ADDITIONAL=$(git log -1 --format="%H" -- dhvanyAloka/dhvanyAloka-terms-additional.pdf)
+          echo "commit_text_loka=$COMMIT_TEXT_LOKA" >> $GITHUB_OUTPUT
+          echo "commit_terms_orig=$COMMIT_TERMS_ORIG" >> $GITHUB_OUTPUT
+          echo "commit_terms_formatted=$COMMIT_TERMS_FORMATTED" >> $GITHUB_OUTPUT
+          echo "commit_terms_additional=$COMMIT_TERMS_ADDITIONAL" >> $GITHUB_OUTPUT
+          echo "short_commit_text_loka=$(echo $COMMIT_TEXT_LOKA | cut -c1-7)" >> $GITHUB_OUTPUT
+          echo "short_commit_terms_orig=$(echo $COMMIT_TERMS_ORIG | cut -c1-7)" >> $GITHUB_OUTPUT
+          echo "short_commit_terms_formatted=$(echo $COMMIT_TERMS_FORMATTED | cut -c1-7)" >> $GITHUB_OUTPUT
+          echo "short_commit_terms_additional=$(echo $COMMIT_TERMS_ADDITIONAL | cut -c1-7)" >> $GITHUB_OUTPUT
+
+      - name: Create release tag
+        id: create_tag
+        run: |
+          TIMESTAMP=$(date -u +"%Y%m%d-%H%M%S")
+          TAG_NAME="dhvanyAloka-$TIMESTAMP"
+          echo "tag_name=$TAG_NAME" >> $GITHUB_OUTPUT
+          echo "timestamp=$TIMESTAMP" >> $GITHUB_OUTPUT
+
+      - name: Create release notes
+        id: release_notes
+        run: |
+          cat << EOF > release_notes.md
+
+          *Generated on: $(date -u +"%Y-%m-%d %H:%M:%S UTC")*
+
+          ## What's Included
+
+          This release includes PDF files that were created/typeset from
+          `.tex` files in the dhvanyAloka directory of this repository.
+          The PDF files are automatically generated after there are any changes
+          to the `.tex` files, so these should be the most of to date versions.
+
+          ## PDF files created
+
+          - **dhvanyAloka-text-english-krishnamoorthy.pdf** - This PDF contains some of the english translation of the Dhvanyaloka by K. Krisnamoorthy.
+          It only contains those sections of the text which are assigned for the EC/in the EC manual.
+          Also note, this PDF does *not* contain the english text of the Locana (the 'L' sections in the EC manual version).
+          - Terms Sheets:
+            - **dhvanyAloka-terms-orig.pdf** - This PDF has the original formatting and all the
+            same information as the terms sheet included in the EC Manual.
+            - **dhvanyAloka-terms.pdf** - This PDF has the same information as above file, but formatted differently.
+            - **dhvanyAloka-terms-additional.pdf** - This PDF has the same info as the above files for its basis,
+             have added many more terms. This was created as I read through the text, so some terms may not be
+            all that relevant/useful. There are many 'TODO' notes sprinkled throughout the PDF,
+            but I have tried to reference the passages each definition is taken from,
+            so you can judge for yourself how the term is used,
+            as some terms are used in multiple ways.
+
+          ## Input Files Used
+
+          - [\`dhvanyAloka-text-english-krishnamoorthy.pdf\`](https://github.com/${{ github.repository }}/blob/${{ steps.get_commits.outputs.commit_text_loka }}/dhvanyAloka/dhvanyAloka-text-english-krishnamoorthy.pdf) 
+          (commit [${{ steps.get_commits.outputs.short_commit_text_loka }}](https://github.com/${{ github.repository }}/commit/${{ steps.get_commits.outputs.commit_text_loka }}))
+          - [\`dhvanyAloka-terms-orig.pdf\`](https://github.com/${{ github.repository }}/blob/${{ steps.get_commits.outputs.commit_terms_orig }}/dhvanyAloka/dhvanyAloka-terms-orig.pdf) 
+          (commit [${{ steps.get_commits.outputs.short_commit_terms_orig }}](https://github.com/${{ github.repository }}/commit/${{ steps.get_commits.outputs.commit_terms_orig }}))
+          - [\`dhvanyAloka-terms.pdf\`](https://github.com/${{ github.repository }}/blob/${{ steps.get_commits.outputs.commit_terms_formatted }}/dhvanyAloka/dhvanyAloka-terms.pdf) 
+          (commit [${{ steps.get_commits.outputs.short_commit_terms_formatted }}](https://github.com/${{ github.repository }}/commit/${{ steps.get_commits.outputs.commit_terms_formatted }}))
+          - [\`dhvanyAloka-terms-additional.pdf\`](https://github.com/${{ github.repository }}/blob/${{ steps.get_commits.outputs.commit_terms_additional }}/dhvanyAloka/dhvanyAloka-terms-additional.pdf) 
+          (commit [${{ steps.get_commits.outputs.short_commit_terms_additional }}](https://github.com/${{ github.repository }}/commit/${{ steps.get_commits.outputs.commit_terms_additional }}))
+
+          EOF
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v6
+        with:
+          tag_name: ${{ steps.create_tag.outputs.tag_name }}
+          name: Dhvanyaloka Text and Terms Lists - ${{ steps.create_tag.outputs.timestamp }}
+          body_path: release_notes.md
+          files: |
+            dhvanyAloka/dhvanyAloka-text-english-krishnamoorthy.pdf
+            dhvanyAloka/dhvanyAloka-terms-orig.pdf
+            dhvanyAloka/dhvanyAloka-terms.pdf
+            dhvanyAloka/dhvanyAloka-terms-additional.pdf
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
