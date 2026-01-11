@@ -43,9 +43,24 @@
     linkcolor=Blue4,  %choose some color if you want links to stand out
 }
 
+% FreeSerif is used as an equivalent of Times New Roman. 
+%  for other equivalents, see: https://jonchristopher.us/blog/linux-font-equivalents-to-popular-web-typefaces/
 
 \usepackage{fontspec}
-\setmainfont{FreeSerif} % this is used as an equivalent of Times New Roman. for other equivalents, see: https://jonchristopher.us/blog/linux-font-equivalents-to-popular-web-typefaces/
+% 1. Set the body text to FreeSerif
+\setmainfont{FreeSerif}
+
+%% Uncomment this following font command and comment out the above one if you are using OverLeaf online tex typesetting tool and are getting errors
+% \setmainfont[
+%  BoldFont={FreeSerifBold.ttf}, 
+%  ItalicFont={FreeSerifItalic.ttf},
+%  BoldItalicFont={FreeSerifBoldItalic.ttf}
+%  ]{FreeSerif.ttf}
+
+% Commented out because this doesn't look good, just use the same font for all.
+% % 2. Set the sans-serif font to FreeSans (used for Title, Chapter, Section, etc. headers)
+% \setsansfont{FreeSans}
+
 % Change headings to use the main serif font instead of sans-serif, so they look the same (most notable so that "QURʾĀN" doesn't use a large half circle)
 \setkomafont{disposition}{\bfseries}
 
