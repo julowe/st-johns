@@ -1,15 +1,18 @@
 # Corrections to MAMEC Manual
 
 ## Quran Readings
-
-Looking at:
+I looked at these versions of the text:
 https://archive.org/details/qurn01palm/
 https://archive.org/details/qurn02palm/
 
-FORMAT:
+Format of Corrections Notes:
 Manual Page, Surah:Ayah; Palmer Volume Number-page number
 correct word/phrase
 original word/phrase with some context
+
+pg 35, 41:23; v2-201
+...those who lose!’
+...those who lose’!’
 
 pg 104, 36:8; v2-162
 Verily
@@ -26,3 +29,6 @@ God's!
 pg 165, 9:8; v1-174
 clientship (or "client-ship" as it is broken at the end of a line in the pdf)
 ...ties of blood or ties of client ship;...
+
+
+Then as I was editing the tex file I noticed some spaces after opening-quote marks, which I removed, e.g. 20:116: ‘ Adore Adam,’ --> ‘Adore Adam,’
