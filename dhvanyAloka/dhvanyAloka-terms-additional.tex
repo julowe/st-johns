@@ -11,11 +11,26 @@
 %\DeclareUnicodeCharacter{1E41}{\(\dot{m}\)} %works in pdfLaTeX, but not LuaLaTeX
 % TODO: decide if i want to stick with text's conventions, or update to IAST. already updated n with macron to n with tilde on top... but those at least look close - vs m with dot below and m with dot above...
 
+\usepackage{fancyhdr}
+\usepackage[style=iso]{datetime2} % Add this line
+
+\pagestyle{fancy}
+\fancyhf{} % clear all existing headers and footers
+\fancyfoot[L]{DRAFT \today} % Left footer
+\fancyfoot[C]{\thepage}     % Center footer
+\renewcommand{\headrulewidth}{0pt}
+
+% Ensure the footer also appears on the title page (which uses 'plain' style)
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[L]{DRAFT \today} % Left footer
+	\fancyfoot[C]{\thepage}     % Center footer
+    \renewcommand{\headrulewidth}{0pt}
+}
 
 
-
-% Don't print page numbers - assuming some overall page number is added for EC Manual printing
-\pagenumbering{gobble}
+% Don't print page numbers if some overall page number is added
+% \pagenumbering{gobble}
 
 % if set to zero, do not print numbers before section headers
 \setcounter{secnumdepth}{0}
@@ -29,7 +44,6 @@
 
 \begin{document}
 
-% TODO uncomment following part if this is to be used more widely. or no matter what, since it did start from their work?
 
 \maketitle
 
@@ -125,7 +139,7 @@
 
 \subsection{Sections of text included in EC Reading}
 
-% NOTE: one line break is not oucnted as a new paragraph, all below is typeset/rendered as one continuous line
+% NOTE: one line break is not counted as a new paragraph, all below is typeset/rendered as one continuous line
 Translator's Introduction (15--17);
 \textbf{1.1} K, A, L (47--49 partial);
 % TODO: seperate out L and make clear the middle is skipped?
@@ -166,8 +180,7 @@ Translator's Introduction (15--17);
 
 Translation of Sanskrit terms in ``quotes'' are from IMP translation, unless otherwise noted.
 I have attempted to provide the reference from where each term is first encountered.
-Notation follows section numbering in IMP translation. Page numbers are given when translation of K. Kris.\ is used.
-% TODO: spell out K. Kris.
+Notation follows section numbering in IMP translation. Page numbers are given when translation of K. Krishnamoorthy is used.
 Alternate translations are separated by a comma (whether from a subsequent section of IMP text, or from K. Kris.).
 Significantly differing definitions or usages are separated by a semicolon.
 Footnotes are marked by a dot, e.g. ``1.1 L.1'' is footnote 1 for the Locana of 1.1.
@@ -281,29 +294,44 @@ Footnotes are marked by a dot, e.g. ``1.1 L.1'' is footnote 1 for the Locana of 
 		]
 		\setlength{\itemsep}{0.15em}
 
-		% TODO: add reference
-		% TODO: rearrange order?
-		\litem{anubhāva} ``consequent'' (TODO REF, IMP Intro?)
+% 		IMP, pg16: BhNS 6.31 +3 (the famous rasasütra) tells us th at “A rasa is pro­
+% duced by the combining of the determ inants (vibhävas), the conse­
+% quents (anubhävas), and the tem porary or transient states of mind
+% (vyabhicärinah or vyabhicäribhävas).23 These technical terms require
+% explanation. By determinants are meant those factors which make the
+% realization of the emotion and the rosa possible. They are of two sorts,
+% objective (âlambanavibhâva) and stimulative (uddïpanavibhâva). The
+% objective determinants are the objects toward which the emotions are
+% felt. In the erotic flavor they will be the lover and his beloved; in the
+% tragic, the person or persons who suffer; in the loathsome, the object of
+% disgust.
+
+		\litem{anubhāva} ``consequent'' (IMP Intro. pg 16),
+		``symptoms'' (1.4b L)
 
 		% TODO: check 2.3 K reference..., none earlier??
 		% TODO: is emotion from the IMP text itself, or into?
-		\litem{bhāva} ``emotion'' (1.4g L, 2.3 K) [K. Kris. Also B. Perry's translation, from IMP's Introduction]; ``realization'' (1.1e L, quote from \textit{BhNŚ})
+		\litem{bhāva} ``emotion'' (1.4g L, 2.3 K) [K. Kris. Also B. Perry's translation, from IMP's Introduction];
+		``realization'' (1.1e L, quote from \textit{BhNŚ})
 
 		% TODO: add references/pages for below few terms. in text, or just Intro?
 		% TODO: 'following' table, or above?
 		% TODO: rasa is referenced in (2.3 K), but not defined
-		\litem{rasa} ``flavor'', ``sentiment'' (TODO REF, IMP Intro?) --- based on the \textit{sthāyibhāva}s (term \#\ref{sthāyibhāva}) respectively, as shown in the table above.
+		\litem{rasa} ``flavor'', ``sentiment'' (TODO REF, IMP Intro?)
+		 --- each rasa is connected to one \textit{sthāyibhāva} (term \#\ref{sthāyibhāva}), as shown in the table above.
 		% see 1.4g L - EC p.104 for good words on RASA
 
 		% TODO: add reference - used in 1.4g L? but no def?? not sure what my notebook note means...
-		\litem{vibhāva} ``determinant'' (TODO REF, IMP Intro?); ``object'' (1.1e L, quote from \textit{BhNŚ})
+		\litem{vibhāva} ``determinant''  (IMP Intro. pg 16, 1.18 L.1),
+		``stimulating determinant'' (1.4b L);
+		``object'' (1.1e L, quote from \textit{BhNŚ})
 		\begin{enumerate}
 			%\setlength{\itemsep}{-0.25em}
 			% TODO: add reference
-			\litem{ālambanavibhāva} ``objective determinant''
+			\litem{ālambanavibhāva} ``objective determinant'' %(IMP Intro. pg 16)
 
 			% TODO: add reference
-			\litem{uddīpanavibhāva} ``stimulative determinant''
+			\litem{uddīpanavibhāva} ``stimulative determinant'' %(IMP Intro. pg 16)
 		\end{enumerate}
 
 		% TODO: state... of mind??? check REF 
@@ -328,6 +356,8 @@ Footnotes are marked by a dot, e.g. ``1.1 L.1'' is footnote 1 for the Locana of 
 
 	\end{enumerate}
 
+	% \vspace{-2ex} % no good answer here to make column breaks more readable
+
 	\subsection{Additional Terms}
 
 	% TODO: check comma vs semicolon between alt translations vs alt usage/def
@@ -339,7 +369,8 @@ Footnotes are marked by a dot, e.g. ``1.1 L.1'' is footnote 1 for the Locana of 
 		\setcounter{enumi}{7}% set to number of last item above.
 
 		% TODO: move to new column? rearrange so it isn't split over 2.
-		\litem{dhvani} ``suggestion'' (1.1 K, 1.1 A) Also ``suggested meaning'' (1.4g A).
+		\litem{dhvani} ``suggestion'' (1.1 K, 1.1 A)
+		Also ``suggested meaning'' (1.4g A).
 		The three types of \textit{dhvani} per 1.4a A are:
 		\begin{enumerate}
 
@@ -357,6 +388,19 @@ Footnotes are marked by a dot, e.g. ``1.1 L.1'' is footnote 1 for the Locana of 
 			From:
 			\begin{itemize}
 			% TODO: maybe wrong? see 1.1 K.2, EC p.77. Connected with bhākta?
+			% 2. Änanda uses the word bhâkta to cover both types of
+			% secondary or associated meaning: the metaphorical (which Abhinava calls
+			% gauna), as in ‘The boy is a lion,” where “lion” takes on secondary sense
+			% because of the boy’s similarity in some respects to a lion, and the relational
+			% (which Abhinava calls läksanika), as in “Bring in the spears,” where “spears”
+			% is used for “spearmen" because of some relation other than similarity between
+			% the two objects. Ananda’s general words for secondary usage or the secondary
+			% operation of a word are bhakti and gunavrtti. In 3.33 h Änanda distinguishes
+			% the two types of gunavrtti as upacâra (metaphorical) and laksanä (relational).
+			% For making this distinction Abhinava prefers the terms gauni and läksanikC
+			% He uses the words laksanä often and gunavrtti occasionally in a very general
+			% sense for any sort of secondary operation.
+			% A By wise men, that is, by those who know
 				\litem{alaṅkāra} ``figures of speech'' (1.1 L, 1.1a A, 1.4g L),
 				``ornaments of sound'' (2.4 A),
 				``(in rhetoric) an ornament of the sense or the sound (cf.\ arthālaṅkāra and śabdālaṅkāra)'' (MW p94),
@@ -370,7 +414,7 @@ Footnotes are marked by a dot, e.g. ``1.1 L.1'' is footnote 1 for the Locana of 
 			From: ``not only \textit{rasa},
 			but \textit{bhāva}, % page 125 or 127?
 			\textit{rasābhāsa}, % page 127?
-			\textit{bhāvābhāsa}, % page ?
+			\textit{bhāvābhāsa}, % page ?, 1.4g L IMP pg 107
 			\textit{bhāvodaya}, % page ?
 			\textit{bhāvasandhi}, % page ?
 			\textit{bhāvaśabala}, % page ?
@@ -500,7 +544,7 @@ Footnotes are marked by a dot, e.g. ``1.1 L.1'' is footnote 1 for the Locana of 
 		\begin{enumerate}
 			%\setlength{\itemsep}{-0.25em}
 			% TODO: use above line about sweetness has its seat ???
-			\litem{mādhurya} ``sweetness'' (2.7 K.1),
+			\litem{mādhurya} ``sweetness'' (2.7 K), % IMP pg 252
 			%``Sweetness has its seat in poetry that is full of this flavor [\textit{śṛṅgāra}].''
 
 			\litem{ojas} ``force'' (2.7 K.1),
@@ -590,15 +634,14 @@ Footnotes are marked by a dot, e.g. ``1.1 L.1'' is footnote 1 for the Locana of 
 
 
 
-		% TODO: check definition
-		\litem{rīti} ``style'' (1.1a A, 1.1a L)
+		\litem{rīti} ``style'' (1.1a A, 1.1a L) % IMP pg 54, 56
 		% also (1.1a L.8)?? also vṛttikāra (1.1e L)??
 
 		\litem{sahṛdayāṇām} ``of sensitive readers'' \{genitive plural of term \#\ref{sahṛdaya}, `\textit{sahṛdaya}'\} (1.1e A, 1.1e L, also 1.1 L.1)
 
 		% TODO: why did i make 'with' italic?
-		\litem{sahṛdaya} ``having their hearts \textit{with} it'' (1.1e L),
-		from `with' \textit{saha} + `heart' \textit{hṛdaya},
+		\litem{sahṛdaya} ``having their hearts \textit{with} it'' (1.1e L);
+		from `with/junction' \textit{sa-} + `heart' \textit{hṛdaya},
 		``with the heart; hearty, sincere; possessing a heart, good-hearted, full of feeling, sensible, intelligent; a learned man'' (MW 1195)
 		% sahṛdaya
 		% (H3) [Printed book page 1195,2]
@@ -613,8 +656,11 @@ Footnotes are marked by a dot, e.g. ``1.1 L.1'' is footnote 1 for the Locana of 
 
 
 		% TODO: verify k kris def. include MW?
-		\litem{prasiddha} 1.\ ``well known to all'' and ``ornamented'' (1.4 L) \{used in 1.4 K: ``well-known elements [of poetry]'' \& in 1.4 A:\ ``known, ornamented, elements [of poetry]''\},
-		``striking'' external constituents \{Further, ``The expression `striking' connotes not only what is `adorned with figures' but also what is `perceptible to the senses'.''\} [K. Kris.\ p.7 \& 9, 1.4 K \& A]
+		\litem{prasiddha} 1.\ ``well known to all'' and ``ornamented'' (1.4 L),
+		% \{used in 1.4 K: ``well-known elements [of poetry]'' \& in 1.4 A:\ ``known, ornamented, elements [of poetry]''\},
+		``striking'' external constituents [K. Kris.\ p.7, 1.4 K],
+		%\{Further, ``The expression `striking' connotes not only what is `adorned with figures' but also what is `perceptible to the senses'.''\}
+		``The expression `striking' connotes not only what is `adorned with figures' but also what is `perceptible to the senses'.'' [K. Kris.\ p.9, 1.4 A]
 		% prasiddha
 		% (H3) [Printed book page 697,3]
 		% pra-°siddha mfn. (pra-) brought about, accomplished, Kum. (a-pras°) [ID=138003]
@@ -649,8 +695,9 @@ Footnotes are marked by a dot, e.g. ``1.1 L.1'' is footnote 1 for the Locana of 
 		% cause, occasion, opportunity, R. ; Daś. [ID=180398]
 		% observation, sight, seeing, W. [ID=180399]
 
+		\litem{bhāsa} 
 		% TODO: do we get bhasa or bhāsa alone in the text, or did i just back-assume this def. from ābhāsa?
-		\litem{bhāsa} true or proper correlate (4.5 A, assumed from term \#~\ref{ābhāsa}),
+		%true or proper correlate (4.5 A, assumed from term \#~\ref{ābhāsa}),
 		``impression made on the mind'' (M.W. p.756)
 		% (H2) [Printed book page 756,1]
 		% bhāsa m. light, lustre, brightness (often ifc.), MBh. ; Hariv. ; Kathās. [ID=150601]
@@ -663,7 +710,6 @@ Footnotes are marked by a dot, e.g. ``1.1 L.1'' is footnote 1 for the Locana of 
 		\litem{rasābhāsa} ``semblance of sentiment'' [K. Kris.] (2.3 K)
 		Also see term \#~\ref{rasa} \& \#~\ref{ābhāsa}
 
-		% TODO: two diff meanings?? or just diff wordings... 'semblance' being in line with 'it works for now until we realize later it was improper (around 1.4g L or footnote??)
 		\litem{bhāvābhāsa} ``improper emotion'' (1.4g L);
 		``semblance of mood'' [K. Kris.] (2.3 K)
 		Also see term \#~\ref{bhāva} \& \#~\ref{ābhāsa}
@@ -721,34 +767,36 @@ Footnotes are marked by a dot, e.g. ``1.1 L.1'' is footnote 1 for the Locana of 
 		``the cessation of an emotion'' (2.3 L),
 		\{Seemingly used interchangeably with \textit{bhāvapraśānti} term \#~\ref{bhāvapraśānti}\}
 
-		% TODO: add reference
-		\litem{rasavadalaṅkāra} ``figurative sentiment'' [K. Kris.\ p.41] (?)
-		See term \#~\ref{rasavat}
-
-		% TODO: get term or definition
-		\litem{rasavat} a ``figure of speech'' different from \textit{rasadhvani} (2.4 Intro. A),
+		\litem{rasavat} ``that which contains rasa in a subordinated position'' (2.3 L),
+		Ānanda  assigns ``rasadhvani to cases where the rasa is predominant and limiting the figure of speech [rasavat] to cases where the rasa is subordinate or ornamental.''
+		(2.4 Intro. A.1) %IMP pg 220
 		%``ornamental'' (2.4 Intro. A.1), % TODO: useful??
-		``that which contains rasa in a subordinated position'' (2.3 L),
-		``Daṇḍin says merely that it was a figure charming with \textit{rasa} (2.275).
-		Bhāmaha says litte more: `The figure \textit{rasavat} is where the rise of a \textit{rasa} as śṛṅgāra is clearly exhibited. It is a locus of \textit{rasa}, \textit{sthāyibhāva}, \textit{sañcārin} (= \textit{vyabhicārin}), \textit{vibhāva}, and dramatic portrayal'\,'' (2.4 A.1)% TODO: useful?? or too much beyond 'diff than rasadhvani??
+		%ALSO:
+		%\litem{rasavadalaṅkāra} ``figurative sentiment'' (2.4 Intro. A) [K. Kris.\ p.41] % IMP pg 219 % JKL Note: i.e. rasavat + alankara, sandhi t -> d
+		%See term \#~\ref{rasavat}
+		% Useful?
+		% ``Daṇḍin says merely that it was a figure charming with \textit{rasa} (2.4 Intro. A.1) (Daṇḍin?: 2.275).
+		% Bhāmaha says litte more: `The figure \textit{rasavat} is where the rise of a \textit{rasa} as śṛṅgāra is clearly exhibited. It is a locus of \textit{rasa}, \textit{sthāyibhāva}, \textit{sañcārin} (= \textit{vyabhicārin}), \textit{vibhāva}, and dramatic portrayal'\,'' (2.4 A.1)% TODO: useful?? or too much beyond 'diff than rasadhvani??
 
 
 
-		% TODO: where is this from -> Note: ``found alike in force [and sweetness]'' is it a K. Kris. translation?? but the [...] makes me think not...
-		% TODO: where from?
-		% TODO: get term or definition
-		\litem{pleasing to the ear} (2.7 A),
-		``sound-harmony'' [K. Kris.\ p.51],
-		NB: ``Now sweetness has been defined [by Bhāmaha 2.3, where he says]:
-		`That [poem] which is pleasing to the ear and which does not contain many compound words and compound ideas is what is called sweet.'
-		Our author [Ānandavardhana] rejects this [in 2.7 A] with the words \textbf{pleasing to the ear}, etc.
-		He uses `pleasing to the ear' as an abbreviation of Bhāmaha.'' (2.7 L)
+		% % TODO: where is this from -> Note: ``found alike in force [and sweetness]'' is it a K. Kris. translation?? but the [...] makes me think not...
+		% %       Is it from 2.7 A: "For, sound-harmony is found alike in forcefulness too (and is not a differentia of sweetness)." ??
+		% % TODO: where from?
+		% % TODO: get term or definition
+		% \litem{pleasing to the ear} (2.7 A), % JKL Note: part of sweetness madhurya, but not all of it, as 'pleasing to the ear'/sound-harmony is found in forcefullness too (not just srngara)
+		% ``sound-harmony'' [K. Kris.\ p.51],
+		% NB: ``Now sweetness has been defined [by Bhāmaha 2.3, where he says]:
+		% `That [poem] which is pleasing to the ear and which does not contain many compound words and compound ideas is what is called sweet.'
+		% Our author [Ānandavardhana] rejects this [in 2.7 A] with the words \textbf{pleasing to the ear}, etc.
+		% He uses `pleasing to the ear' as an abbreviation of Bhāmaha.'' (2.7 L)
 
 		% TODO: add something about ojas or move under it??
 		\litem{dīpti} ``excitement'' (2.9 K, A, L), ``fiery'' (1.1a L)
 
 		% TODO: get def w/o ???
-		\litem{racanā} ``structures''? (2.10 A), ``composition'' [K. Kris.\ p.???]
+		\litem{racanā} ``structures'' (2.10 A), % IMP pg 259
+		``composition'' [K. Kris.\ p. TODO] % TODO: get K. Kris. pg num
 		% Partial MW Def: [Printed book page 861,1]
 		% mostly f(ā). arrangement, disposition, management, accomplishment, performance, preparation, production, fabrication, MBh. ; Kāv. &c. [ID=173268]
 		% a literary production, work, composition, VarBṛS. ; Sāh. [ID=173269]
@@ -784,7 +832,8 @@ Footnotes are marked by a dot, e.g. ``1.1 L.1'' is footnote 1 for the Locana of 
 		\litem{samudāyaḥ} (e) ``the group; or a poem which embodies all the above factors'' (a--d) (1.13 L) Note: (a--e) given by Abhinavagupta (1.1 K.1, EC p.76)
 
 		%TODO: get reference to that Note:...
-		\litem{samaya}  ``conventions by which words transmit meaning'' (1.1 L) \{Note: this used in reference to an alternative idea (see term \#~\ref{vikalpa}.\ \textit{vikalpa}) against the concept of dhvani, argued against in the Dhvanyāloka\}
+		\litem{samaya}  ``conventions by which words transmit meaning'' (1.1 L)
+		\{Note: this used in reference to an alternative idea (see term \#~\ref{vikalpa}.\ \textit{vikalpa}) against the concept of dhvani, argued against in the Dhvanyāloka\}
 
 		\litem{anubandha} ``pertinent point'' (1.1 L.1, EC p.79)
 		% Partial MW Def: [Printed book page 36,2]
@@ -801,10 +850,14 @@ Footnotes are marked by a dot, e.g. ``1.1 L.1'' is footnote 1 for the Locana of 
 			\litem{adhikāra} ``the qualificcation required of the reader''
 		\end{enumerate}
 
-		\litem{lakṣayatām} those ``who are noticing'' (1.1e A); ``describing it by means of a definition'' (1.1e L). Possibly used differently by Ānandavardhana and Abhinavagupta, see 1.1e A.2.
+		\litem{lakṣayatām} those ``who are noticing'' (1.1e A);
+		``describing it by means of a definition'' (1.1e L).
+		Possibly used differently by Ānandavardhana and Abhinavagupta, see: 1.1e A.2.
 
 		% TODO: check `delight' translation
-		\litem{ānanda} ``bliss'', ``bliss, which is nothing more than the relishing of \textit{rasa}'' (1.1e L), ``delight''? (1.1 K), also name of the author \{Ānandavardhana\} (1.1e L)
+		\litem{ānanda} ``bliss'', ``bliss, which is nothing more than the relishing of \textit{rasa}'' (1.1e L),
+		``delight''? (1.1 K),
+		also name of the author \{Ānandavardhana\} (1.1e L)
 		
 		\litem{saṅghaṭanā} ``arrangement'' (1.1a L), ``texture'' (1.1a L), ``certain degrees of compounding'' (1.1a A.3)
 		% other notes: 1.1a A.3 -> 3.5 K, 3.5 A.1
@@ -830,13 +883,15 @@ Footnotes are marked by a dot, e.g. ``1.1 L.1'' is footnote 1 for the Locana of 
 
 		\litem{āsvādyamāna} ``(the process of) being relished'' (1.4g L)
 		% TODO: check on def vs () words
+		% IMP pg 107
 
 		\litem{bhoga} ``enjoyment'' (2.4 L),
 		``aesthetic pleasure'' (2.4 L),
 		a ``type of perception'' (2.4 L)
 		%EC p134, orig p.224
 
-		\litem{bhogakṛttva} From Bhaṭṭanāyaka: ``efficacy of aesthetic enjoyment'' or ``the power of aesthetic enjoyment'' (2.4 L) % TODO: use???
+		\litem{bhogakṛttva} From Bhaṭṭanāyaka: ``efficacy of aesthetic enjoyment'' or ``the power of aesthetic enjoyment'' (2.4 L) 
+		% TODO: use???
 		% TODO: how connected with āsvāda??
 		%EC p.131-132, orig p.221-222
 
@@ -844,7 +899,16 @@ Footnotes are marked by a dot, e.g. ``1.1 L.1'' is footnote 1 for the Locana of 
 		%EC p.135, orig p.225
 
 		\litem{druti} ``melting of the mind''? \{a form of relishing/aesthetic enjoyment\} (1.5 L.3, 2.4 L)
-		% TODO: i have a note about ``Which takes the form of...'' 2.4 L, but not sure where that quote is...
+		% TODO: i have a note about ``Which takes the form of...'' 2.4 L IMP pg 222 line 15, also note 15 on IMP pg 228: 
+		% 15. Druti, vistara, and vikäsa. We can point to no technical use of these terms earlier than
+		% BN, but they occur frequently in later texts. Dhanika on DR 4.43 assigns
+		% expansion (vistano) to the enjoyment of the heroic, and radiance (vinósa) to
+		% the enjoyment of the erotic. Melting (druti) would naturally be connected
+		% with the rasa of compassion and with love in separation: see 2.8 K below.
+		% But BP, on the authority of the Kävyaprakäsasanketa of Râjànaka Ruyyaka,
+		% identifies the three forms of enjoyment with the three respective components
+		% of the enjoyer: rajas, tamos, and sattva. On those terms as connected with
+		% the rasas, see Gnoli, p. 46, and Raghavan, Bhoja, pp. 467ff.
 
 		\litem{vistara} ``expansion'' \{a form of relishing/aesthetic enjoyment\} (1.5 L.3, 2.4 L)
 
@@ -855,16 +919,16 @@ Footnotes are marked by a dot, e.g. ``1.1 L.1'' is footnote 1 for the Locana of 
 		% TODO: ?? use my note of: ``varieties of relishing ... are innumerable'' - not just these three - EC p.136
 
 
-
-
 		% TODO 'great poet' 1.4 L add def or sanskrit word? not sure...
 
 
+		\litem{rāga} ``passion'' (2.8 L) %IMP pg 254
+
 		\litem{anurāga} ``stimulation'' (1.4a L)
 
-		% TODO: add: ``direct denotation'' (2.4 L) ???
 		\litem{abhidhā} ``designation'' \{one of the ``three parts'' which ``poetry consists of'' according to Bhaṭṭanāyaka\} (1.4a L),
-		``denotation'' (1.5 L);
+		``denotation'' (1.5 L),
+		``direct denotation'' (2.4 L); % IMP pg 224
 		``name, appellation'' or
 		``the literal power or sense of a word'' or
 		``a word, sound'' (M.W. p.63)
@@ -887,7 +951,7 @@ Footnotes are marked by a dot, e.g. ``1.1 L.1'' is footnote 1 for the Locana of 
 
 		% TODO: add MW def for citta as a way to compare to gun.avr.tti???
 		\litem{cittavṛtti} ``state of mind'' (1.4g L),
-		``thought-trend'' (1.5 L), % TODO: is this confusing or disproved? see (later on in text, ugh i forget where exactly)...
+		``thought-trend'' TODO: is this disproved later in text? (1.5 L), % TODO: is this confusing or disproved? see (later on in text, ugh i forget where exactly)...
 		``state of mind, feeling, emotion; continuous course of thoughts (opposed to concentration), thinking, imagining'' (MW 396),
 		NB: the \textit{sthāyibhāva}s are a type of `state of mind' (2.3 L)
 		% cittavṛtti
@@ -952,14 +1016,14 @@ Footnotes are marked by a dot, e.g. ``1.1 L.1'' is footnote 1 for the Locana of 
 		% TODO: delete or keep?
 		% TODO: also 'power'? dhvananaśakti ``power of suggestion'' (IMP, General Index, p794)
 		\litem{śakti} ``power''?, ``force''?: ``When the suggestion of \textit{rasa} is ascribed to the directly denoted meaning \dots
-		then the force (\textit{sāmarthya}, \textit{śakti}) of this meaning is the totality of denotative words arranged in their particular way.'' (1.4g L),
-		``capability'' (TODO REF IMP Index)
+		then the force (\textit{sāmarthya}, \textit{śakti}) of this meaning is the totality of denotative words arranged in their particular way.'' (1.4g L)
+		% ``capability'' (TODO REF IMP Index)
 
 		% TODO: ok can prob delete this one...
-		\litem{saṃsarga} ``syntax'' (1.4g L)
+		% \litem{saṃsarga} ``syntax'' (1.4g L)
 
 		% TODO: get sanskrit word
-		\litem{-------} ``memory elements'' (1.5 L)
+		% \litem{-------} ``memory elements'' (1.5 L)
 
 		\litem{alaukika} ``super-normal'' (1.18 L)
 
@@ -993,12 +1057,12 @@ Footnotes are marked by a dot, e.g. ``1.1 L.1'' is footnote 1 for the Locana of 
 		% one who maintains or asserts, ĀpŚr. Sch. [ID=132537]
 		% TODO: delete prob?
 
-		\litem{asaṃlakṣyakramavyaṅgya} ``--------''?? (2.3 L)
+		% \litem{asaṃlakṣyakramavyaṅgya} ``--------''?? (2.3 L)
 		% TODO: look up. also: lakṣaṇā? vyaṅgya?
 
 		\litem{pratīyate} ``perceived'' (2.4 L)
 
-		\litem{gocara} ``direct object'' delete?? (2.4 L)
+		% \litem{gocara} ``direct object'' (2.4 L) % TODO: delete??
 
 		\litem{avabhāsa} ``appearance (or semblance, \textit{avabhāsa}) of a stable emotion in the actor'' (2.4 L)
 		% EC p.133, orig p223
@@ -1010,11 +1074,8 @@ Footnotes are marked by a dot, e.g. ``1.1 L.1'' is footnote 1 for the Locana of 
 		% (in Vedānta phil.) manifestation [ID=17730]
 		% reach, compass, see, śravaṇāvabh°. [ID=17731]
 
-		\litem{vyutpādana} ``educative effect'' (2.4 L)
+		% \litem{vyutpādana} ``educative effect'' (2.4 L)
 		% TODO: prob delete. don't think comes up again, was just a cool word.
-
-		% TODO: keep delete? place under anuraga?
-		\litem{rāga} ``passion'' (2.8 L) TODO: correct? keep?
 
 		\litem{abhāvavāda} ``non-existence'' - the third alternative idea (vikalpa, term \#\ref{vikalpa}) (1.1e A.1)
 
@@ -1028,7 +1089,7 @@ Footnotes are marked by a dot, e.g. ``1.1 L.1'' is footnote 1 for the Locana of 
 		% ślokah. śokatvam āgatah. - 1.5 K.1, but in K? (IMP 113),
 		% connected to agamah. - (1.5 L, IMP 116) ??
 
-		\litem{vipralambhaśṛṅgāra} ``erotic flavor based on the seperation of lovers'' (1.5 L.1)%(IMP 118)
+		% \litem{vipralambhaśṛṅgāra} ``erotic flavor based on the seperation of lovers'' (1.5 L.1)%(IMP 118)
 		% ``the \textit{rasa} of love in separation''?? this isn't right translation... (2.8 K?)
 
 		% TODO: is this correct? is this useful?
@@ -1036,7 +1097,7 @@ Footnotes are marked by a dot, e.g. ``1.1 L.1'' is footnote 1 for the Locana of 
 
 		% TODO: keep or delete??
 		\litem{dhvanana} ``hinting'' (2.4 L),
-		``suggestiveness'' (2.4 L),
+		%``suggestiveness'' (2.4 L),
 		``suggestion'' (2.4 L.45)
 
 		\litem{vyañjana} ``suggesting'' (2.4 L)
