@@ -7,11 +7,13 @@ on:
       - main
     paths:
       - "dhvanyAloka/*.tex"
+      - ".github/workflows/typeset-dhvan.yml"
   pull_request:
     branches:
       - main
     paths:
       - "dhvanyAloka/*.tex"
+      - ".github/workflows/typeset-dhvan.yml"
 
 permissions:
   contents: write
@@ -67,15 +69,7 @@ jobs:
           ## What's Included
 
           This release includes PDF files that were created/typeset from `.tex` files in the dhvanyAloka directory of this repository.
-          The PDF files are automatically generated after there are any changes to the `.tex` files, so these should be the most of to date versions.
-
-          ## PDF files created
-
-          - **dhvanyAloka-text-english-krishnamoorthy.pdf** - This PDF contains some of the english translation of the Dhvanyaloka by K. Krisnamoorthy. It only contains those sections of the text which are assigned for the EC/in the EC manual. Also note, this PDF does *not* contain the english text of the Locana (the 'L' sections in the EC manual version).
-          - Terms Sheets:
-            - **dhvanyAloka-terms-orig.pdf** - This PDF has the original formatting and all the same information as the terms sheet included in the EC Manual.
-            - **dhvanyAloka-terms.pdf** - This PDF has the same information as above file, but formatted differently.
-            - **dhvanyAloka-terms-additional.pdf** - This PDF has the same info as the above files for its basis, have added many more terms. This was created as I read through the text, so some terms may not be all that relevant/useful. There are many 'TODO' notes sprinkled throughout the PDF, but I have tried to reference the passages each definition is taken from, so you can judge for yourself how the term is used, as some terms are used in multiple ways.
+          The PDF files are automatically generated after there are any changes to the `.tex` files, so these should be the most up to date versions.
 
           ## Input Files Used
 
@@ -83,6 +77,16 @@ jobs:
           - [\`dhvanyAloka-terms-orig.tex\`](https://github.com/${{ github.repository }}/blob/${{ steps.get_commits.outputs.commit_terms_orig }}/dhvanyAloka/dhvanyAloka-terms-orig.tex) (commit [${{ steps.get_commits.outputs.short_commit_terms_orig }}](https://github.com/${{ github.repository }}/commit/${{ steps.get_commits.outputs.commit_terms_orig }}))
           - [\`dhvanyAloka-terms.tex\`](https://github.com/${{ github.repository }}/blob/${{ steps.get_commits.outputs.commit_terms_formatted }}/dhvanyAloka/dhvanyAloka-terms.tex) (commit [${{ steps.get_commits.outputs.short_commit_terms_formatted }}](https://github.com/${{ github.repository }}/commit/${{ steps.get_commits.outputs.commit_terms_formatted }}))
           - [\`dhvanyAloka-terms-additional.tex\`](https://github.com/${{ github.repository }}/blob/${{ steps.get_commits.outputs.commit_terms_additional }}/dhvanyAloka/dhvanyAloka-terms-additional.tex) (commit [${{ steps.get_commits.outputs.short_commit_terms_additional }}](https://github.com/${{ github.repository }}/commit/${{ steps.get_commits.outputs.commit_terms_additional }}))
+
+          ## PDF files created
+
+          Quick description of the PDF files that can be downloaded below:
+
+          - **dhvanyAloka-text-english-krishnamoorthy.pdf** - This PDF contains some of the english translation of the Dhvanyaloka by K. Krisnamoorthy. It only contains those sections of the text which are assigned for the EC/in the EC manual. Also note, this PDF does *not* contain the english text of the Locana (the 'L' sections in the EC manual version).
+          - Terms Sheets:
+            - **dhvanyAloka-terms-orig.pdf** - This PDF has the original formatting and all the same information as the terms sheet included in the EC Manual.
+            - **dhvanyAloka-terms.pdf** - This PDF has the same information as above file, but formatted differently.
+            - **dhvanyAloka-terms-additional.pdf** - This PDF has the same info as the above files for its basis, have added many more terms. This was created as I read through the text, so some terms may not be all that relevant/useful. There are many 'TODO' notes sprinkled throughout the PDF, but I have tried to reference the passages each definition is taken from, so you can judge for yourself how the term is used, as some terms are used in multiple ways.
 
           EOF
 
