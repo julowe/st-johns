@@ -1,0 +1,242 @@
+% bookmarks-6up.tex
+% Letter page (8.5in x 11in), zero margins, six equal horizontal divisions spanning most of the page width (1/2" margin on each side).
+
+% How to use:
+%  - Replace the placeholder text inside each \bookmarkbox{...} with your own.
+%  - Toggle frame: set \setboolean{bookmark@frame}{true} to draw boxes as cutting guides.
+%  - Compile with pdflatex/xelatex/lualatex. Duplex print to get double-sided bookmarks.
+%  - Each division is exactly 1/6 of the page height, full width.
+
+% TODO: add small cutting guide dots at top/bottom of bookmarks - to use: cut at point, then trim off a little of left and right sides? could do color bleed then too?
+% TODO: check front text?
+% TODO: add page nubmers from 'How To Read A Book' into this file as comments?
+
+\documentclass[12pt]{article}
+
+% Exact page size and zero margins
+\usepackage[paperwidth=8.5in,paperheight=11in,margin=0in,noheadfoot]{geometry}
+\pagestyle{empty}
+
+% For optional frames and simple math with dimensions
+\usepackage{ifthen}
+\usepackage{calc}
+\usepackage{graphicx}
+\usepackage{fontspec}
+
+% Configure default fonts and spacing lightly
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% Compute exact height per bookmark area
+% Total per-bookmark height (including optional frame)
+\newlength{\bookmarkheight}
+\setlength{\bookmarkheight}{\paperheight/6}
+
+% Content height inside the (optional) frame
+\newlength{\bookmarkcontentheight}
+
+% Content width: paper width - 1 inch (0.5 inch margins left/right)
+\newlength{\bookmarkcontentwidth}
+\setlength{\bookmarkcontentwidth}{\paperwidth - 1in}
+
+% Frame separation in decimal inches (padding between content and frame)
+\newlength{\bookmarkframesep}
+\setlength{\bookmarkframesep}{0.00in} % adjust as desired; uses inches, not points
+
+% Toggleable frame around each area (acts like cut guides)
+\newboolean{bookmark@frame}
+\setboolean{bookmark@frame}{false} % set true|false to draw frames
+
+% Helper to compute content height based on frame settings
+\newcommand{\computeBookmarkContentHeight}{%
+  \setlength{\bookmarkcontentheight}{\bookmarkheight}%
+  \ifthenelse{\boolean{bookmark@frame}}{%
+    % Subtract top+bottom padding and rule thickness so total framed height stays exactly 1/6 page
+    \setlength{\bookmarkcontentheight}{\bookmarkcontentheight - 2\bookmarkframesep - 2\fboxrule}%
+  }{}%
+}
+
+% Wrapper for optional frame around content
+\newcommand{\bookmarkframe}[1]{%
+  \ifthenelse{\boolean{bookmark@frame}}{\setlength{\fboxsep}{\bookmarkframesep}\fbox{#1}}{#1}%
+}
+
+% A full-width box of height 1/6 page for bookmark content
+% Usage: \bookmarkbox{Your text here}
+\newcommand{\bookmarkbox}[1]{%
+  \computeBookmarkContentHeight% ensure correct height per box
+  % \noindent\bookmarkframe{%
+    \begin{minipage}[c][\bookmarkcontentheight][c]{\paperwidth}%
+      \centering
+      \begin{minipage}{\bookmarkcontentwidth}
+        #1
+      \end{minipage}
+    \end{minipage}%
+  %}%
+  % \par
+}
+
+
+% Macro to layout image (left) + text (right)
+% #1 = image filename
+\newcommand{\bookmarkContent}[1]{%
+  % Use a container that spans the full width
+  \hbox to \linewidth{%
+    % Image minipage (adjust width as needed)
+    \begin{minipage}{0.25\linewidth}
+      \centering
+      % Use keepaspectratio so it fits within the box height nicely
+      \includegraphics[width=\linewidth,height=0.8\bookmarkcontentheight,keepaspectratio]{#1}%
+    \end{minipage}%
+    \hfill
+    % Text minipage
+    \begin{minipage}{0.70\linewidth}
+       \raggedright
+       \adlerTextFront
+    \end{minipage}%
+  }%
+}
+
+% Macro to layout image (left) + text (right)
+% #1 = image filename
+% #2 = text
+\newcommand{\bookmarkFront}[2]{%
+  % Use a container that spans the full width
+  \hbox to \linewidth{%
+    % Image minipage (adjust width as needed)
+    \begin{minipage}{0.25\linewidth}
+      \centering
+      % Use keepaspectratio so it fits within the box height nicely
+      \includegraphics[width=\linewidth,height=0.8\bookmarkcontentheight,keepaspectratio]{#1}%
+    \end{minipage}%
+    \hfill
+    % Text minipage
+    \begin{minipage}{0.70\linewidth}
+       \raggedright
+       #2
+    \end{minipage}%
+  }%
+}
+
+% Macro to layout only text (right)
+% #1 = text
+\newcommand{\bookmarkBack}[1]{%
+  % Use a container that spans the full width
+  \hbox to \linewidth{%
+    % Text minipage
+    \begin{minipage}{\linewidth}
+       \raggedright
+       #1
+    \end{minipage}%
+  }%
+}
+
+% A full-width box of height 1/6 page for bookmark content
+% Usage: \bookmarkbox{Your text here}
+\newcommand{\bookmarkFrontBad}[2]{%
+  \computeBookmarkContentHeight% ensure correct height per box
+  % \noindent\bookmarkframe{%
+  \begin{minipage}[c][\bookmarkcontentheight][c]{\paperwidth}%
+    \centering
+    \begin{minipage}{\bookmarkcontentwidth}
+      % Image minipage (adjust width as needed)
+      \begin{minipage}{0.15\linewidth}
+        \centering
+        % Use keepaspectratio so it fits within the box height nicely
+        \includegraphics[width=\linewidth,height=0.8\bookmarkcontentheight,keepaspectratio]{#1}%
+      \end{minipage}%
+      \hfill
+      % Text minipage
+      \begin{minipage}{0.80\linewidth}
+        \raggedright
+        #2
+      \end{minipage}%
+    \end{minipage}
+  \end{minipage}%
+  %}%
+  % \par
+}
+
+% Helpful: visually separate on screen (ignored in print if frames disabled)
+% Uncomment to add faint guidelines with rules inside the box content if desired.
+%\newcommand{\guideline}{\rule{\paperwidth}{0.2pt}}%
+
+% --- USER MACROS ---
+
+% The repeatable front text
+\newcommand{\adlerTextFront}{%
+  {\Large
+    \textbf{What is the book about as a whole?}\\
+    \textbf{What is being said in detail, and how?}\\
+    \textbf{Is the book true, whole or part?}\\
+    \vspace{0.75ex}%adding some space between these lines manually
+    \textbf{What of it?}
+  }
+  \hfill
+  \small\textit{jklideas.com/adler}%
+
+  % \hspace{4em}
+  \hfill
+  \small\textit{Mortimer Adler – How To Read A Book}
+  % \hfill
+  % \small\textit{https://jklideas.com/adler}%
+  % \small\textit{jklideas.com/adler}%
+}
+
+% The repeatable back text
+\newcommand{\adlerTextBack}{%
+  % {\large
+  {\fontsize{13}{15} \selectfont
+    \textbf{What is it about?}
+    \hspace{1em}
+    1. Classify it 
+    2. What is the whole of it about 
+    3. Enumerate and analyze its major parts (in order and relation) 
+    4. What problem(s) is the author trying to solve \\
+    \textbf{Interpreting its Content}
+    \hspace{1em}
+    5. Come to terms 
+    6. Grasp the leading propositions 
+    7. Know the author's arguments 
+    8. Determine the solved and unsolved problems (knowingly or not) \\
+    \textbf{Criticizing its Communication of Knowledge}
+    \hspace{1em}
+    9. Understand, then criticize 
+    10. Disagree civilly 
+    11. Support critical judgments with knowledge, not opinions 
+    12. Show wherein the author is uninformed 
+    13. ...misinformed 
+    14. ...illogical 
+    15. ...where analysis is incomplete
+  }
+}
+
+
+\begin{document}
+
+% Example content. Replace with your own. You can add formatting, images, etc.
+% Usage: \bookmarkbox{\bookmarkContent{<image-filename>}}
+\bookmarkbox{\bookmarkFront{bookmark.png}{\adlerTextFront}}
+\bookmarkbox{\bookmarkFront{book-vertical-spine.png}{\adlerTextFront}}
+\bookmarkbox{\bookmarkFront{books-stack-edges.jpg}{\adlerTextFront}}
+\bookmarkbox{\bookmarkFront{bookmark.png}{\adlerTextFront}}
+\bookmarkbox{\bookmarkFront{book-vertical-spine.png}{\adlerTextFront}}
+% \bookmarkbox{\bookmarkFront{sjc.png}{\adlerTextFront}}
+\bookmarkbox{\bookmarkFront{books-stack-edges.jpg}{\adlerTextFront}}
+
+
+\clearpage
+
+\centering
+% \rotatebox{180}{
+  \begin{minipage}{\textwidth}
+    \bookmarkbox{\bookmarkBack{\adlerTextBack}}
+    \bookmarkbox{\bookmarkBack{\adlerTextBack}}
+    \bookmarkbox{\bookmarkBack{\adlerTextBack}}
+    \bookmarkbox{\bookmarkBack{\adlerTextBack}}
+    \bookmarkbox{\bookmarkBack{\adlerTextBack}}
+    \bookmarkbox{\bookmarkBack{\adlerTextBack}}
+  \end{minipage}
+% }
+
+\end{document}
