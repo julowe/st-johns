@@ -1,0 +1,191 @@
+[
+  {
+    "name": "Keyboard Layout: Indian - Variant: Sanskrit (KaGaPa, phonetic)",
+    "author": "Mapped by Justin Lowe",
+    "notes": "The center of each key has the original english letter just for reference.\n\nOn the left side of each key are the Devanagari letters for a Shift+key-press (in upper-left corner) \nand a normal key-press (in lower-left corner).\ne.g. Instead of 'Q' vs 'q', this keyboard layout would output: 'ठ' and 'ट'\n\nOn the right side of each key are the Devanagari letters when you also hold down the Right-Alt key - \ni.e. for a Right-Alt+Shift+key-press and a Right-Alt+key-press"
+  },
+  [
+    "~\n`",
+    "!\n1",
+    "@\n2",
+    "#\n3",
+    "$\n4",
+    "%\n5",
+    "^\n6",
+    "&\n7",
+    "*\n8",
+    "(\n9",
+    ")\n0",
+    "_\n-",
+    "+\n=",
+    {
+      "w": 2
+    },
+    "Backspace"
+  ],
+  [
+    {
+      "w": 1.5
+    },
+    "Tab",
+    {
+      "a": 0,
+      "f": 5,
+      "fa": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    "ठ\nट\n\n\n\n+Alt\n\n\n\nq",
+    {
+      "a": 4
+    },
+    "ढ\nड\nढ़\nड़\n\n\n\n\n\nw",
+    "े\nॆ\nए\nऎ\n\n\n\n\n\ne",
+    "ृ\nर\nऱ\nऋ\n\n\n\n\n\nr",
+    "थ\nत\n\n\n\n\n\n\n\nt",
+    "ै\nय\nय़\nऐ\n\n\n\n\n\ny",
+    "ू\nु\nऊ\nउ\n\n\n\n\n\nu",
+    "ी\nि\nई\nइ\n\n\n\n\n\ni",
+    "ो\nॊ\nओ\nऒ\n\n\n\n\n\no",
+    "फ\nप\n\nफ़\n\n\n\n\n\np",
+    {
+      "f": 3
+    },
+    "{\n[",
+    "}\n]",
+    {
+      "w": 1.5
+    },
+    "|\n\\"
+  ],
+  [
+    {
+      "w": 1.75
+    },
+    "Caps Lock",
+    {
+      "a": 0,
+      "f": 5,
+      "fa": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    "आ\nा\nॲ\nअ\n\n+Alt\n\n\n\na",
+    {
+      "a": 4
+    },
+    "श\nस\n\n\n\n\n\n\n\ns",
+    "ध\nद\n\nॠ\n\n\n\n\n\nd",
+    "ॄ\n्\n\nग़\n\n\n\n\n\nf",
+    "घ\nग\n\n\n\n\n\n\n\ng",
+    "ः\nह\nᳶ\nᳵ\n\n\n\n\n\nh",
+    "झ\nज\nख़\nज़\n\n\n\n\n\nj",
+    "ख\nक\nऌ\nक़\n\n\n\n\n\nk",
+    "ळ\nल\nᳳ\nॢ\n\n\n\n\n\nl",
+    ":\n;\n\nᳲ\n\n\n\n\n\n;",
+    {
+      "f": 3
+    },
+    "\"\n'",
+    {
+      "w": 2.25
+    },
+    "Enter"
+  ],
+  [
+    {
+      "w": 2.25
+    },
+    "Shift",
+    {
+      "a": 0,
+      "f": 5,
+      "fa": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    "ङ\nञ\n\n\n\n+Alt\n\n\n\nz",
+    {
+      "a": 4
+    },
+    "़\nष\n\nऴ\n\n\n\n\n\nx",
+    "छ\nच\n\n\n\n\n\n\n\nc",
+    "ौ\nव\n\nऔ\n\n\n\n\n\nv",
+    "भ\nब\n\n\n\n\n\n\n\nb",
+    "ण\nन\n\nऩ\n\n\n\n\n\nn",
+    "ं\nम\nॐ\nऽ\n\n\n\n\n\nm",
+    "<\n,\nऍ\nॅ\n\n\n\n\n\n,",
+    ">\n.\nऑ\nॉ\n\n\n\n\n\n.",
+    {
+      "f": 3
+    },
+    "?\n/",
+    {
+      "w": 2.75
+    },
+    "Shift"
+  ],
+  [
+    {
+      "w": 1.25
+    },
+    "Ctrl",
+    {
+      "w": 1.25
+    },
+    "Win",
+    {
+      "w": 1.25
+    },
+    "Alt",
+    {
+      "a": 7,
+      "w": 6.25
+    },
+    "",
+    {
+      "a": 4,
+      "w": 1.25
+    },
+    "Alt",
+    {
+      "w": 1.25
+    },
+    "Win",
+    {
+      "w": 1.25
+    },
+    "Menu",
+    {
+      "w": 1.25
+    },
+    "Ctrl"
+  ]
+]
