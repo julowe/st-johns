@@ -25,11 +25,12 @@ or just general education in that vein.
     - [Sanskrit Grammar Reference Tables](#sanskrit-grammar-reference-tables)
     - [Sanskrit Dictionary Websites](#sanskrit-dictionary-websites)
     - [Sanskrit Dictionary Files](#sanskrit-dictionary-files)
-    - [Devanagari Transliteration Schemes and Typing Characters](#devanagari-transliteration-schemes-and-typing-characters)
+    - [Devanagari Transliteration Schemes](#devanagari-transliteration-schemes)
+    - [Devanagari Keyboard Layouts](#devanagari-keyboard-layouts)
     - [Nāgārjuna Chapter 25 packet](#nāgārjuna-chapter-25-packet)
     - [Scharf's Rāmopākhyāna](#scharfs-rāmopākhyāna)
-  - [Chinese](#chinese) - [Chinese Poetry Glosses/Trots/Cribs Notebook](#chinese-poetry-glossestrotscribs-notebook)
-  <!--toc:end-->
+  - [Chinese](#chinese)
+    - [Chinese Poetry Glosses/Trots/Cribs Notebook](#chinese-poetry-glossestrotscribs-notebook)
 
 ## Admin Documents
 
@@ -214,7 +215,7 @@ To use these files, please see
 [Loading Dictionary files onto your phone](#loading-dictionary-files-onto-your-phone)
 or [Using Dictionary files on your computer](#using-dictionary-files-on-your-computer)
 
-#### Devanagari Transliteration Schemes and Typing Characters
+#### Devanagari Transliteration Schemes
 
 There are a few transliteration schemes for Sanskrit, see
 [Wikipedia's Comparison Table](https://en.wikipedia.org/wiki/Devanagari_transliteration#Transliteration_comparison).
@@ -226,10 +227,31 @@ single roman alphabet letter - for example:
 ड (ḍ in IAST) is typed as 'q',
 and ढ (ḍh in IAST) is typed as 'Q'
 
+#### Devanagari Keyboard Layouts
+
+There are a few different keyboard layouts to choose from to be able to type Devanagari characters.
 If you install a devanagari keyboard on your computer,
 try Right-Alt and Right-Alt+Shift to get the various less common characters.
-And/or for the 'Sanskrit (KaGaPa, Phonetic)' keyboard see my
-[sanskrit/devanagari-keyboard-map.txt](sanskrit/devanagari-keyboard-map.txt)
+
+I settled on the Layout: Indian, Variant: Sanskrit (KaGaPa, Phonetic)
+
+I created an image using
+[Keyboard Layout Editor which shows the mapping from English to Devanagari characters][KLE-sanskrit]
+
+![Devanagari Keymapping](sanskrit/devanagari-keyboard-map-KLE.png)
+
+> [!NOTE]
+> The center of each key has the original english letter just for reference.
+> 
+> On the left side of each key are the Devanagari letters for a Shift+key-press (in upper-left corner) 
+> and a normal key-press (in lower-left corner).
+> e.g. Instead of 'Q' vs 'q', this keyboard layout would output: 'ठ' and 'ट'
+> 
+> On the right side of each key are the Devanagari letters when you also hold down the Right-Alt key 
+> i.e. for a Right-Alt+Shift+key-press and a Right-Alt+key-press
+
+In this repo there is also the [.json output file from that website](sanskrit/devanagari-keyboard-map-KLE.json)
+and [an easier to read .txt file](sanskrit/devanagari-keyboard-map.txt).
 
 #### Nāgārjuna Chapter 25 packet
 
@@ -265,3 +287,5 @@ can use dictionary files and generate glosses/cribs/trots of Chinese texts.
 The example data in the notebook are Chinese Poems.
 This code was here originally, but I have since split it out into it's own repo here:
 [julowe/binder-chinese-poetry](https://github.com/julowe/binder-chinese-poetry)
+
+[KLE-sanskrit]: https://www.keyboard-layout-editor.com/##@_name=Keyboard%20Layout%2F:%20Indian%20-%20Variant%2F:%20Sanskrit%20(KaGaPa,%20phonetic)&author=Mapped%20by%20Justin%20Lowe&notes=The%20center%20of%20each%20key%20has%20the%20original%20english%20letter%20just%20for%20reference.%0A%0AOn%20the%20left%20side%20of%20each%20key%20are%20the%20Devanagari%20letters%20for%20a%20Shift+key-press%20(in%20upper-left%20corner)%20%0Aand%20a%20normal%20key-press%20(in%20lower-left%20corner).%0Ae.g.%20Instead%20of%20'Q'%20vs%20'q',%20this%20keyboard%20layout%20would%20output%2F:%20'%E0%A4%A0'%20and%20'%E0%A4%9F'%0A%0AOn%20the%20right%20side%20of%20each%20key%20are%20the%20Devanagari%20letters%20when%20you%20also%20hold%20down%20the%20Right-Alt%20key%20-%20%0Ai.e.%20for%20a%20Right-Alt+Shift+key-press%20and%20a%20Right-Alt+key-press%3B&@=~%0A%60&=!%0A1&=%2F@%0A2&=%23%0A3&=$%0A4&=%25%0A5&=%5E%0A6&=%2F&%0A7&=*%0A8&=(%0A9&=)%0A0&=%2F_%0A-&=+%0A%2F=&_w:2%3B&=Backspace%3B&@_w:1.5%3B&=Tab&_a:0&f:5&fa@:0&:0&:0&:0&:0&:0&:0&:0&:0&:1%3B%3B&=%E0%A4%A0%0A%E0%A4%9F%0A%0A%0A%0A+Alt%0A%0A%0A%0Aq&_a:4%3B&=%E0%A4%A2%0A%E0%A4%A1%0A%E0%A5%9D%0A%E0%A5%9C%0A%0A%0A%0A%0A%0Aw&=%E0%A5%87%0A%E0%A5%86%0A%E0%A4%8F%0A%E0%A4%8E%0A%0A%0A%0A%0A%0Ae&=%E0%A5%83%0A%E0%A4%B0%0A%E0%A4%B1%0A%E0%A4%8B%0A%0A%0A%0A%0A%0Ar&=%E0%A4%A5%0A%E0%A4%A4%0A%0A%0A%0A%0A%0A%0A%0At&=%E0%A5%88%0A%E0%A4%AF%0A%E0%A5%9F%0A%E0%A4%90%0A%0A%0A%0A%0A%0Ay&=%E0%A5%82%0A%E0%A5%81%0A%E0%A4%8A%0A%E0%A4%89%0A%0A%0A%0A%0A%0Au&=%E0%A5%80%0A%E0%A4%BF%0A%E0%A4%88%0A%E0%A4%87%0A%0A%0A%0A%0A%0Ai&=%E0%A5%8B%0A%E0%A5%8A%0A%E0%A4%93%0A%E0%A4%92%0A%0A%0A%0A%0A%0Ao&=%E0%A4%AB%0A%E0%A4%AA%0A%0A%E0%A5%9E%0A%0A%0A%0A%0A%0Ap&_f:3%3B&=%7B%0A%5B&=%7D%0A%5D&_w:1.5%3B&=%7C%0A%5C%3B&@_w:1.75%3B&=Caps%20Lock&_a:0&f:5&fa@:0&:0&:0&:0&:0&:0&:0&:0&:0&:1%3B%3B&=%E0%A4%86%0A%E0%A4%BE%0A%E0%A5%B2%0A%E0%A4%85%0A%0A+Alt%0A%0A%0A%0Aa&_a:4%3B&=%E0%A4%B6%0A%E0%A4%B8%0A%0A%0A%0A%0A%0A%0A%0As&=%E0%A4%A7%0A%E0%A4%A6%0A%0A%E0%A5%A0%0A%0A%0A%0A%0A%0Ad&=%E0%A5%84%0A%E0%A5%8D%0A%0A%E0%A5%9A%0A%0A%0A%0A%0A%0Af&=%E0%A4%98%0A%E0%A4%97%0A%0A%0A%0A%0A%0A%0A%0Ag&=%E0%A4%83%0A%E0%A4%B9%0A%E1%B3%B6%0A%E1%B3%B5%0A%0A%0A%0A%0A%0Ah&=%E0%A4%9D%0A%E0%A4%9C%0A%E0%A5%99%0A%E0%A5%9B%0A%0A%0A%0A%0A%0Aj&=%E0%A4%96%0A%E0%A4%95%0A%E0%A4%8C%0A%E0%A5%98%0A%0A%0A%0A%0A%0Ak&=%E0%A4%B3%0A%E0%A4%B2%0A%E1%B3%B3%0A%E0%A5%A2%0A%0A%0A%0A%0A%0Al&=%2F:%0A%2F%3B%0A%0A%E1%B3%B2%0A%0A%0A%0A%0A%0A%2F%3B&_f:3%3B&=%22%0A'&_w:2.25%3B&=Enter%3B&@_w:2.25%3B&=Shift&_a:0&f:5&fa@:0&:0&:0&:0&:0&:0&:0&:0&:0&:1%3B%3B&=%E0%A4%99%0A%E0%A4%9E%0A%0A%0A%0A+Alt%0A%0A%0A%0Az&_a:4%3B&=%E0%A4%BC%0A%E0%A4%B7%0A%0A%E0%A4%B4%0A%0A%0A%0A%0A%0Ax&=%E0%A4%9B%0A%E0%A4%9A%0A%0A%0A%0A%0A%0A%0A%0Ac&=%E0%A5%8C%0A%E0%A4%B5%0A%0A%E0%A4%94%0A%0A%0A%0A%0A%0Av&=%E0%A4%AD%0A%E0%A4%AC%0A%0A%0A%0A%0A%0A%0A%0Ab&=%E0%A4%A3%0A%E0%A4%A8%0A%0A%E0%A4%A9%0A%0A%0A%0A%0A%0An&=%E0%A4%82%0A%E0%A4%AE%0A%E0%A5%90%0A%E0%A4%BD%0A%0A%0A%0A%0A%0Am&=%3C%0A,%0A%E0%A4%8D%0A%E0%A5%85%0A%0A%0A%0A%0A%0A,&=%3E%0A.%0A%E0%A4%91%0A%E0%A5%89%0A%0A%0A%0A%0A%0A.&_f:3%3B&=%3F%0A%2F%2F&_w:2.75%3B&=Shift%3B&@_w:1.25%3B&=Ctrl&_w:1.25%3B&=Win&_w:1.25%3B&=Alt&_a:7&w:6.25%3B&=&_a:4&w:1.25%3B&=Alt&_w:1.25%3B&=Win&_w:1.25%3B&=Menu&_w:1.25%3B&=Ctrl
