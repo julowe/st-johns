@@ -1,0 +1,169 @@
+\documentclass[11pt, a4paper]{article}
+
+% --- Language & Font Setup ---
+\usepackage{polyglossia}
+\setmainlanguage{english}
+\setotherlanguage{arabic}
+
+% Use Noto Sans for English to ensure perfect support for ALA-LC 
+% transliteration characters (macrons, underdots, and ayn 'ʿ').
+\setmainfont{Noto Sans}
+
+% Use Amiri for flawless Quranic Arabic rendering
+\newfontfamily\arabicfont[Script=Arabic]{Amiri}
+
+% --- Layout & Tables ---
+\usepackage[top=2.5cm, bottom=2.5cm, left=1.2cm, right=1.2cm]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{threeparttable} % Added for table notes
+
+% Define custom column types for stacked Arabic + Transliteration
+% 'm' vertically centers the cell contents relative to the row.
+\newcolumntype{A}{>{\centering\arraybackslash}m{3.1cm}} % Main word columns
+\newcolumntype{R}{>{\centering\arraybackslash}m{1.6cm}} % Root column
+\newcolumntype{C}{>{\centering\arraybackslash}m{1cm}}   % Number column
+
+\begin{document}
+\thispagestyle{empty}
+% \title{Arabic Numbers (1 -- 10)\\ \large Cardinal and Ordinal Forms with ALA-LC Transliteration}
+% \author{}
+% \date{}
+% \maketitle
+
+
+% \vspace{2em}
+
+\begin{center}
+    \begin{threeparttable}
+        \renewcommand{\arraystretch}{1.6} % Add vertical padding to rows
+        \begin{tabular}{ C R A A A A }
+            \toprule
+                                                                                     &   & \multicolumn{2}{c}{\textbf{Cardinal Numbers (1-10)}} & \multicolumn{2}{c}{\textbf{Ordinal Numbers (1st-10th)}} \\
+            \cmidrule(lr){3-4} \cmidrule(lr){5-6}
+            \textbf{Num}                                                             &
+            \textbf{Root}                                                            &
+            \textbf{w/ Masc. Noun} \tnote{(α)}                                       &
+            \textbf{w/ Fem. Noun} \tnote{(α)}                                        &
+            \textbf{Masculine}                                                       &
+            \textbf{Feminine}                                                                                                                                                                             \\
+            \midrule
+
+            % 1
+            {\large\textbf{1}}\newline {\Large\textarabic{١}}                        &
+            {\Large\textarabic{و ح د}}\newline \textit{\small w-ḥ-d} \tnote{(β)}     &
+            {\Large\textarabic{أَحَدٌ}}\newline \textit{\small aḥadun}                  &
+            {\Large\textarabic{إِحْدَى}}\newline \textit{\small iḥdā}                   &
+            {\Large\textarabic{الأَوَّلُ}}\newline \textit{\small al-awwalu}             &
+            {\Large\textarabic{الأُولَى}}\newline \textit{\small al-ūlā}                                                                                                                                    \\
+            \midrule
+
+            % 2
+            {\large\textbf{2}}\newline {\Large\textarabic{٢}}                        &
+            {\Large\textarabic{ث ن ي}}\newline \textit{\small th-n-y}                &
+            {\Large\textarabic{اِثْنَانِ}}\newline \textit{\small ithnāni}               &
+            {\Large\textarabic{اِثْنَتَانِ}}\newline \textit{\small ithnatāni}            &
+            {\Large\textarabic{ثَانٍ}}\newline \textit{\small thānin}                  &
+            {\Large\textarabic{ثَانِيَةٌ}}\newline \textit{\small thāniyatun}                                                                                                                                 \\
+            \midrule
+
+            % 3
+            {\large\textbf{3}}\newline {\Large\textarabic{٣}}                        &
+            {\Large\textarabic{ث ل ث}}\newline \textit{\small th-l-th}               &
+            {\Large\textarabic{ثَلَاثَةٌ}}\newline \textit{\small thalāthatun}           &
+            {\Large\textarabic{ثَلَاثٌ}}\newline \textit{\small thalāthun}              &
+            {\Large\textarabic{ثَالِثٌ}}\newline \textit{\small thālithun}              &
+            {\Large\textarabic{ثَالِثَةٌ}}\newline \textit{\small thālithatun}                                                                                                                                \\
+            \midrule
+
+            % 4
+            {\large\textbf{4}}\newline {\Large\textarabic{٤}}                        &
+            {\Large\textarabic{ر ب ع}}\newline \textit{\small r-b-ʿ}                 &
+            {\Large\textarabic{أَرْبَعَةٌ}}\newline \textit{\small arbaʿatun}             &
+            {\Large\textarabic{أَرْبَعٌ}}\newline \textit{\small arbaʿun}                &
+            {\Large\textarabic{رَابِعٌ}}\newline \textit{\small rābiʿun}                &
+            {\Large\textarabic{رَابِعَةٌ}}\newline \textit{\small rābiʿatun}                                                                                                                                  \\
+            \midrule
+
+            % 5
+            {\large\textbf{5}}\newline {\Large\textarabic{٥}}                        &
+            {\Large\textarabic{خ م س}}\newline \textit{\small kh-m-s}                &
+            {\Large\textarabic{خَمْسَةٌ}}\newline \textit{\small khamsatun}              &
+            {\Large\textarabic{خَمْسٌ}}\newline \textit{\small khamsun}                 &
+            {\Large\textarabic{خَامِسٌ}}\newline \textit{\small khāmisun}               &
+            {\Large\textarabic{خَامِسَةٌ}}\newline \textit{\small khāmisatun}                                                                                                                                 \\
+            \midrule
+
+            % 6
+            {\large\textbf{6}}\newline {\Large\textarabic{٦}}                        &
+            {\Large\textarabic{س د س}}\newline \textit{\small s-d-s} \tnote{(γ)}     &
+            {\Large\textarabic{سِتَّةٌ}}\newline \textit{\small sittatun}                &
+            {\Large\textarabic{سِتٌّ}}\newline \textit{\small sittun}                   &
+            {\Large\textarabic{سَادِسٌ}}\newline \textit{\small sādisun}                &
+            {\Large\textarabic{سَادِسَةٌ}}\newline \textit{\small sādisatun}                                                                                                                                  \\
+            \midrule
+
+            % 7
+            {\large\textbf{7}}\newline {\Large\textarabic{٧}}                        &
+            {\Large\textarabic{س ب ع}}\newline \textit{\small s-b-ʿ}                 &
+            {\Large\textarabic{سَبْعَةٌ}}\newline \textit{\small sabʿatun}               &
+            {\Large\textarabic{سَبْعٌ}}\newline \textit{\small sabʿun}                  &
+            {\Large\textarabic{سَابِعٌ}}\newline \textit{\small sābiʿun}                &
+            {\Large\textarabic{سَابِعَةٌ}}\newline \textit{\small sābiʿatun}                                                                                                                                  \\
+            \midrule
+
+            % 8
+            {\large\textbf{8}}\newline {\Large\textarabic{٨}}                        &
+            {\Large\textarabic{ث م ن}}\newline \textit{\small th-m-n}                &
+            {\Large\textarabic{ثَمَانِيَةٌ}}\newline \textit{\small thamāniyatun}         &
+            {\Large\textarabic{ثَمَانٍ}}\newline \textit{\small thamānin} \tnote{(δ)}   &
+            {\Large\textarabic{ثَامِنٌ}}\newline \textit{\small thāminun}               &
+            {\Large\textarabic{ثَامِنَةٌ}}\newline \textit{\small thāminatun}                                                                                                                                 \\
+            \midrule
+
+            % 9
+            {\large\textbf{9}}\newline {\Large\textarabic{٩}}                        &
+            {\Large\textarabic{ت س ع}}\newline \textit{\small t-s-ʿ}                 &
+            {\Large\textarabic{تِسْعَةٌ}}\newline \textit{\small tisʿatun}               &
+            {\Large\textarabic{تِسْعٌ}}\newline \textit{\small tisʿun}                  &
+            {\Large\textarabic{تَاسِعٌ}}\newline \textit{\small tāsiʿun}                &
+            {\Large\textarabic{تَاسِعَةٌ}}\newline \textit{\small tāsiʿatun}                                                                                                                                  \\
+            \midrule
+
+            % 10
+            {\large\textbf{10}}\newline {\Large\textarabic{١٠}}                      &
+            {\Large\textarabic{ع ش ر}}\newline \textit{\small ʿ-sh-r}                &
+            {\Large\textarabic{عَشَرَةٌ}}\newline \textit{\small ʿasharatun} \tnote{(ε)} &
+            {\Large\textarabic{عَشْرٌ}}\newline \textit{\small ʿashrun} \tnote{(ε)}     &
+            {\Large\textarabic{عَاشِرٌ}}\newline \textit{\small ʿāshirun}               &
+            {\Large\textarabic{عَاشِرَةٌ}}\newline \textit{\small ʿāshiratun}                                                                                                                                 \\
+
+            \bottomrule
+        \end{tabular}
+
+        \begin{tablenotes}
+            \small
+            \item[(α)] \textbf{Reverse Gender Agreement for some Ordinal numbers:} In Quranic/Classical Arabic, cardinal numbers 1 and 2 act as adjectives and agree with the noun's gender.
+            However, cardinal numbers 3 through 10 exhibit \textit{reverse agreement} of gender.
+            You must use the morphologically feminine number (ending in \textarabic{ة}) with masculine nouns, and the masculine number with feminine nouns.
+            \item[(β)] \textbf{Roots for ``First'':} The ordinal numbers for first (\textit{awwal} / \textit{ūlā}) derive from the roots: \textarabic{أ و ل} (\textit{ʾ-w-l}).
+            % \item \textbf{Roots for ``First'':} The cardinal numbers for one (\textit{aḥad} / \textit{wāḥid}) derive from the root \textarabic{و ح د} (\textit{w-ḥ-d}). However, the ordinal numbers for first (\textit{awwal} / \textit{ūlā}) derive from a completely different root: \textarabic{أ و ل} (\textit{ʾ-w-l}).
+            \item[(γ)] \textbf{Number 6 Root:} The root for six is \textarabic{س د س} (\textit{s-d-s}).
+            The \textit{dāl} assimilated into the \textit{tāʾ} over time, changing \textit{sidta} into \textit{sitta}.
+            \item[(δ)] \textbf{Number 8:} When used with a feminine noun in the indefinite nominative/genitive state,
+            the Classical standard dictates the deficient (manqūs) form \textarabic{ثَمَانٍ} (\textit{thamānin}), ending with kasratan.
+            \item[(ε)] \textbf{Number 10:} Notice the difference in the medial consonant (\textarabic{ش}).
+            It takes a \textit{fatḥah} (\textarabic{عَشَرَةٌ} \textit{ʿasharatun}) with masculine nouns,
+            but a \textit{sukūn} (\textarabic{عَشْرٌ} \textit{ʿashrun}) with feminine nouns.
+        \end{tablenotes}
+    \end{threeparttable}
+\end{center}
+
+% % \vspace{1.5em}
+% \noindent
+% % \textbf{Grammar Note:} In Quranic/Classical Arabic, cardinal numbers 1 and 2 act as adjectives and agree with the noun's gender. However, cardinal numbers 3 through 10 exhibit \textit{reverse agreement} (polarity). You must use the morphologically feminine number (ending in \textarabic{ة}) with masculine nouns, and the masculine number with feminine nouns. 
+% \textbf{Grammar Note:} In Quranic/Classical Arabic, cardinal numbers 1 and 2 act as adjectives and agree with the noun's gender. 
+% However, cardinal numbers 3 through 10 exhibit \textit{reverse agreement} of gender. 
+% You must use the morphologically feminine number (ending in \textarabic{ة}) with masculine nouns, and the masculine number with feminine nouns. 
+
+\end{document}
