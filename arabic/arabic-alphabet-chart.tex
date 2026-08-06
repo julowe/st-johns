@@ -66,11 +66,12 @@
 %% NOTES
 % TODO: update table to https://en.wikipedia.org/wiki/Classical_Arabic#Consonants
 % TODO: use declension table from https://en.wikipedia.org/wiki/Classical_Arabic#Case ?
-% TODO: verufy ipa table is transferred to IPA column of alphabet table
+% TODO: verify ipa table is transferred to IPA column of alphabet table
 % TODO: is there an accepted order for letters in the alphabet chart?
 % TODO: add ligatures table? (sort of did this... used AI to make a list that I don't fully trust)
 % http://mstbob.net/arabic/arabic2.html
 % https://alphabet.quranacademy.org/en/lesson/additional-rules/arabic-ligatures
+% page 35 of arabic alphabet book
 % TODO: add ta marbuta ة ? p.1
 % TODO: add hamzat al-wasl (ٱ) ?
 % TODO: add alif maqṣūra (ى) ?
@@ -85,10 +86,107 @@
 % TODO: add ALA transliteration to alphabet table  https://www.loc.gov/catdir/cpso/romanization/arabic.pdf
 % TODO: add aspiration sigsn vs table-note 1?
 % TODO: add something about hamza position with diff vowel or shadda combos?
+% TODO: add numerals table
 
 % NOTE: lots of good character info here: https://en.wikipedia.org/wiki/Arabic_script_in_Unicode
 
 \begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                  %%
+%%             Arabic Alphabet Chart                %%
+%%                                                  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Arabic Alphabet Chart with all written forms \footnote{Based off textbook and ALA-LC Arabic Romanization Table. Last Updated: 2025-09-17 JKL}}
+
+% TODO: maybe update with actual unicode for each written form, vs using tatweel to force the shape? https://en.wikipedia.org/wiki/Arabic_script_in_Unicode#Contextual_forms
+\begin{center}
+    \begin{threeparttable}
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{|c|c|c|c|l|l|l|}
+            \hline
+            \textbf{Isolated} & \textbf{Final}     & \textbf{Medial}    & \textbf{Initial}             & \textbf{Name}\tnote{1} & \textbf{IPA} & \textbf{Articulation}                                         \\
+            \hline
+            \arBA{ا}          & \arBA{ـا}          &                    &                              & alif                   & [aː]         & (Nil. Bearer for \textit{hamza} or sign of a long \textit{ā}) \\
+            \hline
+            \arBA{ب}          & \arBA{ـب}          & \arBA{ـبـ}         & \arBA{بـ}                    & \textbf{b}āʾ           & [b]          & labial, voiced, unaspirated                                   \\
+            \hline
+            \arBA{ت}          & \arBA{ـت}          & \arBA{ـتـ}         & \arBA{تـ}                    & \textbf{t}āʾ           & [t]          & dental, unvoiced, unaspirated                                 \\
+            \hline
+            \arBA{ث}          & \arBA{ـث}          & \arBA{ـثـ}         & \arBA{ثـ}                    & \textbf{th}āʾ          & [θ]          & dental, unvoiced, unaspirated                                 \\
+            \hline
+            \arBA{ج}          & \arBA{ـج}          & \arBA{ـجـ}         & \arBA{جـ}                    & \textbf{j}īm           & [d͡ʒ]         & palatal, voiced, unaspirated                                  \\
+            \hline
+            \arBA{ح}          & \arBA{ـح}          & \arBA{ـحـ}         & \arBA{حـ}                    & \textbf{ḥ}āʾ           & [ħ]          & pharyngeal, unvoiced, unaspirated                             \\
+            \hline
+            \arBA{خ}          & \arBA{ـخ}          & \arBA{ـخـ}         & \arBA{خـ}                    & \textbf{kh}āʾ          & [χ]          & velar, unvoiced, unaspirated                                  \\
+            \hline
+            \arBA{د}          & \arBA{ـد}          &                    &                              & \textbf{d}āl           & [d]          & dental, voiced, unaspirated                                   \\
+            \hline
+            \arBA{ذ}          & \arBA{ـذ}          &                    &                              & \textbf{dh}āl          & [ð]          & dental, voiced, unaspirated                                   \\
+            \hline
+            \arBA{ر}          & \arBA{ـر}          &                    &                              & \textbf{r}āʾ           & [r]          & alveolar, voiced, unaspirated                                 \\
+            \hline
+            \arBA{ز}          & \arBA{ـز}          &                    &                              & \textbf{z}āy           & [z]          & alveolar, voiced, unaspirated                                 \\
+            \hline
+            \arBA{س}          & \arBA{ـس}          & \arBA{ـسـ}         & \arBA{سـ}                    & \textbf{s}īn           & [s]          & alveolar, unvoiced, unaspirated                               \\
+            \hline
+            \arBA{ش}          & \arBA{ـش}          & \arBA{ـشـ}         & \arBA{شـ}                    & \textbf{sh}īn          & [ʃ]          & palatal, unvoiced, unaspirated                                \\
+            \hline
+            \arBA{ص}          & \arBA{ـص}          & \arBA{ـصـ}         & \arBA{صـ}                    & \textbf{ṣ}ād           & [sˤ]         & emphatic dental, unvoiced, unaspirated                        \\
+            \hline
+            \arBA{ض}          & \arBA{ـض}          & \arBA{ـضـ}         & \arBA{ضـ}                    & \textbf{ḍ}ād           & [dˤ]         & emphatic dental, voiced, unaspirated                          \\
+            \hline
+            \arBA{ط}          & \arBA{ـط}          & \arBA{ـطـ}         & \arBA{طـ}                    & \textbf{ṭ}āʾ           & [tˤ]         & emphatic dental, unvoiced, unaspirated                        \\
+            \hline
+            \arBA{ظ}          & \arBA{ـظ}          & \arBA{ـظـ}         & \arBA{ظـ}                    & \textbf{ẓ}āʾ           & [ðˤ]         & emphatic dental, voiced, unaspirated                          \\
+            \hline
+            \arBA{ع}          & \arBA{ـع}          & \arBA{ـعـ}         & \arBA{عـ}                    & \textbf{ʿ}ayn          & [ʕ]          & pharyngeal, voiced, unaspirated                               \\
+            \hline
+            \arBA{غ}          & \arBA{ـغ}          & \arBA{ـغـ}         & \arBA{غـ}                    & \textbf{gh}ayn         & [ʁ]          & velar, voiced, unaspirated                                    \\
+            \hline
+            \arBA{ف}          & \arBA{ـف}          & \arBA{ـفـ}         & \arBA{فـ}                    & \textbf{f}āʾ           & [f]          & labial, unvoiced, unaspirated                                 \\
+            \hline
+            \arBA{ق}          & \arBA{ـق}          & \arBA{ـقـ}         & \arBA{قـ}                    & \textbf{q}āf           & [q]          & uvular, unvoiced, unaspirated                                 \\
+            \hline
+            \arBA{ك}          & \arBA{ـك}          & \arBA{ـكـ}         & \arBA{كـ}                    & \textbf{k}āf           & [k]          & velar, unvoiced, unaspirated                                  \\
+            \hline
+            \arBA{ل}          & \arBA{ـل}          & \arBA{ـلـ}         & \arBA{لـ}                    & \textbf{l}ām           & [l]          & alveolar, voiced, unaspirated                                 \\
+            \hline
+            \arBA{م}          & \arBA{ـم}          & \arBA{ـمـ}         & \arBA{مـ}                    & \textbf{m}īm           & [m]          & labial, voiced, unaspirated                                   \\
+            \hline
+            \arBA{ن}          & \arBA{ـن}          & \arBA{ـنـ}         & \arBA{نـ}                    & \textbf{n}ūn           & [n]          & alveolar, voiced, unaspirated                                 \\
+            \hline
+            \arBA{ه}          & \arBA{ـه}          & \arBA{ـهـ}         & \arBA{هـ}                    & \textbf{h}āʾ           & [h]          & glottal, unvoiced, unaspirated                                \\
+            \hline
+            \arBA{و}          & \arBA{ـو}          &                    &                              & \textbf{w}āw           & [w]          & labial-velar, voiced, unaspirated                             \\
+            \hline
+            \arBA{ي}          & \arBA{ـي}          & \arBA{ـيـ}         & \arBA{يـ}                    & \textbf{y}āʾ           & [j]          & palatal, voiced approximant                                   \\
+            \hline
+                              & \arBA{ء}, \arBA{◌ٔ} & \arBA{ء}, \arBA{◌ٔ} & \arBA{ٱ}, \arBA{◌ٔ}, \arBA{◌ٕ} & hamza \tnote{2}        & [ʔ]          & glottal, unvoiced, unaspirated                                \\
+            % TODO: add hamzat al-wasl (ٱ) and hamzat al-qat' (ء) ?  ◌ ◌ٔ
+            \hline
+        \end{tabular}
+        \begin{tablenotes}
+            \item[1] the \textbf{b}old letter in the name indicates the letter's typical English transliteration.
+            \item[2] ALA-LC: ``In initial position
+            \dots,
+            %, whether at the beginning of a word,
+            % following a prefixed preposition or conjunction, or following the definite article,
+            \ar{ء} is not represented in romanization.  When medial or final, \ar{ء} is romanized as ’ ''
+        \end{tablenotes}
+    \end{threeparttable}
+\end{center}
+\vspace{0.5cm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                  %%
+%%      IPA Table of Arabic Consonants              %%
+%%                                                  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{landscape}
     \section*{Arabic Consonants on the IPA Table \footnote{This table was based off of Wikipedia's Arabic phonology article \url{https://en.wikipedia.org/wiki/Standard_Arabic_phonology#Consonants} and added to by Justin Lowe. Last Updated: 2025-09-17}}
 
@@ -169,134 +267,34 @@
 
 \end{landscape}
 
-\section*{Arabic Alphabet Chart with all written forms \footnote{Based off textbook and ALA-LC Arabic Romanization Table. Last Updated: 2025-09-17 JKL}}
 
-\begin{center}
-    \begin{threeparttable}
-        \renewcommand{\arraystretch}{1.5}
-        \begin{tabular}{|c|c|c|c|l|l|l|}
-            \hline
-            \textbf{Isolated} & \textbf{Final}     & \textbf{Medial}    & \textbf{Initial}             & \textbf{Name}\tnote{1} & \textbf{IPA} & \textbf{Articulation}                                         \\
-            \hline
-            \arBA{ا}          & \arBA{ـا}          &                    &                              & alif                   & [aː]         & (Nil. Bearer for \textit{hamza} or sign of a long \textit{ā}) \\
-            \hline
-            \arBA{ب}          & \arBA{ـب}          & \arBA{ـبـ}         & \arBA{بـ}                    & \textbf{b}āʾ           & [b]          & labial, voiced, unaspirated                                   \\
-            \hline
-            \arBA{ت}          & \arBA{ـت}          & \arBA{ـتـ}         & \arBA{تـ}                    & \textbf{t}āʾ           & [t]          & dental, unvoiced, unaspirated                                 \\
-            \hline
-            \arBA{ث}          & \arBA{ـث}          & \arBA{ـثـ}         & \arBA{ثـ}                    & \textbf{th}āʾ          & [θ]          & dental, unvoiced, unaspirated                                 \\
-            \hline
-            \arBA{ج}          & \arBA{ـج}          & \arBA{ـجـ}         & \arBA{جـ}                    & \textbf{j}īm           & [d͡ʒ]         & palatal, voiced, unaspirated                                  \\
-            \hline
-            \arBA{ح}          & \arBA{ـح}          & \arBA{ـحـ}         & \arBA{حـ}                    & \textbf{ḥ}āʾ           & [ħ]          & pharyngeal, unvoiced, unaspirated                             \\
-            \hline
-            \arBA{خ}          & \arBA{ـخ}          & \arBA{ـخـ}         & \arBA{خـ}                    & \textbf{kh}āʾ          & [χ]          & velar, unvoiced, unaspirated                                  \\
-            \hline
-            \arBA{د}          & \arBA{ـد}          &                    &                              & \textbf{d}āl           & [d]          & dental, voiced, unaspirated                                   \\
-            \hline
-            \arBA{ذ}          & \arBA{ـذ}          &                    &                              & \textbf{dh}āl          & [ð]          & dental, voiced, unaspirated                                   \\
-            \hline
-            \arBA{ر}          & \arBA{ـر}          &                    &                              & \textbf{r}āʾ           & [r]          & alveolar, voiced, unaspirated                                 \\
-            \hline
-            \arBA{ز}          & \arBA{ـز}          &                    &                              & \textbf{z}āy           & [z]          & alveolar, voiced, unaspirated                                 \\
-            \hline
-            \arBA{س}          & \arBA{ـس}          & \arBA{ـسـ}         & \arBA{سـ}                    & \textbf{s}īn           & [s]          & alveolar, unvoiced, unaspirated                               \\
-            \hline
-            \arBA{ش}          & \arBA{ـش}          & \arBA{ـشـ}         & \arBA{شـ}                    & \textbf{sh}īn          & [ʃ]          & palatal, unvoiced, unaspirated                                \\
-            \hline
-            \arBA{ص}          & \arBA{ـص}          & \arBA{ـصـ}         & \arBA{صـ}                    & \textbf{ṣ}ād           & [sˤ]         & emphatic dental, unvoiced, unaspirated                        \\
-            \hline
-            \arBA{ض}          & \arBA{ـض}          & \arBA{ـضـ}         & \arBA{ضـ}                    & \textbf{ḍ}ād           & [dˤ]         & emphatic dental, voiced, unaspirated                          \\
-            \hline
-            \arBA{ط}          & \arBA{ـط}          & \arBA{ـطـ}         & \arBA{طـ}                    & \textbf{ṭ}āʾ           & [tˤ]         & emphatic dental, unvoiced, unaspirated                        \\
-            \hline
-            \arBA{ظ}          & \arBA{ـظ}          & \arBA{ـظـ}         & \arBA{ظـ}                    & \textbf{ẓ}āʾ           & [ðˤ]         & emphatic dental, voiced, unaspirated                          \\
-            \hline
-            \arBA{ع}          & \arBA{ـع}          & \arBA{ـعـ}         & \arBA{عـ}                    & \textbf{ʿ}ayn          & [ʕ]          & pharyngeal, voiced, unaspirated                               \\
-            \hline
-            \arBA{غ}          & \arBA{ـغ}          & \arBA{ـغـ}         & \arBA{غـ}                    & \textbf{gh}ayn         & [ʁ]          & velar, voiced, unaspirated                                    \\
-            \hline
-            \arBA{ف}          & \arBA{ـف}          & \arBA{ـفـ}         & \arBA{فـ}                    & \textbf{f}āʾ           & [f]          & labial, unvoiced, unaspirated                                 \\
-            \hline
-            \arBA{ق}          & \arBA{ـق}          & \arBA{ـقـ}         & \arBA{قـ}                    & \textbf{q}āf           & [q]          & uvular, unvoiced, unaspirated                                 \\
-            \hline
-            \arBA{ك}          & \arBA{ـك}          & \arBA{ـكـ}         & \arBA{كـ}                    & \textbf{k}āf           & [k]          & velar, unvoiced, unaspirated                                  \\
-            \hline
-            \arBA{ل}          & \arBA{ـل}          & \arBA{ـلـ}         & \arBA{لـ}                    & \textbf{l}ām           & [l]          & alveolar, voiced, unaspirated                                 \\
-            \hline
-            \arBA{م}          & \arBA{ـم}          & \arBA{ـمـ}         & \arBA{مـ}                    & \textbf{m}īm           & [m]          & labial, voiced, unaspirated                                   \\
-            \hline
-            \arBA{ن}          & \arBA{ـن}          & \arBA{ـنـ}         & \arBA{نـ}                    & \textbf{n}ūn           & [n]          & alveolar, voiced, unaspirated                                 \\
-            \hline
-            \arBA{ه}          & \arBA{ـه}          & \arBA{ـهـ}         & \arBA{هـ}                    & \textbf{h}āʾ           & [h]          & glottal, unvoiced, unaspirated                                \\
-            \hline
-            \arBA{و}          & \arBA{ـو}          &                    &                              & \textbf{w}āw           & [w]          & labial-velar, voiced, unaspirated                             \\
-            \hline
-            \arBA{ي}          & \arBA{ـي}          & \arBA{ـيـ}         & \arBA{يـ}                    & \textbf{y}āʾ           & [j]          & palatal, voiced approximant                                   \\
-            \hline
-                              & \arBA{ء}, \arBA{◌ٔ} & \arBA{ء}, \arBA{◌ٔ} & \arBA{ٱ}, \arBA{◌ٔ}, \arBA{◌ٕ} & hamza \tnote{2}        & [ʔ]          & glottal, unvoiced, unaspirated                                \\
-            % TODO: add hamzat al-wasl (ٱ) and hamzat al-qat' (ء) ?  ◌ ◌ٔ
-            \hline
-        \end{tabular}
-        \begin{tablenotes}
-            \item[1] the \textbf{b}old letter in the name indicates the letter's typical English transliteration.
-            \item[2] ALA-LC: ``In initial position
-            \dots,
-            %, whether at the beginning of a word,
-            % following a prefixed preposition or conjunction, or following the definite article,
-            \ar{ء} is not represented in romanization.  When medial or final, \ar{ء} is romanized as ’ ''
-        \end{tablenotes}
-    \end{threeparttable}
-\end{center}
-\vspace{0.5cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                  %%
+%%      Common Arabic Ligatures TODO              %%
+%%                                                  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section*{Common Arabic Ligatures \footnote{(List generated by AI: Claude Sonnet 3.5, not yet reviewed or added to) Last Updated: 2025-09-16 JKL}}
+% \section*{Common Arabic Ligatures \footnote{(List generated by AI: Claude Sonnet 3.5, not yet reviewed or added to) Last Updated: 2025-09-16 JKL}}
 
-\begin{center}
-    \renewcommand{\arraystretch}{1.5}
-    \begin{tabular}{|c|c|l|}
-        \hline
-        \textbf{Ligature} & \textbf{Components}                  & \textbf{Transliteration}                     \\
-        \hline
-        % Two-letter ligatures
-        \arBA{ﻻ}          & \arBA{ل ا}                           & lām-alif (initial/medial)                    \\
-        \hline
-        \arBA{لإ}         & \arBA{ل إ}                           & lām-alif with hamza below                    \\
-        \hline
-        \arBA{لأ}         & \arBA{ل أ}                           & lām-alif with hamza above                    \\
-        \hline
-        \arBA{لآ}         & \arBA{ل آ}                           & lām-alif with madda                          \\
-        \hline
-        % Common letter pairs that form ligatures
-        \arBA{جح}         & \arBA{ج ح}                           & jīm-ḥāʾ                                      \\
-        \hline
-        \arBA{حج}         & \arBA{ح ج}                           & ḥāʾ-jīm                                      \\
-        \hline
-        \arBA{حم}         & \arBA{ح م}                           & ḥāʾ-mīm                                      \\
-        \hline
-        \arBA{سح}         & \arBA{س ح}                           & sīn-ḥāʾ                                      \\
-        \hline
-        \arBA{صح}         & \arBA{ص ح}                           & ṣād-ḥāʾ                                      \\
-        \hline
-        \arBA{لح}         & \arBA{ل ح}                           & lām-ḥāʾ                                      \\
-        \hline
-        % Three-letter combinations
-        \arBA{بسم}        & \arBA{ب س م}                         & bāʾ-sīn-mīm                                  \\
-        \hline
-        % Special word ligatures
-        \arBA{ﷲ}          & \arBA{ا ل ل ه}                       & Allah (word ligature)                        \\
-        \hline
-        \arBA{ﷺ}          & \arBA{ص ل ى ا ل ل ه ع ل ي ه و س ل م} & ṣallā llāhu ʿalayhi wa-sallam                \\
-        \hline
-        \arBA{ﷶ}          & \arBA{ص ل ع م}                       & ṣallā llāhu ʿalayhi wa-sallam (abbreviation) \\
-        \hline
-        \arBA{ﷳ}          & \arBA{ا ك ب ر}                       & akbar                                        \\
-        \hline
-        \arBA{ﷴ}          & \arBA{م ح م د}                       & muḥammad                                     \\
-        \hline
-        \arBA{ﷻ}          & \arBA{ج ل ج ل ا ل ه}                 & jalla jalāluhu                               \\
-        \hline
-    \end{tabular}
-\end{center}
+% \begin{center}
+%     \renewcommand{\arraystretch}{1.5}
+%     \begin{tabular}{|c|c|l|}
+%         \hline
+%         \textbf{Ligature} & \textbf{Components}                  & \textbf{Transliteration}                     \\
+%         \hline
+%         % Two-letter ligatures
+%         \arBA{ﻻ}          & \arBA{ل ا}                           & lām-alif (initial/medial)                    \\
+%         \hline
+%         % Special word ligatures
+%         \arBA{ﷲ}          & \arBA{ا ل ل ه}                       & Allah (word ligature)                        \\
+%         \hline
+%         \arBA{ﷺ}          & \arBA{ص ل ى ا ل ل ه ع ل ي ه و س ل م} & ṣallā llāhu ʿalayhi wa-sallam                \\
+%         \hline
+%         \arBA{ﷶ}          & \arBA{ص ل ع م}                       & ṣallā llāhu ʿalayhi wa-sallam (abbreviation) \\
+%         \hline
+%         \arBA{ﷻ}          & \arBA{ج ل ج ل ا ل ه}                 & jalla jalāluhu                               \\
+%         \hline
+%     \end{tabular}
+% \end{center}
 
 \end{document}
