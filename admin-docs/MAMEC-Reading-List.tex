@@ -13,12 +13,12 @@
 
 \title{Middle Eastern Classics Reading Lists 2025--2026}
 \author{St.\ John's College --- Santa Fe Graduate Institute}
-\date{Updated: 2025-07-25}
-\setcounter{printSessionDate}{1}% setting to 0 will not print dates after "Session XYZ", setting to 1 will print dates (e.g. "Session XYZ - 2025-09-09")
+\def\dateUpdated{2025-10-03} % manually set date updated here, format YYYY-MM-DD
+\setcounter{printSessionDate}{0}% setting to 0 will not print dates after "Session XYZ", setting to 1 will print dates (e.g. "Session XYZ - 2025-09-09")
 
 \DTMsavedate{fallSeminarStart}{2025-09-01}
 \DTMsavedate{preceptorial1Start}{2025-09-02}
-\DTMsavedate{preceptorial2Start}{2025-10-29}
+\DTMsavedate{preceptorial2Start}{2025-10-27}
 
 \DTMsavedate{springSeminarStart}{2026-01-19}
 \DTMsavedate{preceptorial3Start}{2026-01-20}
@@ -41,6 +41,10 @@
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%% CHANGE LOG
+%% 2025-10-03: corrected start date of precept 2 to 2025-10-27 (was 2025-10-29). 
+%%    This only affects the Reading List version with dates, not the one without dates.
+%%    But I created a new PDF of the reading list without dates and a new 'Updated' date, so that both PDFs have the same updated date.
 
 % Typeset/compile with XeLaTeX !!!
 % why? LaTeX will give errors on the unicode characters. If you must use LaTeX, then you can get around the errors with declarations like the line below (that is commented out/not used currently) with the `\DeclareUnicodeCharacter` command...
@@ -48,6 +52,8 @@
 %% \DeclareUnicodeCharacter{1E41}{\d{m}} %produces m with dot below it, not above. It works in pdfLaTeX, but not LuaLaTeX
 %% \DeclareUnicodeCharacter{1E41}{\(\dot{m}\)} %works in pdfLaTeX, but not LuaLaTeX
 
+
+\date{Updated: \dateUpdated}
 
 %NOTE: trying to save one date as another doesn't work, need to do this little dance to get it into the right format:
 %\DTMsavedate{testDate}{\DTMfetchyear{springStart}-\DTMfetchmonth{springStart}-\DTMfetchday{springStart}}
@@ -309,10 +315,13 @@
 
 % End - Introductory typesetting configuration
 
-
-%%%
-%%%%% Begin Main Document
-%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%
+%%         BEGIN MAIN DOCUMENT
+%%
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
@@ -322,13 +331,20 @@
 \renewcommand*\contentsname{Reading Lists}
 \tableofcontents
 
+\vspace{5em}
+\subsection{Changelog}
+\textbf{2025-10-03}: Corrected the starting date of Preceptorial 2. 
+   \textit{This change only affects the version of the Reading List which provides dates for the classes.
+   %But I created a new PDF of the reading list without dates and a new 'Updated' date, so that both PDFs have the same updated date.
+   }
+
 %\vspace{2cm}
 %\textit{\textbf{Note}: For the spring term, students will be provided with a list of options for preceptorials.}
 
 \thispagestyle{fancy} % instead of a `plain` pagestyle this set it to a style which includes the header on the Table of Contents page
 %\thispagestyle{empty} %use this instead of above 'fancy' line, if you do not want a header image on the first page of this document
 
-\fancyfoot[R]{\textit{Updated: 2025-07-25}}
+\fancyfoot[R]{\textit{Updated: \dateUpdated}} % put date updated in footer on right side
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
@@ -355,7 +371,7 @@
     %\raggedcolumns
 
     \printSeminarHeader{lastPrintedClassDate}
-	\textit{The Epic of Gilgamesh}, all (Andrew George translation, Penguin Classics)
+	\textit{The Epic of Gilgamesh}, Chapter 1: The Standard Version (Andrew George translation, Penguin Classics)
 
     \printSeminarHeader{lastPrintedClassDate}
 	\textit{Genesis}, Chapters 1--23
@@ -369,6 +385,7 @@
     \printSeminarHeader{lastPrintedClassDate}
 	\textit{Deuteronomy}, all
 
+    % TODO: swap samuel reading with psalms reading?
     \printSeminarHeader{lastPrintedClassDate}
 	\textit{I Samuel} 8--31; \textit{I\textit{I Samuel}}; \textit{I Kings}, 1--2; \textit{II Chronicles} (last chapter only)
 
@@ -475,50 +492,64 @@
 %\begin{multicols*}{2} % uncomment this line and the matching begin or end line if columns are divided oddly on the last page of this section
     %\raggedcolumns
 
-    \begin{spacing}{0.98}
+    % \begin{spacing}{0.98}
     
     \printSeminarHeader{lastPrintedClassDate}
 	‘Abd al-Jabbār, \textit{Book of the Five Fundamentals}, pp. 90--115 (in the \textit{Middle Eastern Classics Seminar Manual}); al-Sanūsī, \textit{Foundational Proofs}, pp. 35--213 (in Sa’id Foudah, \textit{A Refined Explanation of the Sanusi Creed})
 
+    \vspace{-0.1cm}
     \printSeminarHeader{lastPrintedClassDate}
 	Ibn Sīnā, \textit{The Metaphysics of the Healing} (in the \textit{Middle Eastern Classics Seminar Manual}): Book I, Chapters 1--2 (pp. 1--13) and 5--7 (pp. 22--38)
 
+    \vspace{-0.1cm}
     \printSeminarHeader{lastPrintedClassDate}
 	Ibn Sīnā, \textit{The Metaphysics of the Healing} (in the \textit{Middle Eastern Classics Seminar Manual}): Book VIII, Chapters 6--7 (pp. 283--298); Book IX, Chapter 1 (pp. 299--307)
 
+    \vspace{-0.1cm}
     \printSeminarHeader{lastPrintedClassDate}
 	Ibn Sīnā, \textit{The Metaphysics of the Healing} (in the \textit{Middle Eastern Classics Seminar Manual}): Book IX, Chapters 2--3 (pp. 307--326) and 6 (pp. 339--347)
 
+    \vspace{-0.1cm}
     \printSeminarHeader{lastPrintedClassDate}
 	Ibn Sīnā, \textit{The Metaphysics of the Healing} (in the \textit{Middle Eastern Classics Seminar Manual}): Book IX, Chapter 7 (pp. 347--357) and Book X Chapters 2--5 (pp. 364--378)
 
+    \vspace{-0.1cm}
     \printSeminarHeader{lastPrintedClassDate}
 	Ibn Ṭufayl, \textit{Ḥayy ibn Yaqẓān}, Goodman translation pp. 95 to 135 ``\(\ldots\)to the world of mind.''
 
+    \vspace{-0.1cm}
     \printSeminarHeader{lastPrintedClassDate}
 	Ibn Ṭufayl, \textit{Ḥayy ibn Yaqẓān}, Goodman translation pp. 135 ``Having gained an awareness\(\ldots\)'' to 166
 
+    \vspace{-0.1cm}
     \printSeminarHeader{lastPrintedClassDate}
 	al-Ghazālī, \textit{Deliverance from Error} (McCarthy translation, \textit{Al-Ghazali's Path to Sufism: His \textit{Deliverance from Error}}), all
 
+    \vspace{-0.1cm}
     \printSeminarHeader{lastPrintedClassDate}
 	al-Ghazālī, \textit{The Alchemy of Happiness} (Field translation), all
 
+    \vspace{-0.1cm}
     \printSeminarHeader{lastPrintedClassDate}
 	Ibn Rushd, \textit{The Decisive Treatise} (\textit{Medieval Political Philosophy}, edited by Parens and Macfarland, pp. 124--140)
 
+    \vspace{-0.1cm}
     \printSeminarHeader{lastPrintedClassDate}
 	al-Ghazālī, \textit{The Incoherence of the Philosophers} (Marmura translation, in the \textit{Middle Eastern Classics Seminar Manual}): The Religious Preface, pp. 1--11; First Discussion - On refuting their doctrine of the world's past eternity, First Proof, pp. 12--30
 
+    \vspace{-0.1cm}
     \printSeminarHeader{lastPrintedClassDate}
 	al-Ghazālī, \textit{The Incoherence of the Philosophers} (Marmura translation, in the \textit{Middle Eastern Classics Seminar Manual}): First Discussion - On refuting their doctrine of the world's past eternity, Second, Third, and Fourth Proof, pp. 30--46
 
+    \vspace{-0.1cm}
     \printSeminarHeader{lastPrintedClassDate}
 	Ibn Rushd, \textit{The Incoherence of the Incoherence} (Van Den Bergh translation, in the \textit{Middle Eastern Classics Seminar Manual}): Concerning the Eternity of the World - First Discussion, First Proof, pp. 1--36
 
+    \vspace{-0.1cm}
     \printSeminarHeader{lastPrintedClassDate}
 	Ibn Rushd, \textit{The Incoherence of the Incoherence} (Van Den Bergh translation, in the \textit{Middle Eastern Classics Seminar Manual}): Concerning the Eternity of the World - First Discussion, Second, Third, and Fourth Proof, pp. 37--69
 
+    \vspace{-0.1cm}
     \printSeminarHeader{lastPrintedClassDate}
 	al-Ghazālī, \textit{The Incoherence of the Philosophers} (Marmura translation, in the \textit{Middle Eastern Classics Seminar Manual}): The Natural Sciences, pp. 161--165; Seventeenth Discussion - On causality and miracles, pp. 166--177; Nineteenth Discussion - On refuting their statement that it is impossible for human souls to undergo annihilation after having come to exist; that they are everlasting, their ceasing to exist inconceivable, pp. 201--207
 
@@ -549,9 +580,11 @@
     \printSeminarHeader{lastPrintedClassDate}
 	Niẓāmī Ganjavī, \textit{Layli and Majnun} (Davis translation), pp. 131--258
 
+    \vspace{-0.1cm} % Added to stop last session from going on to next page
     \printSeminarHeader{lastPrintedClassDate}
 	‘Aṭṭār, \textit{The Conference of the Birds}, Darbandi \& Davis translation pp. 29--75 (``\(\ldots\)That your existence is so deeply torn!'')
 
+    \vspace{-0.1cm}
     \printSeminarHeader{lastPrintedClassDate}
 	‘Aṭṭār, \textit{The Conference of the Birds}, Darbandi \& Davis translation pp. 75--120 (``\(\ldots\)Had any knowledge of itself at all!'')
 
@@ -573,7 +606,7 @@
     \printSeminarHeader{lastPrintedClassDate}
 	Ḥāfiẓ, \textit{Faces of Love: Hafez and the Poets of Shiraz (English-only version)}: pp. 2--7, 9--11, 15--16, 18--19, 22--23, 26--27, 29--33, 36--37, 40--41, 50--51, 53, 56--59, 69--71, 76--77, 80--81, 88--91, 94--95, 100--101, 110--115, 120--121, 124--125, 132--133
 
-    \end{spacing}
+    % \end{spacing}
 
 \end{multicols}
 %\end{multicols*} % uncomment this line and the matching begin or end line if columns are divided oddly on the last page of this section
