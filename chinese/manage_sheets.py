@@ -411,8 +411,13 @@ def render_latex(data_file: str, output_tex: str, layout: str = "table"):
     tex_lines.append(
         r"\usepackage[margin=0.42in,footskip=0.2in,top=0.38in,bottom=0.38in]{geometry}"
     )
-    tex_lines.append(r"\usepackage{fontspec}")
-    tex_lines.append(r"\usepackage{xeCJK}")
+    if layout == "vertical":
+        tex_lines.append(r"\usepackage{luatexja}")
+        tex_lines.append(r"\usepackage{luatexja-fontspec}")
+        tex_lines.append(r"\usepackage{lltjext}")
+    else:
+        tex_lines.append(r"\usepackage{fontspec}")
+        tex_lines.append(r"\usepackage{xeCJK}")
     tex_lines.append(r"\usepackage{calc}")
     tex_lines.append(r"\usepackage{paracol}")
     tex_lines.append(r"\usepackage{tcolorbox}")
@@ -432,9 +437,17 @@ def render_latex(data_file: str, output_tex: str, layout: str = "table"):
     tex_lines.append(r"  BoldItalicFont = CharisSIL-Bold.ttf,")
     tex_lines.append(r"  BoldItalicFeatures = {FakeSlant=0.2}")
     tex_lines.append(r"]")
-    tex_lines.append(r"\setCJKmainfont{SimSun.ttf}[")
-    tex_lines.append(r"  Path = fonts/")
-    tex_lines.append(r"]")
+
+    if layout == "vertical":
+        tex_lines.append(r"\setmainjfont{SimSun.ttf}[")
+        tex_lines.append(r"  Path = fonts/,")
+        tex_lines.append(r"  TateFont = {SimSun.ttf},")
+        tex_lines.append(r"  TateFeatures = {JFM = {zh_TW/{quanjiao,vert}}}")
+        tex_lines.append(r"]")
+    else:
+        tex_lines.append(r"\setCJKmainfont{SimSun.ttf}[")
+        tex_lines.append(r"  Path = fonts/")
+        tex_lines.append(r"]")
     tex_lines.append("")
 
     # Page styles
@@ -451,20 +464,22 @@ def render_latex(data_file: str, output_tex: str, layout: str = "table"):
     tex_lines.append(r"% Custom styles")
     tex_lines.append(r"\newcommand{\readingCJKSize}{14pt}")
     tex_lines.append(r"\newcommand{\readingCJKLead}{17pt}")
-    tex_lines.append(r"\newcommand{\readingPuncSize}{9pt}")
-    tex_lines.append(r"\newcommand{\readingPuncLead}{11pt}")
-    tex_lines.append(
-        r"\newcommand{\readingChar}[1]{{\fontsize{\readingCJKSize}{\readingCJKLead}\selectfont #1}}"
-    )
-    tex_lines.append(
-        r"\newcommand{\readingPunc}[1]{\raisebox{0.15em}{{\fontsize{\readingPuncSize}{\readingPuncLead}\selectfont #1}}}"
-    )
+    if layout != "vertical":
+        tex_lines.append(r"\newcommand{\readingPuncSize}{9pt}")
+        tex_lines.append(r"\newcommand{\readingPuncLead}{11pt}")
+        tex_lines.append(
+            r"\newcommand{\readingChar}[1]{{\fontsize{\readingCJKSize}{\readingCJKLead}\selectfont #1}}"
+        )
+        tex_lines.append(
+            r"\newcommand{\readingPunc}[1]{\raisebox{0.15em}{{\fontsize{\readingPuncSize}{\readingPuncLead}\selectfont #1}}}"
+        )
     tex_lines.append(r"\newcommand{\vocabCJKSize}{14pt}")
     tex_lines.append(r"\newcommand{\vocabCJKLead}{17pt}")
     tex_lines.append(
         r"\newcommand{\vocabChar}[1]{\textbf{{\fontsize{\vocabCJKSize}{\vocabCJKLead}\selectfont #1}}}"
     )
-    tex_lines.append(r"\newcommand{\cjkvertchar}[1]{\makebox[\readingCJKSize][c]{#1}}")
+    if layout != "vertical":
+        tex_lines.append(r"\newcommand{\cjkvertchar}[1]{\makebox[\readingCJKSize][c]{#1}}")
     tex_lines.append(r"\newcommand{\stroketag}[1]{{\scriptsize\color{gray} #1}}")
     tex_lines.append("")
 
