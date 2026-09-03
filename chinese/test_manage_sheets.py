@@ -143,7 +143,7 @@ class TestReadingColumnRendering(unittest.TestCase):
         self.assertIn(r"鮮矣仁。\par", content)
 
         # Excerpt delimiter '---' produces 2em space
-        self.assertIn(r"\par\vspace{2em}", content)
+        self.assertIn(r"\vspace{2em}", content)
 
         # Font size override updated without punctuation overrides
         self.assertIn(r"\renewcommand{\readingCJKSize}{18pt}", content)

@@ -703,6 +703,20 @@ def render_latex(data_file: str, output_tex: str, layout: str = "table"):
             tex_lines.append(r"\textbf{\small " + latex_escape("Reading") + r"}")
             tex_lines.append(r"\vspace{0.3em}\hrule\vspace{0.5em}")
             tex_lines.append(r"\vspace*{\fill}")
+
+            # Group reading columns into excerpt blocks separated by '---'
+            blocks = []
+            curr_block = []
+            for c in reading_cols:
+                if c == "---":
+                    if curr_block:
+                        blocks.append(curr_block)
+                        curr_block = []
+                else:
+                    curr_block.append(c)
+            if curr_block:
+                blocks.append(curr_block)
+
             if layout == "vertical":
                 tex_lines.append(
                     r"\begin{minipage}<t>[c][][t]{\dimexpr\textheight-1.2in\relax}"
@@ -713,22 +727,9 @@ def render_latex(data_file: str, output_tex: str, layout: str = "table"):
                 tex_lines.append(r"  \setlength{\parindent}{0pt}")
                 tex_lines.append(r"  \setlength{\parskip}{0.8em}")
 
-                # Group reading columns into excerpt blocks separated by '---'
-                blocks = []
-                curr_block = []
-                for c in reading_cols:
-                    if c == "---":
-                        if curr_block:
-                            blocks.append(curr_block)
-                            curr_block = []
-                    else:
-                        curr_block.append(c)
-                if curr_block:
-                    blocks.append(curr_block)
-
                 for b_idx, block in enumerate(blocks):
                     if b_idx > 0:
-                        tex_lines.append(r"  \par\vspace{2em}")
+                        tex_lines.append(r"  \vspace{2em}")
                     for col_str in block:
                         tex_lines.append(r"  " + col_str + r"\par")
 
@@ -737,18 +738,6 @@ def render_latex(data_file: str, output_tex: str, layout: str = "table"):
                 tex_lines.append(r"\setlength{\tabcolsep}{4pt}")
 
                 # Typeset vertical columns in LaTeX tabular
-                # Group reading columns into excerpt blocks separated by '---'
-                blocks = []
-                curr_block = []
-                for c in reading_cols:
-                    if c == "---":
-                        if curr_block:
-                            blocks.append(curr_block)
-                            curr_block = []
-                    else:
-                        curr_block.append(c)
-                if curr_block:
-                    blocks.append(curr_block)
 
                 # Right-to-Left: Excerpt 0 is on the far right, Excerpt N-1 on the far left
                 # Within each excerpt, Column 0 is on the right, Column K-1 on the left
