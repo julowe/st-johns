@@ -1,6 +1,8 @@
 import unittest
 import sys
 import os
+import tempfile
+import json
 
 # Add parent directory to path so manage_sheets can be imported
 sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
@@ -35,11 +37,6 @@ class TestCLIParsing(unittest.TestCase):
         args = self.parser.parse_args(["all", "--layout", "vertical"])
         self.assertEqual(args.layout, "vertical")
 
-
-if __name__ == "__main__":
-    unittest.main()
-import tempfile
-import json
 
 class TestPreambleGeneration(unittest.TestCase):
     def setUp(self):
@@ -95,3 +92,6 @@ class TestPreambleGeneration(unittest.TestCase):
         # Sizing macros for the vertical minipage should still be present
         self.assertIn(r"\newcommand{\readingCJKSize}", content)
         self.assertIn(r"\newcommand{\readingCJKLead}", content)
+
+if __name__ == "__main__":
+    unittest.main()
