@@ -93,5 +93,72 @@ class TestPreambleGeneration(unittest.TestCase):
         self.assertIn(r"\newcommand{\readingCJKSize}", content)
         self.assertIn(r"\newcommand{\readingCJKLead}", content)
 
+class TestReadingColumnRendering(unittest.TestCase):
+    def setUp(self):
+        self.temp_dir = tempfile.TemporaryDirectory()
+        self.multi_excerpt_data_file = os.path.join(self.temp_dir.name, "multi_data.json")
+        data = {
+            "global_reading_row_spacing": "4pt",
+            "lessons": [
+                {
+                    "lesson_number": 3,
+                    "lesson_title": "Lesson 3",
+                    "pages": [
+                        {
+                            "reading_title": "3.1 Reading",
+                            "vocab_subtitle": "Vocabulary",
+                            "vocab": [],
+                            "reading_cjk_font_size": "18pt",
+                            "reading_columns": [
+                                "子曰：",
+                                "巧言令色，",
+                                "---",
+                                "鮮矣仁。",
+                            ],
+                        }
+                    ],
+                }
+            ],
+        }
+        with open(self.multi_excerpt_data_file, "w", encoding="utf-8") as f:
+            json.dump(data, f)
+
+    def tearDown(self):
+        self.temp_dir.cleanup()
+
+    def test_vertical_reading_column_uses_minipage_t(self):
+        out_tex = os.path.join(self.temp_dir.name, "out_vertical.tex")
+        manage_sheets.render_latex(self.multi_excerpt_data_file, out_tex, layout="vertical")
+        with open(out_tex, "r", encoding="utf-8") as f:
+            content = f.read()
+
+        # Minipage container with <t> direction
+        self.assertIn(r"\begin{minipage}<t>[c][][t]{\dimexpr\textheight-1.2in\relax}", content)
+        self.assertIn(r"\fontsize{\readingCJKSize}{\readingCJKLead}\selectfont", content)
+        self.assertNotIn(r"\begin{tabular}", content)
+
+        # Paragraph breaks preserve column breaks
+        self.assertIn(r"子曰：\par", content)
+        self.assertIn(r"巧言令色，\par", content)
+        self.assertIn(r"鮮矣仁。\par", content)
+
+        # Excerpt delimiter '---' produces 2em space
+        self.assertIn(r"\par\vspace{2em}", content)
+
+        # Font size override updated without punctuation overrides
+        self.assertIn(r"\renewcommand{\readingCJKSize}{18pt}", content)
+        self.assertNotIn(r"\renewcommand{\readingPuncSize}", content)
+
+    def test_table_reading_column_preserves_tabular(self):
+        out_tex = os.path.join(self.temp_dir.name, "out_table.tex")
+        manage_sheets.render_latex(self.multi_excerpt_data_file, out_tex, layout="table")
+        with open(out_tex, "r", encoding="utf-8") as f:
+            content = f.read()
+
+        self.assertIn(r"\begin{tabular}", content)
+        self.assertIn(r"\cjkvertchar", content)
+        self.assertNotIn(r"\begin{minipage}<t>", content)
+        self.assertIn(r"\renewcommand{\readingPuncSize}", content)
+
 if __name__ == "__main__":
     unittest.main()

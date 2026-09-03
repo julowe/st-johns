@@ -568,25 +568,27 @@ def render_latex(data_file: str, output_tex: str, layout: str = "table"):
             if read_pt_match:
                 r_pt = int(read_pt_match.group(1))
                 r_lead = int(r_pt * 1.22)
-                p_pt = max(int(r_pt * 0.65), 5)
-                p_lead = int(p_pt * 1.22)
                 tex_lines.append(
                     r"\renewcommand{\readingCJKSize}{" + f"{r_pt}pt" + r"}"
                 )
                 tex_lines.append(
                     r"\renewcommand{\readingCJKLead}{" + f"{r_lead}pt" + r"}"
                 )
-                tex_lines.append(
-                    r"\renewcommand{\readingPuncSize}{" + f"{p_pt}pt" + r"}"
-                )
-                tex_lines.append(
-                    r"\renewcommand{\readingPuncLead}{" + f"{p_lead}pt" + r"}"
-                )
+                if layout != "vertical":
+                    p_pt = max(int(r_pt * 0.65), 5)
+                    p_lead = int(p_pt * 1.22)
+                    tex_lines.append(
+                        r"\renewcommand{\readingPuncSize}{" + f"{p_pt}pt" + r"}"
+                    )
+                    tex_lines.append(
+                        r"\renewcommand{\readingPuncLead}{" + f"{p_lead}pt" + r"}"
+                    )
             else:
                 tex_lines.append(r"\renewcommand{\readingCJKSize}{14pt}")
                 tex_lines.append(r"\renewcommand{\readingCJKLead}{17pt}")
-                tex_lines.append(r"\renewcommand{\readingPuncSize}{9pt}")
-                tex_lines.append(r"\renewcommand{\readingPuncLead}{11pt}")
+                if layout != "vertical":
+                    tex_lines.append(r"\renewcommand{\readingPuncSize}{9pt}")
+                    tex_lines.append(r"\renewcommand{\readingPuncLead}{11pt}")
 
             tex_lines.append(r"\columnratio{" + l_col_ratio + r"}")
             # tex_lines.append(r"\setlength{\columnsep}{0.20in}")
@@ -701,66 +703,97 @@ def render_latex(data_file: str, output_tex: str, layout: str = "table"):
             tex_lines.append(r"\textbf{\small " + latex_escape("Reading") + r"}")
             tex_lines.append(r"\vspace{0.3em}\hrule\vspace{0.5em}")
             tex_lines.append(r"\vspace*{\fill}")
-            tex_lines.append(r"\setlength{\tabcolsep}{4pt}")
-
-            # Typeset vertical columns in LaTeX tabular
-            # Group reading columns into excerpt blocks separated by '---'
-            blocks = []
-            curr_block = []
-            for c in reading_cols:
-                if c == "---":
-                    if curr_block:
-                        blocks.append(curr_block)
-                        curr_block = []
-                else:
-                    curr_block.append(c)
-            if curr_block:
-                blocks.append(curr_block)
-
-            # Right-to-Left: Excerpt 0 is on the far right, Excerpt N-1 on the far left
-            # Within each excerpt, Column 0 is on the right, Column K-1 on the left
-            display_blocks = []
-            for blk in reversed(blocks):
-                display_blocks.append(list(reversed(blk)))
-
-            # Column specs: natural column spacing between columns, with additional 2.4em between excerpts
-            block_specs = [" ".join(["c" for _ in blk]) for blk in display_blocks]
-            col_specs = r" @{\hspace{2\tabcolsep + 2.4em}} ".join(block_specs)
-
-            # Flatten columns from left to right for row rendering
-            flat_display_cols = []
-            for blk in display_blocks:
-                for col_str in blk:
-                    flat_display_cols.append([ch for ch in col_str])
-
-            tex_lines.append(r"\begin{tabular}{" + col_specs + r"}")
-
-            max_rows = max([len(c) for c in flat_display_cols], default=1)
-
-            for row_idx in range(max_rows):
-                row_cells = []
-                for col_idx in range(len(flat_display_cols)):
-                    char_list = flat_display_cols[col_idx]
-                    if row_idx < len(char_list):
-                        ch = char_list[row_idx]
-                        if ch == "。":
-                            cell_tex = r"\cjkvertchar{\readingPunc{。}}"
-                        elif ch in ["，", ","]:
-                            cell_tex = r"\cjkvertchar{\readingPunc{，}}"
-                        else:
-                            cell_tex = r"\cjkvertchar{\readingChar{" + ch + r"}}"
-                    else:
-                        cell_tex = r"\cjkvertchar{}"
-                    row_cells.append(cell_tex)
+            if layout == "vertical":
                 tex_lines.append(
-                    "  "
-                    + " & ".join(row_cells)
-                    + r" \\["
-                    + global_reading_row_spacing
-                    + r"]"
+                    r"\begin{minipage}<t>[c][][t]{\dimexpr\textheight-1.2in\relax}"
                 )
+                tex_lines.append(
+                    r"  \fontsize{\readingCJKSize}{\readingCJKLead}\selectfont"
+                )
+                tex_lines.append(r"  \setlength{\parindent}{0pt}")
+                tex_lines.append(r"  \setlength{\parskip}{0.8em}")
 
-            tex_lines.append(r"\end{tabular}")
+                # Group reading columns into excerpt blocks separated by '---'
+                blocks = []
+                curr_block = []
+                for c in reading_cols:
+                    if c == "---":
+                        if curr_block:
+                            blocks.append(curr_block)
+                            curr_block = []
+                    else:
+                        curr_block.append(c)
+                if curr_block:
+                    blocks.append(curr_block)
+
+                for b_idx, block in enumerate(blocks):
+                    if b_idx > 0:
+                        tex_lines.append(r"  \par\vspace{2em}")
+                    for col_str in block:
+                        tex_lines.append(r"  " + col_str + r"\par")
+
+                tex_lines.append(r"\end{minipage}")
+            else:
+                tex_lines.append(r"\setlength{\tabcolsep}{4pt}")
+
+                # Typeset vertical columns in LaTeX tabular
+                # Group reading columns into excerpt blocks separated by '---'
+                blocks = []
+                curr_block = []
+                for c in reading_cols:
+                    if c == "---":
+                        if curr_block:
+                            blocks.append(curr_block)
+                            curr_block = []
+                    else:
+                        curr_block.append(c)
+                if curr_block:
+                    blocks.append(curr_block)
+
+                # Right-to-Left: Excerpt 0 is on the far right, Excerpt N-1 on the far left
+                # Within each excerpt, Column 0 is on the right, Column K-1 on the left
+                display_blocks = []
+                for blk in reversed(blocks):
+                    display_blocks.append(list(reversed(blk)))
+
+                # Column specs: natural column spacing between columns, with additional 2.4em between excerpts
+                block_specs = [" ".join(["c" for _ in blk]) for blk in display_blocks]
+                col_specs = r" @{\hspace{2\tabcolsep + 2.4em}} ".join(block_specs)
+
+                # Flatten columns from left to right for row rendering
+                flat_display_cols = []
+                for blk in display_blocks:
+                    for col_str in blk:
+                        flat_display_cols.append([ch for ch in col_str])
+
+                tex_lines.append(r"\begin{tabular}{" + col_specs + r"}")
+
+                max_rows = max([len(c) for c in flat_display_cols], default=1)
+
+                for row_idx in range(max_rows):
+                    row_cells = []
+                    for col_idx in range(len(flat_display_cols)):
+                        char_list = flat_display_cols[col_idx]
+                        if row_idx < len(char_list):
+                            ch = char_list[row_idx]
+                            if ch == "。":
+                                cell_tex = r"\cjkvertchar{\readingPunc{。}}"
+                            elif ch in ["，", ","]:
+                                cell_tex = r"\cjkvertchar{\readingPunc{，}}"
+                            else:
+                                cell_tex = r"\cjkvertchar{\readingChar{" + ch + r"}}"
+                        else:
+                            cell_tex = r"\cjkvertchar{}"
+                        row_cells.append(cell_tex)
+                    tex_lines.append(
+                        "  "
+                        + " & ".join(row_cells)
+                        + r" \\["
+                        + global_reading_row_spacing
+                        + r"]"
+                    )
+
+                tex_lines.append(r"\end{tabular}")
             tex_lines.append(r"\vspace*{\fill}")
             tex_lines.append(r"\end{tcolorbox}")
 
