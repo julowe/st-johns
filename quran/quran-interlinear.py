@@ -1,5 +1,7 @@
 # #!/usr/bin/env python3
 
+# TODO merge/move into arabic-apis repo
+
 import json
 import logging
 import os
@@ -278,12 +280,9 @@ def get_verse(
     url_base, access_token, client_id, chapter_number, verse_number, translations=None
 ):
     response = requests.get(
-        url_base
-        + "/content/api/v4/verses/by_key/"
-        + f"{chapter_number}:{verse_number}"
+        url_base + "/content/api/v4/verses/by_key/" + f"{chapter_number}:{verse_number}"
         # + f"?fields=text_indopak"
-        + f"?fields=text_indopak,text_uthmani,text_imlaei"
-        + f"&translations=19,20",
+        + f"?fields=text_indopak,text_uthmani,text_imlaei" + f"&translations=19,20",
         headers={
             "Accept": "application/json",
             "x-auth-token": access_token,
@@ -356,6 +355,7 @@ def tex_cleanup_text(text):
 
     return text
 
+
 def tex_remove_arabic_marks(text):
     # remove high character marks
     # see https://en.wikipedia.org/wiki/Arabic_(Unicode_block)#Unicode_chart
@@ -376,7 +376,7 @@ def tex_remove_arabic_marks(text):
         "\\u06E6".encode("utf-8").decode("unicode-escape"),
         "\\u06E7".encode("utf-8").decode("unicode-escape"),
         "\\u06E8".encode("utf-8").decode("unicode-escape"),
-        ]
+    ]
     regex_pattern = "[" + re.escape("".join(chars_to_remove)) + "]"
     text = re.sub(regex_pattern, "", text)
 
@@ -597,13 +597,11 @@ def main():
     #         else:  # 'complete' i.e. read all verses in chapter
     #             print("Chapter {}: complete".format(y["chapter"]))
 
-
     if write_tex_file:
         # open output file to write tex to
         output_fh_tex = open(output_tex_file_path, "w")
 
         tex_write_header(output_fh_tex)
-
 
     pbar_sessions = tqdm(sessions, desc="Processing Session", position=0)
     for session in pbar_sessions:
@@ -661,6 +659,8 @@ def main():
                     )
                 )
 
+            # TODO: create link to local audio file. See: https://en.wikibooks.org/wiki/LaTeX/Hyperlinks#Local_file
+            #       Something like: `\href{run:/path/to/my/file.ext}{text displayed}`
             # Make array of verses to process
             verses_to_process = []
             verses_all = False
