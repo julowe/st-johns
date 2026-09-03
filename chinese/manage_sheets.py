@@ -394,7 +394,7 @@ def format_vocab_text(text: str) -> str:
     return formatted
 
 
-def render_latex(data_file: str, output_tex: str):
+def render_latex(data_file: str, output_tex: str, layout: str = "table"):
     """Render intermediate JSON data to a complete master LaTeX document."""
     if not os.path.exists(data_file):
         raise FileNotFoundError(
@@ -1307,7 +1307,8 @@ def generate_worksheets(
     )
 
 
-def main():
+def build_argument_parser() -> argparse.ArgumentParser:
+    """Build and return the CLI argument parser."""
     parser = argparse.ArgumentParser(
         description="Classical Chinese Study Sheets Generator"
     )
@@ -1337,10 +1338,16 @@ def main():
     p_render.add_argument(
         "--output", "-o", default=TEX_FILE, help="Path to output .tex file"
     )
+    p_render.add_argument(
+        "--layout",
+        choices=["table", "vertical"],
+        default="table",
+        help="Reading column layout: 'table' (XeLaTeX tabular grid) or 'vertical' (LuaLaTeX native vertical typesetting). Default: table",
+    )
 
     # compile
     p_compile = subparsers.add_parser(
-        "compile", help="Compile .tex file to .pdf via xelatex"
+        "compile", help="Compile .tex file to .pdf (auto-detects xelatex or lualatex)"
     )
     p_compile.add_argument("--input", "-i", default=TEX_FILE, help="Path to .tex file")
 
@@ -1430,6 +1437,12 @@ def main():
     )
     p_all.add_argument("--epub", default=EPUB_PATH, help="Path to textbook EPUB file")
     p_all.add_argument(
+        "--layout",
+        choices=["table", "vertical"],
+        default="table",
+        help="Reading column layout: 'table' (XeLaTeX tabular grid) or 'vertical' (LuaLaTeX native vertical typesetting). Default: table",
+    )
+    p_all.add_argument(
         "--with-worksheets",
         action="store_true",
         help="Also generate worksheets when running the 'all' command",
@@ -1448,12 +1461,17 @@ def main():
         help="Color or opacity for character guide outline / upcoming strokes (e.g. 'gray', '0.2', '20%%', '#ccc')",
     )
 
+    return parser
+
+
+def main():
+    parser = build_argument_parser()
     args = parser.parse_args()
 
     if args.command == "extract":
         extract_epub_data(args.epub, force=args.force)
     elif args.command == "render":
-        render_latex(args.input, args.output)
+        render_latex(args.input, args.output, layout=args.layout)
     elif args.command == "compile":
         compile_latex(args.input)
     elif args.command == "worksheet":
@@ -1473,7 +1491,7 @@ def main():
     elif args.command == "all":
         if not os.path.exists(DATA_FILE) or args.force:
             extract_epub_data(args.epub, force=args.force)
-        render_latex(DATA_FILE, TEX_FILE)
+        render_latex(DATA_FILE, TEX_FILE, layout=args.layout)
         compile_latex(TEX_FILE)
         if args.with_worksheets:
             generate_worksheets(
