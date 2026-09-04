@@ -796,8 +796,17 @@ def render_latex(data_file: str, output_tex: str, layout: str = "table"):
     print(f"[✓] Rendered master LaTeX document to {output_tex}")
 
 
+def detect_latex_engine(tex_path: str) -> str:
+    """Detect the required TeX engine ('lualatex' or 'xelatex') by inspecting the preamble."""
+    with open(tex_path, "r", encoding="utf-8") as f:
+        head = f.read(2000)
+    if r"\usepackage{luatexja}" in head:
+        return "lualatex"
+    return "xelatex"
+
+
 def compile_latex(tex_path: str):
-    """Compile LaTeX document to PDF via xelatex."""
+    """Compile LaTeX document to PDF via xelatex or lualatex (auto-detected)."""
     if not os.path.exists(tex_path):
         raise FileNotFoundError(
             f"LaTeX file not found: {tex_path}. Run 'render' first."
@@ -806,15 +815,18 @@ def compile_latex(tex_path: str):
     work_dir = os.path.dirname(os.path.abspath(tex_path))
     base_name = os.path.basename(tex_path)
 
-    cmd = ["xelatex", "-interaction=nonstopmode", base_name]
-    print(f"[*] Compiling {base_name} with XeLaTeX...")
+    engine = detect_latex_engine(tex_path)
+    engine_label = "LuaLaTeX" if engine == "lualatex" else "XeLaTeX"
+
+    cmd = [engine, "-interaction=nonstopmode", base_name]
+    print(f"[*] Compiling {base_name} with {engine_label}...")
 
     # Run once
     res1 = subprocess.run(cmd, cwd=work_dir, capture_output=True, text=True)
     if res1.returncode != 0:
-        print("[!] XeLaTeX compilation error output:")
+        print(f"[!] {engine_label} compilation error output:")
         print(res1.stdout[-1500:] if len(res1.stdout) > 1500 else res1.stdout)
-        raise RuntimeError("XeLaTeX failed to compile the document.")
+        raise RuntimeError(f"{engine_label} failed to compile the document.")
 
     # Run second time for layout stabilization
     subprocess.run(cmd, cwd=work_dir, capture_output=True, text=True)

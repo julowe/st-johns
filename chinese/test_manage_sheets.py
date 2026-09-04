@@ -1,4 +1,5 @@
 import unittest
+from unittest.mock import patch
 import sys
 import os
 import tempfile
@@ -160,5 +161,42 @@ class TestReadingColumnRendering(unittest.TestCase):
         self.assertNotIn(r"\begin{minipage}<t>", content)
         self.assertIn(r"\renewcommand{\readingPuncSize}", content)
 
+class TestCompilerEngineDetection(unittest.TestCase):
+    def setUp(self):
+        self.temp_dir = tempfile.TemporaryDirectory()
+
+    def tearDown(self):
+        self.temp_dir.cleanup()
+
+    def test_detect_lualatex_when_luatexja_present(self):
+        tex_path = os.path.join(self.temp_dir.name, "doc.tex")
+        with open(tex_path, "w", encoding="utf-8") as f:
+            f.write("\\documentclass{article}\n\\usepackage{luatexja}\n\\begin{document}Hi\\end{document}")
+        engine = manage_sheets.detect_latex_engine(tex_path)
+        self.assertEqual(engine, "lualatex")
+
+    def test_detect_xelatex_when_luatexja_absent(self):
+        tex_path = os.path.join(self.temp_dir.name, "doc.tex")
+        with open(tex_path, "w", encoding="utf-8") as f:
+            f.write("\\documentclass{article}\n\\usepackage{xeCJK}\n\\begin{document}Hi\\end{document}")
+        engine = manage_sheets.detect_latex_engine(tex_path)
+        self.assertEqual(engine, "xelatex")
+
+    @patch("subprocess.run")
+    def test_compile_latex_invokes_detected_engine(self, mock_run):
+        mock_run.return_value.returncode = 0
+        tex_path = os.path.join(self.temp_dir.name, "doc.tex")
+        with open(tex_path, "w", encoding="utf-8") as f:
+            f.write("\\documentclass{article}\n\\usepackage{luatexja}\n\\begin{document}Hi\\end{document}")
+
+        manage_sheets.compile_latex(tex_path)
+
+        # Verify subprocess.run was called with lualatex
+        called_cmd = mock_run.call_args_list[0][0][0]
+        self.assertEqual(called_cmd[0], "lualatex")
+        self.assertEqual(called_cmd[1], "-interaction=nonstopmode")
+
 if __name__ == "__main__":
     unittest.main()
+
+
