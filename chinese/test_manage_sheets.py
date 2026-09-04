@@ -196,7 +196,30 @@ class TestCompilerEngineDetection(unittest.TestCase):
         self.assertEqual(called_cmd[0], "lualatex")
         self.assertEqual(called_cmd[1], "-interaction=nonstopmode")
 
+class TestEndToEndRendering(unittest.TestCase):
+    def setUp(self):
+        self.temp_dir = tempfile.TemporaryDirectory()
+
+    def tearDown(self):
+        self.temp_dir.cleanup()
+
+    def test_render_actual_lessons_data_both_modes(self):
+        if not os.path.exists(manage_sheets.DATA_FILE):
+            self.skipTest(f"{manage_sheets.DATA_FILE} not found")
+
+        table_tex = os.path.join(self.temp_dir.name, "lessons_table.tex")
+        vertical_tex = os.path.join(self.temp_dir.name, "lessons_vertical.tex")
+
+        manage_sheets.render_latex(manage_sheets.DATA_FILE, table_tex, layout="table")
+        manage_sheets.render_latex(manage_sheets.DATA_FILE, vertical_tex, layout="vertical")
+
+        self.assertTrue(os.path.exists(table_tex))
+        self.assertTrue(os.path.exists(vertical_tex))
+        self.assertGreater(os.path.getsize(table_tex), 1000)
+        self.assertGreater(os.path.getsize(vertical_tex), 1000)
+
+        self.assertEqual(manage_sheets.detect_latex_engine(table_tex), "xelatex")
+        self.assertEqual(manage_sheets.detect_latex_engine(vertical_tex), "lualatex")
+
 if __name__ == "__main__":
     unittest.main()
-
-
