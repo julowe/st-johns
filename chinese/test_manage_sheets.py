@@ -134,12 +134,13 @@ class TestReadingColumnRendering(unittest.TestCase):
             content = f.read()
 
         # Minipage container with <t> direction
-        self.assertIn(r"\begin{minipage}<t>[c][][t]{\dimexpr\textheight-1.2in\relax}", content)
+        self.assertIn(r"\begin{minipage}<t>[c][][t]{\dimexpr\textheight-0.95in\relax}", content)
         self.assertIn(r"\fontsize{\readingCJKSize}{\readingCJKLead}\selectfont", content)
         self.assertNotIn(r"\begin{tabular}", content)
 
-        # Paragraph breaks preserve column breaks with 0pt parskip
+        # Paragraph breaks preserve column breaks with 0pt parskip and natural kanjiskip
         self.assertIn(r"\setlength{\parskip}{0pt}", content)
+        self.assertIn(r"\ltjsetparameter{kanjiskip=1.8pt}", content)
         self.assertIn(r"子曰：\par", content)
         self.assertIn(r"巧言令色，\par", content)
         self.assertIn(r"鮮矣仁。\par", content)

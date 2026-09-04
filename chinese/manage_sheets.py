@@ -441,6 +441,7 @@ def render_latex(data_file: str, output_tex: str, layout: str = "table"):
     if layout == "vertical":
         tex_lines.append(r"\setmainjfont{SimSun.ttf}[")
         tex_lines.append(r"  Path = fonts/,")
+        tex_lines.append(r"  Scale = 1.0,")
         tex_lines.append(r"  TateFont = {SimSun.ttf},")
         tex_lines.append(r"  TateFeatures = {JFM = {zh_TW/{quanjiao,vert}}}")
         tex_lines.append(r"]")
@@ -719,13 +720,14 @@ def render_latex(data_file: str, output_tex: str, layout: str = "table"):
 
             if layout == "vertical":
                 tex_lines.append(
-                    r"\begin{minipage}<t>[c][][t]{\dimexpr\textheight-1.2in\relax}"
+                    r"\begin{minipage}<t>[c][][t]{\dimexpr\textheight-0.95in\relax}"
                 )
                 tex_lines.append(
                     r"  \fontsize{\readingCJKSize}{\readingCJKLead}\selectfont"
                 )
                 tex_lines.append(r"  \setlength{\parindent}{0pt}")
                 tex_lines.append(r"  \setlength{\parskip}{0pt}")
+                tex_lines.append(r"  \ltjsetparameter{kanjiskip=1.8pt}")
 
                 for b_idx, block in enumerate(blocks):
                     if b_idx > 0:
