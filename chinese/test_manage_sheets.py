@@ -138,13 +138,14 @@ class TestReadingColumnRendering(unittest.TestCase):
         self.assertIn(r"\fontsize{\readingCJKSize}{\readingCJKLead}\selectfont", content)
         self.assertNotIn(r"\begin{tabular}", content)
 
-        # Paragraph breaks preserve column breaks
+        # Paragraph breaks preserve column breaks with 0pt parskip
+        self.assertIn(r"\setlength{\parskip}{0pt}", content)
         self.assertIn(r"子曰：\par", content)
         self.assertIn(r"巧言令色，\par", content)
         self.assertIn(r"鮮矣仁。\par", content)
 
-        # Excerpt delimiter '---' produces 2em space
-        self.assertIn(r"\vspace{2em}", content)
+        # Excerpt delimiter '---' produces 0.8em space
+        self.assertIn(r"\vspace{0.8em}", content)
 
         # Font size override updated without punctuation overrides
         self.assertIn(r"\renewcommand{\readingCJKSize}{18pt}", content)

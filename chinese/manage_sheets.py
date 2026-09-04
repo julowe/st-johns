@@ -725,11 +725,11 @@ def render_latex(data_file: str, output_tex: str, layout: str = "table"):
                     r"  \fontsize{\readingCJKSize}{\readingCJKLead}\selectfont"
                 )
                 tex_lines.append(r"  \setlength{\parindent}{0pt}")
-                tex_lines.append(r"  \setlength{\parskip}{0.8em}")
+                tex_lines.append(r"  \setlength{\parskip}{0pt}")
 
                 for b_idx, block in enumerate(blocks):
                     if b_idx > 0:
-                        tex_lines.append(r"  \vspace{2em}")
+                        tex_lines.append(r"  \vspace{0.8em}")
                     for col_str in block:
                         tex_lines.append(r"  " + col_str + r"\par")
 
