@@ -731,7 +731,12 @@ def render_latex(data_file: str, output_tex: str, layout: str = "table"):
                     if b_idx > 0:
                         tex_lines.append(r"  \vspace{0.8em}")
                     for col_str in block:
-                        tex_lines.append(r"  " + col_str + r"\par")
+                        def _replace_space_gap(match):
+                            n = len(match.group(0))
+                            return f"\\hspace{{{n * 0.65:.2f}em}}"
+
+                        formatted_col = re.sub(r" +", _replace_space_gap, col_str)
+                        tex_lines.append(r"  " + formatted_col + r"\par")
 
                 tex_lines.append(r"\end{minipage}")
             else:

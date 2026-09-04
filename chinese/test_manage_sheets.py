@@ -162,6 +162,35 @@ class TestReadingColumnRendering(unittest.TestCase):
         self.assertNotIn(r"\begin{minipage}<t>", content)
         self.assertIn(r"\renewcommand{\readingPuncSize}", content)
 
+    def test_vertical_reading_column_converts_spaces_to_hspace(self):
+        spaced_data_file = os.path.join(self.temp_dir.name, "spaced_data.json")
+        data = {
+            "lessons": [
+                {
+                    "lesson_number": 11,
+                    "pages": [
+                        {
+                            "reading_title": "11.1 Reading",
+                            "vocab_subtitle": "Vocabulary",
+                            "vocab": [],
+                            "reading_columns": [
+                                "床前明月光。        處世若大夢。",
+                            ],
+                        }
+                    ],
+                }
+            ],
+        }
+        with open(spaced_data_file, "w", encoding="utf-8") as f:
+            json.dump(data, f)
+
+        out_tex = os.path.join(self.temp_dir.name, "out_spaced.tex")
+        manage_sheets.render_latex(spaced_data_file, out_tex, layout="vertical")
+        with open(out_tex, "r", encoding="utf-8") as f:
+            content = f.read()
+
+        self.assertIn(r"床前明月光。\hspace{5.20em}處世若大夢。\par", content)
+
 class TestCompilerEngineDetection(unittest.TestCase):
     def setUp(self):
         self.temp_dir = tempfile.TemporaryDirectory()
