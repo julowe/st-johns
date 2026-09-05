@@ -402,7 +402,6 @@ def format_footnote_text(text: str) -> str:
     return format_vocab_text(text, is_footnote=True)
 
 
-
 def render_latex(data_file: str, output_tex: str, layout: str = "table"):
     """Render intermediate JSON data to a complete master LaTeX document."""
     if not os.path.exists(data_file):
@@ -464,7 +463,7 @@ def render_latex(data_file: str, output_tex: str, layout: str = "table"):
     tex_lines.append(r"\pagestyle{fancy}")
     tex_lines.append(r"\fancyhf{}")
     tex_lines.append(r"\renewcommand{\headrulewidth}{0pt}")
-    tex_lines.append(r"\rfoot{\small\textit{Revision 2026-08-20}}")
+    tex_lines.append(r"\rfoot{\small\textit{Revision 2026-09-03}}")
     tex_lines.append(r"\setlength{\parindent}{0pt}")
     tex_lines.append(r"\setlength{\parskip}{0pt}")
     tex_lines.append(r"\linespread{1.08}")
@@ -574,16 +573,16 @@ def render_latex(data_file: str, output_tex: str, layout: str = "table"):
                 fn_pt = round(pt_val * 0.75, 1)
                 fn_pt_str = f"{int(fn_pt)}pt" if fn_pt.is_integer() else f"{fn_pt}pt"
                 fn_lead = round(fn_pt * 1.22, 1)
-                fn_lead_str = f"{int(fn_lead)}pt" if fn_lead.is_integer() else f"{fn_lead}pt"
+                fn_lead_str = (
+                    f"{int(fn_lead)}pt" if fn_lead.is_integer() else f"{fn_lead}pt"
+                )
                 tex_lines.append(
                     r"\renewcommand{\vocabCJKSize}{" + f"{pt_val}pt" + r"}"
                 )
                 tex_lines.append(
                     r"\renewcommand{\vocabCJKLead}{" + f"{lead_val}pt" + r"}"
                 )
-                tex_lines.append(
-                    r"\renewcommand{\footnoteCJKSize}{" + fn_pt_str + r"}"
-                )
+                tex_lines.append(r"\renewcommand{\footnoteCJKSize}{" + fn_pt_str + r"}")
                 tex_lines.append(
                     r"\renewcommand{\footnoteCJKLead}{" + fn_lead_str + r"}"
                 )
@@ -592,7 +591,6 @@ def render_latex(data_file: str, output_tex: str, layout: str = "table"):
                 tex_lines.append(r"\renewcommand{\vocabCJKLead}{17pt}")
                 tex_lines.append(r"\renewcommand{\footnoteCJKSize}{10.5pt}")
                 tex_lines.append(r"\renewcommand{\footnoteCJKLead}{13pt}")
-
 
             reading_cjk_size = page.get("reading_cjk_font_size", "14pt")
             read_pt_match = re.search(r"(\d+)", str(reading_cjk_size))
