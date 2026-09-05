@@ -60,7 +60,7 @@ The pipeline is split into independent stages around a **persistent, human-edita
 | [`manage_sheets.py`](manage_sheets.py)     | Main CLI tool implementing `extract`, `render`, `compile`, and `all` subcommands.                     |
 | [`lessons_data.json`](lessons_data.json)   | Persistent intermediate data storing structured lesson titles, reading columns, and vocabulary lists. |
 | [`stroke_counts.json`](stroke_counts.json) | Complete offline Unicode Han (`Unihan`) stroke database (100,000+ characters).                        |
-| [`lessons_all.tex`](lessons_all.tex)       | Generated XeLaTeX source document.                                                                    |
+| [`lessons_all.tex`](lessons_all.tex)       | Generated LaTeX source document (XeLaTeX table layout or LuaLaTeX vertical layout).                   |
 | [`lessons_all.pdf`](lessons_all.pdf)       | Compiled 21-page PDF study booklet.                                                                   |
 | `fonts/`                                   | Publisher fonts extracted directly from the EPUB (`SimSun.ttf`, `CharisSIL.ttf`, `MinionPro-*.otf`).  |
 
