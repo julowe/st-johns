@@ -5,7 +5,7 @@ import os
 import tempfile
 import json
 
-# Add parent directory to path so manage_sheets can be imported
+# Add this directory to the path so manage_sheets can be imported
 sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 import manage_sheets
 
