@@ -33,6 +33,7 @@ DATA_FILE = os.path.join(BASE_DIR, "lessons_data.json")
 STROKES_FILE = os.path.join(BASE_DIR, "stroke_counts.json")
 TEX_FILE = os.path.join(BASE_DIR, "lessons_all.tex")
 PDF_FILE = os.path.join(BASE_DIR, "lessons_all.pdf")
+READINGS_MD = os.path.join(BASE_DIR, "readings.md")
 WORKSHEET_GENERATOR_DIR = "/home/justin/code/chinese-worksheet-generator"
 WORKSHEETS_DIR = os.path.join(BASE_DIR, "worksheets")
 
@@ -845,6 +846,73 @@ def compile_latex(tex_path: str):
         print(f"[!] Compilation finished but {out_pdf} was not found.")
 
 
+def extract_reading_titles(title: str, num_excerpts: int) -> list[str]:
+    """Extract individual excerpt titles from a lesson's reading_title."""
+    cleaned = re.sub(r"^\d+\.\d+\.\s*Readings?:\s*", "", title).strip()
+    if num_excerpts <= 1:
+        return [cleaned]
+    if ":" in cleaned:
+        cleaned = cleaned.split(":", 1)[1].strip()
+    cleaned = cleaned.replace("Analects, 15.24", "Analects 15.24")
+    placeholder = "___CLASSIC_WAY_VIRTUE___"
+    temp = cleaned.replace("Classic of the Way and Virtue", placeholder)
+    parts = re.split(r",\s*(?:and\s+)?|\s+and\s+", temp)
+    parts = [p.replace(placeholder, "Classic of the Way and Virtue").strip() for p in parts if p.strip()]
+    if len(parts) == num_excerpts:
+        return parts
+    return [f"{cleaned} (Part {i+1})" for i in range(num_excerpts)]
+
+
+def export_readings(data_file: str = DATA_FILE, output_file: str = READINGS_MD):
+    """Export readings from the top-level reading_columns of each lesson as Markdown."""
+    if not os.path.exists(data_file):
+        raise FileNotFoundError(f"Data file not found: {data_file}")
+
+    with open(data_file, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    lines = []
+    for lesson in data.get("lessons", []):
+        cols = lesson.get("reading_columns", [])
+        if not cols:
+            continue
+
+        excerpts = []
+        curr = []
+        for c in cols:
+            if c == "---":
+                if curr:
+                    excerpts.append(curr)
+                    curr = []
+            else:
+                curr.append(c)
+        if curr:
+            excerpts.append(curr)
+
+        if not excerpts:
+            continue
+
+        lesson_title = lesson.get("lesson_title", f"Lesson {lesson.get('lesson_number', '')}").strip()
+        lines.append(f"## {lesson_title}")
+        lines.append("")
+
+        titles = extract_reading_titles(lesson.get("reading_title", ""), len(excerpts))
+
+        for title, exc in zip(titles, excerpts):
+            lines.append(f"### {title}")
+            lines.append("")
+            text = "".join(exc)
+            text = re.sub(r" +", " ", text).strip()
+            lines.append(text)
+            lines.append("")
+
+    content = "\n".join(lines).strip() + "\n"
+    with open(output_file, "w", encoding="utf-8") as f:
+        f.write(content)
+
+    print(f"[✓] Exported readings to {output_file}")
+
+
 def generate_worksheets(
     data_file: str = DATA_FILE,
     lesson_filter: list[int] | None = None,
@@ -1517,6 +1585,24 @@ def build_argument_parser() -> argparse.ArgumentParser:
         help="Color or opacity for character guide outline / upcoming strokes (e.g. 'gray', '0.2', '20%%', '#ccc')",
     )
 
+    # export-readings
+    p_export = subparsers.add_parser(
+        "export-readings",
+        help="Export Classical Chinese readings from the JSON dataset to a clean Markdown file",
+    )
+    p_export.add_argument(
+        "--input",
+        "-i",
+        default=DATA_FILE,
+        help="Path to lessons JSON file. Default: lessons_data.json",
+    )
+    p_export.add_argument(
+        "--output",
+        "-o",
+        default=READINGS_MD,
+        help="Path to output Markdown file. Default: readings.md",
+    )
+
     return parser
 
 
@@ -1530,6 +1616,8 @@ def main():
         render_latex(args.input, args.output, layout=args.layout)
     elif args.command == "compile":
         compile_latex(args.input)
+    elif args.command == "export-readings":
+        export_readings(data_file=args.input, output_file=args.output)
     elif args.command == "worksheet":
         generate_worksheets(
             data_file=args.input,
@@ -1560,3 +1648,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

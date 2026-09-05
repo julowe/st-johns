@@ -252,5 +252,105 @@ class TestEndToEndRendering(unittest.TestCase):
         self.assertEqual(manage_sheets.detect_latex_engine(table_tex), "xelatex")
         self.assertEqual(manage_sheets.detect_latex_engine(vertical_tex), "lualatex")
 
+
+class TestExportReadingsCLI(unittest.TestCase):
+    def setUp(self):
+        self.parser = manage_sheets.build_argument_parser()
+
+    def test_export_readings_subparser_defaults(self):
+        args = self.parser.parse_args(["export-readings"])
+        self.assertEqual(args.input, manage_sheets.DATA_FILE)
+        self.assertEqual(args.output, manage_sheets.READINGS_MD)
+
+    def test_export_readings_subparser_custom_args(self):
+        args = self.parser.parse_args(["export-readings", "-i", "my_data.json", "-o", "my_readings.md"])
+        self.assertEqual(args.input, "my_data.json")
+        self.assertEqual(args.output, "my_readings.md")
+
+
+class TestExportReadings(unittest.TestCase):
+    def setUp(self):
+        self.temp_dir = tempfile.TemporaryDirectory()
+        self.sample_data_file = os.path.join(self.temp_dir.name, "sample_lessons.json")
+        self.output_md = os.path.join(self.temp_dir.name, "output.md")
+
+        sample_data = {
+            "lessons": [
+                {
+                    "lesson_number": 1,
+                    "lesson_title": "Lesson 1",
+                    "reading_title": "1.1. Reading: Analects 17.2",
+                    "reading_columns": ["子曰。   性相近也。", "習相遠也。"],
+                    "pages": [
+                        {
+                            "page_index": 1,
+                            "reading_columns": ["DO_NOT_USE_PAGE_KEY"],
+                        }
+                    ],
+                },
+                {
+                    "lesson_number": 3,
+                    "lesson_title": "Lesson 3",
+                    "reading_title": "3.1. Readings: Analects 12.22, Analects 4.2, and Analects 6.23",
+                    "reading_columns": [
+                        "樊遲問仁。子曰。愛人。",
+                        "---",
+                        "子曰。仁者安仁。",
+                        "---",
+                        "子曰。知者樂水。"
+                    ],
+                    "pages": [
+                        {
+                            "page_index": 1,
+                            "reading_columns": ["DO_NOT_USE_PAGE_KEY_L3"],
+                        }
+                    ],
+                },
+            ]
+        }
+        with open(self.sample_data_file, "w", encoding="utf-8") as f:
+            json.dump(sample_data, f)
+
+    def tearDown(self):
+        self.temp_dir.cleanup()
+
+    def test_extract_reading_titles_handles_classic_of_the_way_and_virtue(self):
+        title = "4.1. Readings: Analects 2.17, Classic of the Way and Virtue 33"
+        titles = manage_sheets.extract_reading_titles(title, 2)
+        self.assertEqual(titles, ["Analects 2.17", "Classic of the Way and Virtue 33"])
+
+    def test_extract_reading_titles_handles_three_readings(self):
+        title = "3.1. Readings: Analects 12.22, Analects 4.2, and Analects 6.23"
+        titles = manage_sheets.extract_reading_titles(title, 3)
+        self.assertEqual(titles, ["Analects 12.22", "Analects 4.2", "Analects 6.23"])
+
+    def test_export_readings_generates_correct_markdown(self):
+        manage_sheets.export_readings(self.sample_data_file, self.output_md)
+        self.assertTrue(os.path.exists(self.output_md))
+        with open(self.output_md, "r", encoding="utf-8") as f:
+            content = f.read()
+
+        # Check lesson headers
+        self.assertIn("## Lesson 1", content)
+        self.assertIn("## Lesson 3", content)
+
+        # Check reading sub-headers
+        self.assertIn("### Analects 17.2", content)
+        self.assertIn("### Analects 12.22", content)
+        self.assertIn("### Analects 4.2", content)
+        self.assertIn("### Analects 6.23", content)
+
+        # Check content and space collapsing
+        self.assertIn("子曰。 性相近也。習相遠也。", content)
+        self.assertIn("樊遲問仁。子曰。愛人。", content)
+        self.assertIn("子曰。仁者安仁。", content)
+        self.assertIn("子曰。知者樂水。", content)
+
+        # Ensure page-level keys are ignored
+        self.assertNotIn("DO_NOT_USE_PAGE_KEY", content)
+        self.assertNotIn("DO_NOT_USE_PAGE_KEY_L3", content)
+
+
 if __name__ == "__main__":
     unittest.main()
+
