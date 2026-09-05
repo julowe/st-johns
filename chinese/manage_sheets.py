@@ -376,23 +376,31 @@ def extract_epub_data(epub_path: str, force: bool = False) -> dict:
     return output_doc
 
 
-def format_vocab_text(text: str) -> str:
-    """Escapes text for LaTeX and wraps all CJK characters in \\vocabChar{...}."""
+def format_vocab_text(text: str, is_footnote: bool = False) -> str:
+    """Escapes text for LaTeX and wraps all CJK characters in \vocabChar{...} or \footnoteChar{...}."""
     if not text:
         return ""
     escaped = latex_escape(text)
-    # Wrap all contiguous CJK unified ideographs with \vocabChar{...}
+    macro = "footnoteChar" if is_footnote else "vocabChar"
+    # Wrap all contiguous CJK unified ideographs with \<macro>{...}
     # If the characters are enclosed in parentheses (e.g. `(习)`), include the parentheses inside the macro
     formatted = re.sub(
         r"(\()([\u4e00-\u9fff\u3400-\u4dbf]+)(\))|([\u4e00-\u9fff\u3400-\u4dbf]+)",
         lambda m: (
-            r"\vocabChar{(" + m.group(2) + r")}"
+            rf"\{macro}{{({m.group(2)})}}"
             if m.group(2)
-            else r"\vocabChar{" + m.group(4) + r"}"
+            else rf"\{macro}{{{m.group(4)}}}"
         ),
         escaped,
     )
+
     return formatted
+
+
+def format_footnote_text(text: str) -> str:
+    """Escapes footnote text for LaTeX and wraps all CJK characters in \footnoteChar{...}."""
+    return format_vocab_text(text, is_footnote=True)
+
 
 
 def render_latex(data_file: str, output_tex: str, layout: str = "table"):
@@ -477,11 +485,19 @@ def render_latex(data_file: str, output_tex: str, layout: str = "table"):
         )
     tex_lines.append(r"\newcommand{\vocabCJKSize}{14pt}")
     tex_lines.append(r"\newcommand{\vocabCJKLead}{17pt}")
+    tex_lines.append(r"\newcommand{\footnoteCJKSize}{10.5pt}")
+    tex_lines.append(r"\newcommand{\footnoteCJKLead}{13pt}")
     tex_lines.append(
         r"\newcommand{\vocabChar}[1]{\textbf{{\fontsize{\vocabCJKSize}{\vocabCJKLead}\selectfont #1}}}"
     )
+    tex_lines.append(
+        r"\newcommand{\footnoteChar}[1]{\textbf{{\fontsize{\footnoteCJKSize}{\footnoteCJKLead}\selectfont #1}}}"
+    )
+
     if layout != "vertical":
-        tex_lines.append(r"\newcommand{\cjkvertchar}[1]{\makebox[\readingCJKSize][c]{#1}}")
+        tex_lines.append(
+            r"\newcommand{\cjkvertchar}[1]{\makebox[\readingCJKSize][c]{#1}}"
+        )
     tex_lines.append(r"\newcommand{\stroketag}[1]{{\scriptsize\color{gray} #1}}")
     tex_lines.append("")
 
@@ -555,15 +571,28 @@ def render_latex(data_file: str, output_tex: str, layout: str = "table"):
             if cjk_pt_match:
                 pt_val = int(cjk_pt_match.group(1))
                 lead_val = int(pt_val * 1.22)
+                fn_pt = round(pt_val * 0.75, 1)
+                fn_pt_str = f"{int(fn_pt)}pt" if fn_pt.is_integer() else f"{fn_pt}pt"
+                fn_lead = round(fn_pt * 1.22, 1)
+                fn_lead_str = f"{int(fn_lead)}pt" if fn_lead.is_integer() else f"{fn_lead}pt"
                 tex_lines.append(
                     r"\renewcommand{\vocabCJKSize}{" + f"{pt_val}pt" + r"}"
                 )
                 tex_lines.append(
                     r"\renewcommand{\vocabCJKLead}{" + f"{lead_val}pt" + r"}"
                 )
+                tex_lines.append(
+                    r"\renewcommand{\footnoteCJKSize}{" + fn_pt_str + r"}"
+                )
+                tex_lines.append(
+                    r"\renewcommand{\footnoteCJKLead}{" + fn_lead_str + r"}"
+                )
             else:
                 tex_lines.append(r"\renewcommand{\vocabCJKSize}{14pt}")
                 tex_lines.append(r"\renewcommand{\vocabCJKLead}{17pt}")
+                tex_lines.append(r"\renewcommand{\footnoteCJKSize}{10.5pt}")
+                tex_lines.append(r"\renewcommand{\footnoteCJKLead}{13pt}")
+
 
             reading_cjk_size = page.get("reading_cjk_font_size", "14pt")
             read_pt_match = re.search(r"(\d+)", str(reading_cjk_size))
@@ -667,7 +696,7 @@ def render_latex(data_file: str, output_tex: str, layout: str = "table"):
                             r"\noindent\footnotesize\textsuperscript{"
                             + str(idx)
                             + r"}"
-                            + format_vocab_text(fn)
+                            + format_footnote_text(fn)
                             + r"\par"
                         )
             else:
@@ -684,7 +713,8 @@ def render_latex(data_file: str, output_tex: str, layout: str = "table"):
 
                     fmt_line = format_vocab_text(v_text)
                     for fn in footnotes:
-                        fmt_line += r"\footnote{" + format_vocab_text(fn) + r"}"
+                        fmt_line += r"\footnote{" + format_footnote_text(fn) + r"}"
+
                     if stroke_tag:
                         fmt_line += r" \stroketag{" + latex_escape(stroke_tag) + r"}"
 
@@ -734,6 +764,7 @@ def render_latex(data_file: str, output_tex: str, layout: str = "table"):
                     if b_idx > 0:
                         tex_lines.append(r"  \vspace{0.8em}")
                     for col_str in block:
+
                         def _replace_space_gap(match):
                             n = len(match.group(0))
                             return f"\\hspace{{{n * 0.65:.2f}em}}"
@@ -857,7 +888,11 @@ def extract_reading_titles(title: str, num_excerpts: int) -> list[str]:
     placeholder = "___CLASSIC_WAY_VIRTUE___"
     temp = cleaned.replace("Classic of the Way and Virtue", placeholder)
     parts = re.split(r",\s*(?:and\s+)?|\s+and\s+", temp)
-    parts = [p.replace(placeholder, "Classic of the Way and Virtue").strip() for p in parts if p.strip()]
+    parts = [
+        p.replace(placeholder, "Classic of the Way and Virtue").strip()
+        for p in parts
+        if p.strip()
+    ]
     if len(parts) == num_excerpts:
         return parts
     return [f"{cleaned} (Part {i+1})" for i in range(num_excerpts)]
@@ -892,7 +927,9 @@ def export_readings(data_file: str = DATA_FILE, output_file: str = READINGS_MD):
         if not excerpts:
             continue
 
-        lesson_title = lesson.get("lesson_title", f"Lesson {lesson.get('lesson_number', '')}").strip()
+        lesson_title = lesson.get(
+            "lesson_title", f"Lesson {lesson.get('lesson_number', '')}"
+        ).strip()
         lines.append(f"## {lesson_title}")
         lines.append("")
 
@@ -988,9 +1025,7 @@ def generate_worksheets(
 
     # Attempt to load makemeahanzi dataset to pre-check character existence
     makemeahanzi_chars = set()
-    graphics_txt = os.path.join(
-        WORKSHEET_GENERATOR_DIR, "makemeahanzi", "graphics.txt"
-    )
+    graphics_txt = os.path.join(WORKSHEET_GENERATOR_DIR, "makemeahanzi", "graphics.txt")
     if not os.path.exists(graphics_txt):
         alt_graphics = os.path.expanduser("~/.local/share/makemeahanzi/graphics.txt")
         if os.path.exists(alt_graphics):
@@ -1019,9 +1054,7 @@ def generate_worksheets(
         if not defn:
             return ""
         defn = " ".join(defn.split())
-        segments = [
-            s.strip() for s in defn.replace(";", ",").split(",") if s.strip()
-        ]
+        segments = [s.strip() for s in defn.replace(";", ",").split(",") if s.strip()]
         sanitized = []
         for s in segments:
             words = s.split(" ")
@@ -1056,9 +1089,8 @@ def generate_worksheets(
         dst_pdf = os.path.join(worksheets_dir, f"lesson_{lesson_num:02d}.pdf")
 
         # Check if we can render from existing JSON info files directly
-        use_existing = (
-            sheet_only
-            or (os.path.exists(dst_char_info) and not force_info and not info_only)
+        use_existing = sheet_only or (
+            os.path.exists(dst_char_info) and not force_info and not info_only
         )
 
         if use_existing:
@@ -1227,11 +1259,7 @@ def generate_worksheets(
                 for i, c in enumerate(trad):
                     gen_c = c
                     if not check_char_available(c):
-                        if (
-                            simp
-                            and i < len(simp)
-                            and check_char_available(simp[i])
-                        ):
+                        if simp and i < len(simp) and check_char_available(simp[i]):
                             gen_c = simp[i]
                         elif c in VARIANTS_MAP and check_char_available(
                             VARIANTS_MAP[c]
@@ -1291,9 +1319,7 @@ def generate_worksheets(
             continue
 
         # 2. Patch character_infos.json
-        char_info_path = os.path.join(
-            WORKSHEET_GENERATOR_DIR, "character_infos.json"
-        )
+        char_info_path = os.path.join(WORKSHEET_GENERATOR_DIR, "character_infos.json")
         if os.path.exists(char_info_path):
             patched_lines = []
             with open(char_info_path, "r", encoding="utf-8") as cf:
@@ -1318,9 +1344,7 @@ def generate_worksheets(
                     cf.write("")
 
         # 2b. Patch word_infos.json
-        word_info_path = os.path.join(
-            WORKSHEET_GENERATOR_DIR, "word_infos.json"
-        )
+        word_info_path = os.path.join(WORKSHEET_GENERATOR_DIR, "word_infos.json")
         if os.path.exists(word_info_path):
             patched_words = []
             with open(word_info_path, "r", encoding="utf-8") as wf:
@@ -1648,4 +1672,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

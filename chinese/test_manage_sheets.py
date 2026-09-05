@@ -351,6 +351,93 @@ class TestExportReadings(unittest.TestCase):
         self.assertNotIn("DO_NOT_USE_PAGE_KEY_L3", content)
 
 
+class TestFootnoteFormatting(unittest.TestCase):
+    def setUp(self):
+        self.temp_dir = tempfile.TemporaryDirectory()
+        self.sample_data_file = os.path.join(self.temp_dir.name, "sample_fn_data.json")
+        sample_data = {
+            "lessons": [
+                {
+                    "lesson_number": 1,
+                    "lesson_title": "Lesson 1",
+                    "pages": [
+                        {
+                            "page_index": 1,
+                            "reading_title": "1.1 Reading",
+                            "vocab_subtitle": "Vocabulary",
+                            "vocab_cjk_font_size": "18pt",
+                            "vocab": [
+                                {
+                                    "text": "曰 yuē v., to say",
+                                    "footnotes": ["Notice 日 is narrower than 曰."],
+                                    "stroke_tag": "[4 strokes]",
+                                }
+                            ],
+                            "reading_columns": ["子曰。"],
+                            "is_table_page": False,
+                        },
+                        {
+                            "page_index": 2,
+                            "reading_title": "1.2 Reading",
+                            "vocab_subtitle": "Vocabulary Table",
+                            "vocab_cjk_font_size": "14pt",
+                            "vocab": [
+                                {
+                                    "character": "曰",
+                                    "hint": "say",
+                                    "pronunciation": "yuē",
+                                    "meaning": "to say",
+                                    "footnotes": ["Compare with 日."],
+                                }
+                            ],
+                            "reading_columns": ["子曰。"],
+                            "is_table_page": True,
+                        }
+                    ],
+                }
+            ]
+        }
+        with open(self.sample_data_file, "w", encoding="utf-8") as f:
+            json.dump(sample_data, f)
+
+    def tearDown(self):
+        self.temp_dir.cleanup()
+
+    def test_format_footnote_text_uses_footnote_char(self):
+        text = "Notice 日 is narrower than 曰."
+        vocab_formatted = manage_sheets.format_vocab_text(text)
+        fn_formatted = manage_sheets.format_footnote_text(text)
+        self.assertIn(r"\vocabChar{日}", vocab_formatted)
+        self.assertIn(r"\vocabChar{曰}", vocab_formatted)
+        self.assertIn(r"\footnoteChar{日}", fn_formatted)
+        self.assertIn(r"\footnoteChar{曰}", fn_formatted)
+        self.assertNotIn(r"\vocabChar", fn_formatted)
+
+    def test_render_latex_defines_and_sizes_footnote_cjk(self):
+        out_tex = os.path.join(self.temp_dir.name, "out.tex")
+        manage_sheets.render_latex(self.sample_data_file, out_tex)
+        with open(out_tex, "r", encoding="utf-8") as f:
+            content = f.read()
+
+        # Preamble defaults
+        self.assertIn(r"\newcommand{\footnoteCJKSize}{10.5pt}", content)
+        self.assertIn(r"\newcommand{\footnoteCJKLead}{13pt}", content)
+        self.assertIn(r"\newcommand{\footnoteChar}[1]", content)
+
+        # Page 1: 18pt * 0.75 = 13.5pt
+        self.assertIn(r"\renewcommand{\footnoteCJKSize}{13.5pt}", content)
+        self.assertIn(r"\renewcommand{\footnoteCJKLead}{16.5pt}", content)
+
+        # Page 2: 14pt * 0.75 = 10.5pt
+        self.assertIn(r"\renewcommand{\footnoteCJKSize}{10.5pt}", content)
+        self.assertIn(r"\renewcommand{\footnoteCJKLead}{12.8pt}", content)
+
+        # Ensure footnoteChar is actually used in both list and table footnotes
+        self.assertIn(r"\footnote{Notice \footnoteChar{日} is narrower than \footnoteChar{曰}.}", content)
+        self.assertIn(r"Compare with \footnoteChar{日}.", content)
+
+
 if __name__ == "__main__":
     unittest.main()
+
 
