@@ -34,7 +34,7 @@ STROKES_FILE = os.path.join(BASE_DIR, "stroke_counts.json")
 TEX_FILE = os.path.join(BASE_DIR, "lessons_all.tex")
 PDF_FILE = os.path.join(BASE_DIR, "lessons_all.pdf")
 READINGS_MD = os.path.join(BASE_DIR, "readings.md")
-WORKSHEET_GENERATOR_DIR = "/home/justin/code/chinese-worksheet-generator"
+WORKSHEET_GENERATOR_DIR = os.environ.get("WORKSHEET_GENERATOR_DIR")
 WORKSHEETS_DIR = os.path.join(BASE_DIR, "worksheets")
 
 NS = {"xhtml": "http://www.w3.org/1999/xhtml"}
