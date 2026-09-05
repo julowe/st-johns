@@ -1,7 +1,7 @@
 # Classical Chinese Study Sheets Generator
 
 A modular toolchain to extract reading passages and vocabulary from
-Bryan W. van Norden's textbook
+Bryan W. Van Norden's textbook
 **_Classical Chinese for Everyone: A Guide for Absolute Beginners_** (EPUB)
 and typeset them into 8.5" $\times$ 11" two-column study and reference sheets.
 
@@ -194,7 +194,7 @@ python3 chinese/manage_sheets.py compile
 
 ## Typography & Fonts
 
-To guarantee exact visual fidelity with Bryan W. van Norden's published textbook, the script extracts and uses the EPUB's embedded fonts:
+To guarantee exact visual fidelity with Bryan W. Van Norden's published textbook, the script extracts and uses the EPUB's embedded fonts:
 
 - **Chinese Characters:** `SimSun.ttf` (Song / Ming style CJK serif).
 - **Pinyin & English Text:** `CharisSIL.ttf` / `CharisSIL-Bold.ttf` (full Unicode support for pinyin tone diacritics `ǐ`, `ǒ`, `ǎ`, `ǔ`).
@@ -211,5 +211,8 @@ To guarantee exact visual fidelity with Bryan W. van Norden's published textbook
 
 ## TODO
 
-- [ ] add date to footer
-- [ ] make a smaller gap between vocab pinyin and definition
+- [x] add date to footer
+- [x] make a smaller gap between vocab pinyin and definition
+- [x] add subcommand to output a txt file of all readings, only the chinese characters, for use in Anki or other SRS flashcard apps
+- [ ] make txt wordlist for anki import?
+- [ ] subcommand for a glossary: a txt file output but also a tex/pdf file output? (of just the 'vocab' sections, one [or a few] chinese characters and then the definition, etc just as in textbook)
