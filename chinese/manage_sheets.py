@@ -8,7 +8,7 @@ study sheets from Bryan W. van Norden's textbook EPUB.
 Commands:
   extract   Extract data from EPUB to intermediate JSON (lessons_data.json)
   render    Render intermediate JSON to LaTeX master document (lessons_all.tex)
-  compile   Compile LaTeX document to PDF (lessons_all.pdf) via xelatex
+  compile   Compile LaTeX document to PDF (lessons_all.pdf) via xelatex or lualatex (auto-detected)
   worksheet Generate stroke-order practice worksheets via chinese-worksheet-generator
   all       Run full pipeline (extract if missing, render, compile)
 """
